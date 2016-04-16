@@ -11,6 +11,7 @@ public class NotationExceed {
     protected final LocalDateTime dateTime;
     protected final boolean exceed;
 
+
     public NotationExceed(String name, String url, String description, int hours, LocalDateTime dateTime, boolean exceed) {
         this.name = name;
         this.url = url;
