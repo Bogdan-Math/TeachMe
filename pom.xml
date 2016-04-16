@@ -33,6 +33,7 @@
     </build>
 
 
+    <!--dependencies-->
     <dependencies>
 
         <!--servlet api-->
@@ -45,10 +46,15 @@
 
     </dependencies>
 
-
+    <!--profiles-->
     <profiles>
+
     </profiles>
 
+
+    <!--dependencyManagement-->
     <dependencyManagement>
+
     </dependencyManagement>
+
 </project>
