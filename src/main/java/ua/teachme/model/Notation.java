@@ -1,6 +1,8 @@
 package ua.teachme.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class Notation {
 
@@ -36,6 +38,14 @@ public class Notation {
 
     public LocalDateTime getDateTime() {
         return dateTime;
+    }
+
+    public LocalDate getDate(){
+        return dateTime.toLocalDate();
+    }
+
+    public LocalTime getTime(){
+        return dateTime.toLocalTime();
     }
 
     @Override

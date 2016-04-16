@@ -19,4 +19,25 @@ public class NotationExceed {
         this.dateTime = dateTime;
         this.exceed = exceed;
     }
+
+    public NotationExceed(Notation notation, boolean exceed){
+        this.name = notation.getName();
+        this.url = notation.getUrl();
+        this.description = notation.getDescription();
+        this.hours = notation.getHours();
+        this.dateTime = notation.getDateTime();
+        this.exceed = exceed;
+    }
+
+    @Override
+    public String toString() {
+        return "NotationExceed{" +
+                "name='" + name + '\'' +
+                ", url='" + url + '\'' +
+                ", description='" + description + '\'' +
+                ", hours=" + hours +
+                ", dateTime=" + dateTime +
+                ", exceed=" + exceed +
+                '}';
+    }
 }
