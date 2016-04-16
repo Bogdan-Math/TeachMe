@@ -27,6 +27,7 @@ public class NotationUtil {
         getFilteredNotationsWithExceed(notations, LocalTime.of(11, 0), LocalTime.of(23, 0), 8).forEach(System.out::println);
     }
 
+    //filter with streams
     public static List<NotationExceed> getFilteredNotationsWithExceed(List<Notation> notations, LocalTime startTime, LocalTime endTime, int hoursPerDay){
         Map<LocalDate, Integer> hoursSumByDate = notations.stream()
                 .collect(
