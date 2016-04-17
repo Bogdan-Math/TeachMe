@@ -5,7 +5,7 @@
 
     <display-name>TeachMe</display-name>
 
-    <!-- mapping request {ip:port}/notations -->
+    <!-- mapping request {ip:port}/TeachMe/notations to NotationServlet -->
     <servlet>
         <servlet-name>notationServlet</servlet-name>
         <servlet-class>ua.teachme.web.NotationServlet</servlet-class>
