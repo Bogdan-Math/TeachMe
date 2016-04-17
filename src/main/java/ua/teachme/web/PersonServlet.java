@@ -16,7 +16,7 @@ public class PersonServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         LOG.debug("redirect to person");
-        //request.getRequestDispatcher("/notationList.jsp").forward(request, response);
+        //request.getRequestDispatcher("/notations.jsp").forward(request, response);
         response.sendRedirect("person.jsp");
     }
 }

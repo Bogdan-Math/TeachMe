@@ -1,6 +1,7 @@
 package ua.teachme.web;
 
 import org.slf4j.Logger;
+import ua.teachme.util.NotationUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,8 +18,9 @@ public class NotationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         LOG.debug("redirect to notations");
-        //request.getRequestDispatcher("/notationList.jsp").forward(request, response);
-        response.sendRedirect("notationList.jsp");
+        request.setAttribute("notations", NotationUtil.getFilteredWithExceed(NotationUtil.NOTATIONS, NotationUtil.HOURS_PER_DAY));
+        request.getRequestDispatcher("/notations.jsp").forward(request, response);
+        /*response.sendRedirect("notations.jsp");*/
     }
 
 }

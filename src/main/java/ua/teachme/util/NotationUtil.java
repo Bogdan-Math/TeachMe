@@ -11,21 +11,32 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class NotationUtil {
-    public static void main(String[] args) {
-        List<Notation> notations = Arrays.asList(
-                new Notation("name1", "URL", "description", 1, LocalDateTime.now()),
-                new Notation("name2", "URL", "description", 4, LocalDateTime.now()),
-                new Notation("name3", "URL", "description", 7, LocalDateTime.now()),
-                new Notation("name4", "URL", "description", 2, LocalDateTime.now()),
-                new Notation("name5", "URL", "description", 4, LocalDateTime.of(2016, Month.MARCH, 13, 11, 35)),
-                new Notation("name6", "URL", "description", 1, LocalDateTime.of(2016, Month.MARCH, 13, 21, 55)),
-                new Notation("name7", "URL", "description", 3, LocalDateTime.of(2016, Month.MARCH, 13, 22, 15)),
-                new Notation("name8", "URL", "description", 0, LocalDateTime.of(2016, Month.MARCH, 13, 23, 31))
-        );
 
-        getFilteredNotationsExceedWithStreams(notations, LocalTime.of(12, 0), LocalTime.of(22, 0), 8).forEach(System.out::println);
+    public static final int HOURS_PER_DAY = 8;
+
+    public static final List<Notation> NOTATIONS = Arrays.asList(
+            new Notation("name1", "URL", "description", 1, LocalDateTime.now()),
+            new Notation("name2", "URL", "description", 4, LocalDateTime.now()),
+            new Notation("name3", "URL", "description", 7, LocalDateTime.now()),
+            new Notation("name4", "URL", "description", 2, LocalDateTime.now()),
+            new Notation("name5", "URL", "description", 4, LocalDateTime.of(2016, Month.MARCH, 13, 11, 35)),
+            new Notation("name6", "URL", "description", 1, LocalDateTime.of(2016, Month.MARCH, 13, 21, 55)),
+            new Notation("name7", "URL", "description", 3, LocalDateTime.of(2016, Month.MARCH, 13, 22, 15)),
+            new Notation("name8", "URL", "description", 0, LocalDateTime.of(2016, Month.MARCH, 13, 23, 31))
+    );
+
+    public static void main(String[] args) {
+        getFilteredNotationsExceedWithStreams(NOTATIONS, LocalTime.of(11, 0), LocalTime.of(23, 0), HOURS_PER_DAY).forEach(System.out::println);
         System.out.println("///////////////");
-        getFilteredNotationsExceedWithLoops(notations, LocalTime.of(12, 0), LocalTime.of(22, 0), 8).forEach(System.out::println);
+        getFilteredNotationsExceedWithLoops(NOTATIONS, LocalTime.of(11, 0), LocalTime.of(23, 0), HOURS_PER_DAY).forEach(System.out::println);
+        System.out.println("///////////////");
+        getFilteredWithExceed(NOTATIONS, HOURS_PER_DAY).forEach(System.out::println);
+    }
+
+
+    //filter with full day period
+    public static List<NotationExceed> getFilteredWithExceed(List<Notation> notations, int hoursPerDay){
+        return getFilteredNotationsExceedWithStreams(notations, LocalTime.MIN, LocalTime.MAX, hoursPerDay);
     }
 
     //filter with loops
