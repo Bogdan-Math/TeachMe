@@ -16,7 +16,7 @@
         <url-pattern>/notations</url-pattern>
     </servlet-mapping>
 
-    <!-- mapping request {ip:port}/TeachMe/notations to NotationServlet -->
+    <!-- mapping request {ip:port}/TeachMe/person to PersonServlet -->
     <servlet>
         <servlet-name>personServlet</servlet-name>
         <servlet-class>ua.teachme.web.PersonServlet</servlet-class>
