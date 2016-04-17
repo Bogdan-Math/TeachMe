@@ -16,4 +16,15 @@
         <url-pattern>/notations</url-pattern>
     </servlet-mapping>
 
+    <!-- mapping request {ip:port}/TeachMe/notations to NotationServlet -->
+    <servlet>
+        <servlet-name>personServlet</servlet-name>
+        <servlet-class>ua.teachme.web.PersonServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>personServlet</servlet-name>
+        <url-pattern>/person</url-pattern>
+    </servlet-mapping>
+
 </web-app>
