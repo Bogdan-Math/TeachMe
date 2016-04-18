@@ -6,20 +6,33 @@ import java.time.LocalTime;
 
 public class Notation {
 
-    protected final String name;
-    protected final String url;
-    protected final String description;
-    protected final int hours;
-    protected final LocalDateTime dateTime;
+    private Integer id;
+    private final String name;
+    private final String url;
+    private final String description;
+    private final int hours;
+    private final LocalDateTime dateTime;
 
 
-    public Notation(String name, String url, String description, int hours, LocalDateTime dateTime) {
+    public Notation(String name, String url, String description, int hours, LocalDateTime dateTime){
+        this(null, name, url, description, hours, dateTime);
+    }
+
+    public Notation(Integer id, String name, String url, String description, int hours, LocalDateTime dateTime) {
+        this.id = id;
         this.name = name;
         this.url = url;
         this.description = description;
         this.hours = hours;
         this.dateTime = dateTime;
     }
+
+    public boolean isNew(){
+        return id == null;
+    }
+
+    public Integer getId() {return id;}
+    public void setId(Integer id){this.id = id;}
 
     public String getName() {
         return name;

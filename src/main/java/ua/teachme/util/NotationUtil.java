@@ -31,30 +31,17 @@ public class NotationUtil {
         getFilteredNotationsExceedWithLoops(NOTATIONS, LocalTime.of(11, 0), LocalTime.of(23, 0), HOURS_PER_DAY).forEach(System.out::println);
         System.out.println("///////////////");
         getFilteredWithExceed(NOTATIONS, HOURS_PER_DAY).forEach(System.out::println);
+        System.out.println("///////////////");
     }
 
 
     //filter with full day period
-    public static List<NotationExceed> getFilteredWithExceed(List<Notation> notations, int hoursPerDay){
+    public static List<NotationExceed> getFilteredWithExceed(Collection<Notation> notations, int hoursPerDay){
         return getFilteredNotationsExceedWithStreams(notations, LocalTime.MIN, LocalTime.MAX, hoursPerDay);
     }
 
-    //filter with loops
-    public static List<NotationExceed> getFilteredNotationsExceedWithLoops(List<Notation> notations, LocalTime startTime, LocalTime endTime, int hoursPerDay){
-        Map<LocalDate, Integer> hoursSumByDate = new HashMap<>();
-        notations.forEach(notation -> hoursSumByDate.merge(notation.getDate(), notation.getHours(), Integer::sum));
-
-        List<NotationExceed> notationExceedList = new ArrayList<>();
-        notations.forEach(notation -> {
-            if (TimeUtil.isBetween(notation.getTime(), startTime, endTime)){
-                notationExceedList.add( new NotationExceed(notation, hoursSumByDate.get(notation.getDate()) > hoursPerDay ));
-            }
-        });
-        return notationExceedList;
-    }
-
     //filter with streams
-    public static List<NotationExceed> getFilteredNotationsExceedWithStreams(List<Notation> notations, LocalTime startTime, LocalTime endTime, int hoursPerDay){
+    public static List<NotationExceed> getFilteredNotationsExceedWithStreams(Collection<Notation> notations, LocalTime startTime, LocalTime endTime, int hoursPerDay){
         Map<LocalDate, Integer> hoursSumByDate = notations.stream()
                 .collect(
                         Collectors.groupingBy(
@@ -67,5 +54,19 @@ public class NotationUtil {
                 .filter(notation -> TimeUtil.isBetween(notation.getTime(), startTime, endTime))
                 .map(notation -> new NotationExceed(notation, hoursSumByDate.get(notation.getDate()) > hoursPerDay))
                 .collect(Collectors.toList());
+    }
+
+    //filter with loops
+    public static List<NotationExceed> getFilteredNotationsExceedWithLoops(Collection<Notation> notations, LocalTime startTime, LocalTime endTime, int hoursPerDay){
+        Map<LocalDate, Integer> hoursSumByDate = new HashMap<>();
+        notations.forEach(notation -> hoursSumByDate.merge(notation.getDate(), notation.getHours(), Integer::sum));
+
+        List<NotationExceed> notationExceedList = new ArrayList<>();
+        notations.forEach(notation -> {
+            if (TimeUtil.isBetween(notation.getTime(), startTime, endTime)){
+                notationExceedList.add( new NotationExceed(notation, hoursSumByDate.get(notation.getDate()) > hoursPerDay ));
+            }
+        });
+        return notationExceedList;
     }
 }

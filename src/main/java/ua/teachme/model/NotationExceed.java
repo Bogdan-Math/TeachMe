@@ -6,14 +6,16 @@ import java.time.LocalTime;
 
 public class NotationExceed {
 
-    protected final String name;
-    protected final String url;
-    protected final String description;
-    protected final int hours;
-    protected final LocalDateTime dateTime;
-    protected final boolean exceed;
+    private final Integer id;
+    private final String name;
+    private final String url;
+    private final String description;
+    private final int hours;
+    private final LocalDateTime dateTime;
+    private final boolean exceed;
 
-    public NotationExceed(String name, String url, String description, int hours, LocalDateTime dateTime, boolean exceed) {
+    public NotationExceed(Integer id, String name, String url, String description, int hours, LocalDateTime dateTime, boolean exceed) {
+        this.id = id;
         this.name = name;
         this.url = url;
         this.description = description;
@@ -23,6 +25,7 @@ public class NotationExceed {
     }
 
     public NotationExceed(Notation notation, boolean exceed) {
+        this.id = notation.getId();
         this.name = notation.getName();
         this.url = notation.getUrl();
         this.description = notation.getDescription();
@@ -30,6 +33,8 @@ public class NotationExceed {
         this.dateTime = notation.getDateTime();
         this.exceed = exceed;
     }
+
+    public Integer getId() {return id;}
 
     public String getName() {return name;}
 
