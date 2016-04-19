@@ -18,11 +18,12 @@ public class NotationRepositoryInMemoryImpl implements NotationRepository {
     }
 
     @Override
-    public void save(Notation notation) {
+    public Notation save(Notation notation) {
         if (notation.isNew()){
             notation.setId(counter.incrementAndGet());
         }
         notationsRepository.put(notation.getId(), notation);
+        return notation;
     }
 
     @Override
@@ -39,4 +40,5 @@ public class NotationRepositoryInMemoryImpl implements NotationRepository {
     public Collection<Notation> getAll() {
         return notationsRepository.values();
     }
+
 }
