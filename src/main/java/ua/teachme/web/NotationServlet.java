@@ -65,7 +65,7 @@ public class NotationServlet extends HttpServlet {
         );
         notationRepository.save(notation);
         response.sendRedirect("notations");
-        LOG.debug("redirect to /notations.jsp, save notation, id={}.", request.getParameter("id"));
+        LOG.debug("redirect to /notations.jsp, save new notation.");
     }
 
     private int getIdFromRequest(HttpServletRequest request) {

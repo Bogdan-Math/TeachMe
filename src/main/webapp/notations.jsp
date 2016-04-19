@@ -16,7 +16,7 @@
     </style>
 </head>
 <body>
-<h2><a href="">Home</a></h2>
+<h2><a href="index.jsp">Home</a></h2>
 
 <table border="1">
 <a href="notations?action=create">add notation</a>
@@ -33,7 +33,7 @@
     <c:forEach items="${notations}" var="notation">
         <jsp:useBean id="notation" scope="page" type="ua.teachme.model.NotationExceed"/>
         <tr class="${notation.exceed ? 'exceed' : 'normal'}">
-            <td>${notation.id}</td>
+            <%--<td>${notation.id}</td>--%>
             <td>${notation.name}</td>
             <td>${notation.url}</td>
             <td>${notation.description}</td>

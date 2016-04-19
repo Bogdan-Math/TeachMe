@@ -13,7 +13,6 @@ public class Notation {
     private final int hours;
     private final LocalDateTime dateTime;
 
-
     public Notation(String name, String url, String description, int hours, LocalDateTime dateTime){
         this(null, name, url, description, hours, dateTime);
     }
