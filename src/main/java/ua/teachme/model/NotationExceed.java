@@ -59,6 +59,7 @@ public class NotationExceed {
     @Override
     public String toString() {
         return "NotationExceed{" +
+                "id='" + id + '\''+
                 "name='" + name + '\'' +
                 ", url='" + url + '\'' +
                 ", description='" + description + '\'' +

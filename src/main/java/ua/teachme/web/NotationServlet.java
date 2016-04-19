@@ -38,7 +38,7 @@ public class NotationServlet extends HttpServlet {
             response.sendRedirect("notations");
             LOG.debug("redirect to notations, notation id={}, action={}.", request.getParameter("id"), request.getParameter("action"));
         } else if ("create".equals(action)) {
-            request.setAttribute("notation", new Notation(null, "", "", "", 0, LocalDateTime.now()));
+            request.setAttribute("notation", new Notation("", "", "", 0, LocalDateTime.now()));
             request.getRequestDispatcher("/edit.jsp").forward(request, response);
             LOG.debug("forward to /edit.jsp with new notation");
         } else if ("update".equals(action)) {
