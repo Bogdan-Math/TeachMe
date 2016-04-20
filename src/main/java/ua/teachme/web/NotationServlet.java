@@ -3,7 +3,7 @@ package ua.teachme.web;
 import org.slf4j.Logger;
 import ua.teachme.model.Notation;
 import ua.teachme.repository.NotationRepository;
-import ua.teachme.repository.NotationRepositoryInMemoryImpl;
+import ua.teachme.repository.InMemoryNotationRepositoryImpl;
 import ua.teachme.util.NotationUtil;
 
 import javax.servlet.ServletException;
@@ -23,7 +23,7 @@ public class NotationServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         super.init();
-        notationRepository = new NotationRepositoryInMemoryImpl();
+        notationRepository = new InMemoryNotationRepositoryImpl();
     }
 
     @Override

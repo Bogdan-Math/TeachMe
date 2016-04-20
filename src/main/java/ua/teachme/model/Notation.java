@@ -46,4 +46,15 @@ public class Notation extends EntityName{
     public LocalTime getTime(){
         return dateTime.toLocalTime();
     }
+
+    @Override
+    public String toString() {
+        return "Notation{" +
+                super.toString() +
+                "url='" + url + '\'' +
+                ", description='" + description + '\'' +
+                ", hours=" + hours +
+                ", dateTime=" + dateTime +
+                '}';
+    }
 }

@@ -8,12 +8,12 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class NotationRepositoryInMemoryImpl implements NotationRepository {
+public class InMemoryNotationRepositoryImpl implements NotationRepository {
 
     private Map<Integer, Notation> notationsRepository =  new ConcurrentHashMap<>();
     private AtomicInteger counter = new AtomicInteger(0);
 
-    public NotationRepositoryInMemoryImpl() {
+    public InMemoryNotationRepositoryImpl() {
         NotationUtil.NOTATIONS.forEach(this::save);
     }
 
