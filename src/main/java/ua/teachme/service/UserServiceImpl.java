@@ -1,13 +1,14 @@
 package ua.teachme.service;
 
 import ua.teachme.model.User;
+import ua.teachme.repository.UserRepository;
 
 import java.util.Collection;
 
-/**
- * Created by Bogdan on 20.04.2016.
- */
 public class UserServiceImpl implements UserService {
+
+    private UserRepository userRepository;
+
     @Override
     public Collection<User> getAll() {
         return null;
