@@ -3,7 +3,7 @@ package ua.teachme.web;
 import org.slf4j.Logger;
 import ua.teachme.model.Notation;
 import ua.teachme.repository.NotationRepository;
-import ua.teachme.repository.InMemoryNotationRepositoryImpl;
+import ua.teachme.repository.memory.InMemoryNotationRepositoryImpl;
 import ua.teachme.util.NotationUtil;
 
 import javax.servlet.ServletException;

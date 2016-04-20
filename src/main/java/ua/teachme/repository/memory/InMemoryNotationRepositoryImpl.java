@@ -1,6 +1,7 @@
-package ua.teachme.repository;
+package ua.teachme.repository.memory;
 
 import ua.teachme.model.Notation;
+import ua.teachme.repository.NotationRepository;
 import ua.teachme.util.NotationUtil;
 
 import java.util.Collection;

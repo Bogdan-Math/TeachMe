@@ -1,11 +1,12 @@
-package ua.teachme.repository;
+package ua.teachme.repository.memory;
 
 import ua.teachme.model.User;
+import ua.teachme.repository.UserRepository;
 
 import java.util.Collection;
 
 //todo impl methods
-public class InMemoryUserRepositoryImpl implements UserRepository{
+public class InMemoryUserRepositoryImpl implements UserRepository {
 
     @Override
     public Collection<User> getAll() {
