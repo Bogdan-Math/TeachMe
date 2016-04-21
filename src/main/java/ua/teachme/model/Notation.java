@@ -6,6 +6,7 @@ import java.time.LocalTime;
 
 public class Notation extends EntityName{
 
+    private User user;
     private String url;
     private String description;
     private int hours;
@@ -23,21 +24,46 @@ public class Notation extends EntityName{
         this.dateTime = dateTime;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public String getUrl() {
         return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getDescription() {
         return description;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public int getHours() {
         return hours;
+    }
+
+    public void setHours(int hours) {
+        this.hours = hours;
     }
 
     public LocalDateTime getDateTime() {
         return dateTime;
     }
+
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
+    }
+
 
     public LocalDate getDate(){
         return dateTime.toLocalDate();

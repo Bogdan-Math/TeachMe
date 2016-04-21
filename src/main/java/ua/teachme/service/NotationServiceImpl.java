@@ -1,12 +1,11 @@
 package ua.teachme.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.*;
 import org.springframework.stereotype.Service;
 import ua.teachme.model.Notation;
 import ua.teachme.repository.NotationRepository;
 
-import java.util.Collection;
+import java.util.List;
 
 @Service
 public class NotationServiceImpl implements NotationService {
@@ -14,15 +13,9 @@ public class NotationServiceImpl implements NotationService {
     @Autowired
     private NotationRepository notationRepository;
 
-/*
-    public void setNotationRepository(NotationRepository notationRepository) {
-        this.notationRepository = notationRepository;
-    }
-*/
-
     @Override
-    public Collection<Notation> getAll() {
-        return null;
+    public List<Notation> getAll() {
+        return notationRepository.getAll();
     }
 
     @Override
@@ -32,11 +25,11 @@ public class NotationServiceImpl implements NotationService {
 
     @Override
     public Notation get(int id) {
-        return null;
+        return notationRepository.get(id);
     }
 
     @Override
     public void delete(int id) {
-
+        notationRepository.delete(id);
     }
 }

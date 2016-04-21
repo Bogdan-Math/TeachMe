@@ -34,14 +34,13 @@ public class NotationUtil {
         System.out.println("///////////////");
     }
 
-
     //filter with full day period
-    public static List<NotationExceed> getFilteredWithExceed(Collection<Notation> notations, int hoursPerDay){
+    public static List<NotationExceed> getFilteredWithExceed(List<Notation> notations, int hoursPerDay){
         return getFilteredNotationsExceedWithStreams(notations, LocalTime.MIN, LocalTime.MAX, hoursPerDay);
     }
 
     //filter with streams
-    public static List<NotationExceed> getFilteredNotationsExceedWithStreams(Collection<Notation> notations, LocalTime startTime, LocalTime endTime, int hoursPerDay){
+    public static List<NotationExceed> getFilteredNotationsExceedWithStreams(List<Notation> notations, LocalTime startTime, LocalTime endTime, int hoursPerDay){
         Map<LocalDate, Integer> hoursSumByDate = notations.stream()
                 .collect(
                         Collectors.groupingBy(
@@ -57,7 +56,7 @@ public class NotationUtil {
     }
 
     //filter with loops
-    public static List<NotationExceed> getFilteredNotationsExceedWithLoops(Collection<Notation> notations, LocalTime startTime, LocalTime endTime, int hoursPerDay){
+    public static List<NotationExceed> getFilteredNotationsExceedWithLoops(List<Notation> notations, LocalTime startTime, LocalTime endTime, int hoursPerDay){
         Map<LocalDate, Integer> hoursSumByDate = new HashMap<>();
         notations.forEach(notation -> hoursSumByDate.merge(notation.getDate(), notation.getHours(), Integer::sum));
 

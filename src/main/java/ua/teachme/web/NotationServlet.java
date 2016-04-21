@@ -3,7 +3,7 @@ package ua.teachme.web;
 import org.slf4j.Logger;
 import ua.teachme.model.Notation;
 import ua.teachme.repository.NotationRepository;
-import ua.teachme.repository.memory.InMemoryNotationRepositoryImpl;
+import ua.teachme.repository.mock.InMemoryNotationRepositoryImpl;
 import ua.teachme.util.NotationUtil;
 
 import javax.servlet.ServletException;
@@ -61,7 +61,7 @@ public class NotationServlet extends HttpServlet {
                 request.getParameter("url"),
                 request.getParameter("description"),
                 Integer.valueOf(request.getParameter("hours")),
-                LocalDateTime.now()
+                id.isEmpty() ? LocalDateTime.now() : LocalDateTime.parse(request.getParameter("dateTime"))
         );
         notationRepository.save(notation);
         response.sendRedirect("notations");

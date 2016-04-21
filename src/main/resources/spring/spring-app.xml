@@ -8,7 +8,7 @@
 >
 
 <!--
-    <bean id="notationRepository" class="ua.teachme.repository.memory.InMemoryNotationRepositoryImpl"/>
+    <bean id="notationRepository" class="ua.teachme.repository.InMemoryNotationRepositoryImpl"/>
     <bean id="notationService" class="ua.teachme.service.NotationServiceImpl">
         <property name="notationRepository" ref="notationRepository"/>
     </bean>
