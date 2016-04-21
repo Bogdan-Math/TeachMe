@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ua.teachme.model.Notation;
 import ua.teachme.repository.NotationRepository;
+import ua.teachme.util.exception.ExceptionUtil;
 
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class NotationServiceImpl implements NotationService {
 
     @Override
     public Notation get(int id) {
-        return notationRepository.get(id);
+        return ExceptionUtil.check(notationRepository.get(id), id);
     }
 
     @Override

@@ -7,9 +7,9 @@ import org.springframework.stereotype.Controller;
 import ua.teachme.service.NotationService;
 
 @Controller
-public class AbstractNotationController {
+public class NotationController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(AbstractNotationController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(NotationController.class);
     
     @Autowired
     private NotationService notationService;

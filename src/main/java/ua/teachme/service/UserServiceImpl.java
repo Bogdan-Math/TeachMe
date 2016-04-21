@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ua.teachme.model.User;
 import ua.teachme.repository.UserRepository;
 import ua.teachme.util.exception.EntityNotFoundException;
+import ua.teachme.util.exception.ExceptionUtil;
 
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User get(int id) throws EntityNotFoundException {
-        return userRepository.get(id);
+        return ExceptionUtil.check(userRepository.get(id), id);
     }
 
     @Override
