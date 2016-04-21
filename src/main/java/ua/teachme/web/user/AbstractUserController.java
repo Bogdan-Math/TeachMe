@@ -1,5 +1,5 @@
 package ua.teachme.web.user;
 
-public class AbstractUserController {
+public abstract class AbstractUserController {
 
 }

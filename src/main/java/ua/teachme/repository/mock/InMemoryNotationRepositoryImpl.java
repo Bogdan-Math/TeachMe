@@ -4,7 +4,9 @@ import org.springframework.stereotype.Repository;
 import ua.teachme.model.Notation;
 import ua.teachme.repository.NotationRepository;
 import ua.teachme.util.NotationUtil;
+import ua.teachme.util.TimeUtil;
 
+import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -45,5 +47,10 @@ public class InMemoryNotationRepositoryImpl implements NotationRepository {
     @Override
     public void delete(int id) {
         notationsRepository.remove(id);
+    }
+
+    @Override
+    public List<Notation> getBetween(LocalDateTime start, LocalDateTime end) {
+        return getAll().stream().filter(notation -> TimeUtil.isBetween(notation.getDateTime(), start, end)).collect(Collectors.toList());
     }
 }
