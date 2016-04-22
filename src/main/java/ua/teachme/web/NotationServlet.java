@@ -4,9 +4,7 @@ import org.slf4j.Logger;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ua.teachme.model.Notation;
-import ua.teachme.repository.NotationRepository;
-import ua.teachme.repository.mock.InMemoryNotationRepositoryImpl;
-import ua.teachme.util.NotationUtil;
+import ua.teachme.util.notation.NotationUtil;
 import ua.teachme.web.notation.NotationController;
 
 import javax.servlet.ServletException;

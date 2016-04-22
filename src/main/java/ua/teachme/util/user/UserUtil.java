@@ -1,6 +1,7 @@
-package ua.teachme.util;
+package ua.teachme.util.user;
 
 import ua.teachme.model.User;
+import ua.teachme.util.notation.NotationUtil;
 
 import java.time.LocalDate;
 import java.util.Arrays;

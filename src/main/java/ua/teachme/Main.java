@@ -3,7 +3,7 @@ package ua.teachme;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ua.teachme.dto.NotationExceed;
-import ua.teachme.util.UserUtil;
+import ua.teachme.util.user.UserUtil;
 import ua.teachme.web.notation.NotationController;
 import ua.teachme.web.user.UserController;
 

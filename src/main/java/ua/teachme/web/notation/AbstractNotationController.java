@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import ua.teachme.model.Notation;
 import ua.teachme.dto.NotationExceed;
 import ua.teachme.service.NotationService;
-import ua.teachme.util.NotationUtil;
+import ua.teachme.util.notation.NotationUtil;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
