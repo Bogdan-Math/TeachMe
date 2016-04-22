@@ -9,6 +9,7 @@
     <!-- To enable JMX Management -->
     <jmxConfigurator/>
 
+    <!--todo add and separate web and repository logging-->
     <!--appender for logging in file-->
     <appender name="file" class="ch.qos.logback.core.FileAppender">
         <!--<file>../webapps/TeachMe/log/TeachMe.log</file>-->

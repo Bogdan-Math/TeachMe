@@ -5,15 +5,7 @@
 <html>
 <head>
     <title>Notations</title>
-    <style>
-        .exceed {
-            color: red;
-        }
-
-        .normal {
-            color: green;
-        }
-    </style>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <h2><a href="index.jsp">Home</a></h2>
