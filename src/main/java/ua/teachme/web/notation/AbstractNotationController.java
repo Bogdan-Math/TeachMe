@@ -2,7 +2,7 @@ package ua.teachme.web.notation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import ua.teachme.model.Notation;
-import ua.teachme.model.NotationExceed;
+import ua.teachme.dto.NotationExceed;
 import ua.teachme.service.NotationService;
 import ua.teachme.util.NotationUtil;
 
@@ -14,11 +14,6 @@ public abstract class AbstractNotationController {
 
     @Autowired
     private NotationService notationService;
-
-    public void setNotationService(NotationService notationService) {
-        this.notationService = notationService;
-    }
-
 
     public List<Notation> getAll(){
         return notationService.getAll();

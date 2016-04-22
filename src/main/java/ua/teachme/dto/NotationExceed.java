@@ -1,4 +1,6 @@
-package ua.teachme.model;
+package ua.teachme.dto;
+
+import ua.teachme.model.Notation;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

@@ -2,17 +2,12 @@ package ua.teachme;
 
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ua.teachme.model.Notation;
-import ua.teachme.model.NotationExceed;
-import ua.teachme.model.User;
-import ua.teachme.repository.NotationRepository;
-import ua.teachme.service.NotationService;
+import ua.teachme.dto.NotationExceed;
 import ua.teachme.util.UserUtil;
 import ua.teachme.web.notation.NotationController;
 import ua.teachme.web.user.UserController;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
 import java.util.Arrays;

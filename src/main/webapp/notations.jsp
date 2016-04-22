@@ -31,7 +31,7 @@
     </thead>
 
     <c:forEach items="${notations}" var="notation">
-        <jsp:useBean id="notation" scope="page" type="ua.teachme.model.NotationExceed"/>
+        <jsp:useBean id="notation" scope="page" type="ua.teachme.dto.NotationExceed"/>
         <tr class="${notation.exceed ? 'exceed' : 'normal'}">
             <%--<td>${notation.id}</td>--%>
             <td>${notation.name}</td>

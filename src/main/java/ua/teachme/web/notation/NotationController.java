@@ -2,8 +2,7 @@ package ua.teachme.web.notation;
 
 import org.springframework.stereotype.Controller;
 import ua.teachme.model.Notation;
-import ua.teachme.model.NotationExceed;
-import ua.teachme.service.NotationServiceImpl;
+import ua.teachme.dto.NotationExceed;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -35,9 +34,5 @@ public class NotationController extends AbstractNotationController{
     @Override
     public List<NotationExceed> getBetween(LocalDate startDate, LocalTime startTime, LocalDate endDate, LocalTime endTime) {
         return super.getBetween(startDate, startTime, endDate, endTime);
-    }
-
-    public NotationController() {
-       setNotationService(new NotationServiceImpl());
     }
 }
