@@ -1,17 +1,43 @@
 package ua.teachme.web.notation;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import ua.teachme.service.NotationService;
+import ua.teachme.model.Notation;
+import ua.teachme.model.NotationExceed;
+import ua.teachme.service.NotationServiceImpl;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
 
 @Controller
-public class NotationController {
+public class NotationController extends AbstractNotationController{
 
-    private static final Logger LOG = LoggerFactory.getLogger(NotationController.class);
-    
-    @Autowired
-    private NotationService notationService;
+    @Override
+    public List<Notation> getAll() {
+        return super.getAll();
+    }
 
+    @Override
+    public Notation save(Notation notation) {
+        return super.save(notation);
+    }
+
+    @Override
+    public Notation get(int id) {
+        return super.get(id);
+    }
+
+    @Override
+    public void delete(int id) {
+        super.delete(id);
+    }
+
+    @Override
+    public List<NotationExceed> getBetween(LocalDate startDate, LocalTime startTime, LocalDate endDate, LocalTime endTime) {
+        return super.getBetween(startDate, startTime, endDate, endTime);
+    }
+
+    public NotationController() {
+       setNotationService(new NotationServiceImpl());
+    }
 }

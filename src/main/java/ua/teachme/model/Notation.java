@@ -64,7 +64,6 @@ public class Notation extends EntityName{
         this.dateTime = dateTime;
     }
 
-
     public LocalDate getDate(){
         return dateTime.toLocalDate();
     }

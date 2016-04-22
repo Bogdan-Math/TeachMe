@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void delete(int id) throws EntityNotFoundException {
+    public void delete(int id) {
         userRepository.delete(id);
     }
 }

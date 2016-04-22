@@ -6,7 +6,9 @@ import ua.teachme.model.Notation;
 import ua.teachme.repository.NotationRepository;
 import ua.teachme.util.exception.ExceptionUtil;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 @Service
@@ -33,6 +35,14 @@ public class NotationServiceImpl implements NotationService {
     @Override
     public void delete(int id) {
         notationRepository.delete(id);
+    }
+
+    @Override
+    public List<Notation> getBetween(LocalDate start, LocalDate end) {
+        return getBetween(
+                LocalDateTime.of(start, LocalTime.MIN),
+                LocalDateTime.of(end, LocalTime.MAX)
+        );
     }
 
     @Override

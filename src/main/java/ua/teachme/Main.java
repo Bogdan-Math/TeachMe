@@ -3,11 +3,20 @@ package ua.teachme;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ua.teachme.model.Notation;
+import ua.teachme.model.NotationExceed;
+import ua.teachme.model.User;
 import ua.teachme.repository.NotationRepository;
 import ua.teachme.service.NotationService;
+import ua.teachme.util.UserUtil;
+import ua.teachme.web.notation.NotationController;
+import ua.teachme.web.user.UserController;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.Month;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,21 +24,18 @@ public class Main {
         System.out.println("Hello TeachMe Enterprise!");
 
         try (ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("spring/spring-app.xml")) {
-
             System.out.println(Arrays.toString(context.getBeanDefinitionNames()));
 
-/*            //get bean by name
+            UserController userController = context.getBean(UserController.class);
+            System.out.println(userController.save(UserUtil.users.get(0)));
 
-            NotationRepository notationRepository1 = (NotationRepository) context.getBean("notationRepository");
-            System.out.println(notationRepository1.save(new Notation("name1", "url1", "desc1", 0, LocalDateTime.now())));
-*/
+            NotationController notationController = context.getBean(NotationController.class);
 
-            //get bean by class
-            NotationRepository notationRepository2 = context.getBean(NotationRepository.class);
-            System.out.println("repository " + notationRepository2.save(new Notation("name2", "url2", "desc2", 0, LocalDateTime.now())));
-
-            NotationService notationService = context.getBean(NotationService.class);
-            System.out.println("service " + notationService.save(new Notation("name2", "url2", "desc2", 0, LocalDateTime.now())));
+            List<NotationExceed> list = notationController.getBetween(
+                    LocalDate.of(2016, Month.MARCH, 13), LocalTime.of(0, 0),
+                    LocalDate.of(2016, Month.MARCH, 13), LocalTime.of(23, 0)
+            );
+            list.forEach(System.out::println);
         }
     }
 }
