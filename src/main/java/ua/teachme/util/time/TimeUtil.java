@@ -23,7 +23,7 @@ public class TimeUtil {
         return StringUtils.isEmpty(str) ? null : LocalTime.parse(str);
     }
 
-    public static String formatToString(LocalDateTime localDateTime){
+    public static String toString(LocalDateTime localDateTime){
         return localDateTime == null ? "" : localDateTime.format(DATE_TIME_FORMAT);
     }
 }
