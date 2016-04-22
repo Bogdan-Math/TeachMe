@@ -18,6 +18,32 @@
 <body>
 <h2><a href="index.jsp">Home</a></h2>
 
+<form method="post" action="notations?action=filter">
+
+    <dl>
+        <dt>start date</dt>
+        <dd><input type="date" value="${startDate}" name="startDate"></dd>
+    </dl>
+
+    <dl>
+        <dt>start time</dt>
+        <dd><input type="time" value="${startTime}" name="startTime"></dd>
+    </dl>
+
+    <dl>
+        <dt>end date</dt>
+        <dd><input type="date" value="${endDate}" name="endDate"></dd>
+    </dl>
+
+    <dl>
+        <dt>end time</dt>
+        <dd><input type="time" value="${endTime}" name="endTime"></dd>
+    </dl>
+
+    <button type="submit">filter</button>
+    <button type="reset">reset</button>
+</form>
+
 <table border="1">
 <a href="notations?action=create">add notation</a>
     <thead>
@@ -31,9 +57,12 @@
     </thead>
 
     <c:forEach items="${notations}" var="notation">
+
         <jsp:useBean id="notation" scope="page" type="ua.teachme.dto.NotationExceed"/>
         <tr class="${notation.exceed ? 'exceed' : 'normal'}">
-            <%--<td>${notation.id}</td>--%>
+            <%--
+            <td>${notation.id}</td>
+            --%>
             <td>${notation.name}</td>
             <td>${notation.url}</td>
             <td>${notation.description}</td>

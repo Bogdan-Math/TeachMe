@@ -9,6 +9,10 @@ import java.time.format.DateTimeFormatter;
 
 public class TimeUtil {
 
+    public static final LocalDate TODAY = LocalDate.now();
+    public static final LocalTime MIN_TIME = LocalTime.MIN;
+    public static final LocalTime MAX_TIME = LocalTime.MAX;
+
     private static final DateTimeFormatter DATE_TIME_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
     public static <T extends Comparable<? super T>> boolean isBetween(T value, T start, T end) {
