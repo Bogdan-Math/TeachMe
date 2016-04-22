@@ -1,10 +1,13 @@
 package ua.teachme.web;
 
 import org.slf4j.Logger;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ua.teachme.model.Notation;
 import ua.teachme.repository.NotationRepository;
 import ua.teachme.repository.mock.InMemoryNotationRepositoryImpl;
 import ua.teachme.util.NotationUtil;
+import ua.teachme.web.notation.NotationController;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,23 +21,32 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class NotationServlet extends HttpServlet {
 
     private static final Logger LOG = getLogger(NotationServlet.class);
-    private static NotationRepository notationRepository;
+
+    ConfigurableApplicationContext springContext;
+    private NotationController notationController;
 
     @Override
     public void init() throws ServletException {
         super.init();
-        notationRepository = new InMemoryNotationRepositoryImpl();
+        springContext = new ClassPathXmlApplicationContext("spring/spring-app.xml");
+        notationController = springContext.getBean(NotationController.class);
+    }
+
+    @Override
+    public void destroy() {
+        springContext.close();
+        super.destroy();
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action == null) {
-            request.setAttribute("notations", NotationUtil.getFilteredWithExceed(notationRepository.getAll(), NotationUtil.HOURS_PER_DAY));
+            request.setAttribute("notations", NotationUtil.getFilteredWithExceed(notationController.getAll(), NotationUtil.HOURS_PER_DAY));
             request.getRequestDispatcher("/notations.jsp").forward(request, response);
             LOG.debug("forward to /notations.jsp with all notations");
         } else if ("delete".equals(action)) {
-            notationRepository.delete(getIdFromRequest(request));
+            notationController.delete(getIdFromRequest(request));
             response.sendRedirect("notations");
             LOG.debug("redirect to notations, notation id={}, action={}.", request.getParameter("id"), request.getParameter("action"));
         } else if ("create".equals(action)) {
@@ -42,7 +54,7 @@ public class NotationServlet extends HttpServlet {
             request.getRequestDispatcher("/edit.jsp").forward(request, response);
             LOG.debug("forward to /edit.jsp with new notation");
         } else if ("update".equals(action)) {
-            request.setAttribute("notation", notationRepository.get(getIdFromRequest(request)));
+            request.setAttribute("notation", notationController.get(getIdFromRequest(request)));
             request.getRequestDispatcher("/edit.jsp").forward(request, response);
             LOG.debug("forward to /edit.jsp, notation id={}, action={}.", request.getParameter("id"), request.getParameter("action"));
         } else {
@@ -63,7 +75,7 @@ public class NotationServlet extends HttpServlet {
                 Integer.valueOf(request.getParameter("hours")),
                 id.isEmpty() ? LocalDateTime.now() : LocalDateTime.parse(request.getParameter("dateTime"))
         );
-        notationRepository.save(notation);
+        notationController.save(notation);
         response.sendRedirect("notations");
         LOG.debug("redirect to /notations.jsp, save new notation.");
     }
