@@ -1,9 +1,5 @@
 package ua.teachme.web;
 
-import org.slf4j.Logger;
-import org.slf4j.MDC;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ua.teachme.model.Notation;
 import ua.teachme.util.notation.NotationUtil;
 import ua.teachme.util.time.TimeUtil;
@@ -16,27 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
-import static org.slf4j.LoggerFactory.getLogger;
-
-//todo set correct logging
 public class NotationServlet extends HttpServlet {
 
-    private static final Logger LOG = getLogger(NotationServlet.class);
-    ConfigurableApplicationContext springContext;
-    private NotationController notationController;
-
-    @Override
-    public void init() throws ServletException {
-        super.init();
-        springContext = new ClassPathXmlApplicationContext("spring/spring-app.xml");
-        notationController = springContext.getBean(NotationController.class);
-    }
-
-    @Override
-    public void destroy() {
-        springContext.close();
-        super.destroy();
-    }
+    private NotationController notationController = IndexServlet.getSpringContext().getBean(NotationController.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
