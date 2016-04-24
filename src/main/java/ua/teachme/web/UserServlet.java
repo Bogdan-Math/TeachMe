@@ -25,6 +25,7 @@ public class UserServlet extends HttpServlet {
         int userID = Integer.parseInt(request.getParameter("userID"));
         SelectedUser.setID(userID);
         User selectedUser = userController.get(SelectedUser.getID());
+        request.setAttribute("selectedUser", selectedUser);
         request.getRequestDispatcher("user.jsp").forward(request, response);
     }
 }
