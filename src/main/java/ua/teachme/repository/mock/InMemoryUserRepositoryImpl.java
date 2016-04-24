@@ -5,6 +5,8 @@ import ua.teachme.model.User;
 import ua.teachme.repository.UserRepository;
 import ua.teachme.util.user.UserUtil;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -50,5 +52,13 @@ public class InMemoryUserRepositoryImpl implements UserRepository {
     @Override
     public User getByEmail(String email) {
         return userRepository.values().stream().filter(user -> user.getEmail().equals(email)).findFirst().orElse(null);
+    }
+
+    @PostConstruct
+    public void postConstruct() {
+    }
+
+    @PreDestroy
+    public void preDestroy() {
     }
 }

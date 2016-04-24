@@ -6,6 +6,8 @@ import ua.teachme.repository.NotationRepository;
 import ua.teachme.util.notation.NotationUtil;
 import ua.teachme.util.time.TimeUtil;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
@@ -52,5 +54,13 @@ public class InMemoryNotationRepositoryImpl implements NotationRepository {
     @Override
     public List<Notation> getBetween(LocalDateTime start, LocalDateTime end) {
         return getAll().stream().filter(notation -> TimeUtil.isBetween(notation.getDateTime(), start, end)).collect(Collectors.toList());
+    }
+
+    @PostConstruct
+    public void postConstruct() {
+    }
+
+    @PreDestroy
+    public void preDestroy() {
     }
 }
