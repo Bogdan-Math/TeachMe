@@ -1,6 +1,5 @@
 package ua.teachme.web;
 
-import org.springframework.context.ConfigurableApplicationContext;
 import ua.teachme.SelectedUser;
 import ua.teachme.model.User;
 import ua.teachme.web.user.UserController;

@@ -1,36 +1,27 @@
 package ua.teachme;
 
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ua.teachme.dto.NotationExceed;
-import ua.teachme.util.user.UserUtil;
-import ua.teachme.web.notation.NotationController;
-import ua.teachme.web.user.UserController;
+import org.junit.Test;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.Month;
-import java.util.Arrays;
-import java.util.List;
+import static org.junit.Assert.*;
 
 public class MainTest {
-    public static void main(String[] args) {
 
-        try (ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("spring/spring-app.xml")) {
-            System.out.println(Arrays.toString(context.getBeanDefinitionNames()));
+    @Test
+    public void testCreateSpringContext() throws Exception {
+        Main.createSpringContext();
+        assertNotNull(Main.getSpringContext());
+    }
 
-            UserController userController = context.getBean(UserController.class);
-            System.out.println(userController.save(UserUtil.users.get(0)));
-            userController.get(1).getNotations().forEach(System.out::println);
+    @Test
+    public void testCloseSpringContext() throws Exception {
+        Main.createSpringContext();
+        Main.closeSpringContext();
+        assertNull(Main.getSpringContext());
+    }
 
-            NotationController notationController = context.getBean(NotationController.class);
-
-            List<NotationExceed> list = notationController.getBetween(
-                    LocalDate.of(2016, Month.MARCH, 13), LocalTime.of(0, 0),
-                    LocalDate.of(2016, Month.MARCH, 13), LocalTime.of(23, 0)
-            );
-            list.forEach(System.out::println);
-        }
-
+    @Test
+    public void testGetSpringContext() throws Exception {
+        Main.createSpringContext();
+        assertNotNull(Main.getSpringContext());
     }
 }
