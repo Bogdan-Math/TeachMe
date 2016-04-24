@@ -1,6 +1,7 @@
 package ua.teachme.web;
 
 import org.slf4j.Logger;
+import org.slf4j.MDC;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ua.teachme.model.Notation;
@@ -21,7 +22,6 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class NotationServlet extends HttpServlet {
 
     private static final Logger LOG = getLogger(NotationServlet.class);
-
     ConfigurableApplicationContext springContext;
     private NotationController notationController;
 
@@ -30,16 +30,23 @@ public class NotationServlet extends HttpServlet {
         super.init();
         springContext = new ClassPathXmlApplicationContext("spring/spring-app.xml");
         notationController = springContext.getBean(NotationController.class);
+        MDC.put("logger_id","spring_context");
+        LOG.debug("context created");
     }
 
     @Override
     public void destroy() {
         springContext.close();
         super.destroy();
+        MDC.put("logger_id","spring_context");
+        LOG.debug("context destroyed");
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        MDC.put("logger_id","web");
+
         String action = request.getParameter("action");
         if (action == null) {
             request.setAttribute("notations", NotationUtil.getFilteredWithExceed(notationController.getAll(), NotationUtil.HOURS_PER_DAY));
@@ -71,6 +78,9 @@ public class NotationServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        MDC.put("logger_id","web");
+
         response.setCharacterEncoding("UTF-8");
         String action = request.getParameter("action");
         if (null == action) {
