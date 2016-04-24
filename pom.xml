@@ -35,6 +35,9 @@
         <!--spring-->
         <spring.version>4.2.5.RELEASE</spring.version>
 
+        <!--junit tests-->
+        <junit.version>4.12</junit.version>
+
     </properties>
 
     <!--build properties-->
@@ -108,7 +111,7 @@
             <version>${apache-commons.version}</version>
         </dependency>
 
-        <!-- SpringFramework -->
+        <!--SpringFramework-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -119,6 +122,14 @@
                     <artifactId>commons-logging</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <!--JUnit Tests-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
