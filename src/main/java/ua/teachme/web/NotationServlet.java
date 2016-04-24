@@ -30,57 +30,42 @@ public class NotationServlet extends HttpServlet {
         super.init();
         springContext = new ClassPathXmlApplicationContext("spring/spring-app.xml");
         notationController = springContext.getBean(NotationController.class);
-        MDC.put("logger_id","spring_context");
-        LOG.debug("context created");
     }
 
     @Override
     public void destroy() {
         springContext.close();
         super.destroy();
-        MDC.put("logger_id","spring_context");
-        LOG.debug("context destroyed");
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        MDC.put("logger_id","web");
-
         String action = request.getParameter("action");
         if (action == null) {
             request.setAttribute("notations", NotationUtil.getFilteredWithExceed(notationController.getAll(), NotationUtil.HOURS_PER_DAY));
             setDefaultDateAndTime(request);
             request.getRequestDispatcher("/notations.jsp").forward(request, response);
-            LOG.debug("forward to /notations.jsp with all notations");
         }
         else if ("delete".equals(action)) {
             notationController.delete(getIdFromRequest(request));
             response.sendRedirect("notations");
             setDefaultDateAndTime(request);
-            LOG.debug("redirect to notations, notation id={}, action={}.", request.getParameter("id"), request.getParameter("action"));
         }
         else if ("create".equals(action)) {
             request.setAttribute("notation", new Notation("", "", "", 0, LocalDateTime.now()));
             request.getRequestDispatcher("/edit.jsp").forward(request, response);
-            LOG.debug("forward to /edit.jsp with new notation");
         }
         else if ("update".equals(action)) {
             request.setAttribute("notation", notationController.get(getIdFromRequest(request)));
             request.getRequestDispatcher("/edit.jsp").forward(request, response);
-            LOG.debug("forward to /edit.jsp, notation id={}, action={}.", request.getParameter("id"), request.getParameter("action"));
         }
         else {
             response.sendRedirect("index.jsp");
-            LOG.debug("redirect to /index.jsp wrong parameters");
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        MDC.put("logger_id","web");
-
         response.setCharacterEncoding("UTF-8");
         String action = request.getParameter("action");
         if (null == action) {
@@ -95,7 +80,6 @@ public class NotationServlet extends HttpServlet {
             );
             notationController.save(notation);
             response.sendRedirect("notations");
-            LOG.debug("redirect to /notations.jsp, save new notation.");
         }
         else if ("filter".equals(action)) {
             String startDate = request.getParameter("startDate");
@@ -115,11 +99,9 @@ public class NotationServlet extends HttpServlet {
             request.setAttribute("endTime", endTime);
 
             request.getRequestDispatcher("/notations.jsp").forward(request, response);
-            LOG.debug("redirect to /notations.jsp, filtering.");
         }
         else {
             response.sendRedirect("notations");
-            LOG.debug("redirect to /notations.jsp, wrong parameters.");
         }
     }
 
