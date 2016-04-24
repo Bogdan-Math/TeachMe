@@ -1,6 +1,8 @@
 package ua.teachme.model;
 
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.EnumSet;
 import java.util.List;
 import java.util.Set;
 
@@ -13,13 +15,18 @@ public class User extends EntityName {
     private Set<Role> roles;
     private LocalDate registeredDate;
 
-    public User(Integer id, String name, String password, String email, int maxHoursPerDay, Set<Role> roles, LocalDate registeredDate) {
+    public User(Integer id, String name, String password, String email, int maxHoursPerDay, List<Notation> notations, Role role, Role... roles){
+        this(id, name, password, email, maxHoursPerDay, notations, EnumSet.of(role, roles));
+    }
+
+    public User(Integer id, String name, String password, String email, int maxHoursPerDay, List<Notation> notations, Set<Role> roles) {
         super(id, name);
         this.password = password;
         this.email = email;
-        this.roles = roles;
         this.maxHoursPerDay = maxHoursPerDay;
-        this.registeredDate = registeredDate;
+        this.notations = notations;
+        this.roles = roles;
+        this.registeredDate = LocalDate.now();
     }
 
     public String getPassword() {

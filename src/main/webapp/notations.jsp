@@ -14,22 +14,39 @@
 
     <dl>
         <dt>start date</dt>
-        <dd><input type="date" value="${startDate}" name="startDate"></dd>
+        <dd>
+            <label>
+            <input type="date" value="${startDate}" name="startDate">
+            </label>
+        </dd>
     </dl>
 
     <dl>
         <dt>start time</dt>
-        <dd><input type="time" value="${startTime}" name="startTime"></dd>
+        <dd>
+            <label>
+            <input type="time" value="${startTime}" name="startTime">
+            </label>
+        </dd>
+
     </dl>
 
     <dl>
         <dt>end date</dt>
-        <dd><input type="date" value="${endDate}" name="endDate"></dd>
+        <dd>
+            <label>
+            <input type="date" value="${endDate}" name="endDate">
+            </label>
+        </dd>
     </dl>
 
     <dl>
         <dt>end time</dt>
-        <dd><input type="time" value="${endTime}" name="endTime"></dd>
+        <dd>
+            <label>
+            <input type="time" value="${endTime}" name="endTime">
+            </label>
+        </dd>
     </dl>
 
     <button type="submit">filter</button>

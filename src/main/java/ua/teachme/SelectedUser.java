@@ -1,7 +1,13 @@
 package ua.teachme;
 
 public class SelectedUser {
-    public static int id(){
-        return 1;
+
+    private static int id;
+
+    public static int getID(){
+        return id;
+    }
+    public static void setID(int id){
+        SelectedUser.id = id;
     }
 }

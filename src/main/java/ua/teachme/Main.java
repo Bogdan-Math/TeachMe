@@ -1,5 +1,8 @@
 package ua.teachme;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ua.teachme.dto.NotationExceed;
@@ -14,7 +17,17 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
+
+/*
+    private static final Logger LOG = LoggerFactory.getLogger(Main.class);
+*/
+
     public static void main(String[] args) {
+
+/*
+        MDC.put("logger_id", "filename_to_logging");
+        LOG.debug("logging");
+*/
 
         System.out.println("Hello TeachMe Enterprise!");
 
@@ -23,6 +36,7 @@ public class Main {
 
             UserController userController = context.getBean(UserController.class);
             System.out.println(userController.save(UserUtil.users.get(0)));
+            userController.get(1).getNotations().forEach(System.out::println);
 
             NotationController notationController = context.getBean(NotationController.class);
 

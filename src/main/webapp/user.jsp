@@ -4,11 +4,10 @@
 
 <html>
 <head>
-    <title>Person</title>
+    <title>User</title>
 </head>
 <body>
 <h2><a href="index.jsp">Home</a></h2>
-
-
+    ${userID}
 </body>
 </html>
