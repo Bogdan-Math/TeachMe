@@ -9,12 +9,10 @@
 <jsp:useBean id="notation" scope="request" type="ua.teachme.model.Notation"/>
 <form method="post" action="notations">
 
-    <%--
     <dl>
         <dt>id</dt>
-        <dd><input type="TEXT" value="${notation.id}" name="id"></dd>
+        <dd><input type="hidden" value="${notation.id}" name="id"></dd>
     </dl>
-    --%>
 
     <dl>
         <dt>name</dt>

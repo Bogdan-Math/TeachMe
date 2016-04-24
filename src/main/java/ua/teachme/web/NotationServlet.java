@@ -3,7 +3,6 @@ package ua.teachme.web;
 import org.slf4j.Logger;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ua.teachme.dto.NotationExceed;
 import ua.teachme.model.Notation;
 import ua.teachme.util.notation.NotationUtil;
 import ua.teachme.util.time.TimeUtil;
@@ -15,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.List;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -40,19 +38,19 @@ public class NotationServlet extends HttpServlet {
         super.destroy();
     }
 
-    //todo add default date and time to filter
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action == null) {
             request.setAttribute("notations", NotationUtil.getFilteredWithExceed(notationController.getAll(), NotationUtil.HOURS_PER_DAY));
-
+            setDefaultDateAndTime(request);
             request.getRequestDispatcher("/notations.jsp").forward(request, response);
             LOG.debug("forward to /notations.jsp with all notations");
         }
         else if ("delete".equals(action)) {
             notationController.delete(getIdFromRequest(request));
             response.sendRedirect("notations");
+            setDefaultDateAndTime(request);
             LOG.debug("redirect to notations, notation id={}, action={}.", request.getParameter("id"), request.getParameter("action"));
         }
         else if ("create".equals(action)) {
@@ -89,15 +87,23 @@ public class NotationServlet extends HttpServlet {
             response.sendRedirect("notations");
             LOG.debug("redirect to /notations.jsp, save new notation.");
         }
-        //todo add date and time to request attribute
         else if ("filter".equals(action)) {
+            String startDate = request.getParameter("startDate");
+            String startTime = request.getParameter("startTime");
+            String endDate = request.getParameter("endDate");
+            String endTime = request.getParameter("endTime");
             request.setAttribute("notations", notationController.getBetween(
-                    TimeUtil.toLocalDate(request.getParameter("startDate")),
-                    TimeUtil.toLocalTime(request.getParameter("startTime")),
-                    TimeUtil.toLocalDate(request.getParameter("endDate")),
-                    TimeUtil.toLocalTime(request.getParameter("endTime"))
+                    TimeUtil.toLocalDate(startDate),
+                    TimeUtil.toLocalTime(startTime),
+                    TimeUtil.toLocalDate(endDate),
+                    TimeUtil.toLocalTime(endTime)
                     )
             );
+            request.setAttribute("startDate", startDate);
+            request.setAttribute("startTime", startTime);
+            request.setAttribute("endDate", endDate);
+            request.setAttribute("endTime", endTime);
+
             request.getRequestDispatcher("/notations.jsp").forward(request, response);
             LOG.debug("redirect to /notations.jsp, filtering.");
         }
@@ -109,5 +115,11 @@ public class NotationServlet extends HttpServlet {
 
     private int getIdFromRequest(HttpServletRequest request) {
         return Integer.valueOf(request.getParameter("id"));
+    }
+    private void setDefaultDateAndTime(HttpServletRequest request){
+        request.setAttribute("startDate", TimeUtil.TODAY);
+        request.setAttribute("startTime", TimeUtil.MIN_TIME);
+        request.setAttribute("endDate", TimeUtil.TODAY);
+        request.setAttribute("endTime", TimeUtil.MAX_TIME);
     }
 }
