@@ -14,7 +14,7 @@ import ua.teachme.util.time.TimeUtil;
 import static org.junit.Assert.*;
 
 
-//use spring tests
+//use Spring tests
 @ContextConfiguration("classpath:spring/spring-app.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 public class NotationControllerTest {
