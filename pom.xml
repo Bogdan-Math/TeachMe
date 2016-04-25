@@ -124,11 +124,19 @@
             </exclusions>
         </dependency>
 
-        <!--JUnit Tests-->
+        <!--Unit Tests - core framework-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!--Unit Tests - spring framework-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
             <scope>test</scope>
         </dependency>
 
