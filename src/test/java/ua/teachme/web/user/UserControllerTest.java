@@ -15,6 +15,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+//use junit tests
 public class UserControllerTest {
 
     private static ConfigurableApplicationContext appCtx;
