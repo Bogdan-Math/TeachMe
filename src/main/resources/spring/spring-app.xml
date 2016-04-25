@@ -14,6 +14,7 @@
     </bean>
 -->
 
+    <!--helpful "context:" to auto scan selected package-->
     <context:annotation-config/>
     <context:component-scan base-package="ua.teachme.**.repository"/>
     <context:component-scan base-package="ua.teachme.**.service"/>

@@ -1,9 +1,11 @@
 package ua.teachme.web.notation;
 
 import org.junit.Test;
+import org.springframework.test.context.ContextConfiguration;
 
 import static org.junit.Assert.*;
 
+@ContextConfiguration("classpath:spring/spring-app.xml")
 public class NotationControllerTest {
 
     @Test
