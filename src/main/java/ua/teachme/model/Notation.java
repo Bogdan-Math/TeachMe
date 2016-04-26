@@ -6,7 +6,6 @@ import java.time.LocalTime;
 
 public class Notation extends EntityName{
 
-    private User user;
     private String url;
     private String description;
     private int hours;
@@ -22,14 +21,6 @@ public class Notation extends EntityName{
         this.description = description;
         this.hours = hours;
         this.dateTime = dateTime;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public String getUrl() {
