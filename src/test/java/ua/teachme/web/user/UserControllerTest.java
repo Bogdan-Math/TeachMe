@@ -16,6 +16,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 //use JUnit tests
+//todo fix input tests data
 public class UserControllerTest {
 
     private static ConfigurableApplicationContext appCtx;

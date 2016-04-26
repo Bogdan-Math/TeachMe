@@ -15,6 +15,7 @@ import static org.junit.Assert.*;
 
 
 //use Spring tests
+//todo fix input tests data
 @ContextConfiguration("classpath:spring/spring-app.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 public class NotationControllerTest {
