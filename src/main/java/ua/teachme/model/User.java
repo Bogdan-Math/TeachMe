@@ -15,6 +15,14 @@ public class User extends EntityName {
     private Set<Role> roles;
     private LocalDate registeredDate;
 
+    public User() {
+        super();
+    }
+
+    public User(User user){
+        this(user.getId(), user.getName(), user.getPassword(), user.getEmail(), user.getMaxHoursPerDay(), user.getNotations(), user.getRoles());
+    }
+
     public User(Integer id, String name, String password, String email, int maxHoursPerDay, List<Notation> notations, Role role, Role... roles){
         this(id, name, password, email, maxHoursPerDay, notations, EnumSet.of(role, roles));
     }

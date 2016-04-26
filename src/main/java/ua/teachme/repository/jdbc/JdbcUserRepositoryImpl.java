@@ -11,6 +11,7 @@ import ua.teachme.model.User;
 import ua.teachme.repository.UserRepository;
 
 import javax.sql.DataSource;
+import java.sql.Timestamp;
 import java.util.List;
 
 @Repository
@@ -26,6 +27,7 @@ public class JdbcUserRepositoryImpl implements UserRepository{
 
     private SimpleJdbcInsert jdbcInsert;
 
+    @Autowired
     public JdbcUserRepositoryImpl(DataSource dataSource) {
         this.jdbcInsert = new SimpleJdbcInsert(dataSource)
                                 .withTableName("users")
@@ -49,8 +51,8 @@ public class JdbcUserRepositoryImpl implements UserRepository{
                 .addValue("name", entity.getName())
                 .addValue("password", entity.getPassword())
                 .addValue("email", entity.getEmail())
-                .addValue("max_hours_per_day", entity.getMaxHoursPerDay())
-                .addValue("registered_date", entity.getRegisteredDate());
+                .addValue("maxHoursPerDay", entity.getMaxHoursPerDay())
+                .addValue("registeredDate",entity.getRegisteredDate());
 
         if (entity.isNew()){
             Number newKey = jdbcInsert.executeAndReturnKey(map);
@@ -62,8 +64,8 @@ public class JdbcUserRepositoryImpl implements UserRepository{
                             "name=:name, " +
                             "password=:password, " +
                             "email=:email, " +
-                            "max_hours_per_day=:caloriesPerDay, " +
-                            "registered=:registeredDate " +
+                            "max_hours_per_day=:maxHoursPerDay, " +
+                            "registered_date=:registeredDate " +
                             "WHERE id=:id",
                     map);
 

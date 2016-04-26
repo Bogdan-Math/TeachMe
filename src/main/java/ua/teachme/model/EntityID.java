@@ -4,6 +4,9 @@ public class EntityID {
 
     protected Integer id;
 
+    public EntityID() {
+    }
+
     public EntityID(Integer id) {
         this.id = id;
     }

@@ -4,6 +4,10 @@ public class EntityName extends EntityID {
 
     protected String name;
 
+    public EntityName() {
+        super();
+    }
+
     public EntityName(Integer id, String name) {
         super(id);
         this.name = name;
