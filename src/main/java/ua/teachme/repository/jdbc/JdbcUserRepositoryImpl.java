@@ -50,7 +50,7 @@ public class JdbcUserRepositoryImpl implements UserRepository{
                 .addValue("password", entity.getPassword())
                 .addValue("email", entity.getEmail())
                 .addValue("max_hours_per_day", entity.getMaxHoursPerDay())
-                .addValue("registered", entity.getRegisteredDate());
+                .addValue("registered_date", entity.getRegisteredDate());
 
         if (entity.isNew()){
             Number newKey = jdbcInsert.executeAndReturnKey(map);
