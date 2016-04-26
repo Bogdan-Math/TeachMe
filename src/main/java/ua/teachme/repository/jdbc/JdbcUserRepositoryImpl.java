@@ -11,7 +11,6 @@ import ua.teachme.model.User;
 import ua.teachme.repository.UserRepository;
 
 import javax.sql.DataSource;
-import java.sql.Timestamp;
 import java.util.List;
 
 @Repository
@@ -36,17 +35,17 @@ public class JdbcUserRepositoryImpl implements UserRepository{
 
     @Override
     public User getByEmail(String email) {
-        return jdbcTemplate.queryForObject("SELECT * FROM users WHERE email=?", ROW_MAPPER, email);
+        return jdbcTemplate.queryForObject("SELECT * FROM users WHERE email=?", ROW_MAPPER);
     }
 
     @Override
     public List<User> getAll() {
-        return jdbcTemplate.query("SELECT * FROM users ORDER BY name, email", ROW_MAPPER);
+        return jdbcTemplate.query("SELECT * FROM users ORDER BY name, registered_date", ROW_MAPPER);
     }
 
     @Override
     public User save(User entity) {
-        MapSqlParameterSource map = new MapSqlParameterSource()
+        MapSqlParameterSource parametersMap = new MapSqlParameterSource()
                 .addValue("id", entity.getId())
                 .addValue("name", entity.getName())
                 .addValue("password", entity.getPassword())
@@ -55,7 +54,7 @@ public class JdbcUserRepositoryImpl implements UserRepository{
                 .addValue("registeredDate",entity.getRegisteredDate());
 
         if (entity.isNew()){
-            Number newKey = jdbcInsert.executeAndReturnKey(map);
+            Number newKey = jdbcInsert.executeAndReturnKey(parametersMap);
             entity.setId(newKey.intValue());
         }
         else {
@@ -67,7 +66,7 @@ public class JdbcUserRepositoryImpl implements UserRepository{
                             "max_hours_per_day=:maxHoursPerDay, " +
                             "registered_date=:registeredDate " +
                             "WHERE id=:id",
-                    map);
+                    parametersMap);
 
         }
         return entity;
@@ -75,7 +74,7 @@ public class JdbcUserRepositoryImpl implements UserRepository{
 
     @Override
     public User get(int id) {
-        return jdbcTemplate.query("SELECT * FROM users WHERE id=?", ROW_MAPPER, id).get(0);
+        return jdbcTemplate.query("SELECT * FROM users WHERE id=?", ROW_MAPPER).get(0);
     }
 
     @Override

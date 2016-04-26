@@ -11,6 +11,10 @@ public class Notation extends EntityName{
     private int hours;
     private LocalDateTime dateTime;
 
+    public Notation(){
+        super();
+    }
+
     public Notation(String name, String url, String description, int hours, LocalDateTime dateTime){
         this(null, name, url, description, hours, dateTime);
     }
