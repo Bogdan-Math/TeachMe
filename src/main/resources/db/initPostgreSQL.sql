@@ -1,5 +1,5 @@
 /*init global_sequence*/
-DROP SEQUENCE IF EXISTS global_sequence;
+DROP SEQUENCE IF EXISTS global_sequence CASCADE;
 CREATE SEQUENCE global_sequence START 1000000;
 
 /*init users table*/
