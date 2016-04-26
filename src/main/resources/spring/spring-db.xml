@@ -11,8 +11,11 @@
     <!--import properties from PostgreSQL.properties-->
     <context:property-placeholder location="classpath:db/PostgreSQL.properties"/>
 
-
-    <!--core data source driver manager-->
+    <!--
+        core data source driver manager
+        one query = one connect
+        without pooling
+    -->
     <bean id="jdbcDataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${db.driver}"/>
