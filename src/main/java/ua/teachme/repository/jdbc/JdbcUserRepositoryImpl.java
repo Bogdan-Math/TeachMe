@@ -3,6 +3,7 @@ package ua.teachme.repository.jdbc;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
@@ -33,7 +34,7 @@ public class JdbcUserRepositoryImpl implements UserRepository{
 
     @Override
     public User getByEmail(String email) {
-        return null;
+        return jdbcTemplate.queryForObject("SELECT * FROM users WHERE email=?", ROW_MAPPER, email);
     }
 
     @Override
@@ -43,16 +44,40 @@ public class JdbcUserRepositoryImpl implements UserRepository{
 
     @Override
     public User save(User entity) {
-        return null;
+        MapSqlParameterSource map = new MapSqlParameterSource()
+                .addValue("id", entity.getId())
+                .addValue("name", entity.getName())
+                .addValue("password", entity.getPassword())
+                .addValue("email", entity.getEmail())
+                .addValue("max_hours_per_day", entity.getMaxHoursPerDay())
+                .addValue("registered", entity.getRegisteredDate());
+
+        if (entity.isNew()){
+            Number newKey = jdbcInsert.executeAndReturnKey(map);
+            entity.setId(newKey.intValue());
+        }
+        else {
+            namedParameterJdbcTemplate.update(
+                    "UPDATE users SET " +
+                            "name=:name, " +
+                            "password=:password, " +
+                            "email=:email, " +
+                            "max_hours_per_day=:caloriesPerDay, " +
+                            "registered=:registeredDate " +
+                            "WHERE id=:id",
+                    map);
+
+        }
+        return entity;
     }
 
     @Override
     public User get(int id) {
-        return null;
+        return jdbcTemplate.query("SELECT * FROM users WHERE id=?", ROW_MAPPER, id).get(0);
     }
 
     @Override
     public void delete(int id) {
-
+        jdbcTemplate.execute("DELETE FROM users WHERE id=?");
     }
 }

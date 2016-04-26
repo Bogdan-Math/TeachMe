@@ -10,5 +10,5 @@ CREATE TABLE users
   password          VARCHAR NOT NULL,
   email             VARCHAR NOT NULL,
   max_hours_per_day INTEGER DEFAULT 8 NOT NULL,
-  registered TIMESTAMP DEFAULT now()
+  registered_date TIMESTAMP DEFAULT now()
 );
