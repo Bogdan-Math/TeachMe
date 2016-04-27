@@ -19,7 +19,7 @@ public class InMemoryNotationRepositoryImpl implements NotationRepository {
 
     private AtomicInteger counter = new AtomicInteger(0);
     private Map<Integer, Notation> notationsRepository =  new ConcurrentHashMap<>();
-    private Comparator<Notation> notationComparator = Comparator.comparing(Notation::getDateTime);
+    private Comparator<Notation> notationComparator = Comparator.comparing(Notation::getCreatedDateAndTime);
 
     public InMemoryNotationRepositoryImpl() {
         NotationUtil.NOTATIONS.forEach(this::save);
@@ -51,6 +51,6 @@ public class InMemoryNotationRepositoryImpl implements NotationRepository {
 
     @Override
     public List<Notation> getBetween(LocalDateTime start, LocalDateTime end) {
-        return getAll().stream().filter(notation -> TimeUtil.isBetween(notation.getDateTime(), start, end)).collect(Collectors.toList());
+        return getAll().stream().filter(notation -> TimeUtil.isBetween(notation.getCreatedDateAndTime(), start, end)).collect(Collectors.toList());
     }
 }

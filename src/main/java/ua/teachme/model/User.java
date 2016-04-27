@@ -1,6 +1,7 @@
 package ua.teachme.model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.List;
@@ -13,7 +14,7 @@ public class User extends EntityName {
     private int maxHoursPerDay;
     private List<Notation> notations;
     private Set<Role> roles;
-    private LocalDate registeredDate;
+    private LocalDateTime registeredDateAndTime;
 
     public User() {
         super();
@@ -34,7 +35,7 @@ public class User extends EntityName {
         this.maxHoursPerDay = maxHoursPerDay;
         this.notations = notations;
         this.roles = roles;
-        this.registeredDate = LocalDate.now();
+        this.registeredDateAndTime = LocalDateTime.now();
     }
 
     public String getPassword() {
@@ -77,11 +78,27 @@ public class User extends EntityName {
         this.roles = roles;
     }
 
-    public LocalDate getRegisteredDate() {
-        return registeredDate;
+    public LocalDateTime getRegisteredDateAndTime() {
+        return registeredDateAndTime;
     }
 
-    public void setRegisteredDate(LocalDate registeredDate) {
-        this.registeredDate = registeredDate;
+    public void setRegisteredDateAndTime(LocalDateTime registeredDateAndTime) {
+        this.registeredDateAndTime = registeredDateAndTime;
+    }
+
+    public LocalDate getRegisteredDate() {
+        return registeredDateAndTime.toLocalDate();
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", maxHoursPerDay=" + maxHoursPerDay +
+                ", notations=" + notations +
+                ", roles=" + roles +
+                ", registeredDateAndTime=" + registeredDateAndTime +
+                '}';
     }
 }

@@ -36,7 +36,7 @@
 
     <dl>
         <dt>date and time:</dt>
-        <dd><input type="datetime-local" value="${notation.dateTime}" name="dateTime"></dd>
+        <dd><input type="datetime-local" value="${notation.createdDateAndTime}" name="createdDateAndTime"></dd>
     </dl>
 
     <button type="submit">save</button>

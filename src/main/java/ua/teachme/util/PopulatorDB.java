@@ -12,13 +12,11 @@ public class PopulatorDB {
     @Autowired
     private DataSource jdbcDataSource;
 
-    @Autowired
-    private DefaultResourceLoader resourceLoader;
-
-    @Autowired
     private ResourceDatabasePopulator databasePopulator;
 
     public PopulatorDB(String scriptLocation){
+        DefaultResourceLoader resourceLoader = new DefaultResourceLoader();
+        databasePopulator = new ResourceDatabasePopulator();
         databasePopulator.setScripts(resourceLoader.getResource(scriptLocation));
     }
 

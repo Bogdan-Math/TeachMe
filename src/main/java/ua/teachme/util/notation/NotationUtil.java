@@ -45,7 +45,7 @@ public class NotationUtil {
         Map<LocalDate, Integer> hoursSumByDate = notations.stream()
                 .collect(
                         Collectors.groupingBy(
-                                notation -> notation.getDateTime().toLocalDate(),
+                                notation -> notation.getCreatedDateAndTime().toLocalDate(),
                                 Collectors.summingInt(Notation::getHours)
                         )
                 );

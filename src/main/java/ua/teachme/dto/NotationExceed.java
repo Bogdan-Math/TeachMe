@@ -32,7 +32,7 @@ public class NotationExceed {
         this.url = notation.getUrl();
         this.description = notation.getDescription();
         this.hours = notation.getHours();
-        this.dateTime = notation.getDateTime();
+        this.dateTime = notation.getCreatedDateAndTime();
         this.exceed = exceed;
     }
 

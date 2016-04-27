@@ -9,22 +9,22 @@ public class Notation extends EntityName{
     private String url;
     private String description;
     private int hours;
-    private LocalDateTime dateTime;
+    private LocalDateTime createdDateAndTime;
 
     public Notation(){
         super();
     }
 
-    public Notation(String name, String url, String description, int hours, LocalDateTime dateTime){
-        this(null, name, url, description, hours, dateTime);
+    public Notation(String name, String url, String description, int hours, LocalDateTime createdDateAndTime){
+        this(null, name, url, description, hours, createdDateAndTime);
     }
 
-    public Notation(Integer id, String name, String url, String description, int hours, LocalDateTime dateTime) {
+    public Notation(Integer id, String name, String url, String description, int hours, LocalDateTime createdDateAndTime) {
         super(id, name);
         this.url = url;
         this.description = description;
         this.hours = hours;
-        this.dateTime = dateTime;
+        this.createdDateAndTime = createdDateAndTime;
     }
 
     public String getUrl() {
@@ -51,20 +51,20 @@ public class Notation extends EntityName{
         this.hours = hours;
     }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
+    public LocalDateTime getCreatedDateAndTime() {
+        return createdDateAndTime;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
+    public void setCreatedDateAndTime(LocalDateTime createdDateAndTime) {
+        this.createdDateAndTime = createdDateAndTime;
     }
 
     public LocalDate getDate(){
-        return dateTime.toLocalDate();
+        return createdDateAndTime.toLocalDate();
     }
 
     public LocalTime getTime(){
-        return dateTime.toLocalTime();
+        return createdDateAndTime.toLocalTime();
     }
 
     @Override
@@ -74,7 +74,7 @@ public class Notation extends EntityName{
                 "url='" + url + '\'' +
                 ", description='" + description + '\'' +
                 ", hours=" + hours +
-                ", dateTime=" + dateTime +
+                ", createdDateAndTime=" + createdDateAndTime +
                 '}';
     }
 }

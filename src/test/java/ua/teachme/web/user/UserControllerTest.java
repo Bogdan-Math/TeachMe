@@ -4,10 +4,12 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ua.teachme.Main;
 import ua.teachme.model.User;
+import ua.teachme.util.PopulatorDB;
 import ua.teachme.util.exception.EntityNotFoundException;
 import ua.teachme.util.user.UserUtil;
 
@@ -15,26 +17,26 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-//use JUnit tests
-//todo fix input tests data
+//tests with JUnit
 public class UserControllerTest {
 
     private static ConfigurableApplicationContext appCtx;
     private static UserController userController;
+    private static PopulatorDB populatorDB;
 
     @BeforeClass
     public static void beforeClass(){
         appCtx = new ClassPathXmlApplicationContext("spring/spring-app.xml", "spring/spring-db.xml");
         userController = appCtx.getBean(UserController.class);
+        populatorDB = appCtx.getBean(PopulatorDB.class);
     }
 
-/*
-    @Before
+
+    @Before//execute before every test in this class
     public void before(){
-        userController.getAll().forEach(user -> userController.delete(user.getId()));
-        UserUtil.users.forEach(user -> userController.save(user));
+        populatorDB.execute();
     }
-*/
+
 
     @AfterClass
     public static void afterClass(){
@@ -43,9 +45,7 @@ public class UserControllerTest {
 
     @Test(expected = EntityNotFoundException.class)
     public void testGetByEmail() throws Exception {
-        assertEquals(userController.getByEmail("admin-email"), UserUtil.users.get(0));
-        assertEquals(userController.getByEmail("common-user-email"), UserUtil.users.get(1));
-        assertEquals(userController.getByEmail("anonymous-email"), UserUtil.users.get(2));
+        userController.getByEmail("anonymous@gmail.com");
         userController.getByEmail("");
     }
 
@@ -56,21 +56,21 @@ public class UserControllerTest {
 
     @Test
     public void testSave() throws Exception {
-        userController.save(UserUtil.users.get(2));
-        //assertEquals(UserUtil.users.get(0), userController.save(UserUtil.users.get(0)));
+        assertEquals(3, userController.getAll().size());
+        userController.save(UserUtil.users.get(0));
+        assertEquals(4, userController.getAll().size());
     }
 
     @Test(expected = EntityNotFoundException.class)
     public void testGet() throws Exception {
-        assertEquals(userController.get(1), UserUtil.users.get(0));
-        assertEquals(userController.get(2), UserUtil.users.get(1));
-        assertEquals(userController.get(3), UserUtil.users.get(2));
-        userController.get(0);
+        userController.get(1000000);
+        userController.get(-1000000);
     }
 
     @Test
     public void testDelete() throws Exception {
+        assertEquals(3, userController.getAll().size());
         userController.delete(1000000);
-        assertEquals(1, userController.getAll().size());
+        assertEquals(2, userController.getAll().size());
     }
 }

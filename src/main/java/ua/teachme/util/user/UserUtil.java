@@ -12,8 +12,8 @@ import java.util.List;
 public class UserUtil {
 
     public static List<User> users = Arrays.asList(
-            new User(1, "admin", "password", "admin-email", NotationUtil.HOURS_PER_DAY, NotationUtil.NOTATIONS, Role.ADMIN),
-            new User(2, "common user", "password", "common-user-email", NotationUtil.HOURS_PER_DAY, NotationUtil.NOTATIONS, Role.COMMON),
+            new User(null, "admin", "password", "admin-email", NotationUtil.HOURS_PER_DAY, NotationUtil.NOTATIONS, Role.ADMIN),
+            new User(null, "common user", "password", "common-user-email", NotationUtil.HOURS_PER_DAY, NotationUtil.NOTATIONS, Role.COMMON),
             new User(null, "anonymous", "password", "anonymous-email", NotationUtil.HOURS_PER_DAY, NotationUtil.NOTATIONS, Role.ANONYMOUS)
     );
 }

@@ -1,6 +1,7 @@
 package ua.teachme.repository.jdbc;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -16,7 +17,7 @@ import java.util.List;
 @Repository
 public class JdbcUserRepositoryImpl implements UserRepository{
 
-    private static final BeanPropertyRowMapper<User> ROW_MAPPER = BeanPropertyRowMapper.newInstance(User.class);
+    private static final BeanPropertyRowMapper<User> USER_PROPERTY_ROW_MAPPER = BeanPropertyRowMapper.newInstance(User.class);
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -35,12 +36,13 @@ public class JdbcUserRepositoryImpl implements UserRepository{
 
     @Override
     public User getByEmail(String email) {
-        return jdbcTemplate.queryForObject("SELECT * FROM users WHERE email=?", ROW_MAPPER);
+        List<User> users = jdbcTemplate.query("SELECT * FROM users WHERE email=?", USER_PROPERTY_ROW_MAPPER, email);
+        return DataAccessUtils.singleResult(users);
     }
 
     @Override
     public List<User> getAll() {
-        return jdbcTemplate.query("SELECT * FROM users ORDER BY name, registered_date", ROW_MAPPER);
+        return jdbcTemplate.query("SELECT * FROM users ORDER BY name, registered_date_and_time", USER_PROPERTY_ROW_MAPPER);
     }
 
     @Override
@@ -51,8 +53,7 @@ public class JdbcUserRepositoryImpl implements UserRepository{
                 .addValue("password", entity.getPassword())
                 .addValue("email", entity.getEmail())
                 .addValue("maxHoursPerDay", entity.getMaxHoursPerDay())
-                .addValue("registeredDate",entity.getRegisteredDate());
-
+                .addValue("registeredDateAndTime",entity.getRegisteredDateAndTime());
         if (entity.isNew()){
             Number newKey = jdbcInsert.executeAndReturnKey(parametersMap);
             entity.setId(newKey.intValue());
@@ -64,21 +65,21 @@ public class JdbcUserRepositoryImpl implements UserRepository{
                             "password=:password, " +
                             "email=:email, " +
                             "max_hours_per_day=:maxHoursPerDay, " +
-                            "registered_date=:registeredDate " +
+                            "registered_date_and_time=:registeredDateAndTime " +
                             "WHERE id=:id",
                     parametersMap);
-
         }
         return entity;
     }
 
     @Override
     public User get(int id) {
-        return jdbcTemplate.query("SELECT * FROM users WHERE id=?", ROW_MAPPER).get(0);
+        List<User> users = jdbcTemplate.query("SELECT * FROM users WHERE id=?", USER_PROPERTY_ROW_MAPPER, id);
+        return DataAccessUtils.singleResult(users);
     }
 
     @Override
     public void delete(int id) {
-        jdbcTemplate.execute("DELETE FROM users WHERE id=?");
+        jdbcTemplate.update("DELETE FROM users WHERE id=?", id);
     }
 }

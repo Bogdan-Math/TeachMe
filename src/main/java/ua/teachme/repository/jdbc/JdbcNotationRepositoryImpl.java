@@ -1,6 +1,7 @@
 package ua.teachme.repository.jdbc;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -37,12 +38,12 @@ public class JdbcNotationRepositoryImpl implements NotationRepository{
 
     @Override
     public List<Notation> getBetween(LocalDateTime start, LocalDateTime end) {
-        return jdbcTemplate.query("SELECT * FROM notations WHERE date_time BETWEEN ? AND ? ORDER BY date_time DESC", NOTATION_PROPERTY_ROW_MAPPER, start, end);
+        return jdbcTemplate.query("SELECT * FROM notations WHERE created_date_and_time BETWEEN ? AND ? ORDER BY created_date_and_time DESC", NOTATION_PROPERTY_ROW_MAPPER, start, end);
     }
 
     @Override
     public List<Notation> getAll() {
-        return jdbcTemplate.query("SELECT * FROM notations ORDER BY name, date_time", NOTATION_PROPERTY_ROW_MAPPER);
+        return jdbcTemplate.query("SELECT * FROM notations ORDER BY name, created_date_and_time", NOTATION_PROPERTY_ROW_MAPPER);
     }
 
     @Override
@@ -53,7 +54,7 @@ public class JdbcNotationRepositoryImpl implements NotationRepository{
                 .addValue("url", entity.getUrl())
                 .addValue("description", entity.getDescription())
                 .addValue("hours", entity.getHours())
-                .addValue("dateTime", entity.getDateTime());
+                .addValue("createdDateAndTime", entity.getCreatedDateAndTime());
 
         if (entity.isNew()){
             Number newKey = jdbcInsertNotation.executeAndReturnKey(parametersMap);
@@ -66,7 +67,7 @@ public class JdbcNotationRepositoryImpl implements NotationRepository{
                             "url=:url, " +
                             "description=:description, " +
                             "hours=:hours, " +
-                            "date_time=:dateTime " +
+                            "created_date_and_time=:createdDateAndTime " +
                             "WHERE id=:id",
                     parametersMap);
         }
@@ -75,11 +76,12 @@ public class JdbcNotationRepositoryImpl implements NotationRepository{
 
     @Override
     public Notation get(int id) {
-        return jdbcTemplate.query("SELECT * FROM notations WHERE id=?", NOTATION_PROPERTY_ROW_MAPPER).get(0);
+        List<Notation> notations = jdbcTemplate.query("SELECT * FROM notations WHERE id=?", NOTATION_PROPERTY_ROW_MAPPER, id);
+        return DataAccessUtils.singleResult(notations);
     }
 
     @Override
     public void delete(int id) {
-        jdbcTemplate.execute("DELETE FROM notations WHERE id=?");
+        jdbcTemplate.update("DELETE FROM notations WHERE id=?", id);
     }
 }
