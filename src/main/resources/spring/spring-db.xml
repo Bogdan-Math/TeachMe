@@ -11,6 +11,14 @@
     <!--import properties from PostgreSQL.properties-->
     <context:property-placeholder location="classpath:db/PostgreSQL.properties"/>
 
+    <!--bean1, bean2, bean3: needed to populate db before every tests-->
+        <!--bean1-->
+    <bean id="populatorDB" class="ua.teachme.util.PopulatorDB"> <constructor-arg name="scriptLocation" value="classpath:db/populatePostgreSQL" /></bean>
+        <!--bean2-->
+    <bean id="resourceLoader" class="org.springframework.core.io.DefaultResourceLoader"/>
+        <!--bean3-->
+    <bean id="databasePopulator" class="org.springframework.jdbc.datasource.init.ResourceDatabasePopulator"/>
+
     <!--
         core data source driver manager
         one query = one connect

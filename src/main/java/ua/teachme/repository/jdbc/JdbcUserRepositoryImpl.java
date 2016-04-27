@@ -27,8 +27,8 @@ public class JdbcUserRepositoryImpl implements UserRepository{
     private SimpleJdbcInsert jdbcInsert;
 
     @Autowired
-    public JdbcUserRepositoryImpl(DataSource dataSource) {
-        this.jdbcInsert = new SimpleJdbcInsert(dataSource)
+    public JdbcUserRepositoryImpl(DataSource jdbcDataSource) {
+        this.jdbcInsert = new SimpleJdbcInsert(jdbcDataSource)
                                 .withTableName("users")
                                 .usingGeneratedKeyColumns("id");
     }

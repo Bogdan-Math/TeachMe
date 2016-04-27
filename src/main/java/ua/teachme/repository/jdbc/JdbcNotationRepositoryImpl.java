@@ -29,8 +29,8 @@ public class JdbcNotationRepositoryImpl implements NotationRepository{
     private SimpleJdbcInsert jdbcInsertNotation;
 
     @Autowired
-    public JdbcNotationRepositoryImpl(DataSource dataSource){
-        this.jdbcInsertNotation = new SimpleJdbcInsert(dataSource)
+    public JdbcNotationRepositoryImpl(DataSource jdbcDataSource){
+        this.jdbcInsertNotation = new SimpleJdbcInsert(jdbcDataSource)
                                         .withTableName("notations")
                                         .usingGeneratedKeyColumns("id");
     }
