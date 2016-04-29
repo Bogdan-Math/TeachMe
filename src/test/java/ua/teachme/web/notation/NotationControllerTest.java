@@ -1,17 +1,14 @@
 package ua.teachme.web.notation;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ua.teachme.model.Notation;
-import ua.teachme.util.PopulatorDB;
 import ua.teachme.util.exception.EntityNotFoundException;
 import ua.teachme.util.notation.NotationUtil;
-import ua.teachme.util.time.TimeUtil;
 
 import static org.junit.Assert.*;
 
@@ -19,19 +16,11 @@ import static org.junit.Assert.*;
 //tests with Spring
 @ContextConfiguration({"classpath:spring/spring-app.xml", "classpath:spring/spring-db.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
+@Sql(scripts = "classpath:db/populatePostgreSQL.sql") //execute before every test in this class
 public class NotationControllerTest {
 
     @Autowired
     private NotationController notationController;
-
-    @Autowired
-    private PopulatorDB populatorDB;
-
-    @Before//execute before every test in this class
-    public void before(){
-        populatorDB.execute();
-    }
-
 
     @Test
     public void testGetAll() throws Exception {

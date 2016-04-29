@@ -31,12 +31,10 @@ public class UserControllerTest {
         populatorDB = appCtx.getBean(PopulatorDB.class);
     }
 
-
     @Before//execute before every test in this class
     public void before(){
         populatorDB.execute();
     }
-
 
     @AfterClass
     public static void afterClass(){
