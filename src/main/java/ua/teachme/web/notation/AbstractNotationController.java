@@ -39,7 +39,7 @@ public abstract class AbstractNotationController {
                 ),
                 startTime == null ? LocalTime.MIN : startTime,
                 endTime == null ? LocalTime.MAX : endTime,
-                NotationUtil.HOURS_PER_DAY
+                NotationUtil.hours
         );
     }
 }

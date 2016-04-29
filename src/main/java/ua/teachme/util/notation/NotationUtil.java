@@ -13,9 +13,9 @@ import java.util.stream.Collectors;
 
 public class NotationUtil {
 
-    public static final int HOURS_PER_DAY = 8;
+    public static int hours = 8;
 
-    public static final List<Notation> NOTATIONS = Arrays.asList(
+    public static List<Notation> notations = Arrays.asList(
             new Notation("name1", "URL", "description", 1, LocalDateTime.now()),
             new Notation("name2", "URL", "description", 4, LocalDateTime.now()),
             new Notation("name3", "URL", "description", 7, LocalDateTime.now()),
@@ -26,12 +26,14 @@ public class NotationUtil {
             new Notation("name8", "URL", "description", 0, LocalDateTime.of(2016, Month.MARCH, 13, 23, 31))
     );
 
+    public static Notation notation = new Notation(notations.get(0));
+
     public static void main(String[] args) {
-        getFilteredNotationsExceedWithStreams(NOTATIONS, LocalTime.of(11, 0), LocalTime.of(23, 0), HOURS_PER_DAY).forEach(System.out::println);
+        getFilteredNotationsExceedWithStreams(notations, LocalTime.of(11, 0), LocalTime.of(23, 0), hours).forEach(System.out::println);
         System.out.println("///////////////");
-        getFilteredNotationsExceedWithLoops(NOTATIONS, LocalTime.of(11, 0), LocalTime.of(23, 0), HOURS_PER_DAY).forEach(System.out::println);
+        getFilteredNotationsExceedWithLoops(notations, LocalTime.of(11, 0), LocalTime.of(23, 0), hours).forEach(System.out::println);
         System.out.println("///////////////");
-        getFilteredWithExceed(NOTATIONS, HOURS_PER_DAY).forEach(System.out::println);
+        getFilteredWithExceed(notations, hours).forEach(System.out::println);
         System.out.println("///////////////");
     }
 

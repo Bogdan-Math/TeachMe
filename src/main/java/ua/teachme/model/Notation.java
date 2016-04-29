@@ -15,6 +15,10 @@ public class Notation extends EntityName{
         super();
     }
 
+    public Notation(Notation notation){
+        this(notation.getName(), notation.getUrl(), notation.getDescription(), notation.getHours(), notation.getCreatedDateAndTime());
+    }
+
     public Notation(String name, String url, String description, int hours, LocalDateTime createdDateAndTime){
         this(null, name, url, description, hours, createdDateAndTime);
     }
@@ -70,11 +74,27 @@ public class Notation extends EntityName{
     @Override
     public String toString() {
         return "Notation{" +
-                super.toString() +
-                "url='" + url + '\'' +
+                "name=" + name +
+                ", url='" + url + '\'' +
                 ", description='" + description + '\'' +
                 ", hours=" + hours +
                 ", createdDateAndTime=" + createdDateAndTime +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Notation)) return false;
+
+        Notation notation = (Notation) o;
+
+        return url.equals(notation.url);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return url.hashCode();
     }
 }

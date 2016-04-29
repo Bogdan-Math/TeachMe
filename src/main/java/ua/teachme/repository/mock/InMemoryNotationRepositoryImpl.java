@@ -22,7 +22,7 @@ public class InMemoryNotationRepositoryImpl implements NotationRepository {
     private Comparator<Notation> notationComparator = Comparator.comparing(Notation::getCreatedDateAndTime);
 
     public InMemoryNotationRepositoryImpl() {
-        NotationUtil.NOTATIONS.forEach(this::save);
+        NotationUtil.notations.forEach(this::save);
     }
 
     @Override
