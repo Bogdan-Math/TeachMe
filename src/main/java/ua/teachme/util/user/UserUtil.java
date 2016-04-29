@@ -17,5 +17,5 @@ public class UserUtil {
     );
 
     public static User user = new User(users.get(0));
-
+    public static User newUser = new User(users.get(0));
 }

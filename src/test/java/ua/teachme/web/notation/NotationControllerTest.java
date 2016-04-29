@@ -30,7 +30,7 @@ public class NotationControllerTest {
     @Test
     public void testSave() throws Exception {
         assertEquals(6, notationController.getAll().size());
-        assertEquals(NotationUtil.notation, notationController.save(NotationUtil.notation));
+        assertEquals(NotationUtil.notation, notationController.save(NotationUtil.newNotation));
         assertEquals(7, notationController.getAll().size());
     }
 

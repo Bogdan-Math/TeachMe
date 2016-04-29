@@ -93,7 +93,8 @@ public class User extends EntityName {
     @Override
     public String toString() {
         return "User{" +
-                "name=" + name +
+                "id=" + id +
+                ", name=" + name +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", maxHoursPerDay=" + maxHoursPerDay +

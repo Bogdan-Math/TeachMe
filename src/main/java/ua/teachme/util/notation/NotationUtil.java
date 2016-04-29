@@ -27,6 +27,7 @@ public class NotationUtil {
     );
 
     public static Notation notation = new Notation(notations.get(0));
+    public static Notation newNotation = new Notation(notations.get(0));
 
     public static void main(String[] args) {
         getFilteredNotationsExceedWithStreams(notations, LocalTime.of(11, 0), LocalTime.of(23, 0), hours).forEach(System.out::println);

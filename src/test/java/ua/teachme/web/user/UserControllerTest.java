@@ -4,16 +4,11 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ua.teachme.Main;
-import ua.teachme.model.User;
 import ua.teachme.util.PopulatorDB;
 import ua.teachme.util.exception.EntityNotFoundException;
 import ua.teachme.util.user.UserUtil;
-
-import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -55,7 +50,7 @@ public class UserControllerTest {
     @Test
     public void testSave() throws Exception {
         assertEquals(3, userController.getAll().size());
-        assertEquals(UserUtil.user, userController.save(UserUtil.user));
+        userController.save(UserUtil.newUser);
         assertEquals(4, userController.getAll().size());
     }
 
