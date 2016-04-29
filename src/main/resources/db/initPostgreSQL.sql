@@ -25,7 +25,7 @@ CREATE TABLE notations(
   description             TEXT,
   hours                   INTEGER DEFAULT 2,
   created_date_and_time   TIMESTAMP DEFAULT now(),
-  user_id                 INTEGER NOT NULL,
+  user_id                 INTEGER /*NOT NULL*/,
 
   PRIMARY KEY (id),
   FOREIGN KEY (user_id)   REFERENCES users(id) ON DELETE CASCADE

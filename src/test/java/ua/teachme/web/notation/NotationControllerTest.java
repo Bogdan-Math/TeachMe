@@ -24,14 +24,14 @@ public class NotationControllerTest {
 
     @Test
     public void testGetAll() throws Exception {
-        assertEquals(3, notationController.getAll().size());
+        assertEquals(6, notationController.getAll().size());
     }
 
     @Test
     public void testSave() throws Exception {
-        assertEquals(3, notationController.getAll().size());
+        assertEquals(6, notationController.getAll().size());
         notationController.save(NotationUtil.NOTATIONS.get(0));
-        assertEquals(4, notationController.getAll().size());
+        assertEquals(7, notationController.getAll().size());
     }
 
     @Test(expected = EntityNotFoundException.class)
@@ -42,16 +42,16 @@ public class NotationControllerTest {
 
     @Test
     public void testDelete() throws Exception {
-        assertEquals(3, notationController.getAll().size());
+        assertEquals(6, notationController.getAll().size());
         notationController.delete(1000004);
-        assertEquals(2, notationController.getAll().size());
+        assertEquals(5, notationController.getAll().size());
     }
 
     @Test
     public void testGetBetween() throws Exception {
         Notation notation = notationController.get(1000004);
         assertEquals(
-                1,
+                2,
                 notationController.getBetween(
                         notation.getDate(), notation.getTime(),
                         notation.getDate(), notation.getTime()

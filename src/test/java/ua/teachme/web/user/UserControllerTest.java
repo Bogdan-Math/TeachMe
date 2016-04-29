@@ -61,14 +61,14 @@ public class UserControllerTest {
 
     @Test(expected = EntityNotFoundException.class)
     public void testGet() throws Exception {
-        userController.get(1000000);
-        userController.get(-1000000);
+        userController.get(1000001);
+        userController.get(-1000001);
     }
 
     @Test
     public void testDelete() throws Exception {
         assertEquals(3, userController.getAll().size());
-        userController.delete(1000000);
+        userController.delete(1000001);
         assertEquals(2, userController.getAll().size());
     }
 }
