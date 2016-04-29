@@ -54,7 +54,7 @@ public class NotationServlet extends HttpServlet {
                     request.getParameter("url"),
                     request.getParameter("description"),
                     Integer.valueOf(request.getParameter("hours")),
-                    id.isEmpty() ? LocalDateTime.now() : LocalDateTime.parse(request.getParameter("dateTime"))
+                    id.isEmpty() ? LocalDateTime.now() : LocalDateTime.parse(request.getParameter("createdDateAndTime"))
             );
             notationController.save(notation);
             response.sendRedirect("notations");

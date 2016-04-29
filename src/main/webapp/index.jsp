@@ -10,9 +10,9 @@
 <form method="post" action="user">
     <label>
         <select name="userID">
-            <option value="1">admin</option>
-            <option value="2">common user</option>
-            <option value="3">anonymous</option>
+            <option value="1000001">anonymous</option>
+            <option value="1000002">common user</option>
+            <option value="1000003">admin</option>
         </select>
     </label>
     <button type="submit">select</button>

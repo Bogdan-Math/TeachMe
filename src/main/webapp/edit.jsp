@@ -11,7 +11,7 @@
 
     <dl>
         <dt>id</dt>
-        <dd><input type="hidden" value="${notation.id}" name="id"></dd>
+        <dd><input type="text" value="${notation.id}" name="id"></dd>
     </dl>
 
     <dl>
