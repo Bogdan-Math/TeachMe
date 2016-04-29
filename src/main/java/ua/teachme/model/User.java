@@ -93,12 +93,29 @@ public class User extends EntityName {
     @Override
     public String toString() {
         return "User{" +
-                "password='" + password + '\'' +
+                "name=" + name +
+                ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", maxHoursPerDay=" + maxHoursPerDay +
                 ", notations=" + notations +
                 ", roles=" + roles +
                 ", registeredDateAndTime=" + registeredDateAndTime +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User)) return false;
+
+        User user = (User) o;
+
+        return email.equals(user.email);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return email.hashCode();
     }
 }
