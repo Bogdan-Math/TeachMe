@@ -1,7 +1,13 @@
 package ua.teachme.model;
 
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
+
 public class EntityName extends EntityID {
 
+    @Column(name = "name")
     protected String name;
 
     public EntityName() {
