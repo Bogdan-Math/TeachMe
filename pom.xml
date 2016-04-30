@@ -41,6 +41,10 @@
         <!--PostgreSQL-->
         <postgresql.version>9.4.1208</postgresql.version>
 
+        <!--Hibernate-->
+        <hibernate.version>5.1.0.Final</hibernate.version>
+        <hibernate-validator.version>5.2.4.Final</hibernate-validator.version>
+
     </properties>
 
     <!--build properties-->
@@ -114,7 +118,7 @@
             <version>${apache-commons.version}</version>
         </dependency>
 
-        <!--SpringFramework-->
+        <!--Spring Framework-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -150,11 +154,24 @@
             <version>${postgresql.version}</version>
         </dependency>
 
-        <!--Spring API for JDBC driver-->
+        <!--Spring API for ORM-->
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
+            <artifactId>spring-orm</artifactId>
             <version>${spring.version}</version>
+        </dependency>
+
+        <!--Hibernate - implementation of JPA-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate-validator.version}</version>
         </dependency>
 
     </dependencies>
