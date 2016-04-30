@@ -22,7 +22,7 @@ CREATE TABLE notations(
   id                      INTEGER DEFAULT nextval('global_sequence'),
   name                    VARCHAR NOT NULL,
   url                     VARCHAR NOT NULL,
-  description             TEXT,
+  description             TEXT NOT NULL,
   hours                   INTEGER DEFAULT 2,
   created_date_and_time   TIMESTAMP DEFAULT now(),
   user_id                 INTEGER /*NOT NULL*/,

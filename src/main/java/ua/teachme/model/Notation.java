@@ -1,14 +1,36 @@
 package ua.teachme.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.URL;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
+@Entity
+@Table(name = "notations")
 public class Notation extends EntityName{
 
+    //todo set annotations to correct mapping
+    private User user;
+
+    @Column(name = "url")
+    @NotEmpty
+    @URL
     private String url;
+
+    @Column(name = "description")
+    @NotEmpty
     private String description;
+
+    @Column(name = "hours")
+    @NotEmpty
     private int hours;
+
+    @Column(name = "created_date_and_time")
     private LocalDateTime createdDateAndTime;
 
     public Notation(){
@@ -29,6 +51,14 @@ public class Notation extends EntityName{
         this.description = description;
         this.hours = hours;
         this.createdDateAndTime = createdDateAndTime;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getUrl() {

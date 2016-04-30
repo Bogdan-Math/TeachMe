@@ -4,7 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-
 public class EntityName extends EntityID {
 
     @Column(name = "name")

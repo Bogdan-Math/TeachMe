@@ -30,10 +30,10 @@ public class User extends EntityName {
     @Column(name = "max_hours_per_day")
     private int maxHoursPerDay;
 
-    //todo correct annotations
+    //todo set annotations to correct mapping
     private List<Notation> notations;
 
-    //todo correct annotations
+    //todo set annotations to correct mapping
     private Set<Role> roles;
 
     @Column(name = "registered_date_and_time")
