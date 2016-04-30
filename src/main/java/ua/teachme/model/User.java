@@ -1,19 +1,42 @@
 package ua.teachme.model;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.Set;
 
+@Entity
+@Table(name = "users")
 public class User extends EntityName {
 
+    @Column(name = "password", nullable = false)
+    @NotEmpty
+    @Length(min = 6)
     private String password;
+
+    @Column(name = "email", nullable = false)
+    @NotEmpty
+    @Email
     private String email;
+
+    @Column(name = "max_hours_per_day")
     private int maxHoursPerDay;
+
+    //todo correct annotations
     private List<Notation> notations;
+
+    //todo correct annotations
     private Set<Role> roles;
+
+    @Column(name = "registered_date_and_time")
     private LocalDateTime registeredDateAndTime;
 
     public User() {

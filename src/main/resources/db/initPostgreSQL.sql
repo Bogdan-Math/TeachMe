@@ -9,7 +9,7 @@ CREATE TABLE users
   id                         INTEGER DEFAULT nextval('global_sequence'),
   name                       VARCHAR NOT NULL,
   password                   VARCHAR NOT NULL,
-  email                      VARCHAR NOT NULL,
+  email                      VARCHAR NOT NULL UNIQUE,
   max_hours_per_day          INTEGER DEFAULT 8 NOT NULL,
   registered_date_and_time   TIMESTAMP DEFAULT now(),
 
