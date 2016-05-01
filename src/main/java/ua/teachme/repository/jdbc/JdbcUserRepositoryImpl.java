@@ -45,6 +45,7 @@ public class JdbcUserRepositoryImpl implements UserRepository{
         return jdbcTemplate.query("SELECT * FROM users JOIN accounts ON users.account_id = accounts.id ORDER BY name, registered_date_and_time", USER_PROPERTY_ROW_MAPPER);
     }
 
+
     @Override
     public User save(User entity) {
         MapSqlParameterSource parametersMap = new MapSqlParameterSource()
