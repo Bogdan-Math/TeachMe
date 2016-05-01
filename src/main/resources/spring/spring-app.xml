@@ -18,7 +18,7 @@
 
     <!--helpful "context:" to auto scan selected package-->
     <context:annotation-config/>
-    <context:component-scan base-package="ua.teachme.**.repository.jpa"/>
+    <context:component-scan base-package="ua.teachme.**.repository.jdbc"/>
     <context:component-scan base-package="ua.teachme.**.service"/>
     <context:component-scan base-package="ua.teachme.**.web"/>
 

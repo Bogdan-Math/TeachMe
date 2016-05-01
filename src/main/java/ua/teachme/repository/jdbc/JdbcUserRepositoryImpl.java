@@ -36,13 +36,13 @@ public class JdbcUserRepositoryImpl implements UserRepository{
 
     @Override
     public User getByEmail(String email) {
-        List<User> users = jdbcTemplate.query("SELECT * FROM users WHERE email=?", USER_PROPERTY_ROW_MAPPER, email);
+        List<User> users = jdbcTemplate.query("SELECT * FROM users JOIN accounts ON users.account_id = accounts.id WHERE accounts.email=?", USER_PROPERTY_ROW_MAPPER, email);
         return DataAccessUtils.singleResult(users);
     }
 
     @Override
     public List<User> getAll() {
-        return jdbcTemplate.query("SELECT * FROM users ORDER BY name, registered_date_and_time", USER_PROPERTY_ROW_MAPPER);
+        return jdbcTemplate.query("SELECT * FROM users JOIN accounts ON users.account_id = accounts.id ORDER BY name, registered_date_and_time", USER_PROPERTY_ROW_MAPPER);
     }
 
     @Override
