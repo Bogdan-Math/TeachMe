@@ -27,12 +27,12 @@ public class UserControllerTest {
     }
 
     @Before//execute before every test in this class
-    public void before(){
+    public void setUp(){
         populatorDB.execute();
     }
 
     @AfterClass
-    public static void afterClass(){
+    public static void tearDown(){
         appCtx.close();
     }
 

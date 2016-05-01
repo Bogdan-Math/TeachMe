@@ -23,7 +23,7 @@ public class InMemoryNotationRepositoryImplTest {
     private NotationRepository notationRepository;
 
     @Before
-    public void before(){
+    public void setUp(){
         notationRepository.getAll().forEach(notation -> notationRepository.delete(notation.getId()));
         NotationUtil.notations.forEach(notation -> notationRepository.save(notation));
     }

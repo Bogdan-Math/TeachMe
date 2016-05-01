@@ -1,11 +1,18 @@
 package ua.teachme.repository.jpa;
 
+import org.springframework.stereotype.Repository;
 import ua.teachme.model.User;
 import ua.teachme.repository.UserRepository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
+@Repository
 public class JpaUserRepositoryImpl implements UserRepository {
+
+    @PersistenceContext
+    private EntityManager entityManager;
 
     @Override
     public User getByEmail(String email) {
