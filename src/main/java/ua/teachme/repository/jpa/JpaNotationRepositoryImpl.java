@@ -1,13 +1,11 @@
 package ua.teachme.repository.jpa;
 
-import org.springframework.stereotype.Repository;
 import ua.teachme.model.Notation;
 import ua.teachme.repository.NotationRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Repository
 public class JpaNotationRepositoryImpl implements NotationRepository{
 
     @Override

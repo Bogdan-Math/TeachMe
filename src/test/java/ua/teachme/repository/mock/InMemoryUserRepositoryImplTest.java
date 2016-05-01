@@ -19,7 +19,7 @@ public class InMemoryUserRepositoryImplTest {
     private UserRepository userRepository;
 
     @Before //execute before every test in this class
-    public void setUp(){
+    public void before(){
         userRepository.getAll().forEach(user -> userRepository.delete(user.getId()));
         UserUtil.users.forEach(user -> userRepository.save(user));
     }

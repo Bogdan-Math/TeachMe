@@ -1,70 +1,82 @@
 package ua.teachme.model;
 
+import jdk.nashorn.internal.ir.annotations.Ignore;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.Set;
 
+@Entity
+@Table(name = "users")
 public class User extends EntityName {
 
-    private Account account;
+    @Column(name = "password", nullable = false)
+    @NotEmpty
+    @Length(min = 6)
+    private String password;
 
+    @Column(name = "email", nullable = false)
+    @NotEmpty
+    @Email
+    private String email;
+
+    @Column(name = "max_hours_per_day")
     private int maxHoursPerDay;
 
     //todo set annotations to correct mapping
+    @Ignore
     private List<Notation> notations;
 
     //todo set annotations to correct mapping
     private Set<Role> roles;
 
+    @Column(name = "registered_date_and_time")
     private LocalDateTime registeredDateAndTime;
 
     public User() {
         super();
-        this.account = new Account();
     }
 
     public User(User user){
-        this(user.getId(), user.getName(), user.getAccount().getEmail(), user.getAccount().getPassword(),user.getMaxHoursPerDay(), user.getNotations(), user.getRoles());
+        this(user.getId(), user.getName(), user.getPassword(), user.getEmail(), user.getMaxHoursPerDay(), user.getNotations(), user.getRoles());
     }
 
-    public User(Integer id, String name, String email, String password, int maxHoursPerDay, List<Notation> notations, Role role, Role... roles){
-        this(id, name, email, password, maxHoursPerDay, notations, EnumSet.of(role, roles));
+    public User(Integer id, String name, String password, String email, int maxHoursPerDay, List<Notation> notations, Role role, Role... roles){
+        this(id, name, password, email, maxHoursPerDay, notations, EnumSet.of(role, roles));
     }
 
-    public User(Integer id, String name, String email, String password, int maxHoursPerDay, List<Notation> notations, Set<Role> roles) {
+    public User(Integer id, String name, String password, String email, int maxHoursPerDay, List<Notation> notations, Set<Role> roles) {
         super(id, name);
-        this.account.setEmail(email);
-        this.account.setPassword(password);
+        this.password = password;
+        this.email = email;
         this.maxHoursPerDay = maxHoursPerDay;
         this.notations = notations;
         this.roles = roles;
         this.registeredDateAndTime = LocalDateTime.now();
     }
 
-    public Account getAccount() {
-        return account;
+    public String getPassword() {
+        return password;
     }
 
-    public void setAccount(Account account) {
-        this.account = account;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getEmail(){
-        return account.getEmail();
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmail(String email){
-        account.setEmail(email);
-    }
-
-    public String getPassword(){
-        return account.getPassword();
-    }
-
-    public void setPassword(String password){
-        account.setPassword(password);
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getMaxHoursPerDay() {
@@ -108,8 +120,8 @@ public class User extends EntityName {
         return "User{" +
                 "id=" + id +
                 ", name=" + name +
-                ", password='" + account.getPassword() + '\'' +
-                ", email='" + account.getEmail() + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
                 ", maxHoursPerDay=" + maxHoursPerDay +
                 ", notations=" + notations +
                 ", roles=" + roles +
@@ -124,12 +136,12 @@ public class User extends EntityName {
 
         User user = (User) o;
 
-        return account.getEmail().equals(user.getAccount().getEmail());
+        return email.equals(user.email);
 
     }
 
     @Override
     public int hashCode() {
-        return account.getEmail().hashCode();
+        return email.hashCode();
     }
 }
