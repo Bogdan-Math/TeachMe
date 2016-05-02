@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.URL;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -15,6 +16,7 @@ import java.time.LocalTime;
 public class Notation extends EntityName{
 
     //todo set annotations to correct mapping
+    @Transient()
     private User user;
 
     @Column(name = "url")

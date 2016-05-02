@@ -8,6 +8,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.EnumSet;
@@ -32,10 +33,11 @@ public class User extends EntityName {
     private int maxHoursPerDay;
 
     //todo set annotations to correct mapping
-    @Ignore
+    @Transient()
     private List<Notation> notations;
 
     //todo set annotations to correct mapping
+    @Transient()
     private Set<Role> roles;
 
     @Column(name = "registered_date_and_time")
