@@ -5,10 +5,8 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.EnumSet;
@@ -32,19 +30,17 @@ public class User extends EntityName {
     @Column(name = "max_hours_per_day")
     private int maxHoursPerDay;
 
-    //todo set annotations to correct mapping
-    @Transient()
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
     private List<Notation> notations;
 
     //todo set annotations to correct mapping
-    @Transient()
+    @Transient()// - to ignore field
     private Set<Role> roles;
 
     @Column(name = "registered_date_and_time")
     private LocalDateTime registeredDateAndTime;
 
     public User() {
-        super();
     }
 
     public User(User user){

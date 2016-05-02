@@ -3,20 +3,19 @@ package ua.teachme.model;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.URL;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity
 @Table(name = "notations")
-public class Notation extends EntityName{
+public class Notation extends EntityName {
 
-    //todo set annotations to correct mapping
-    @Transient()
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @Column(name = "url")
@@ -32,11 +31,11 @@ public class Notation extends EntityName{
     @NotEmpty
     private int hours;
 
-    @Column(name = "created_date_and_time")
+    @Column(name = "created_date_and_time", nullable = false)
     private LocalDateTime createdDateAndTime;
 
     public Notation(){
-        super();
+
     }
 
     public Notation(Notation notation){

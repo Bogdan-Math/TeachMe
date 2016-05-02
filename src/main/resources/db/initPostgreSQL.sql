@@ -7,7 +7,6 @@ DROP TABLE IF EXISTS users CASCADE;
 CREATE TABLE users
 (
   id                         INTEGER DEFAULT nextval('global_sequence'),
-  notation_id                INTEGER,
 
   name                       VARCHAR NOT NULL,
   password                   VARCHAR NOT NULL,
@@ -15,8 +14,7 @@ CREATE TABLE users
   max_hours_per_day          INTEGER DEFAULT 8 NOT NULL,
   registered_date_and_time   TIMESTAMP DEFAULT now(),
 
-  PRIMARY KEY (id),
-  FOREIGN KEY (notation_id) REFERENCES notations(id) ON DELETE CASCADE
+  PRIMARY KEY (id)
 );
 
 /*init notations table*/
