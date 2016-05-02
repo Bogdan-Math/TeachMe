@@ -1,12 +1,10 @@
 package ua.teachme.model;
 
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.EnumSet;
@@ -40,8 +38,7 @@ public class User extends EntityName {
     @Column(name = "registered_date_and_time")
     private LocalDateTime registeredDateAndTime;
 
-    public User() {
-    }
+    public User() {}
 
     public User(User user){
         this(user.getId(), user.getName(), user.getPassword(), user.getEmail(), user.getMaxHoursPerDay(), user.getNotations(), user.getRoles());

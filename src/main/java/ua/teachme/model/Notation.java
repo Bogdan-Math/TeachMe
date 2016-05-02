@@ -14,7 +14,7 @@ import java.time.LocalTime;
 @Table(name = "notations")
 public class Notation extends EntityName {
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
@@ -31,12 +31,10 @@ public class Notation extends EntityName {
     @NotEmpty
     private int hours;
 
-    @Column(name = "created_date_and_time", nullable = false)
+    @Column(name = "created_date_and_time")
     private LocalDateTime createdDateAndTime;
 
-    public Notation(){
-
-    }
+    public Notation(){}
 
     public Notation(Notation notation){
         this(notation.getName(), notation.getUrl(), notation.getDescription(), notation.getHours(), notation.getCreatedDateAndTime());
