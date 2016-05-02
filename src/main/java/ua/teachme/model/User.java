@@ -11,9 +11,18 @@ import java.util.EnumSet;
 import java.util.List;
 import java.util.Set;
 
+@NamedQueries({
+        @NamedQuery(name = User.DELETE, query = "DELETE FROM User user WHERE user.id=:id"),
+        @NamedQuery(name = User.GET_ALL, query = "SELECT user FROM User user ORDER BY user.name, user.email"),
+        @NamedQuery(name = User.BY_EMAIL, query = "SELECT user FROM User user WHERE user.email=:email")
+})
 @Entity
 @Table(name = "users")
 public class User extends EntityName {
+
+    public static final String DELETE = "delete";
+    public static final String GET_ALL = "getAll";
+    public static final String BY_EMAIL = "getByEmail";
 
     @Column(name = "password", nullable = false)
     @NotEmpty
@@ -28,7 +37,7 @@ public class User extends EntityName {
     @Column(name = "max_hours_per_day")
     private int maxHoursPerDay;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private List<Notation> notations;
 
     //todo set annotations to correct mapping
