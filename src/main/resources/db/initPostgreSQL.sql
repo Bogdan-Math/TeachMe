@@ -11,7 +11,7 @@ CREATE TABLE users
   name                       VARCHAR NOT NULL,
   password                   VARCHAR NOT NULL,
   email                      VARCHAR NOT NULL UNIQUE,
-  max_hours_per_day          INTEGER DEFAULT 8 NOT NULL,
+  max_hours_per_day          INTEGER DEFAULT 8,
   registered_date_and_time   TIMESTAMP DEFAULT now(),
 
   PRIMARY KEY (id)

@@ -20,9 +20,9 @@ import java.util.Set;
 @Table(name = "users")
 public class User extends EntityName {
 
-    public static final String DELETE = "delete";
-    public static final String GET_ALL = "getAll";
-    public static final String BY_EMAIL = "getByEmail";
+    public static final String DELETE = "user.delete";
+    public static final String GET_ALL = "user.getAll";
+    public static final String BY_EMAIL = "user.getByEmail";
 
     @Column(name = "password", nullable = false)
     @NotEmpty
