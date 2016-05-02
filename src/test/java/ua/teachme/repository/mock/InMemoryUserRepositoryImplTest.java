@@ -32,7 +32,7 @@ public class InMemoryUserRepositoryImplTest {
     @Test
     public void testSave() throws Exception {
         assertEquals(3, userRepository.getAll().size());
-        userRepository.save(UserUtil.user);
+        assertEquals(UserUtil.user, userRepository.save(UserUtil.user));
         assertEquals(4, userRepository.getAll().size());
     }
 
@@ -50,6 +50,6 @@ public class InMemoryUserRepositoryImplTest {
 
     @Test
     public void testGetByEmail() throws Exception {
-        assertEquals(UserUtil.user, userRepository.getByEmail("admin-email"));
+        assertEquals(UserUtil.user, userRepository.getByEmail("admin@email.com"));
     }
 }

@@ -50,7 +50,7 @@ public class UserControllerTest {
     @Test
     public void testSave() throws Exception {
         assertEquals(3, userController.getAll().size());
-        userController.save(UserUtil.newUser);
+        assertEquals(UserUtil.newUser, userController.save(UserUtil.newUser));
         assertEquals(4, userController.getAll().size());
     }
 
