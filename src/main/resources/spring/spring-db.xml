@@ -16,7 +16,7 @@
 >
 
     <!--import properties from PostgreSQL.properties-->
-    <context:property-placeholder location="classpath:db/PostgreSQL.properties"/>
+    <context:property-placeholder location="classpath:db/postgreSQL.properties"/>
 
     <!--populate db in every spring-context-->
     <jdbc:initialize-database data-source="jdbcDataSource" enabled="${db.init}">
