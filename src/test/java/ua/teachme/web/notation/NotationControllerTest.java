@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
 //tests with Spring
 @ContextConfiguration({"classpath:spring/spring-app.xml", "classpath:spring/spring-db.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
-@Sql(scripts = "classpath:db/populatePostgreSQL.sql") //execute before every test in this class
+@Sql(scripts = "classpath:db/hsqldb/populateHSQLDB.sql") //execute before every test in this class
 public class NotationControllerTest {
 
     @Autowired

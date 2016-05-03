@@ -16,17 +16,25 @@
 >
 
     <!--import properties from PostgreSQL.properties-->
-    <context:property-placeholder location="classpath:db/postgreSQL.properties"/>
+<!--
+    <context:property-placeholder location="classpath:db/postgres/postgreSQL.properties"/>
+-->
+    <context:property-placeholder location="classpath:db/hsqldb/HSQLDB.properties"/>
 
     <!--populate db in every spring-context-->
     <jdbc:initialize-database data-source="jdbcDataSource" enabled="${db.init}">
-        <jdbc:script location="classpath:db/initPostgreSQL.sql"/>
-        <jdbc:script location="classpath:db/populatePostgreSQL.sql"/>
+<!--
+        <jdbc:script location="classpath:db/postgres/initPostgreSQL.sql"/>
+        <jdbc:script location="classpath:db/postgres/populatePostgreSQL.sql"/>
+-->
+        <jdbc:script location="classpath:db/hsqldb/initHSQLDB.sql"/>
+        <jdbc:script location="classpath:db/hsqldb/populateHSQLDB.sql"/>
+
     </jdbc:initialize-database>
 
     <!--populate db before every tests by personal class-->
     <bean class="ua.teachme.util.PopulatorDB">
-        <constructor-arg name="scriptLocation" value="classpath:db/populatePostgreSQL.sql" />
+        <constructor-arg name="scriptLocation" value="classpath:db/hsqldb/populateHSQLDB.sql" />
     </bean>
 
     <!--
