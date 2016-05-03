@@ -29,7 +29,7 @@ public class Notation extends EntityName {
 
     @Column(name = "url")
     @NotEmpty
-    @URL
+    //@URL//todo insert valid url
     private String url;
 
     @Column(name = "description")
@@ -37,7 +37,7 @@ public class Notation extends EntityName {
     private String description;
 
     @Column(name = "hours")
-    @NotEmpty
+    @NotNull
     private int hours;
 
     @Column(name = "created_date_and_time")
