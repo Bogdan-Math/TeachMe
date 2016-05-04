@@ -1,1 +1,1 @@
-TeachMe - URL storage.
+TeachMe - notations storage. Contains personal tasks with some theoretical material and data for managing these tasks. Client-Server app.
