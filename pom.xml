@@ -45,6 +45,8 @@
         <hibernate.version>5.1.0.Final</hibernate.version>
         <hibernate-validator.version>5.2.4.Final</hibernate-validator.version>
 
+        <!--Spring Data Jpa-->
+        <spring-data-jpa.version>1.9.4.RELEASE</spring-data-jpa.version>
 
         <hsqldb.version>2.3.2</hsqldb.version>
 
@@ -159,9 +161,9 @@
 
         <!--Spring API for ORM-->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
-            <version>${spring.version}</version>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${spring-data-jpa.version}</version>
         </dependency>
 
         <!--Hibernate - implementation of JPA-->
@@ -202,6 +204,7 @@
     <!--profiles-->
     <profiles>
 
+<!--
         <profile>
             <id>PostgreSQL</id>
             <dependencies>
@@ -212,6 +215,7 @@
                 </dependency>
             </dependencies>
         </profile>
+-->
 
 
     </profiles>
