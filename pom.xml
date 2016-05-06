@@ -209,7 +209,7 @@
 
     <!--profiles-->
     <profiles>
-
+<!--
         <profile>
             <id>HSQLDB</id>
             <dependencies>
@@ -234,6 +234,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
         </profile>
+-->
     </profiles>
 
 
