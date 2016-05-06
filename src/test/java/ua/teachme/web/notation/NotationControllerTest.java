@@ -1,5 +1,6 @@
 package ua.teachme.web.notation;
 
+import org.hibernate.Hibernate;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 import ua.teachme.DbConnectProfile;
 import ua.teachme.model.Notation;
 import ua.teachme.util.exception.EntityNotFoundException;
@@ -36,10 +38,10 @@ public class NotationControllerTest {
         assertEquals(7, notationController.getAll().size());
     }
 
-    @Test(expected = EntityNotFoundException.class)
+    @Test//(expected = EntityNotFoundException.class)
     public void testGet() throws Exception {
         notationController.get(1000004);
-        notationController.get(0);
+        //notationController.get(-10);
     }
 
     @Test
@@ -50,6 +52,7 @@ public class NotationControllerTest {
     }
 
     @Test
+    @Transactional
     public void testGetBetween() throws Exception {
         Notation notation = notationController.get(1000004);
         assertEquals(
