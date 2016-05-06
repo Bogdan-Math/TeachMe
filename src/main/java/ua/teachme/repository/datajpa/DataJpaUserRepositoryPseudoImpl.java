@@ -30,11 +30,11 @@ public class DataJpaUserRepositoryPseudoImpl implements UserRepository{
 
     @Override
     public User get(int id) {
-        return proxyUserRepository.findById(id);
+        return proxyUserRepository.findOne(id);
     }
 
     @Override
     public void delete(int id) {
-        proxyUserRepository.deleteById(id);
+        proxyUserRepository.delete(id);
     }
 }

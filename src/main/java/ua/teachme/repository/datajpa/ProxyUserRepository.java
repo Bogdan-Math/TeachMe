@@ -14,12 +14,12 @@ public interface ProxyUserRepository extends JpaRepository<User, Integer> {
 
     @Modifying
 //    @Query(name = User.DELETE)
-    void deleteById(/*@Param("id")*/int id);
+    void delete(/*@Param("id")*/Integer id);
 
     @Modifying
     User save(User user);
 
-    User findById(int id);
+    User findOne(Integer id);
 
     User findByEmail(String email);
 
