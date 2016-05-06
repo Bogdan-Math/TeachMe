@@ -32,7 +32,7 @@ public class DataJpaNotationRepositoryPseudoImpl implements NotationRepository {
 
     @Override
     public Notation get(int id) {
-        return proxyNotationRepository.getOne(id);
+        return proxyNotationRepository.findOne(id);
     }
 
     @Override

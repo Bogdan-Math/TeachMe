@@ -23,7 +23,7 @@ public class Notation extends EntityName {
     public static final String GET_ALL = "notation.getAll";
     public static final String GET_BETWEEN = "notation.getBetween";
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
