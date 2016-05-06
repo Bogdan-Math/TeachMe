@@ -8,7 +8,7 @@ import ua.teachme.repository.UserRepository;
 import java.util.List;
 
 @Repository
-public class DataJpaUserRepositoryImpl implements UserRepository{
+public class DataJpaUserRepositoryPseudoImpl implements UserRepository{
 
     @Autowired
     private ProxyUserRepository proxyUserRepository;

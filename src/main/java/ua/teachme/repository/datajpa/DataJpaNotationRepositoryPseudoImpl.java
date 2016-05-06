@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
-public class DataJpaNotationRepositoryImpl implements NotationRepository {
+public class DataJpaNotationRepositoryPseudoImpl implements NotationRepository {
 
     @Override
     public List<Notation> getBetween(LocalDateTime start, LocalDateTime end) {
