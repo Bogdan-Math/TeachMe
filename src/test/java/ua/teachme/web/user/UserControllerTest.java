@@ -13,6 +13,7 @@ import ua.teachme.util.user.UserUtil;
 import static org.junit.Assert.*;
 
 //tests with JUnit
+//todo change junit to spring test here, throw junit realization to MainTest
 public class UserControllerTest {
 
     private static ConfigurableApplicationContext appCtx;
