@@ -1,4 +1,4 @@
-package ua.teachme;
+package ua.teachme.profiles;
 
 public class WorkBy {
     public static final String JPA = "JPA";

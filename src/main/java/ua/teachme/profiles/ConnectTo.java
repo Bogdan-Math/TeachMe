@@ -1,4 +1,4 @@
-package ua.teachme;
+package ua.teachme.profiles;
 
 public class ConnectTo {
     public static final String POSTGRESQL = "connect-PostgreSQL";

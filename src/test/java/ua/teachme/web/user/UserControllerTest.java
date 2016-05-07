@@ -7,8 +7,8 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import ua.teachme.ConnectTo;
-import ua.teachme.WorkBy;
+import ua.teachme.profiles.ConnectTo;
+import ua.teachme.profiles.WorkBy;
 import ua.teachme.util.exception.EntityNotFoundException;
 import ua.teachme.util.user.UserUtil;
 

@@ -1,6 +1,8 @@
 package ua.teachme;
 
 import org.springframework.context.support.GenericXmlApplicationContext;
+import ua.teachme.profiles.ConnectTo;
+import ua.teachme.profiles.WorkBy;
 
 public class Main {
 

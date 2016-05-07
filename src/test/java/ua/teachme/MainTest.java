@@ -2,6 +2,8 @@ package ua.teachme;
 
 import org.junit.*;
 import org.springframework.context.support.GenericXmlApplicationContext;
+import ua.teachme.profiles.ConnectTo;
+import ua.teachme.profiles.WorkBy;
 import ua.teachme.repository.NotationRepository;
 import ua.teachme.repository.UserRepository;
 import ua.teachme.service.NotationService;
