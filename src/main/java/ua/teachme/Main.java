@@ -9,7 +9,7 @@ public class Main {
         return new ClassPathXmlApplicationContext
                 (
                         "spring/spring-app.xml",
-                        "spring/spring-db.xml"
+                        "spring/connect-with-db.xml"
                 );
     }
 }

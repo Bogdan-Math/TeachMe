@@ -3,21 +3,20 @@ package ua.teachme.web.user;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import ua.teachme.DbConnectProfile;
+import ua.teachme.ConnectDB;
 import ua.teachme.util.exception.EntityNotFoundException;
 import ua.teachme.util.user.UserUtil;
 
 import static org.junit.Assert.*;
 
 //tests with Spring
-@ContextConfiguration({"classpath:spring/spring-app.xml", "classpath:spring/spring-db.xml"})
+@ContextConfiguration({"classpath:spring/spring-app.xml", "classpath:spring/connect-with-db.xml", "classpath:spring/work-with-db.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
-@ActiveProfiles(DbConnectProfile.POSTGRESQL)
+@ActiveProfiles(ConnectDB.POSTGRESQL)
 @Sql(scripts = "classpath:db/postgres/populatePostgreSQL.sql") //execute before every test in this class
 public class UserControllerTest {
 
