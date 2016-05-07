@@ -27,8 +27,6 @@
     <jpa:repositories base-package="ua.teachme.**.repository.datajpa"/>
 -->
 
-    <context:component-scan base-package="ua.teachme.**.repository.jpa"/>
-
     <!--add all beans to ctx from "service (service)" layer-->
     <context:component-scan base-package="ua.teachme.**.service"/>
 

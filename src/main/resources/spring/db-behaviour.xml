@@ -3,16 +3,23 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/tx
-                           http://www.springframework.org/schema/tx/spring-tx.xsd"
+                           http://www.springframework.org/schema/tx/spring-tx.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd"
 
 >
     <!--support any action (CRUD etc.) like transactional-->
     <tx:annotation-driven/>
 
+    <!--helpful "context:" to auto scan selected package-->
+    <context:annotation-config/>
+
     <beans profile="JPA">
+        <context:component-scan base-package="ua.teachme.**.repository.jpa"/>
 
         <!--create EntityManager - main class to work with db by JPQL-->
         <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
@@ -34,6 +41,8 @@
     </beans>
 
     <beans profile="JDBC">
+
+        <context:component-scan base-package="ua.teachme.**.repository.jdbc"/>
 
         <!--main class to standard work-->
         <bean id="jdbcTemplate"
