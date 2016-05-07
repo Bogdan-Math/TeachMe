@@ -22,8 +22,10 @@
     <context:annotation-config/>
 
     <!--add all beans to ctx from "repository (dao)" layer-->
+<!--
     <context:component-scan base-package="ua.teachme.**.repository.datajpa"/>
     <jpa:repositories base-package="ua.teachme.**.repository.datajpa"/>
+-->
 
     <!--add all beans to ctx from "service (service)" layer-->
     <context:component-scan base-package="ua.teachme.**.service"/>
