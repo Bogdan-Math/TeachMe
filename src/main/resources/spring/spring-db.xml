@@ -45,11 +45,6 @@
 -->
     </jdbc:initialize-database>
 
-    <!--populate db before every tests by personal class-->
-    <bean class="ua.teachme.util.PopulatorDB">
-        <constructor-arg name="scriptLocation" value="classpath:db/postgres/populatePostgreSQL.sql" />
-    </bean>
-
 
     <tx:annotation-driven/>
 

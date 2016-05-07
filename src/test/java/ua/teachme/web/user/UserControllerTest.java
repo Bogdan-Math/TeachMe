@@ -1,12 +1,7 @@
 package ua.teachme.web.user;
 
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ua.teachme.util.PopulatorDB;
 import ua.teachme.util.exception.EntityNotFoundException;
 import ua.teachme.util.user.UserUtil;
 
@@ -18,24 +13,7 @@ public class UserControllerTest {
 
     private static ConfigurableApplicationContext appCtx;
     private static UserController userController;
-    private static PopulatorDB populatorDB;
 
-    @BeforeClass
-    public static void beforeClass(){
-        appCtx = new ClassPathXmlApplicationContext("spring/spring-app.xml", "spring/spring-db.xml");
-        userController = appCtx.getBean(UserController.class);
-        populatorDB = appCtx.getBean(PopulatorDB.class);
-    }
-
-    @Before//execute before every test in this class
-    public void setUp(){
-        populatorDB.execute();
-    }
-
-    @AfterClass
-    public static void tearDown(){
-        appCtx.close();
-    }
 
     @Test//(expected = EntityNotFoundException.class)
     public void testGetByEmail() throws Exception {

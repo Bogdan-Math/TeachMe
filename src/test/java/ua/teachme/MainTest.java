@@ -12,6 +12,7 @@ import ua.teachme.web.user.UserController;
 
 import static org.junit.Assert.*;
 
+//tests with JUnit
 public class MainTest {
 
     private static ConfigurableApplicationContext appCtx;
