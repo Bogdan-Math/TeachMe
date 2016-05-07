@@ -6,11 +6,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
 
     public static ConfigurableApplicationContext createAndGetSpringContext(){
-        ConfigurableApplicationContext appCtx = new ClassPathXmlApplicationContext
+        return new ClassPathXmlApplicationContext
                 (
                         "spring/spring-app.xml",
                         "spring/spring-db.xml"
                 );
-        return appCtx;
     }
 }
