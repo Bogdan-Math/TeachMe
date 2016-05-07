@@ -49,7 +49,7 @@
             <property name="password" value="${hsqldb.password}"/>
         </bean>
 
-        <!--initialize db before every spring context usage (need to tests)-->
+        <!--initialize db before every spring context usage-->
         <jdbc:initialize-database data-source="jdbcDataSource" enabled="${hsqldb.init}">
             <jdbc:script location="classpath:db/hsqldb/initHSQLDB.sql"/>
             <jdbc:script location="classpath:db/hsqldb/populateHSQLDB.sql"/>
