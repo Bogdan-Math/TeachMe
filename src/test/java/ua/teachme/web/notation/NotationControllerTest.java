@@ -27,6 +27,11 @@ public class NotationControllerTest {
     private NotationController notationController;
 
     @Test
+    public void testNotationController(){
+        assertNotNull(notationController);
+    }
+
+    @Test
     public void testGetAll() throws Exception {
         assertEquals(6, notationController.getAll().size());
     }
