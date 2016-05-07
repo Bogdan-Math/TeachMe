@@ -7,8 +7,6 @@
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context.xsd
-                           http://www.springframework.org/schema/tx
-                           http://www.springframework.org/schema/tx/spring-tx.xsd
                            http://www.springframework.org/schema/data/jpa
                            http://www.springframework.org/schema/data/jpa/spring-jpa.xsd"
 >
@@ -22,10 +20,15 @@
 
     <!--helpful "context:" to auto scan selected package-->
     <context:annotation-config/>
+
+    <!--add all beans to ctx from "repository (dao)" layer-->
     <context:component-scan base-package="ua.teachme.**.repository.datajpa"/>
     <jpa:repositories base-package="ua.teachme.**.repository.datajpa"/>
 
+    <!--add all beans to ctx from "service (service)" layer-->
     <context:component-scan base-package="ua.teachme.**.service"/>
+
+    <!--add all beans to ctx from "web (controller)" layer-->
     <context:component-scan base-package="ua.teachme.**.web"/>
 
 </beans>
