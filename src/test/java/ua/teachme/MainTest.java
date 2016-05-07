@@ -1,8 +1,7 @@
 package ua.teachme;
 
 import org.junit.*;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
 import ua.teachme.repository.NotationRepository;
 import ua.teachme.repository.UserRepository;
 import ua.teachme.service.NotationService;
@@ -15,11 +14,14 @@ import static org.junit.Assert.*;
 //tests with JUnit
 public class MainTest {
 
-    private static ConfigurableApplicationContext appCtx;
+    private static GenericXmlApplicationContext appCtx;
 
     @BeforeClass
-    public static void beforeClass(){
-        appCtx = new ClassPathXmlApplicationContext("spring/spring-app.xml", "spring/db-connect.xml");
+    public static void beforeClass() {
+        appCtx = new GenericXmlApplicationContext();
+        appCtx.getEnvironment().setActiveProfiles(ConnectTo.HSQLDB, WorkBy.JPA);
+        appCtx.load("spring/spring-app.xml", "spring/db-connect.xml", "spring/db-behaviour.xml");
+        appCtx.refresh();
     }
 
     @Before//execute BEFORE every test in this class
