@@ -19,6 +19,7 @@ import static org.junit.Assert.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ActiveProfiles({ConnectTo.HSQLDB, WorkBy.JPA})
 @Sql(scripts = "classpath:db/hsqldb/populateHSQLDB.sql") //execute before every test in this class
+//todo: add more requirements and checks to tests
 public class UserControllerTest {
 
     @Autowired
