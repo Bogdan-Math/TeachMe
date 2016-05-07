@@ -1,9 +1,16 @@
 package ua.teachme;
 
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class Main {
-    /*
-        private static final Logger LOG = LoggerFactory.getLogger(Main.class);
-        MDC.put("logger_id", "filename_to_logging");
-        LOG.debug("logging");
-    */
+
+    public static ConfigurableApplicationContext createAndGetSpringContext(){
+        ConfigurableApplicationContext appCtx = new ClassPathXmlApplicationContext
+                (
+                        "spring/spring-app.xml",
+                        "spring/spring-db.xml"
+                );
+        return appCtx;
+    }
 }
