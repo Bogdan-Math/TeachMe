@@ -19,7 +19,7 @@ public class MainTest {
 
     @BeforeClass
     public static void beforeClass(){
-        appCtx = new ClassPathXmlApplicationContext("spring/spring-app.xml", "spring/connect-with-db.xml");
+        appCtx = new ClassPathXmlApplicationContext("spring/spring-app.xml", "spring/db-connect.xml");
     }
 
     @Before//execute BEFORE every test in this class

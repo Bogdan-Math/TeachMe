@@ -8,16 +8,16 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
-import ua.teachme.ConnectDB;
+import ua.teachme.ConnectTo;
 import ua.teachme.model.Notation;
 import ua.teachme.util.notation.NotationUtil;
 
 import static org.junit.Assert.*;
 
 //tests with Spring
-@ContextConfiguration({"classpath:spring/spring-app.xml", "classpath:spring/connect-with-db.xml"})
+@ContextConfiguration({"classpath:spring/spring-app.xml", "classpath:spring/db-connect.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
-@ActiveProfiles(ConnectDB.POSTGRESQL)
+@ActiveProfiles(ConnectTo.POSTGRESQL)
 @Sql(scripts = "classpath:db/postgres/populatePostgreSQL.sql") //execute before every test in this class
 public class NotationControllerTest {
 

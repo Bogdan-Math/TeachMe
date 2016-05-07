@@ -54,6 +54,7 @@
             <jdbc:script location="classpath:db/hsqldb/initHSQLDB.sql"/>
             <jdbc:script location="classpath:db/hsqldb/populateHSQLDB.sql"/>
         </jdbc:initialize-database>
+
     </beans>
 
 </beans>

@@ -7,16 +7,17 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import ua.teachme.ConnectDB;
+import ua.teachme.ConnectTo;
+import ua.teachme.WorkBy;
 import ua.teachme.util.exception.EntityNotFoundException;
 import ua.teachme.util.user.UserUtil;
 
 import static org.junit.Assert.*;
 
 //tests with Spring
-@ContextConfiguration({"classpath:spring/spring-app.xml", "classpath:spring/connect-with-db.xml", "classpath:spring/work-with-db.xml"})
+@ContextConfiguration({"classpath:spring/spring-app.xml", "classpath:spring/db-connect.xml", "classpath:spring/db-behaviour.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
-@ActiveProfiles(ConnectDB.HSQLDB)
+@ActiveProfiles({ConnectTo.HSQLDB, WorkBy.JPA})
 @Sql(scripts = "classpath:db/hsqldb/populateHSQLDB.sql") //execute before every test in this class
 public class UserControllerTest {
 

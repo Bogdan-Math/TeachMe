@@ -16,7 +16,7 @@ public class IndexServlet extends HttpServlet{
     @Override
     public void init() throws ServletException {
         super.init();
-        springContext = new ClassPathXmlApplicationContext("spring/spring-app.xml", "spring/connect-with-db.xml");
+        springContext = new ClassPathXmlApplicationContext("spring/spring-app.xml", "spring/db-connect.xml");
     }
 
 
