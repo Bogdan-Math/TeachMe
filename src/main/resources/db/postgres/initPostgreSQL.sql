@@ -24,6 +24,7 @@ CREATE TABLE main_goals
   id                         INTEGER DEFAULT nextval('global_sequence'),
   user_id                    INTEGER /*NOT NULL*/,
 
+  name                       VARCHAR NOT NULL,
   description                VARCHAR(255) NOT NULL,
   UNIQUE (description),
 

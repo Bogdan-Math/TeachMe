@@ -17,8 +17,8 @@ import static org.junit.Assert.*;
 //tests with Spring
 @ContextConfiguration({"classpath:spring/spring-app.xml", "classpath:spring/db-connect.xml", "classpath:spring/db-behaviour.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
-@ActiveProfiles({ConnectTo.HSQLDB, WorkBy.DATAJPA})
-@Sql(scripts = "classpath:db/hsqldb/populateHSQLDB.sql") //execute before every test in this class
+@ActiveProfiles({ConnectTo.POSTGRESQL, WorkBy.JPA})
+@Sql(scripts = "classpath:db/postgres/populatePostgreSQL.sql") //execute before every test in this class
 //todo: add more requirements and checks to tests
 public class UserControllerTest {
 
