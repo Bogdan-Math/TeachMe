@@ -94,6 +94,14 @@ public class User extends EntityName {
         this.maxHoursPerDay = maxHoursPerDay;
     }
 
+    public MainGoal getMainGoal() {
+        return mainGoal;
+    }
+
+    public void setMainGoal(MainGoal mainGoal) {
+        this.mainGoal = mainGoal;
+    }
+
     public List<Notation> getNotations() {
         return notations;
     }
