@@ -45,21 +45,21 @@ public class NotationControllerTest {
 
     @Test//(expected = EntityNotFoundException.class)
     public void testGet() throws Exception {
-        notationController.get(1000004);
+        notationController.get(1000007);
         //notationController.get(-10);
     }
 
     @Test
     public void testDelete() throws Exception {
         assertEquals(6, notationController.getAll().size());
-        notationController.delete(1000004);
+        notationController.delete(1000007);
         assertEquals(5, notationController.getAll().size());
     }
 
     @Test
     @Transactional
     public void testGetBetween() throws Exception {
-        Notation notation = notationController.get(1000004);
+        Notation notation = notationController.get(1000007);
         assertEquals(
                 2,
                 notationController.getBetween(

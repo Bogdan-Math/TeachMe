@@ -20,8 +20,6 @@ INSERT INTO main_goals (user_id, description) VALUES (1000001, 'main goal 1');
 INSERT INTO main_goals (user_id, description) VALUES (1000002, 'main goal 2');
 INSERT INTO main_goals (user_id, description) VALUES (1000003, 'main goal 3');
 
-UPDATE MAIN_GOALS SET DESCRIPTION='1' WHERE USER_ID=1000001;
-
 /*populate notations table*/
 DELETE FROM notations;
 

@@ -17,6 +17,7 @@ CREATE TABLE users
   PRIMARY KEY (id)
 );
 
+/*init main_goals table*/
 DROP TABLE IF EXISTS main_goals CASCADE;
 CREATE TABLE main_goals
 (
