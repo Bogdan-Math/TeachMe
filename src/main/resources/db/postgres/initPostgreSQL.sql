@@ -17,6 +17,19 @@ CREATE TABLE users
   PRIMARY KEY (id)
 );
 
+DROP TABLE IF EXISTS main_goals CASCADE;
+CREATE TABLE main_goals
+(
+  id                         INTEGER DEFAULT nextval('global_sequence'),
+  user_id                    INTEGER /*NOT NULL*/,
+
+  description                VARCHAR(255) NOT NULL,
+  UNIQUE (description),
+
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id)   REFERENCES users(id) ON DELETE CASCADE
+);
+
 /*init notations table*/
 DROP TABLE if EXISTS notations CASCADE;
 CREATE TABLE notations(

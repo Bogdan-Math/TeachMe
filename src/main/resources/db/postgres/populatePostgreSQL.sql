@@ -13,6 +13,13 @@ VALUES ('User', 'password', 'user@gmail.com');
 INSERT INTO users (name, password, email)
 VALUES ('Admin', 'password', 'admin@gmail.com');
 
+/*populate main_goals table*/
+DELETE FROM main_goals;
+
+INSERT INTO main_goals (user_id, description) VALUES (1000001, 'main goal 1');
+INSERT INTO main_goals (user_id, description) VALUES (1000002, 'main goal 2');
+INSERT INTO main_goals (user_id, description) VALUES (1000003, 'main goal 3');
+
 /*populate notations table*/
 DELETE FROM notations;
 
