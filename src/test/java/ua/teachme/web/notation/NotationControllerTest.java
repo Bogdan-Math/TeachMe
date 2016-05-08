@@ -9,6 +9,7 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 import ua.teachme.profiles.ConnectTo;
+import ua.teachme.profiles.Populate;
 import ua.teachme.profiles.WorkBy;
 import ua.teachme.model.Notation;
 import ua.teachme.util.notation.NotationUtil;
@@ -19,7 +20,7 @@ import static org.junit.Assert.*;
 @ContextConfiguration({"classpath:spring/spring-app.xml", "classpath:spring/db-connect.xml", "classpath:spring/db-behaviour.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 @ActiveProfiles({ConnectTo.POSTGRESQL, WorkBy.JPA})
-@Sql(scripts = "classpath:db/postgres/populatePostgreSQL.sql") //execute before every test in this class
+@Sql(scripts = Populate.POSTGRESQL) //execute before every test in this class
 //todo: add more requirements and checks to tests
 public class NotationControllerTest {
 
