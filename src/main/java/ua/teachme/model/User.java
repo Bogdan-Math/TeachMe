@@ -37,6 +37,9 @@ public class User extends EntityName {
     @Column(name = "max_hours_per_day")
     private int maxHoursPerDay;
 
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "user")
+    private MainGoal mainGoal;
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private List<Notation> notations;
 
