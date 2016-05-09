@@ -10,7 +10,7 @@ public class LogUtil {
     private static final Logger LOG = getLogger(LogUtil.class/*logged class*/);
 
     private void log(){
-        /* all options in: ua.teachme.resources/logback.xml */
+        /* all options in: main.resources/logback.xml */
         MDC.put("logger_id", "filename_to_logging");
         LOG.debug("logging");
     }
