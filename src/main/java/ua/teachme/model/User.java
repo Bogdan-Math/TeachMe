@@ -53,20 +53,14 @@ public class User extends EntityName {
     public User() {}
 
     public User(User user){
-        this(user.getId(), user.getName(), user.getPassword(), user.getEmail(), user.getMaxHoursPerDay(), user.getNotations(), user.getRoles());
+        this(user.getId(), user.getName(), user.getPassword(), user.getEmail(), user.getMaxHoursPerDay());
     }
 
-    public User(Integer id, String name, String password, String email, int maxHoursPerDay, List<Notation> notations, Role role, Role... roles){
-        this(id, name, password, email, maxHoursPerDay, notations, EnumSet.of(role, roles));
-    }
-
-    public User(Integer id, String name, String password, String email, int maxHoursPerDay, List<Notation> notations, Set<Role> roles) {
+    public User(Integer id, String name, String password, String email, int maxHoursPerDay) {
         super(id, name);
         this.password = password;
         this.email = email;
         this.maxHoursPerDay = maxHoursPerDay;
-        this.notations = notations;
-        this.roles = roles;
         this.registeredDateAndTime = LocalDateTime.now();
     }
 
@@ -114,8 +108,8 @@ public class User extends EntityName {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+    public void setRoles(Role role, Role... roles) {
+        this.roles = EnumSet.of(role, roles);
     }
 
     public LocalDateTime getRegisteredDateAndTime() {
@@ -152,7 +146,6 @@ public class User extends EntityName {
         User user = (User) o;
 
         return email.equals(user.email);
-
     }
 
     @Override
