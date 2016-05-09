@@ -1,5 +1,6 @@
 package ua.teachme.repository.mock;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,10 +26,19 @@ public class InMemoryNotationRepositoryImplTest {
     @Autowired
     private NotationRepository notationRepository;
 
-    @Before
+    @Before //execute BEFORE every test in this class
     public void setUp(){
-        notationRepository.getAll().forEach(notation -> notationRepository.delete(notation.getId()));
         NotationUtil.notations.forEach(notation -> notationRepository.save(notation));
+    }
+
+    @After //execute AFTER every test in this class
+    public void tearDown(){
+        notationRepository.getAll().forEach(notation -> notationRepository.delete(notation.getId()));
+    }
+
+    @Test
+    public void testNotationRepository(){
+        assertNotNull(notationRepository);
     }
 
     @Test

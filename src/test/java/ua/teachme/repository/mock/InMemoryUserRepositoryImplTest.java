@@ -1,5 +1,6 @@
 package ua.teachme.repository.mock;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,10 +22,19 @@ public class InMemoryUserRepositoryImplTest {
     @Autowired
     private UserRepository userRepository;
 
-    @Before //execute before every test in this class
+    @Before //execute BEFORE every test in this class
     public void setUp(){
-        userRepository.getAll().forEach(user -> userRepository.delete(user.getId()));
         UserUtil.users.forEach(user -> userRepository.save(user));
+    }
+
+    @After //execute AFTER every test in this class
+    public void tearDown(){
+        userRepository.getAll().forEach(user -> userRepository.delete(user.getId()));
+    }
+
+    @Test
+    public void testUserRepository(){
+        assertNotNull(userRepository);
     }
 
     @Test
