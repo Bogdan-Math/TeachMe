@@ -15,7 +15,7 @@ import java.time.LocalTime;
 
 import static org.junit.Assert.*;
 
-@ContextConfiguration("classpath:spring/mock.xml")
+@ContextConfiguration("classpath:spring/repository-implementations.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 public class InMemoryNotationRepositoryImplTest {
 
