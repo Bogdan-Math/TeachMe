@@ -4,8 +4,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import ua.teachme.profiles.WorkBy;
 import ua.teachme.repository.NotationRepository;
 import ua.teachme.util.notation.NotationUtil;
 
@@ -17,6 +19,7 @@ import static org.junit.Assert.*;
 
 @ContextConfiguration("classpath:spring/repository-implementations.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
+@ActiveProfiles(WorkBy.MOCK)
 public class InMemoryNotationRepositoryImplTest {
 
     @Autowired
