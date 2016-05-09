@@ -16,6 +16,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 @ContextConfiguration("classpath:spring/repository-implementations.xml")
@@ -43,6 +44,7 @@ public class InMemoryNotationRepositoryImplTest {
 
     @Test
     public void testGetAll() throws Exception {
+        assertThat(notationRepository.getAll(), is(NotationUtil.notations));
         assertEquals(8, notationRepository.getAll().size());
     }
 

@@ -12,6 +12,7 @@ import ua.teachme.profiles.WorkBy;
 import ua.teachme.repository.UserRepository;
 import ua.teachme.util.user.UserUtil;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 @ContextConfiguration("classpath:spring/repository-implementations.xml")
@@ -39,6 +40,7 @@ public class InMemoryUserRepositoryImplTest {
 
     @Test
     public void testGetAll() throws Exception {
+        assertThat(userRepository.getAll(), is(UserUtil.users));
         assertEquals(3, userRepository.getAll().size());
     }
 

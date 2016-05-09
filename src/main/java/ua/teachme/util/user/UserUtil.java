@@ -11,8 +11,8 @@ public class UserUtil {
 
     public static List<User> users = Arrays.asList(
             new User(null, "admin", "password", "admin@email.com", NotationUtil.hours),
-            new User(null, "common user", "password", "common-user@email.com", NotationUtil.hours),
-            new User(null, "anonymous", "password", "anonymous@email.com", NotationUtil.hours)
+            new User(null, "anonymous", "password", "anonymous@email.com", NotationUtil.hours),
+            new User(null, "common user", "password", "common-user@email.com", NotationUtil.hours)
     );
 
 
