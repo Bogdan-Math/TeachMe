@@ -15,7 +15,7 @@ import ua.teachme.util.user.UserUtil;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
-@ContextConfiguration("classpath:spring/repository-implementations.xml")
+@ContextConfiguration("classpath:spring/repository-mock.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 @ActiveProfiles(WorkBy.MOCK)
 public class InMemoryUserRepositoryImplTest {
