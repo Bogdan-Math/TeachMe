@@ -1,6 +1,8 @@
 package ua.teachme.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import ua.teachme.model.Notation;
 import ua.teachme.repository.NotationRepository;
@@ -18,11 +20,13 @@ public class NotationServiceImpl implements NotationService {
     private NotationRepository notationRepository;
 
     @Override
+    @Cacheable(value = "notations")
     public List<Notation> getAll() {
         return notationRepository.getAll();
     }
 
     @Override
+    @CacheEvict(value = "notations", allEntries = true)
     public Notation save(Notation entity) {
         return notationRepository.save(entity);
     }
@@ -33,11 +37,13 @@ public class NotationServiceImpl implements NotationService {
     }
 
     @Override
+    @CacheEvict(value = "notations", allEntries = true)
     public void delete(int id) {
         notationRepository.delete(id);
     }
 
     @Override
+    @Cacheable(value = "notations")
     public List<Notation> getBetween(LocalDate start, LocalDate end) {
         return getBetween(
                 LocalDateTime.of(start, LocalTime.MIN),
@@ -46,10 +52,8 @@ public class NotationServiceImpl implements NotationService {
     }
 
     @Override
+    @Cacheable(value = "notations")
     public List<Notation> getBetween(LocalDateTime start, LocalDateTime end) {
         return notationRepository.getBetween(start, end);
     }
-
-    @Override
-    public void evictCache() {}
 }

@@ -42,4 +42,8 @@ public abstract class AbstractNotationController {
                 NotationUtil.hours
         );
     }
+
+    public void evictCache(){
+        notationService.evictCache();
+    }
 }

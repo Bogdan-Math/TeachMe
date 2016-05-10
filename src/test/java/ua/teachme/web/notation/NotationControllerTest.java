@@ -1,5 +1,7 @@
 package ua.teachme.web.notation;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,16 @@ public class NotationControllerTest {
 
     @Autowired
     private NotationController notationController;
+
+    @Before
+    public void setUp(){
+        notationController.evictCache();
+    }
+
+    @After
+    public void tearDown(){
+
+    }
 
     @Test
     public void testNotationController(){
