@@ -8,6 +8,9 @@
                            http://www.springframework.org/schema/context/spring-context.xsd"
 >
 
+    <import resource="spring-cache.xml"/>
+
+    <!--enables scanning Spring's annotations-->
     <context:annotation-config/>
 
     <!--add all beans to ctx from "service (service)" layer-->
