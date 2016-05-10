@@ -1,5 +1,7 @@
 package ua.teachme.web.user;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,16 @@ public class UserControllerTest {
 
     @Autowired
     private UserController userController;
+
+    @Before
+    public void setUp(){
+        userController.evictCache();
+    }
+
+    @After
+    public void tearDown(){
+
+    }
 
     @Test
     public void testUserController(){

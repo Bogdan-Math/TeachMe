@@ -1,6 +1,8 @@
 package ua.teachme.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import ua.teachme.model.User;
 import ua.teachme.repository.UserRepository;
@@ -21,11 +23,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Cacheable(value = "users")
     public List<User> getAll() {
         return userRepository.getAll();
     }
 
     @Override
+    @CacheEvict(value = "users", allEntries = true)
     public User save(User entity) {
         return userRepository.save(entity);
     }
@@ -36,6 +40,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @CacheEvict(value = "users", allEntries = true)
     public void delete(int id) {
         userRepository.delete(id);
     }

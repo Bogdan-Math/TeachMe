@@ -49,4 +49,7 @@ public class NotationServiceImpl implements NotationService {
     public List<Notation> getBetween(LocalDateTime start, LocalDateTime end) {
         return notationRepository.getBetween(start, end);
     }
+
+    @Override
+    public void evictCache() {}
 }

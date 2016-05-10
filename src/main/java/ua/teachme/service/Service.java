@@ -9,4 +9,7 @@ public interface Service<T> {
     T save(T entity);
     T get(int id) throws EntityNotFoundException;
     void delete(int id);
+
+    //to clear cache
+    void evictCache();
 }

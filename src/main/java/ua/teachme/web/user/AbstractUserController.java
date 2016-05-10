@@ -31,4 +31,8 @@ public abstract class AbstractUserController {
         return userService.getByEmail(email);
     }
 
+    public void evictCache(){
+        userService.evictCache();
+    }
+
 }
