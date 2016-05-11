@@ -4,8 +4,13 @@
 
     <!--todo: select correct disk storage for cache-->
     <!--<diskStore path="java.io.tmpdir"/>-->
-
     <!-- objects are evicted from the cache every 60 seconds -->
+
+    <!--HIBERNATE cache (from db to model)-->
+    <cache name="ua.teachme.model.User"
+           maxElementsInMemory="10000"/>
+
+    <!--SERVICE layer cache (from repository to controller)-->
     <cache name="users"
            timeToLiveSeconds="60"
            maxElementsInMemory="1000"
