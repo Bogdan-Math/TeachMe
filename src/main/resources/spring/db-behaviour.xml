@@ -39,6 +39,27 @@
               p:dataSource-ref="jdbcDataSource"
               p:packagesToScan="ua.teachme.**.model">
 
+            <!--property map configuration-->
+            <property name="jpaPropertyMap">
+                <map>
+
+                    <!--console info-->
+                    <entry key="#{T(org.hibernate.cfg.AvailableSettings).FORMAT_SQL}" value="${hibernate.format_sql}"/>
+                    <entry key="#{T(org.hibernate.cfg.AvailableSettings).USE_SQL_COMMENTS}" value="${hibernate.use_sql_comments}"/>
+
+                    <!--hibernate cache properties-->
+                    <entry key="#{T(org.hibernate.cfg.AvailableSettings).CACHE_REGION_FACTORY}" value="org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory"/>
+
+                    <!--1-st level cache active forever it's constant, 2-nd and 3-rd allow changes-->
+                    <entry key="#{T(org.hibernate.cfg.AvailableSettings).USE_SECOND_LEVEL_CACHE}" value="true"/><!--default - false-->
+                    <entry key="#{T(org.hibernate.cfg.AvailableSettings).USE_QUERY_CACHE}" value="false"/> <!--default - false-->
+
+                    <!--config file location-->
+                    <entry key="#{T(org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory).NET_SF_EHCACHE_CONFIGURATION_RESOURCE_NAME}" value="cache/ehcache.xml"/>
+
+                </map>
+            </property>
+
             <!--inject implementation (Hibernate) in JPA-->
             <property name="jpaVendorAdapter">
                 <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
