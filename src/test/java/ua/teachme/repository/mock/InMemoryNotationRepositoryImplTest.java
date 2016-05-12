@@ -51,13 +51,13 @@ public class InMemoryNotationRepositoryImplTest {
     @Test
     public void testSave() throws Exception {
         assertEquals(8, notationRepository.getAll().size());
-        assertEquals(NotationUtil.notation, notationRepository.save(NotationUtil.notation));
+        assertEquals(NotationUtil.newNotation, notationRepository.save(NotationUtil.newNotation));
         assertEquals(9, notationRepository.getAll().size());
     }
 
     @Test
     public void testGet() throws Exception {
-        assertEquals(NotationUtil.notation, notationRepository.get(1));
+        assertEquals(NotationUtil.newNotation, notationRepository.get(1));
     }
 
     @Test

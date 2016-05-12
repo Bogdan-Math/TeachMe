@@ -9,9 +9,16 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import ua.teachme.model.Notation;
+import ua.teachme.model.User;
 import ua.teachme.profiles.ConnectTo;
 import ua.teachme.profiles.Populate;
 import ua.teachme.profiles.WorkBy;
+import ua.teachme.util.exception.EntityNotFoundException;
+import ua.teachme.util.notation.NotationUtil;
+import ua.teachme.util.user.UserUtil;
+
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -43,31 +50,53 @@ public class NotationServiceImplTest {
 
     @Test
     public void testGetAll() throws Exception {
-
+        List<Notation> notations = notationService.getAll();
+        assertNotNull(notations);
+        assertEquals(3, notations.size());
     }
 
     @Test
     public void testSave() throws Exception {
-
+        assertEquals(6, notationService.getAll().size());
+        assertEquals(NotationUtil.newNotation, notationService.save(NotationUtil.newNotation));
+        assertEquals(7, notationService.getAll().size());
     }
 
-    @Test
+    @Test(expected = EntityNotFoundException.class)
     public void testGet() throws Exception {
-
+        assertEquals(NotationUtil.notations.get(0), notationService.get(1000007));
+        notationService.get(-1);
     }
 
-    @Test
+    @Test(expected = EntityNotFoundException.class)
     public void testDelete() throws Exception {
-
+        assertEquals(6, notationService.getAll().size());
+        notationService.delete(1000007);
+        assertEquals(5, notationService.getAll().size());
+        notationService.get(1000007);
     }
 
     @Test
-    public void testGetBetween() throws Exception {
-
+    public void testGetBetween_1() throws Exception {
+        Notation notation = notationService.get(1000007);
+        assertEquals(
+                2,
+                notationService.getBetween(
+                        notation.getDate(),
+                        notation.getDate()
+                ).size()
+        );
     }
 
     @Test
-    public void testGetBetween1() throws Exception {
-
+    public void testGetBetween_2() throws Exception {
+        Notation notation = notationService.get(1000007);
+        assertEquals(
+                2,
+                notationService.getBetween(
+                        notation.getCreatedDateAndTime(),
+                        notation.getCreatedDateAndTime()
+                ).size()
+        );
     }
 }

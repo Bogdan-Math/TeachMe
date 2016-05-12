@@ -16,18 +16,16 @@ public class NotationUtil {
     public static int hours = 8;
 
     public static List<Notation> notations = Arrays.asList(
-            new Notation("name1", "URL", "description", 1, LocalDateTime.now()),
-            new Notation("name2", "URL", "description", 4, LocalDateTime.now()),
-            new Notation("name3", "URL", "description", 7, LocalDateTime.now()),
-            new Notation("name4", "URL", "description", 2, LocalDateTime.now()),
-            new Notation("name5", "URL", "description", 4, LocalDateTime.of(2016, Month.MARCH, 13, 11, 35)),
-            new Notation("name6", "URL", "description", 1, LocalDateTime.of(2016, Month.MARCH, 13, 21, 55)),
-            new Notation("name7", "URL", "description", 3, LocalDateTime.of(2016, Month.MARCH, 13, 22, 15)),
-            new Notation("name8", "URL", "description", 0, LocalDateTime.of(2016, Month.MARCH, 13, 23, 31))
+            new Notation("notation1", "http://url1.com", "desc1", 1, LocalDateTime.now()),
+            new Notation("notation2", "http://url2.com", "desc2", 2, LocalDateTime.now()),
+            new Notation("notation3", "http://url3.com", "desc1", 3, LocalDateTime.now()),
+            new Notation("notation4", "http://url4.com", "desc1", 4, LocalDateTime.now()),
+            new Notation("notation5", "http://url5.com", "desc1", 5, LocalDateTime.of(2016, Month.MARCH, 13, 11, 35)),
+            new Notation("notation6", "http://url6.com", "desc1", 6, LocalDateTime.of(2016, Month.MARCH, 13, 21, 55))
     );
 
-    public static Notation notation = new Notation(notations.get(0));
-    public static Notation newNotation = new Notation(notations.get(0));
+    public static Notation newNotation = new Notation("name", "URL", "description", 1, LocalDateTime.now());
+    public static Notation equalNotation = new Notation("name", "URL", "description", 1, LocalDateTime.now());
 
     public static void main(String[] args) {
         getFilteredNotationsExceedWithStreams(notations, LocalTime.of(11, 0), LocalTime.of(23, 0), hours).forEach(System.out::println);
