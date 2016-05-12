@@ -44,27 +44,27 @@ public class InMemoryNotationRepositoryImplTest {
 
     @Test
     public void testGetAll() throws Exception {
-        assertThat(notationRepository.getAll(), is(NotationUtil.notations));
-        assertEquals(8, notationRepository.getAll().size());
+//        assertThat(notationRepository.getAll(), is(NotationUtil.notations));
+        assertEquals(6, notationRepository.getAll().size());
     }
 
     @Test
     public void testSave() throws Exception {
-        assertEquals(8, notationRepository.getAll().size());
+        assertEquals(6, notationRepository.getAll().size());
         assertEquals(NotationUtil.newNotation, notationRepository.save(NotationUtil.newNotation));
-        assertEquals(9, notationRepository.getAll().size());
+        assertEquals(7, notationRepository.getAll().size());
     }
 
     @Test
     public void testGet() throws Exception {
-        assertEquals(NotationUtil.newNotation, notationRepository.get(1));
+        assertEquals(NotationUtil.notations.get(0), notationRepository.get(1));
     }
 
     @Test
     public void testDelete() throws Exception {
-        assertEquals(8, notationRepository.getAll().size());
+        assertEquals(6, notationRepository.getAll().size());
         notationRepository.delete(1);
-        assertEquals(7, notationRepository.getAll().size());
+        assertEquals(5, notationRepository.getAll().size());
     }
 
     @Test

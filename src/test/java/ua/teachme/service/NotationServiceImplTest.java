@@ -52,7 +52,7 @@ public class NotationServiceImplTest {
     public void testGetAll() throws Exception {
         List<Notation> notations = notationService.getAll();
         assertNotNull(notations);
-        assertEquals(3, notations.size());
+        assertEquals(6, notations.size());
     }
 
     @Test
