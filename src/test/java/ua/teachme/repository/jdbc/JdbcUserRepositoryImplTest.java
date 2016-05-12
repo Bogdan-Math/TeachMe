@@ -3,10 +3,28 @@ package ua.teachme.repository.jdbc;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.jdbc.Sql;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import ua.teachme.profiles.ConnectTo;
+import ua.teachme.profiles.Populate;
+import ua.teachme.profiles.WorkBy;
+import ua.teachme.repository.UserRepository;
 
 import static org.junit.Assert.*;
 
+@ContextConfiguration({"classpath:spring/spring-app.xml", "classpath:spring/db-connect.xml", "classpath:spring/db-behaviour.xml"})
+@RunWith(SpringJUnit4ClassRunner.class)
+@ActiveProfiles({ConnectTo.HSQLDB, WorkBy.JDBC})
+@Sql(scripts = Populate.HSQLDB) //execute before every test in this class
+//todo: add more requirements and checks to tests
 public class JdbcUserRepositoryImplTest {
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Before
     public void setUp() throws Exception {
@@ -16,6 +34,12 @@ public class JdbcUserRepositoryImplTest {
     @After
     public void tearDown() throws Exception {
 
+    }
+
+    @Test
+    public void testUserRepository(){
+        assertNotNull(userRepository);
+        assertEquals(JdbcUserRepositoryImpl.class, userRepository.getClass());
     }
 
     @Test
