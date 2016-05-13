@@ -1,10 +1,7 @@
 package ua.teachme.web;
 
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.GenericXmlApplicationContext;
-import ua.teachme.profiles.ConnectTo;
-import ua.teachme.profiles.WorkBy;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,21 +11,17 @@ import java.io.IOException;
 
 public class IndexServlet extends HttpServlet{
 
-    private static GenericXmlApplicationContext springContext;
+    private static WebApplicationContext springContext;
 
     @Override
     public void init() throws ServletException {
         super.init();
-        springContext = new GenericXmlApplicationContext();
-        springContext.getEnvironment().setActiveProfiles(ConnectTo.POSTGRESQL, WorkBy.JPA);
-        springContext.load("spring/spring-app.xml", "spring/db-connect.xml", "spring/db-behaviour.xml");
-        springContext.refresh();
+        springContext = WebApplicationContextUtils.getRequiredWebApplicationContext(getServletContext());
     }
-
 
     @Override
     public void destroy() {
-        springContext.close();
+        //springContext.close();
         super.destroy();
     }
 
@@ -42,7 +35,7 @@ public class IndexServlet extends HttpServlet{
         response.sendRedirect("/notations.jsp");
     }
 
-    public static ConfigurableApplicationContext getSpringContext() {
+    public static WebApplicationContext getSpringContext() {
         return springContext;
     }
 }
