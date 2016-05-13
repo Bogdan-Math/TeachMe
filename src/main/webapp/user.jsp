@@ -3,14 +3,22 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
-    <jsp:include page="fragments/title.jsp"/>
+<jsp:include page="fragments/title.jsp"/>
 
 <body>
-    <header>
-        <jsp:include page="fragments/header.jsp"/>
-    </header>
+<header>
+    <jsp:include page="fragments/header.jsp"/>
+</header>
 
 <jsp:useBean id="selectedUser" scope="request" type="ua.teachme.model.User"/>
+<dl>
+    <dd>
+        <label>
+            <input type="text" value="${selectedUser.mainGoal} : ${selectedUser.mainGoal.description}" name="mainGoal">
+        </label>
+    </dd>
+</dl>
+
 <dl>
     <dd>
         <label>
@@ -73,8 +81,8 @@
     </dd>
 </dl>
 
-    <footer>
-        <jsp:include page="fragments/footer.jsp"/>
-    </footer>
+<footer>
+    <jsp:include page="fragments/footer.jsp"/>
+</footer>
 </body>
 </html>
