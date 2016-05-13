@@ -3,10 +3,10 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
-<head>
-    <title>Notations</title>
-    <link rel="stylesheet" href="css/main.css">
-</head>
+    <head>
+        <title>Notations</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
 <body>
 <h2><a href="index.jsp">Home</a></h2>
 
