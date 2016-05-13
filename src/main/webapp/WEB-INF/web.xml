@@ -4,6 +4,27 @@
          id="WebApp_ID" version="2.5">
 
     <display-name>TeachMe</display-name>
+    
+    <!-- create app-context under the app code, and load configs from context params -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!--load configs for app-context-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath:spring/db-connect.xml
+            classpath:spring/db-behaviour.xml
+            classpath:spring/spring-app.xml
+        </param-value>
+    </context-param>
+
+    <!--set profiles for app-context-->
+    <context-param>
+        <param-name>spring.profiles.default</param-name>
+        <param-value>connect-PostgreSQL,JPA</param-value>
+    </context-param>
 
     <!-- mapping request {ip:port}/TeachMe/index to IndexServlet -->
     <servlet>
