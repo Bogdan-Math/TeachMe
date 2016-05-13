@@ -3,9 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
-    <head>
-        <jsp:include page="fragments/title.jsp"/>
-    </head>
+    <jsp:include page="fragments/title.jsp"/>
 
 <body>
     <header>

@@ -2,7 +2,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<title>
-    <fmt:setBundle basename="strings.app"/>
-    <fmt:message key="app.title"/>
-</title>
+<head>
+    <title>
+        <fmt:setBundle basename="strings.app"/>
+        <fmt:message key="app.title"/>
+    </title>
+    <link rel="stylesheet" href="css/main.css">
+</head>

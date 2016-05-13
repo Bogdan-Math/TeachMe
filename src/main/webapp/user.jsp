@@ -3,13 +3,14 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
-<head>
-    <title>User</title>
-</head>
-<body>
-<h2><a href="index.jsp">Home</a></h2>
-<jsp:useBean id="selectedUser" scope="request" type="ua.teachme.model.User"/>
+    <jsp:include page="fragments/title.jsp"/>
 
+<body>
+    <header>
+        <jsp:include page="fragments/header.jsp"/>
+    </header>
+
+<jsp:useBean id="selectedUser" scope="request" type="ua.teachme.model.User"/>
 <dl>
     <dd>
         <label>
@@ -72,6 +73,8 @@
     </dd>
 </dl>
 
-<a href="notations">notations</a>
+    <footer>
+        <jsp:include page="fragments/footer.jsp"/>
+    </footer>
 </body>
 </html>

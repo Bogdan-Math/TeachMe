@@ -3,12 +3,12 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
-    <head>
-        <title>Notations</title>
-        <link rel="stylesheet" href="css/main.css">
-    </head>
+<jsp:include page="fragments/title.jsp"/>
+
 <body>
-<h2><a href="index.jsp">Home</a></h2>
+    <header>
+        <jsp:include page="fragments/header.jsp"/>
+    </header>
 
 <form method="post" action="notations?action=filter">
 
@@ -84,5 +84,8 @@
     </c:forEach>
 </table>
 
+    <footer>
+        <jsp:include page="fragments/footer.jsp"/>
+    </footer>
 </body>
 </html>

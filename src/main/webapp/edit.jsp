@@ -1,10 +1,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <html>
-<head>
-    <title>Edit</title>
-</head>
+    <jsp:include page="fragments/title.jsp"/>
+
 <body>
-<h2><a href="index.jsp">Home</a></h2>
+    <header>
+        <jsp:include page="fragments/header.jsp"/>
+    </header>
+
 
 <jsp:useBean id="notation" scope="request" type="ua.teachme.model.Notation"/>
 <form method="post" action="notations">
@@ -42,5 +47,9 @@
     <button type="submit">save</button>
     <button onclick="window.history.back()">cancel</button>
 </form>
+
+    <footer>
+        <jsp:include page="fragments/footer.jsp"/>
+    </footer>
 </body>
 </html>

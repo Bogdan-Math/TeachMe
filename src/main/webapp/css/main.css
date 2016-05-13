@@ -1,7 +1,32 @@
+dl {
+    background: none repeat scroll 0 0 #bbfab7;
+    margin: 8px 0;
+    padding: 0;
+}
+
+dt {
+    display: inline-block;
+    width: 170px;
+}
+
+dd {
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: top;
+}
+
+header, footer {
+    background: none repeat scroll 0 0 #24e288;
+    color: #096f11;
+    font-size: 20px;
+    padding: 5px 20px;
+    margin: 6px 0;
+}
+
 .exceed {
     color: red;
 }
 
 .normal {
-    color: green;
+    color: #1596b6;
 }
