@@ -190,6 +190,13 @@
             <version>${spring-data-jpa.version}</version>
         </dependency>
 
+        <!--tomcat jdbc driver (can use pool of connections unlike spring-jdbc)-->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jdbc</artifactId>
+            <version>${tomcat.version}</version>
+        </dependency>
+
         <!--Hibernate - implementation of JPA-->
         <dependency>
             <groupId>org.hibernate</groupId>

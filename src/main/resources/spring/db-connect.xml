@@ -12,15 +12,15 @@
 
 
 >
-    <!--import properties from PostgreSQL.properties-->
+    <!--import properties from db.properties-->
     <context:property-placeholder location="classpath:db/db.properties"/>
 
     <!--connect to main db (for production)-->
     <beans profile="connect-PostgreSQL">
 
-        <!--todo: need change to tomcat-jdbc (with connection pool)-->
+        <!--expand data source driver manager, use pool of connections-->
         <bean id="jdbcDataSource"
-              class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+              class="org.apache.tomcat.jdbc.pool.DataSource">
             <property name="driverClassName" value="${postgres.driver}"/>
             <property name="url" value="${postgres.url}"/>
             <property name="username" value="${postgres.username}"/>
@@ -50,10 +50,12 @@
         </bean>
 
         <!--initialize db before every spring context usage-->
+<!--
         <jdbc:initialize-database data-source="jdbcDataSource" enabled="${hsqldb.init}">
             <jdbc:script location="classpath:db/hsqldb/initHSQLDB.sql"/>
             <jdbc:script location="classpath:db/hsqldb/populateHSQLDB.sql"/>
         </jdbc:initialize-database>
+-->
 
     </beans>
 
