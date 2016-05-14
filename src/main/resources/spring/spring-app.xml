@@ -16,7 +16,4 @@
     <!--add all beans to ctx from "service (service)" layer-->
     <context:component-scan base-package="ua.teachme.**.service"/>
 
-    <!--add all beans to ctx from "web (controller)" layer-->
-    <context:component-scan base-package="ua.teachme.**.web"/>
-
 </beans>

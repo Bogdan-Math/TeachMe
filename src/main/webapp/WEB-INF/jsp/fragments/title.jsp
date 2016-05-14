@@ -7,5 +7,5 @@
         <fmt:setBundle basename="strings.app"/>
         <fmt:message key="app.title"/>
     </title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="resources/css/main.css">
 </head>

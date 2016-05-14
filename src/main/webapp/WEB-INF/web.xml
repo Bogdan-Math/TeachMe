@@ -26,38 +26,54 @@
         <param-value>connect-PostgreSQL,JPA</param-value>
     </context-param>
 
-    <!-- mapping request {ip:port}/TeachMe/index to IndexServlet -->
+    <!--Spring MVC-->
     <servlet>
-        <servlet-name>indexServlet</servlet-name>
-        <servlet-class>ua.teachme.web.IndexServlet</servlet-class>
-        <load-on-startup>0</load-on-startup>
+        <servlet-name>mvc-dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:spring/spring-mvc.xml</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
-        <servlet-name>indexServlet</servlet-name>
-        <url-pattern>/index</url-pattern>
+        <servlet-name>mvc-dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <!-- mapping request {ip:port}/TeachMe/users to UserServlet -->
-    <servlet>
-        <servlet-name>userServlet</servlet-name>
-        <servlet-class>ua.teachme.web.UserServlet</servlet-class>
-        <load-on-startup>0</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>userServlet</servlet-name>
-        <url-pattern>/user</url-pattern>
-        <url-pattern>/users</url-pattern>
-    </servlet-mapping>
+    <!--
+        &lt;!&ndash; mapping request {ip:port}/TeachMe/index to IndexServlet &ndash;&gt;
+        <servlet>
+            <servlet-name>indexServlet</servlet-name>
+            <servlet-class>ua.teachme.web.IndexServlet</servlet-class>
+            <load-on-startup>0</load-on-startup>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>indexServlet</servlet-name>
+            <url-pattern>/index</url-pattern>
+        </servlet-mapping>
 
-    <!-- mapping request {ip:port}/TeachMe/notations to NotationServlet -->
-    <servlet>
-        <servlet-name>notationServlet</servlet-name>
-        <servlet-class>ua.teachme.web.NotationServlet</servlet-class>
-        <load-on-startup>0</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>notationServlet</servlet-name>
-        <url-pattern>/notations</url-pattern>
-    </servlet-mapping>
+        &lt;!&ndash; mapping request {ip:port}/TeachMe/users to UserServlet &ndash;&gt;
+        <servlet>
+            <servlet-name>userServlet</servlet-name>
+            <servlet-class>ua.teachme.web.UserServlet</servlet-class>
+            <load-on-startup>0</load-on-startup>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>userServlet</servlet-name>
+            <url-pattern>/user</url-pattern>
+            <url-pattern>/users</url-pattern>
+        </servlet-mapping>
+
+        &lt;!&ndash; mapping request {ip:port}/TeachMe/notations to NotationServlet &ndash;&gt;
+        <servlet>
+            <servlet-name>notationServlet</servlet-name>
+            <servlet-class>ua.teachme.web.NotationServlet</servlet-class>
+            <load-on-startup>0</load-on-startup>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>notationServlet</servlet-name>
+            <url-pattern>/notations</url-pattern>
+        </servlet-mapping>
+    -->
 
 </web-app>
