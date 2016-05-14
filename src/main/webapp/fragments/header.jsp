@@ -16,3 +16,10 @@
         <fmt:message key="app.notations"/>
     </a>
 </<br>
+
+<br>
+<a href="users">
+    <fmt:setBundle basename="strings.app"/>
+    <fmt:message key="app.users"/>
+</a>
+</<br>

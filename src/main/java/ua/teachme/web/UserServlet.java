@@ -16,7 +16,9 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+        request.setAttribute("users", userController.getAll());
+        request.getRequestDispatcher("users.jsp").forward(request, response);
+        //doPost(request, response);
     }
 
     @Override
