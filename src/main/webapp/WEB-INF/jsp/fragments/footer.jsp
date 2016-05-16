@@ -3,6 +3,5 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <header>
-    <fmt:setBundle basename="strings.app"/>
     <fmt:message key="app.on_github"/>
 </header>

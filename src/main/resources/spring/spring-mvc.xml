@@ -16,10 +16,22 @@
     <!--add all beans to ctx from "web (controller)" layer-->
     <context:component-scan base-package="ua.teachme.**.web"/>
 
-    <!--  all resources inside folder src/main/webapp/resources are mapped so they can be referred to inside JSP files -->
+    <!--all resources inside folder src/main/webapp/resources are mapped so they can be referred inside JSP file-->
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
+    <!--all jsp inside folder src/main/webapp/WEB-INF are mapped so they can be referred to controller returned values-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"
           p:suffix=".jsp"/>
+
+    <!--all resources inside folder src/main/resources/strings are mapped so they can be referred inside JSP file-->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="basenames">
+            <list>
+                <value>strings/app</value>
+            </list>
+        </property>
+    </bean>
+
 </beans>

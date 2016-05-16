@@ -4,7 +4,6 @@
 
 <head>
     <title>
-        <fmt:setBundle basename="strings.app"/>
         <fmt:message key="app.title"/>
     </title>
     <link rel="stylesheet" href="resources/css/main.css">

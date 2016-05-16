@@ -5,21 +5,18 @@
 
 <br>
     <a href="index">
-        <fmt:setBundle basename="strings.app"/>
         <fmt:message key="app.title"/>
     </a>
 </<br>
 
 <br>
     <a href="notations">
-        <fmt:setBundle basename="strings.app"/>
         <fmt:message key="app.notations"/>
     </a>
 </<br>
 
 <br>
 <a href="users">
-    <fmt:setBundle basename="strings.app"/>
     <fmt:message key="app.users"/>
 </a>
 </<br>
