@@ -13,14 +13,15 @@ import ua.teachme.profiles.ConnectTo;
 import ua.teachme.profiles.Populate;
 import ua.teachme.profiles.WorkBy;
 import ua.teachme.repository.UserRepository;
+import ua.teachme.util.user.UserUtil;
 
 import static org.junit.Assert.*;
 
 @ContextConfiguration({"classpath:spring/spring-app.xml", "classpath:spring/db-connect.xml", "classpath:spring/db-behaviour.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
-@ActiveProfiles({ConnectTo.HSQLDB, WorkBy.JDBC})
-@Sql(scripts = Populate.HSQLDB) //execute before every test in this class
-//todo: add more requirements and checks to tests
+@ActiveProfiles({ConnectTo.POSTGRESQL, WorkBy.JDBC})
+@Sql(scripts = Populate.POSTGRESQL) //execute before every test in this class
+//todo: to use HSQLDB in jdbc test need to add strategy (Timestamp to localDateTime and reverse)
 public class JdbcUserRepositoryImplTest {
 
     @Autowired
@@ -44,26 +45,30 @@ public class JdbcUserRepositoryImplTest {
 
     @Test
     public void testGetByEmail() throws Exception {
-
+        assertEquals(UserUtil.admin, userRepository.getByEmail("admin@gmail.com"));
     }
 
     @Test
     public void testGetAll() throws Exception {
-
+        assertEquals(3, userRepository.getAll().size());
     }
 
     @Test
     public void testSave() throws Exception {
-
+        assertEquals(3, userRepository.getAll().size());
+        assertEquals(UserUtil.equalUser, userRepository.save(UserUtil.newUser));
+        assertEquals(4, userRepository.getAll().size());
     }
 
     @Test
     public void testGet() throws Exception {
-
+        assertEquals(UserUtil.anonymous, userRepository.get(1000001));
     }
 
     @Test
     public void testDelete() throws Exception {
-
+        assertEquals(3, userRepository.getAll().size());
+        userRepository.delete(1000001);
+        assertEquals(2, userRepository.getAll().size());
     }
 }
