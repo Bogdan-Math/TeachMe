@@ -31,11 +31,11 @@ public class NotationServlet extends HttpServlet {
         }
         else if ("create".equals(action)) {
             request.setAttribute("notation", new Notation("", "", "", 0, LocalDateTime.now()));
-            request.getRequestDispatcher("/edit.jsp").forward(request, response);
+            request.getRequestDispatcher("/notation.jsp").forward(request, response);
         }
         else if ("update".equals(action)) {
             request.setAttribute("notation", notationController.get(getIdFromRequest(request)));
-            request.getRequestDispatcher("/edit.jsp").forward(request, response);
+            request.getRequestDispatcher("/notation.jsp").forward(request, response);
         }
         else {
             response.sendRedirect("index.jsp");

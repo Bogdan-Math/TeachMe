@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
-<jsp:include page="fragments/title.jsp"/>
+    <jsp:include page="fragments/title.jsp"/>
 
 <body>
     <header>
@@ -77,8 +77,8 @@
             <td>${notation.description}</td>
             <td>${notation.hours}</td>
             <td>${notation.date} : ${notation.time}</td>
-            <td><a href="notations?action=update&id=${notation.id}">update</a></td>
-            <td><a href="notations?action=delete&id=${notation.id}">delete</a></td>
+            <td><a href="notations/update?id=${notation.id}">update</a></td>
+            <td><a href="notations/delete?id=${notation.id}">delete</a></td>
         </tr>
 
     </c:forEach>

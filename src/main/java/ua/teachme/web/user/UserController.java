@@ -19,13 +19,13 @@ public class UserController extends AbstractUserController{
     }
 
     @Override
-    public User save(User user) {
-        return super.save(user);
+    public User get(int id) {
+        return super.get(id);
     }
 
     @Override
-    public User get(int id) {
-        return super.get(id);
+    public User save(User user) {
+        return super.save(user);
     }
 
     @Override
