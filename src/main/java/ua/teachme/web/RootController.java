@@ -10,33 +10,17 @@ import ua.teachme.service.UserService;
 import ua.teachme.util.notation.NotationUtil;
 
 @Controller
+@RequestMapping(method = RequestMethod.GET)
 public class RootController {
 
-    @Autowired
-    private UserService userService;
-
-    @Autowired
-    private NotationService notationService;
-
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/")
     public String root(){
         return "index";
     }
 
-    @RequestMapping(value = "index", method = RequestMethod.GET)
+    @RequestMapping(value = "index")
     public String index(){
         return "index";
     }
-
-    @RequestMapping(value = "users", method = RequestMethod.GET)
-    public String users(Model model){
-        model.addAttribute("users", userService.getAll());
-        return "users";
-    }
-
-    @RequestMapping(value = "notations", method = RequestMethod.GET)
-    public String notations(Model model){
-        model.addAttribute("notations", NotationUtil.getFilteredWithExceed(notationService.getAll(), NotationUtil.hours));
-        return "notations";
-    }
 }
+

@@ -1,21 +1,21 @@
 package ua.teachme.web.user;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import ua.teachme.model.User;
 
 import java.util.List;
 
 @Controller
+@RequestMapping(value = "/users")
 public class UserController extends AbstractUserController{
 
-    @Override
-    public User getByEmail(String email) {
-        return super.getByEmail(email);
-    }
-
-    @Override
-    public List<User> getAll() {
-        return super.getAll();
+    @RequestMapping(method = RequestMethod.GET)
+    public String getAll(Model model) {
+        model.addAttribute("users", super.getAll());
+        return "users";
     }
 
     @Override
@@ -31,5 +31,10 @@ public class UserController extends AbstractUserController{
     @Override
     public void delete(int id) {
         super.delete(id);
+    }
+
+    @Override
+    public User getByEmail(String email) {
+        return super.getByEmail(email);
     }
 }
