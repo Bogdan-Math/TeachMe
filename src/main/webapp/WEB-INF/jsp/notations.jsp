@@ -10,7 +10,7 @@
         <jsp:include page="fragments/header.jsp"/>
     </header>
 
-<form method="post" action="notations?action=filter">
+<form method="post" action="notations/filter">
 
     <dl>
         <dt>start date</dt>
@@ -50,11 +50,13 @@
     </dl>
 
     <button type="submit">filter</button>
+<%--
     <button type="reset">reset</button>
+--%>
 </form>
 
 <table border="1">
-<a href="notations?action=create">add notation</a>
+<a href="notations/add">add notation</a>
     <thead>
     <tr>
         <th>name</th>
