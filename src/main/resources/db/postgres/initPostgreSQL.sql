@@ -47,3 +47,13 @@ CREATE TABLE notations(
   PRIMARY KEY (id),
   FOREIGN KEY (user_id)   REFERENCES users(id) ON DELETE CASCADE
 );
+
+/*init user_roles table*/
+DROP TABLE if EXISTS user_roles CASCADE;
+CREATE TABLE user_roles(
+  user_id                 INTEGER NOT NULL,
+
+  role                    VARCHAR,
+
+  FOREIGN KEY (user_id)   REFERENCES users(id) ON DELETE CASCADE
+);

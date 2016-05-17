@@ -34,3 +34,16 @@ VALUES (1000002, 'notation3', 'http://url3.com', 'desc3', 3, '2016-05-02 21:26:0
 INSERT INTO notations (user_id, name, url, description, hours, created_date_and_time)
 VALUES (1000003, 'notation5', 'http://url5.com', 'desc5', 5, '2016-05-03 21:26:03'),
        (1000003, 'notation6', 'http://url6.com', 'desc6', 6, '2016-05-03 21:26:03');
+
+/*populate user_roles table*/
+DELETE FROM user_roles;
+
+INSERT INTO user_roles (user_id, role) VALUES (1000001, 'ANONYMOUS');
+
+INSERT INTO user_roles (user_id, role) VALUES (1000002, 'ANONYMOUS');
+INSERT INTO user_roles (user_id, role) VALUES (1000002, 'COMMON');
+
+INSERT INTO user_roles (user_id, role) VALUES (1000003, 'ANONYMOUS');
+INSERT INTO user_roles (user_id, role) VALUES (1000003, 'COMMON');
+INSERT INTO user_roles (user_id, role) VALUES (1000003, 'ADMIN');
+
