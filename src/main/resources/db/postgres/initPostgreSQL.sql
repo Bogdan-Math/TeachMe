@@ -23,10 +23,10 @@ CREATE TABLE main_goals
 (
   id                         INTEGER DEFAULT nextval('global_sequence'),
   user_id                    INTEGER /*NOT NULL*/,
+  UNIQUE (user_id),
 
   name                       VARCHAR NOT NULL,
   description                VARCHAR(255) NOT NULL,
-  UNIQUE (description),
 
   PRIMARY KEY (id),
   FOREIGN KEY (user_id)   REFERENCES users(id) ON DELETE CASCADE
