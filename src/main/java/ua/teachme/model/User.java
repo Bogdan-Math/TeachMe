@@ -37,12 +37,16 @@ public class User extends EntityName {
     @Column(name = "max_hours_per_day")
     private int maxHoursPerDay;
 
+    //todo: add get/set mainGoal tests
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "user")
     private MainGoal mainGoal;
 
+    //todo: add get/set notations tests
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private List<Notation> notations;
 
+    //todo: change to ManyToMany
+    //todo: add get/set roles tests
     @Enumerated(EnumType.STRING)
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
     @Column(name = "role")
