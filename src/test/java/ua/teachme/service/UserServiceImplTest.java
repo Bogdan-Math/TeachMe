@@ -17,6 +17,7 @@ import ua.teachme.profiles.WorkBy;
 import ua.teachme.util.exception.EntityNotFoundException;
 import ua.teachme.util.user.UserUtil;
 
+import java.util.Comparator;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -59,6 +60,7 @@ public class UserServiceImplTest {
         List<User> users = userService.getAll();
         assertNotNull(users);
         assertEquals(3, users.size());
+        assertTrue(users.containsAll(UserUtil.users) && UserUtil.users.containsAll(users));
     }
 
     @Test(expected = DataIntegrityViolationException.class)

@@ -53,6 +53,7 @@ public class NotationServiceImplTest {
         List<Notation> notations = notationService.getAll();
         assertNotNull(notations);
         assertEquals(6, notations.size());
+        assertTrue(notations.containsAll(NotationUtil.notations) && NotationUtil.notations.containsAll(notations));
     }
 
     @Test
