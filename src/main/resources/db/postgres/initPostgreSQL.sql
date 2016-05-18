@@ -51,6 +51,7 @@ CREATE TABLE notations(
 /*init user_roles table*/
 DROP TABLE if EXISTS user_roles CASCADE;
 CREATE TABLE user_roles(
+  id                      INTEGER DEFAULT nextval('global_sequence'),
   user_id                 INTEGER NOT NULL,
 
   role                    VARCHAR,

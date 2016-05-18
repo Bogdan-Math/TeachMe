@@ -16,9 +16,9 @@ VALUES ('Admin', 'password', 'admin@gmail.com');
 /*populate main_goals table*/
 DELETE FROM main_goals;
 
-INSERT INTO main_goals (user_id, description) VALUES (1000001, 'main goal 1');
-INSERT INTO main_goals (user_id, description) VALUES (1000002, 'main goal 2');
-INSERT INTO main_goals (user_id, description) VALUES (1000003, 'main goal 3');
+INSERT INTO main_goals (user_id, name, description) VALUES (1000001, 'm1', 'main goal 1');
+INSERT INTO main_goals (user_id, name, description) VALUES (1000002, 'm2', 'main goal 2');
+INSERT INTO main_goals (user_id, name, description) VALUES (1000003, 'm3', 'main goal 3');
 
 /*populate notations table*/
 DELETE FROM notations;
@@ -34,3 +34,16 @@ VALUES (1000002, 'notations3', 'http://url3.com', 'desc3', 3, '2016-05-02 21:26:
 INSERT INTO notations (user_id, name, url, description, hours, created_date_and_time)
 VALUES (1000003, 'notations5', 'http://url5.com', 'desc5', 5, '2016-05-03 21:26:03'),
        (1000003, 'notations6', 'http://url6.com', 'desc6', 6, '2016-05-03 21:26:03');
+
+/*populate user_roles table*/
+DELETE FROM user_roles;
+
+INSERT INTO user_roles (user_id, role) VALUES (1000001, 'ANONYMOUS');
+
+INSERT INTO user_roles (user_id, role) VALUES (1000002, 'ANONYMOUS');
+INSERT INTO user_roles (user_id, role) VALUES (1000002, 'COMMON');
+
+INSERT INTO user_roles (user_id, role) VALUES (1000003, 'ANONYMOUS');
+INSERT INTO user_roles (user_id, role) VALUES (1000003, 'COMMON');
+INSERT INTO user_roles (user_id, role) VALUES (1000003, 'ADMIN');
+
