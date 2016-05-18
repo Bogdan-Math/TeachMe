@@ -26,7 +26,7 @@ CREATE TABLE main_goals
   UNIQUE (user_id),
 
   name                       VARCHAR NOT NULL,
-  description                VARCHAR(255) NOT NULL,
+  description                VARCHAR NOT NULL,
 
   PRIMARY KEY (id),
   FOREIGN KEY (user_id)   REFERENCES users(id) ON DELETE CASCADE
