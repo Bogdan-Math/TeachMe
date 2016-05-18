@@ -19,9 +19,8 @@ import static org.junit.Assert.*;
 
 @ContextConfiguration({"classpath:spring/spring-app.xml", "classpath:spring/db-connect.xml", "classpath:spring/db-behaviour.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
-@ActiveProfiles({ConnectTo.POSTGRESQL, WorkBy.JDBC})
-@Sql(scripts = Populate.POSTGRESQL) //execute before every test in this class
-//todo: to use HSQLDB in jdbc test need to add strategy (Timestamp to localDateTime and reverse)
+@ActiveProfiles({ConnectTo.HSQLDB, WorkBy.JDBC})
+@Sql(scripts = Populate.HSQLDB) //execute before every test in this class
 public class JdbcUserRepositoryImplTest {
 
     @Autowired

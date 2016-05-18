@@ -58,6 +58,14 @@ public class User extends EntityName {
         this(user.getId(), user.getName(), user.getPassword(), user.getEmail(), user.getMaxHoursPerDay());
     }
 
+    public User(Integer id, String name, String password, String email, int maxHoursPerDay, LocalDateTime registeredDateAndTime) {
+        super(id, name);
+        this.password = password;
+        this.email = email;
+        this.maxHoursPerDay = maxHoursPerDay;
+        this.registeredDateAndTime = registeredDateAndTime;
+    }
+
     public User(Integer id, String name, String password, String email, int maxHoursPerDay) {
         super(id, name);
         this.password = password;
