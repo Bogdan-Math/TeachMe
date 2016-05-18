@@ -43,8 +43,10 @@ public class User extends EntityName {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private List<Notation> notations;
 
-    //todo set annotations to correct mapping
-    @Transient()// - to ignore field
+    @Enumerated(EnumType.STRING)
+    @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
+    @Column(name = "role")
+    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     private Set<Role> roles;
 
     @Column(name = "registered_date_and_time")
