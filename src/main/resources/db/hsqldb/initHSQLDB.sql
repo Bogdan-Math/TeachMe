@@ -25,6 +25,7 @@ CREATE TABLE main_goals
   user_id                    INTEGER /*NOT NULL*/,
   UNIQUE (user_id),
 
+  name                       VARCHAR(255) NOT NULL,
   description                VARCHAR(255) NOT NULL,
 
   PRIMARY KEY (id),
@@ -44,5 +45,15 @@ CREATE TABLE notations(
   created_date_and_time   TIMESTAMP DEFAULT now(),
 
   PRIMARY KEY (id),
+  FOREIGN KEY (user_id)   REFERENCES users(id) ON DELETE CASCADE
+);
+
+/*init user_roles table*/
+DROP TABLE if EXISTS user_roles CASCADE;
+CREATE TABLE user_roles(
+  user_id                 INTEGER NOT NULL,
+
+  role                    VARCHAR(255),
+
   FOREIGN KEY (user_id)   REFERENCES users(id) ON DELETE CASCADE
 );
