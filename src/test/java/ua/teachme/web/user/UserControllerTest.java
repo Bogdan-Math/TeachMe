@@ -1,60 +1,25 @@
 package ua.teachme.web.user;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import ua.teachme.profiles.ConnectTo;
-import ua.teachme.profiles.Populate;
-import ua.teachme.profiles.WorkBy;
-import ua.teachme.util.exception.EntityNotFoundException;
-import ua.teachme.util.user.UserUtil;
+import ua.teachme.model.User;
 
 import static org.junit.Assert.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
-public class UserControllerTest {
-
-    @Before
-    public void setUp(){
-    }
-
-    @After
-    public void tearDown(){
-
-    }
-
-    @Test
-    public void testUserController(){
-
-    }
-
-    @Test
-    public void testGetByEmail() throws Exception {
-
-    }
+public class UserControllerTest extends AbstractUserControllerTest {
 
     @Test
     public void testGetAll() throws Exception {
-
-    }
-
-    @Test
-    public void testSave() throws Exception {
+        super.getMockMvc()
+                .perform(get("/users"))
+                .andDo(print());
 
     }
 
     @Test
     public void testGet() throws Exception {
-
-    }
-
-    @Test
-    public void testDelete() throws Exception {
-
+        User user =  super.getUserController().get(1000001);
+        user.getNotations().forEach(System.out::println);
     }
 }
