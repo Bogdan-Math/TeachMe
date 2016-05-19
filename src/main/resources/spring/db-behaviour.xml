@@ -81,7 +81,9 @@
               p:entityManagerFactory-ref="entityManagerFactory"/>
 
         <!--need to clear 2-nd level hibernate cache-->
+<!--
         <bean id="jpaUtil" class="ua.teachme.util.jpa.JpaUtil"/>
+-->
     </beans>
 
     <beans profile="JDBC">
