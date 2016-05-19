@@ -53,12 +53,4 @@ public class InMemoryUserRepositoryImpl implements UserRepository {
     public User getByEmail(String email) {
         return userRepository.values().stream().filter(user -> user.getEmail().equals(email)).findFirst().orElse(null);
     }
-
-    @PostConstruct
-    public void postConstruct() {
-    }
-
-    @PreDestroy
-    public void preDestroy() {
-    }
 }
