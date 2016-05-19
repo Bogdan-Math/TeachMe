@@ -57,6 +57,13 @@
                     <!--config file location-->
                     <entry key="#{T(org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory).NET_SF_EHCACHE_CONFIGURATION_RESOURCE_NAME}" value="cache/ehcache.xml"/>
 
+                    <!--JPA auto generate db scripts (NOT db schema) from model-->
+<!--
+                    <entry key="javax.persistence.schema-generation.scripts.action" value="drop-and-create"/>
+                    <entry key="javax.persistence.schema-generation.scripts.create-target" value="${TEACHME_ROOT}/config/ddl/create.ddl"/>
+                    <entry key="javax.persistence.schema-generation.scripts.drop-target" value="${TEACHME_ROOT}/config/ddl/drop.ddl"/>
+-->
+
                 </map>
             </property>
 
