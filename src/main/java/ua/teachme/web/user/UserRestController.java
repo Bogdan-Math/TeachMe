@@ -41,4 +41,10 @@ public class UserRestController extends AbstractUserController{
     public void evictCache() {
         super.evictCache();
     }
+
+    @RequestMapping(value = "/textUA", method = RequestMethod.GET)
+    public String text() {
+        return "Українська мова !!!";
+    }
+
 }
