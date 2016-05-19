@@ -13,7 +13,7 @@
 
     <mvc:annotation-driven>
 
-        <!--correct convert to UA/RU etc. by Spring for REST (json)-->
+        <!--correct convert to UA/RU etc. if need to return only Sting from RestController (not json)-->
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.StringHttpMessageConverter">
                 <property name="supportedMediaTypes">

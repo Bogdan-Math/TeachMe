@@ -44,10 +44,19 @@
     <filter>
         <filter-name>encoder</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+
+        <!--convert to UA/RU etc. (UTF-8) to/from DB-->
         <init-param>
             <param-name>encoding</param-name>
             <param-value>UTF-8</param-value>
         </init-param>
+
+        <!--correct convert (UTF-8) if need to return JSON from RestController-->
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+
     </filter>
     <filter-mapping>
         <filter-name>encoder</filter-name>
