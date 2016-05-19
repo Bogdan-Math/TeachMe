@@ -37,4 +37,9 @@ public class UserController extends AbstractUserController{
     public User getByEmail(String email) {
         return super.getByEmail(email);
     }
+
+    @Override
+    public void evictCache() {
+        super.evictCache();
+    }
 }
