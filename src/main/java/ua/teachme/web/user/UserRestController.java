@@ -9,9 +9,10 @@ import ua.teachme.model.User;
 import java.util.List;
 
 @RestController
-@RequestMapping("/rest/users")
+@RequestMapping(value = "/rest/users")
 public class UserRestController extends AbstractUserController{
 
+    @Override
     @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<User> getAll() {
         return super.getAll();
@@ -46,5 +47,4 @@ public class UserRestController extends AbstractUserController{
     public String text() {
         return "Українська мова !!!";
     }
-
 }
