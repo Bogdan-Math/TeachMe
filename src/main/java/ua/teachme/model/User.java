@@ -1,5 +1,6 @@
 package ua.teachme.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -39,10 +40,12 @@ public class User extends EntityName {
 
     //todo: add get/set mainGoal tests
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "user")
+    @JsonIgnore // help to avoid: recursion calls/out of memory/stack overflow/no session(hibernate) exceptions
     private MainGoal mainGoal;
 
     //todo: add get/set notations tests
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    @JsonIgnore // help to avoid: recursion calls/out of memory/stack overflow/no session(hibernate) exceptions
     private List<Notation> notations;
 
     //todo: change to ManyToMany
@@ -51,6 +54,7 @@ public class User extends EntityName {
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
     @Column(name = "role")
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
+    @JsonIgnore // help to avoid: recursion calls/out of memory/stack overflow/no session(hibernate) exceptions
     private Set<Role> roles;
 
     @Column(name = "registered_date_and_time")

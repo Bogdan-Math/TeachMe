@@ -55,6 +55,9 @@
         <!--ehcache-->
         <ehcache.version>2.10.1</ehcache.version>
 
+        <!--json-->
+        <jackson-json.version>2.7.3</jackson-json.version>
+
     </properties>
 
     <!--build properties-->
@@ -241,6 +244,13 @@
             <groupId>net.sf.ehcache</groupId>
             <artifactId>ehcache</artifactId>
             <version>${ehcache.version}</version>
+        </dependency>
+
+        <!--JSON - data format to use between server and client-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-json.version}</version>
         </dependency>
 
     </dependencies>
