@@ -14,8 +14,4 @@
         <context:component-scan base-package="ua.teachme.repository.mock"/>
     </beans>
 
-
-
-
-
 </beans>
