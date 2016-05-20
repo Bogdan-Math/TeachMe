@@ -1,9 +1,8 @@
 package ua.teachme.web.notation;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ua.teachme.dto.NotationExceed;
 import ua.teachme.model.Notation;
 
@@ -27,7 +26,8 @@ public class NotationRestController extends AbstractNotationController{
     }
 
     @Override
-    public Notation get(int id) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Notation get(@PathVariable("id") int id) {
         return super.get(id);
     }
 
@@ -39,10 +39,5 @@ public class NotationRestController extends AbstractNotationController{
     @Override
     public List<NotationExceed> getBetween(LocalDate startDate, LocalTime startTime, LocalDate endDate, LocalTime endTime) {
         return super.getBetween(startDate, startTime, endDate, endTime);
-    }
-
-    @Override
-    public void evictCache() {
-        super.evictCache();
     }
 }

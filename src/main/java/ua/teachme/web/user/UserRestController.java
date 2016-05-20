@@ -1,9 +1,7 @@
 package ua.teachme.web.user;
 
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ua.teachme.model.User;
 
 import java.util.List;
@@ -24,7 +22,8 @@ public class UserRestController extends AbstractUserController{
     }
 
     @Override
-    public User get(int id) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public User get(@PathVariable("id") int id) {
         return super.get(id);
     }
 
@@ -34,13 +33,9 @@ public class UserRestController extends AbstractUserController{
     }
 
     @Override
-    public User getByEmail(String email) {
+    @RequestMapping(value = "/by", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public User getByEmail(@RequestParam("email") String email) {
         return super.getByEmail(email);
-    }
-
-    @Override
-    public void evictCache() {
-        super.evictCache();
     }
 
     @RequestMapping(value = "/textUA", method = RequestMethod.GET)
