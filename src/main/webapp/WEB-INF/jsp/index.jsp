@@ -10,7 +10,7 @@
         <jsp:include page="fragments/header.jsp"/>
     </header>
 
-<form method="post" action="user">
+<form method="post" action="users">
     <label>
         <select name="userID">
             <option value="1000001">anonymous</option>

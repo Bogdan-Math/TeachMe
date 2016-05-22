@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ua.teachme.model.User;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -18,9 +19,11 @@ public class UserController extends AbstractUserController{
         return "users";
     }
 
-    @Override
-    public User get(int id) {
-        return super.get(id);
+    @RequestMapping(value = "", method = RequestMethod.POST)
+    public String get(HttpServletRequest request, Model model) {
+        int id = Integer.valueOf(request.getParameter("userID"));
+        model.addAttribute("selectedUser", super.get(id));
+        return "user";
     }
 
     @Override
