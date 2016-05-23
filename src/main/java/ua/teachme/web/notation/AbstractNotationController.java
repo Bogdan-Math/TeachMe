@@ -44,10 +44,8 @@ public abstract class AbstractNotationController {
         );
     }
 
-    public List<NotationExceed> getBetween(LocalDateTime startDateTime, LocalDateTime endDateTime){
-        return getBetween(
-                startDateTime.toLocalDate(), startDateTime.toLocalTime(),
-                endDateTime.toLocalDate(), endDateTime.toLocalTime());
+    public List<NotationExceed> getBetween(LocalDate startDate, LocalDate endDate){
+        return getBetween(startDate, LocalTime.MIN, endDate, LocalTime.MAX);
     }
 
     public void evictCache(){
