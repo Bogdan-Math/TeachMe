@@ -36,7 +36,7 @@ public class UserRestController extends AbstractUserController{
 
     @Override
     @RequestMapping(value = "/by", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public User getByEmail(@RequestParam("email") String email) {
+    public User getByEmail(@RequestParam("userEmail") String email) {
         return super.getByEmail(email);
     }
 
