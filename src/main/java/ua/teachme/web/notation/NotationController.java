@@ -26,15 +26,15 @@ public class NotationController extends AbstractNotationController{
         return "notations";
     }
 
-    @RequestMapping(value = "/update", method = RequestMethod.GET)
-    public String update(HttpServletRequest request, Model model) {
-        model.addAttribute("notation", super.get(getIdFromRequest(request)));
+    @RequestMapping(value = "/create", method = RequestMethod.GET)
+    public String create(Model model) {
+        model.addAttribute("notation", new Notation());
         return "notation";
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public String add(Model model) {
-        model.addAttribute("notation", new Notation());
+    @RequestMapping(value = "/update", method = RequestMethod.GET)
+    public String update(HttpServletRequest request, Model model) {
+        model.addAttribute("notation", super.get(getIdFromRequest(request)));
         return "notation";
     }
 
