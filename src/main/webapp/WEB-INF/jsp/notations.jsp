@@ -14,14 +14,14 @@
 <form method="post" action="notations/filter">
 
     <dl>
-        <dt>start date</dt>
+        <dt>start date: </dt>
         <dd>
             <label>
                 <input type="date" value="${startDate}" name="startDate">
             </label>
         </dd>
 
-        <dt>start time</dt>
+        <dt>start time: </dt>
         <dd>
             <label>
                 <input type="time" value="${startTime}" name="startTime">
@@ -31,14 +31,14 @@
     </dl>
 
     <dl>
-        <dt>end date</dt>
+        <dt>end date: </dt>
         <dd>
             <label>
                 <input type="date" value="${endDate}" name="endDate">
             </label>
         </dd>
 
-        <dt>end time</dt>
+        <dt>end time: </dt>
         <dd>
             <label>
                 <input type="time" value="${endTime}" name="endTime">
