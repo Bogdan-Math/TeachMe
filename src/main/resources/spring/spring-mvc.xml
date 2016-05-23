@@ -42,7 +42,7 @@
           p:prefix="/WEB-INF/jsp/"
           p:suffix=".jsp"/>
 
-    <!--all resources inside folder src/main/resources/strings are mapped so they can be referred inside JSP file-->
+    <!--Internationalization by bundle. All resources inside folder src/main/resources/strings are mapped so they can be referred inside JSP file-->
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="defaultEncoding" value="UTF-8"/>
         <property name="basenames">
