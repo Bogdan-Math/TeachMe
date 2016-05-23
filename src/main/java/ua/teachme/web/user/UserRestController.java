@@ -16,6 +16,7 @@ public class UserRestController extends AbstractUserController{
         return super.getAll();
     }
 
+    //todo: add 'save' to REST functionality
     @Override
     public User save(User user) {
         return super.save(user);
@@ -27,6 +28,7 @@ public class UserRestController extends AbstractUserController{
         return super.get(id);
     }
 
+    //todo: add 'delete' to REST functionality
     @Override
     public void delete(int id) {
         super.delete(id);

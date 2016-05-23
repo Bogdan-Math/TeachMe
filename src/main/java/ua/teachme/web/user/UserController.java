@@ -19,30 +19,29 @@ public class UserController extends AbstractUserController{
         return "users";
     }
 
-    @RequestMapping(value = "", method = RequestMethod.POST)
+    @RequestMapping(value = "/id", method = RequestMethod.POST)
     public String get(HttpServletRequest request, Model model) {
         int id = Integer.valueOf(request.getParameter("userID"));
         model.addAttribute("selectedUser", super.get(id));
         return "user";
     }
 
+    //todo: add 'save' functionality on jsp view
     @Override
     public User save(User user) {
         return super.save(user);
     }
 
+    //todo: add 'delete' functionality on jsp view
     @Override
     public void delete(int id) {
         super.delete(id);
     }
 
-    @Override
-    public User getByEmail(String email) {
-        return super.getByEmail(email);
-    }
-
-    @Override
-    public void evictCache() {
-        super.evictCache();
+    @RequestMapping(value = "/email", method = RequestMethod.POST)
+    public String getByEmail(HttpServletRequest request, Model model) {
+        String email = request.getParameter("userEmail");
+        model.addAttribute("selectedUser", super.getByEmail(email));
+        return "user";
     }
 }
