@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
+//todo: separate 'save' to 'create' and 'update' methods
 public abstract class AbstractNotationController {
 
     @Autowired

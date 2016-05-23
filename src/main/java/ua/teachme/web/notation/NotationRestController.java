@@ -21,6 +21,7 @@ public class NotationRestController extends AbstractNotationController{
         return super.getAll();
     }
 
+    //todo: add 'save' to REST functionality
     @Override
     public Notation save(Notation notation) {
         return super.save(notation);
@@ -33,7 +34,8 @@ public class NotationRestController extends AbstractNotationController{
     }
 
     @Override
-    public void delete(int id) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public void delete(@PathVariable("id") int id) {
         super.delete(id);
     }
 
