@@ -2,6 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<header>
-    <fmt:message key="app.on_github"/>
-</header>
+<div class="footer">
+    <div class="container">
+        <fmt:message key="app.on_github"/>
+    </div>
+</div>
