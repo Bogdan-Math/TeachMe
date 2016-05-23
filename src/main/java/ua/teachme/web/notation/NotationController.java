@@ -67,12 +67,12 @@ public class NotationController extends AbstractNotationController{
                 TimeUtil.toLocalTime(endTime)
                 )
         );
-/*
+
         model.addAttribute("startDate", startDate);
         model.addAttribute("startTime", startTime);
         model.addAttribute("endDate", endDate);
         model.addAttribute("endTime", endTime);
-*/
+
         setDefaultDateAndTime(model);
         return "notations";
     }

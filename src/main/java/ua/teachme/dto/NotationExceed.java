@@ -62,7 +62,7 @@ public class NotationExceed {
     public String toString() {
         return "NotationExceed{" +
                 "id='" + id + '\''+
-                "name='" + name + '\'' +
+                ", name='" + name + '\'' +
                 ", url='" + url + '\'' +
                 ", description='" + description + '\'' +
                 ", hours=" + hours +

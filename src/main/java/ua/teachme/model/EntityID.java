@@ -12,7 +12,7 @@ import javax.persistence.*;
         getterVisibility = Visibility.NONE,
         isGetterVisibility = Visibility.NONE,
         setterVisibility = Visibility.NONE
-)// need to disable methods vision in json, only fields vision
+)// need to disable methods vision in json, allow only fields vision
 public class EntityID {
 
     @Id

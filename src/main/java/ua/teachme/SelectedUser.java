@@ -1,5 +1,6 @@
 package ua.teachme;
 
+//todo: find were can use it or delete
 public class SelectedUser {
 
     private static int id;

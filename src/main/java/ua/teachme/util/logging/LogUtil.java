@@ -5,6 +5,7 @@ import org.slf4j.MDC;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
+//todo: add correct logging to repository, service and controller layers
 public class LogUtil {
 
     private static final Logger LOG = getLogger(LogUtil.class/*logged class*/);

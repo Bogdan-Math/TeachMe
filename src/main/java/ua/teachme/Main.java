@@ -4,6 +4,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 import ua.teachme.profiles.ConnectTo;
 import ua.teachme.profiles.WorkBy;
 
+//todo: delete this class after ALPHA-production
 public class Main {
 
     private static GenericXmlApplicationContext appCtx;

@@ -43,6 +43,8 @@ public class MainTest {
 
         assertNotNull(Main.getSpringContext());
         assertEquals(Main.getSpringContext(), Main.getSpringContext());
+
+//todo: delete this comments after ALPHA-production
 /*
         //UserController
         assertEquals

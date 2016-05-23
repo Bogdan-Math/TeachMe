@@ -30,5 +30,4 @@ public class MainGoal extends EntityName{
     public void setDescription(String description) {
         this.description = description;
     }
-
 }

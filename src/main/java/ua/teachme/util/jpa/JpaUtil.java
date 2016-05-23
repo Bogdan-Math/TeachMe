@@ -6,6 +6,7 @@ import org.hibernate.SessionFactory;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+//todo: add hibernate 2-nd lvl caching and use this to clearing, or delete this class
 public class JpaUtil {
 
     @PersistenceContext

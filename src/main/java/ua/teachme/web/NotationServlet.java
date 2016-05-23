@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
+//todo: delete this class after ALPHA-production
 public class NotationServlet extends HttpServlet {
 
     private NotationController notationController = IndexServlet.getSpringContext().getBean(NotationController.class);

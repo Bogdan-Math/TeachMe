@@ -11,6 +11,7 @@ import java.time.Month;
 import java.util.*;
 import java.util.stream.Collectors;
 
+//todo: clear unused code
 public class NotationUtil {
 
     public static int hours = 8;

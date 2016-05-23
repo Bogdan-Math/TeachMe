@@ -12,12 +12,11 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ua.teachme.model.User;
 import ua.teachme.profiles.ConnectTo;
-import ua.teachme.profiles.Populate;
+import ua.teachme.profiles.PopulateDB;
 import ua.teachme.profiles.WorkBy;
 import ua.teachme.util.exception.EntityNotFoundException;
 import ua.teachme.util.user.UserUtil;
 
-import java.util.Comparator;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -26,7 +25,7 @@ import static org.junit.Assert.*;
 @ContextConfiguration({"classpath:spring/spring-app.xml", "classpath:spring/db-connect.xml", "classpath:spring/db-behaviour.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 @ActiveProfiles({ConnectTo.POSTGRESQL, WorkBy.JPA})
-@Sql(scripts = Populate.POSTGRESQL) //execute before every test in this class
+@Sql(scripts = PopulateDB.POSTGRESQL) //execute before every test in this class
 //todo: add more requirements and checks to tests
 public class UserServiceImplTest {
 

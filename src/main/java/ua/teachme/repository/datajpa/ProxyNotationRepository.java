@@ -13,10 +13,10 @@ import java.util.List;
 @Transactional
 public interface ProxyNotationRepository extends JpaRepository<Notation, Integer>{
 
-    @Modifying
+    @Modifying//should be here to show to Spring Data JPA, that this method can modify DB, NOT only read.
     void delete(Integer id);
 
-    @Modifying
+    @Modifying//should be here to show to Spring Data JPA, that this method can modify DB, NOT only read.
     Notation save(Notation notation);
 
     Notation findOne(Integer id);

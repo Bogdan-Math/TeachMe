@@ -12,11 +12,11 @@ import java.util.List;
 @Transactional
 public interface ProxyUserRepository extends JpaRepository<User, Integer> {
 
-    @Modifying
+    @Modifying//should be here to show to Spring Data JPA, that this method can modify DB, NOT only read.
 //    @Query(name = User.DELETE)
     void delete(/*@Param("id")*/Integer id);
 
-    @Modifying
+    @Modifying//should be here to show to Spring Data JPA, that this method can modify DB, NOT only read.
     User save(User user);
 
     User findOne(Integer id);

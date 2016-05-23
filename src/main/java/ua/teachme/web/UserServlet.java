@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+//todo: delete this class after ALPHA-production
 public class UserServlet extends HttpServlet {
 
     private UserController userController = IndexServlet.getSpringContext().getBean(UserController.class);

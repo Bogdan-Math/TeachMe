@@ -12,9 +12,7 @@ public class UserUtil {
     public static User equalUser = new User("NewUser", "password", "new-user@gmail.com", NotationUtil.hours);
 
     public static User admin = new User("Admin", "admin-password", "admin@gmail.com", NotationUtil.hours);
-
     public static User user = new User("User", "user-password", "user@gmail.com", NotationUtil.hours);
-
     public static User anonymous = new User("Anonymous", "anonymous-password", "anonymous@gmail.com", NotationUtil.hours);
 
     public static List<User> users = Arrays.asList(

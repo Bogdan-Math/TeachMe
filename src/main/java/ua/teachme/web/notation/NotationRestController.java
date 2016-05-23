@@ -7,7 +7,6 @@ import ua.teachme.dto.NotationExceed;
 import ua.teachme.model.Notation;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 

@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import ua.teachme.model.User;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 @Controller
 @RequestMapping(value = "/users")
