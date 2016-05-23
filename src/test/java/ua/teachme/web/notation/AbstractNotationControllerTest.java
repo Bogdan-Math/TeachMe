@@ -1,7 +1,8 @@
-package ua.teachme.web.user;
+package ua.teachme.web.notation;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ActiveProfiles;
@@ -9,14 +10,13 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MockMvcBuilder;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import ua.teachme.profiles.ConnectTo;
 import ua.teachme.profiles.WorkBy;
-import ua.teachme.service.UserService;
+import ua.teachme.web.user.UserController;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -32,7 +32,7 @@ import static org.junit.Assert.*;
 @ActiveProfiles({ConnectTo.POSTGRESQL, WorkBy.JPA})
 @WebAppConfiguration
 @Transactional
-public abstract class AbstractUserControllerTest {
+public class AbstractNotationControllerTest {
 
     private static CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
 
@@ -45,7 +45,7 @@ public abstract class AbstractUserControllerTest {
     private WebApplicationContext webApplicationContext;
 
     @Autowired
-    private UserController userController;
+    private NotationController notationController;
 
     private MockMvc mockMvc;
 
@@ -67,20 +67,20 @@ public abstract class AbstractUserControllerTest {
 
     @Before
     public void setUp() throws Exception {
-        userController.evictCache();
+        notationController.evictCache();
     }
 
     @After
     public void tearDown() throws Exception {
-        userController.evictCache();
+        notationController.evictCache();
     }
-
 
     public MockMvc getMockMvc() {
         return mockMvc;
     }
 
-    public UserController getUserController() {
-        return userController;
+    public NotationController getNotationController() {
+        return notationController;
     }
+
 }

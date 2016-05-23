@@ -1,7 +1,5 @@
 package ua.teachme.web.notation;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,28 +14,41 @@ import ua.teachme.profiles.WorkBy;
 import ua.teachme.model.Notation;
 import ua.teachme.util.notation.NotationUtil;
 
+import java.time.LocalDateTime;
+
 import static org.junit.Assert.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-public class NotationControllerTest {
-
-    @Before
-    public void setUp(){
-
-    }
-
-    @After
-    public void tearDown(){
-
-    }
-
-    @Test
-    public void testNotationController(){
-
-    }
+@RunWith(SpringJUnit4ClassRunner.class)
+//todo: add more requirements and checks to tests
+public class NotationControllerTest extends AbstractNotationControllerTest{
 
     @Test
     public void testGetAll() throws Exception {
+        super.getMockMvc()
+                .perform(get("/notations"))
+                .andExpect(status().isOk())
+                .andDo(print());
+    }
 
+    @Test
+    public void testCreate() throws Exception {
+        super.getMockMvc()
+                .perform(get("/notations/create"))
+                .andExpect(status().isOk())
+                .andDo(print());
+    }
+
+    @Test
+    public void testUpdate() throws Exception {
+        int id = 1000007;
+        super.getMockMvc()
+                .perform(get("/notations/update?id=" + id))
+                .andExpect(status().isOk())
+                .andDo(print());
     }
 
     @Test
@@ -46,18 +57,12 @@ public class NotationControllerTest {
     }
 
     @Test
-    public void testGet() throws Exception {
+    public void testFilter() throws Exception {
 
     }
 
     @Test
     public void testDelete() throws Exception {
-
-    }
-
-    @Test
-    @Transactional
-    public void testGetBetween() throws Exception {
 
     }
 }
