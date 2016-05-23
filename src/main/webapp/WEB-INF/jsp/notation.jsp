@@ -3,12 +3,13 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
-    <jsp:include page="fragments/title.jsp"/>
+<jsp:include page="fragments/title.jsp"/>
 
 <body>
-    <header>
-        <jsp:include page="fragments/header.jsp"/>
-    </header>
+
+<header>
+    <jsp:include page="fragments/header.jsp"/>
+</header>
 
 
 <jsp:useBean id="notation" scope="request" type="ua.teachme.model.Notation"/>
@@ -48,8 +49,9 @@
     <button onclick="window.history.back()">cancel</button>
 </form>
 
-    <footer>
-        <jsp:include page="fragments/footer.jsp"/>
-    </footer>
+<footer>
+    <jsp:include page="fragments/footer.jsp"/>
+</footer>
+
 </body>
 </html>

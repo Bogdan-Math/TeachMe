@@ -6,31 +6,48 @@
 <jsp:include page="fragments/title.jsp"/>
 
 <body>
-    <header>
-        <jsp:include page="fragments/header.jsp"/>
-    </header>
+<header>
+    <jsp:include page="fragments/header.jsp"/>
+</header>
 
 <section>
-    <table border="1" cellpadding="8" cellspacing="0">
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Roles</th>
-            <th>Registered Date</th>
-        </tr>
-        </thead>
-        <c:forEach items="${users}" var="user">
-            <jsp:useBean id="user" scope="page" type="ua.teachme.model.User"/>
-            <tr>
-                <td><c:out value="${user.name}"/></td>
-                <td><a href="mailto:${user.email}">${user.email}</a></td>
-                <td>${user.roles}</td>
-                <td>${user.registeredDateAndTime} </td>
-            </tr>
-        </c:forEach>
-    </table>
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="shadow">
+
+                <table class="table table-view">
+
+                    <thead>
+                    <tr>
+                        <th><fmt:message key="table.users.name"/></th>
+                        <th><fmt:message key="table.users.email"/></th>
+                        <th><fmt:message key="table.users.roles"/></th>
+                        <th><fmt:message key="table.users.reg"/></th>
+                    </tr>
+                    </thead>
+
+                    <c:forEach items="${users}" var="user">
+                        <jsp:useBean id="user" scope="page" type="ua.teachme.model.User"/>
+                        <tr>
+                            <td><c:out value="${user.name}"/></td>
+                            <td><a href="mailto:${user.email}">${user.email}</a></td>
+                            <td>${user.roles}</td>
+                            <td>${user.registeredDateAndTime} </td>
+                        </tr>
+                    </c:forEach>
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+
 </section>
-<jsp:include page="fragments/footer.jsp"/>
+
+<footer>
+    <jsp:include page="fragments/footer.jsp"/>
+</footer>
+
 </body>
 </html>

@@ -3,12 +3,13 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
-    <jsp:include page="fragments/title.jsp"/>
+<jsp:include page="fragments/title.jsp"/>
 
 <body>
-    <header>
-        <jsp:include page="fragments/header.jsp"/>
-    </header>
+
+<header>
+    <jsp:include page="fragments/header.jsp"/>
+</header>
 
 <form method="post" action="notations/filter">
 
@@ -16,16 +17,14 @@
         <dt>start date</dt>
         <dd>
             <label>
-            <input type="date" value="${startDate}" name="startDate">
+                <input type="date" value="${startDate}" name="startDate">
             </label>
         </dd>
-    </dl>
 
-    <dl>
         <dt>start time</dt>
         <dd>
             <label>
-            <input type="time" value="${startTime}" name="startTime">
+                <input type="time" value="${startTime}" name="startTime">
             </label>
         </dd>
 
@@ -35,59 +34,68 @@
         <dt>end date</dt>
         <dd>
             <label>
-            <input type="date" value="${endDate}" name="endDate">
+                <input type="date" value="${endDate}" name="endDate">
             </label>
         </dd>
-    </dl>
 
-    <dl>
         <dt>end time</dt>
         <dd>
             <label>
-            <input type="time" value="${endTime}" name="endTime">
+                <input type="time" value="${endTime}" name="endTime">
             </label>
         </dd>
+
     </dl>
 
-    <button type="submit">filter</button>
-<%--
-    <button type="reset">reset</button>
---%>
+    <button type="submit"><fmt:message key="button.filter"/></button>
+    <%--
+        <button type="reset">reset</button>
+    --%>
 </form>
 
-<table border="1">
-<a href="notations/add">add notation</a>
-    <thead>
-    <tr>
-        <th>name</th>
-        <th>url</th>
-        <th>description</th>
-        <th>hours</th>
-        <th>time</th>
-    </tr>
-    </thead>
+<div class="jumbotron">
+    <div class="container">
+        <div class="shadow">
 
-    <c:forEach items="${notations}" var="notation">
+            <table class="table table-view">
 
-        <jsp:useBean id="notation" scope="page" type="ua.teachme.dto.NotationExceed"/>
-        <tr class="${notation.exceed ? 'exceed' : 'normal'}">
-            <%--
-            <td>${notation.id}</td>
-            --%>
-            <td>${notation.name}</td>
-            <td>${notation.url}</td>
-            <td>${notation.description}</td>
-            <td>${notation.hours}</td>
-            <td>${notation.date} : ${notation.time}</td>
-            <td><a href="notations/update?id=${notation.id}">update</a></td>
-            <td><a href="notations/delete?id=${notation.id}">delete</a></td>
-        </tr>
+                <a href="notations/add"><fmt:message key="button.create"/></a>
+                <thead>
+                <tr>
+                    <th><fmt:message key="table.notation.name"/></th>
+                    <th><fmt:message key="table.notation.url"/></th>
+                    <th><fmt:message key="table.notation.description"/></th>
+                    <th><fmt:message key="table.notation.hours"/></th>
+                    <th><fmt:message key="table.notation.created"/></th>
+                </tr>
+                </thead>
 
-    </c:forEach>
-</table>
+                <c:forEach items="${notations}" var="notation">
 
-    <footer>
-        <jsp:include page="fragments/footer.jsp"/>
-    </footer>
+                    <jsp:useBean id="notation" scope="page" type="ua.teachme.dto.NotationExceed"/>
+                    <tr class="${notation.exceed ? 'exceed' : 'normal'}">
+                            <%--
+                            <td>${notation.id}</td>
+                            --%>
+                        <td>${notation.name}</td>
+                        <td>${notation.url}</td>
+                        <td>${notation.description}</td>
+                        <td>${notation.hours}</td>
+                        <td>${notation.date} : ${notation.time}</td>
+                        <td><a href="notations/update?id=${notation.id}"><fmt:message key="button.update"/></a></td>
+                        <td><a href="notations/delete?id=${notation.id}"><fmt:message key="button.delete"/></a></td>
+                    </tr>
+
+                </c:forEach>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<footer>
+    <jsp:include page="fragments/footer.jsp"/>
+</footer>
+
 </body>
 </html>

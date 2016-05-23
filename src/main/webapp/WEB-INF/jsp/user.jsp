@@ -6,6 +6,7 @@
 <jsp:include page="fragments/title.jsp"/>
 
 <body>
+
 <header>
     <jsp:include page="fragments/header.jsp"/>
 </header>
@@ -84,5 +85,6 @@
 <footer>
     <jsp:include page="fragments/footer.jsp"/>
 </footer>
+
 </body>
 </html>
