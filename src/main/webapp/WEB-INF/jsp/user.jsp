@@ -12,6 +12,7 @@
 </header>
 
 <jsp:useBean id="selectedUser" scope="request" type="ua.teachme.model.User"/>
+<form method="post" action="users/create" style="text-align: center">
 <dl>
     <dd>
         <label>
@@ -81,6 +82,11 @@
         </label>
     </dd>
 </dl>
+
+    <button type="submit" class="btn btn-primary" ><fmt:message key="button.save"/></button>
+    <button type="button" class="btn btn-default" onclick="window.history.back()"><fmt:message key="button.close"/></button>
+
+</form>
 
 <footer>
     <jsp:include page="fragments/footer.jsp"/>
