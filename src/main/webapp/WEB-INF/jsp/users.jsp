@@ -16,28 +16,30 @@
         <div class="container">
             <div class="shadow">
 
-                <table class="table table-view">
+                    <a class="btn btn-default" id="create"><fmt:message key="table.users.create"/></a>
 
-                    <thead>
-                    <tr>
-                        <th><fmt:message key="table.users.name"/></th>
-                        <th><fmt:message key="table.users.email"/></th>
-                        <th><fmt:message key="table.users.roles"/></th>
-                        <th><fmt:message key="table.users.reg"/></th>
-                    </tr>
-                    </thead>
+                    <table class="table table-striped">
 
-                    <c:forEach items="${users}" var="user">
-                        <jsp:useBean id="user" scope="page" type="ua.teachme.model.User"/>
+                        <thead>
                         <tr>
-                            <td><c:out value="${user.name}"/></td>
-                            <td><a href="mailto:${user.email}">${user.email}</a></td>
-                            <td>${user.roles}</td>
-                            <td>${user.registeredDateAndTime} </td>
+                            <th><fmt:message key="table.users.name"/></th>
+                            <th><fmt:message key="table.users.email"/></th>
+                            <th><fmt:message key="table.users.roles"/></th>
+                            <th><fmt:message key="table.users.reg"/></th>
                         </tr>
-                    </c:forEach>
+                        </thead>
 
-                </table>
+                        <c:forEach items="${users}" var="user">
+                            <jsp:useBean id="user" scope="page" type="ua.teachme.model.User"/>
+                            <tr>
+                                <td><c:out value="${user.name}"/></td>
+                                <td><a href="mailto:${user.email}">${user.email}</a></td>
+                                <td>${user.roles}</td>
+                                <td>${user.registeredDateAndTime} </td>
+                            </tr>
+                        </c:forEach>
+
+                    </table>
 
             </div>
         </div>
