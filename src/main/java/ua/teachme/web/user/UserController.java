@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import ua.teachme.model.User;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,16 +26,26 @@ public class UserController extends AbstractUserController{
         return "user";
     }
 
-    //todo: add 'save' functionality on jsp view
-    @Override
-    public User save(User user) {
-        return super.save(user);
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    public String save(HttpServletRequest request /*@RequestParam("id") int id,
+                       @RequestParam("name") String name,
+                       @RequestParam("email") String email,
+                       @RequestParam("password") String password*/) {
+        int id = Integer.valueOf(request.getParameter("id"));
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+
+        User user = new User(id, name, password, email);
+        super.save(user);
+        return "redirect:/users";
     }
 
-    //todo: add 'delete' functionality on jsp view
-    @Override
-    public void delete(int id) {
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public String delete(HttpServletRequest request) {
+        int id = Integer.valueOf(request.getParameter("id"));
         super.delete(id);
+        return "redirect:/users";
     }
 
     @RequestMapping(value = "/email", method = RequestMethod.POST)
