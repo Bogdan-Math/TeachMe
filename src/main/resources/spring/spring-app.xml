@@ -9,6 +9,7 @@
 >
 
     <import resource="spring-cache.xml"/>
+    <import resource="spring-security.xml"/>
 
     <!--enables scanning Spring's annotations-->
     <context:annotation-config/>
