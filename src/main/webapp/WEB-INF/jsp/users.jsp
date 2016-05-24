@@ -18,7 +18,7 @@
 
                     <a class="btn btn-default" id="create"><fmt:message key="table.users.create"/></a>
 
-                    <table class="table table-striped">
+                    <table class="table table-hover">
 
                         <thead>
                         <tr>
@@ -36,6 +36,10 @@
                                 <td><a href="mailto:${user.email}">${user.email}</a></td>
                                 <td>${user.roles}</td>
                                 <td>${user.registeredDateAndTime} </td>
+
+                                <td><a class="btn btn-success"><fmt:message key="table.users.update"/></a></td>
+                                <td><a class="btn btn-danger"><fmt:message key="table.users.delete"/></a></td>
+
                             </tr>
                         </c:forEach>
 
