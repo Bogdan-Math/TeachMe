@@ -42,8 +42,8 @@
                             <td>${user.roles}</td>
                             <td>${user.registeredDateAndTime} </td>
 
-                            <td><a class="btn btn-success"><fmt:message key="table.users.update"/></a></td>
-                            <td><a class="btn btn-danger"><fmt:message key="table.users.delete"/></a></td>
+                            <td><a class="btn btn-success" href="users/update?id=${user.id}"><fmt:message key="table.users.update"/></a></td>
+                            <td><a class="btn btn-danger" href="users/delete?id=${user.id}"><fmt:message key="table.users.delete"/></a></td>
 
                         </tr>
                     </c:forEach>
