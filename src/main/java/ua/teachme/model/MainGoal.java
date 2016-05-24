@@ -13,7 +13,9 @@ public class MainGoal extends EntityName{
     @Column(name = "description")
     private String description;
 
+/*
     public MainGoal(){}
+*/
 
     public User getUser() {
         return user;

@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="30 seconds">
 
-<!--
     <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
         <resetJUL>true</resetJUL>
     </contextListener>
--->
 
     <!-- To enable JMX Management -->
     <jmxConfigurator/>
 
     <!--appender to separate logging in different files-->
     <appender name="SIFT" class="ch.qos.logback.classic.sift.SiftingAppender">
+
         <discriminator>
             <key>logger_id</key>
             <defaultValue>main</defaultValue>
         </discriminator>
-        <sift>
 
+        <sift>
             <!--appender to choose single file to logging-->
             <appender name="${logger_id}" class="ch.qos.logback.core.FileAppender">
                 <file>${TEACHME_ROOT}/log/${logger_id}.log</file>
@@ -25,8 +24,8 @@
                     <pattern>%d [%thread] %level %mdc %logger{35} - %msg%n</pattern>
                 </layout>
             </appender>
-
         </sift>
+
     </appender>
 
     <!--appender to logging in console-->
