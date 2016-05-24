@@ -58,6 +58,9 @@
         <!--json-->
         <jackson-json.version>2.7.3</jackson-json.version>
 
+        <!--Spring Security (has own version not like Spring)-->
+        <spring-security.version>4.0.4.RELEASE</spring-security.version>
+
         <!--UI (view). All jars in package 'webjars'-->
         <webjars-bootstrap.version>3.3.6</webjars-bootstrap.version>
         <webjars-jquery.version>2.2.3</webjars-jquery.version>
@@ -255,6 +258,19 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson-json.version}</version>
+        </dependency>
+
+        <!--Spring Security-->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring-security.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring-security.version}</version>
         </dependency>
 
         <!--Bootstrap - HTML/CSS/JS framework-->
