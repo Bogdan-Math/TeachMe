@@ -8,6 +8,7 @@
     <!-- To enable JMX Management -->
     <jmxConfigurator/>
 
+    <!--todo: add correct logging and deny logging incorrect paths-->
     <!--appender to separate logging in different files-->
     <appender name="SIFT" class="ch.qos.logback.classic.sift.SiftingAppender">
 
