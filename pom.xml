@@ -60,7 +60,7 @@
 
         <!--UI (view). All jars in package 'webjars'-->
         <webjars-bootstrap.version>3.3.6</webjars-bootstrap.version>
-
+        <webjars-jquery.version>2.2.3</webjars-jquery.version>
 
     </properties>
 
@@ -264,6 +264,12 @@
             <version>${webjars-bootstrap.version}</version>
         </dependency>
 
+        <!--JQuery - JS lib-->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>${webjars-jquery.version}</version>
+        </dependency>
 
     </dependencies>
 
