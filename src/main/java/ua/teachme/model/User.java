@@ -30,6 +30,9 @@ public class User extends EntityName {
     @Length(min = 6)
     private String password;
 
+    //todo: add enable/disable user
+    //private boolean enable;
+
     @Column(name = "email", nullable = false)
     @NotEmpty
     @Email
