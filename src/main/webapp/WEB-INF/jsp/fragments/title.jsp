@@ -11,7 +11,7 @@
     <base href="${fn:substring(url, 0, fn:length(url) - fn:length(pageContext.request.requestURI))}${pageContext.request.contextPath}/" />
 
     <link href="<c:url value="resources/css/main.css" />" rel="stylesheet" >
-    <link href="<c:url value="/resources/images/icon.png" />" rel="icon"/>
+    <link href="<c:url value="resources/images/icon.png" />" rel="icon"/>
     <link href="<c:url value="webjars/bootstrap/3.3.6/css/bootstrap.min.css" />" rel="stylesheet"/>
 
 </head>

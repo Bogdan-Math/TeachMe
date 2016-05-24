@@ -62,11 +62,11 @@
                 <a href="notations/create"><fmt:message key="button.create"/></a>
                 <thead>
                 <tr>
-                    <th><fmt:message key="table.notation.name"/></th>
-                    <th><fmt:message key="table.notation.url"/></th>
-                    <th><fmt:message key="table.notation.description"/></th>
-                    <th><fmt:message key="table.notation.hours"/></th>
-                    <th><fmt:message key="table.notation.created"/></th>
+                    <th><fmt:message key="table.notations.name"/></th>
+                    <th><fmt:message key="table.notations.url"/></th>
+                    <th><fmt:message key="table.notations.description"/></th>
+                    <th><fmt:message key="table.notations.hours"/></th>
+                    <th><fmt:message key="table.notations.created"/></th>
                 </tr>
                 </thead>
 
