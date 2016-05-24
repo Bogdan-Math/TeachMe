@@ -77,6 +77,13 @@ public class User extends EntityName {
         this.registeredDateAndTime = registeredDateAndTime;
     }
 
+    public User(Integer id, String name, String password, String email) {
+        super(id, name);
+        this.password = password;
+        this.email = email;
+        this.registeredDateAndTime = LocalDateTime.now();
+    }
+
     public User(Integer id, String name, String password, String email, int maxHoursPerDay) {
         super(id, name);
         this.password = password;
