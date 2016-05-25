@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping(value = "/users")
 public class UserController extends AbstractUserController{
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public String getAll(Model model) {
         model.addAttribute("users", super.getAll());
         return "users";

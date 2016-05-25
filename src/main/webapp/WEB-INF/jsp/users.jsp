@@ -6,8 +6,6 @@
 <jsp:include page="fragments/title.jsp"/>
 
 <body>
-<script type="text/javascript" src="webjars/jquery/2.2.3/jquery.min.js"></script>
-<script type="text/javascript" src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <header>
     <jsp:include page="fragments/header.jsp"/>
