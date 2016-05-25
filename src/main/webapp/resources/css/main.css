@@ -17,21 +17,14 @@ dd {
     vertical-align: top;
 }
 
-/*
-header, footer {
-    text-align: center;
-    background: #24e288;
-    color: #000000;
-    font-size: 20px;
-    padding: 20px 20px;
-    margin: auto;
-}
-*/
-
 .exceed {
-    color: red;
+    color: #ff1719;
 }
 
 .normal {
     color: #2365d4;
+}
+
+.in-center {
+    text-align: center;
 }

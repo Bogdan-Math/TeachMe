@@ -29,15 +29,15 @@
     <jsp:include page="fragments/header.jsp"/>
 </header>
 
-<section>
-
     <div class="jumbotron">
         <div class="container">
             <div class="shadow">
 
-                <a class="btn btn-default" data-toggle="modal" data-target="#createModalWindow">
-                    <fmt:message key="table.users.create"/>
-                </a>
+                <div class="in-center">
+                    <a class="btn btn-default" data-toggle="modal" data-target="#createModalWindow">
+                        <fmt:message key="table.users.create"/>
+                    </a>
+                </div>
 
                 <table class="table table-hover" id="dataTable">
 
@@ -65,8 +65,10 @@
                             <td>${user.roles}</td>
                             <td>${user.registeredDateAndTime} </td>
 
-                            <td><a class="btn btn-success" href="users/update?id=${user.id}"><fmt:message key="table.users.edit"/></a></td>
-                            <td><a class="btn btn-danger" href="users/delete?id=${user.id}"><fmt:message key="table.users.delete"/></a></td>
+                            <td><a class="btn btn-success" href="users/update?id=${user.id}"><fmt:message
+                                    key="table.users.edit"/></a></td>
+                            <td><a class="btn btn-danger" href="users/delete?id=${user.id}"><fmt:message
+                                    key="table.users.delete"/></a></td>
 
                         </tr>
                     </c:forEach>
@@ -76,8 +78,6 @@
             </div>
         </div>
     </div>
-
-</section>
 
 <footer>
     <jsp:include page="fragments/footer.jsp"/>
@@ -116,7 +116,8 @@
                     <div class="form-group">
                         <label for="password" class="control-label col-xs-3">Password</label>
                         <div class="col-xs-9">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="password">
+                            <input type="password" class="form-control" id="password" name="password"
+                                   placeholder="password">
                         </div>
                     </div>
 
@@ -124,7 +125,8 @@
                         <div class="form-group">
                             <div class="col-xs-offset-3 col-xs-9">
                                 <button type="submit" class="btn btn-primary"><fmt:message key="button.save"/></button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal"><fmt:message key="button.close"/></button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal"><fmt:message
+                                        key="button.close"/></button>
                             </div>
                         </div>
                     </div>
