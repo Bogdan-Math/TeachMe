@@ -3,7 +3,25 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
-<jsp:include page="fragments/title.jsp"/>
+
+<head>
+
+    <jsp:include page="fragments/title.jsp"/>
+
+    <link rel="stylesheet" href="webjars/datatables/1.10.11/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="webjars/datatables/1.10.11/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript">
+
+        var dataTableApi;
+
+        $(document).ready(function () {
+            //$(function () {
+            dataTableApi = $('#dataTable').dataTable();
+        });
+    </script>
+
+</head>
 
 <body>
 
@@ -29,6 +47,13 @@
                         <th><fmt:message key="table.users.email"/></th>
                         <th><fmt:message key="table.users.roles"/></th>
                         <th><fmt:message key="table.users.reg"/></th>
+                        <%--
+                        MOTHER_FUCKING FIX !!!
+                        (Don't delete this two <th>. Need to correct use DataTable js
+                        )--%>
+                        <th></th>
+                        <th></th>
+
                     </tr>
                     </thead>
 
@@ -112,5 +137,4 @@
 </div><!-- /.modal -->
 
 </body>
-
 </html>
