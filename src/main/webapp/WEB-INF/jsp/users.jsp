@@ -99,9 +99,6 @@
                     <a class="btn btn-default" data-toggle="modal" data-target="#createUserModalWindow">
                         <fmt:message key="table.users.create"/>
                     </a>
-                    <a class="btn btn-default" data-toggle="modal">
-                        <fmt:message key="table.users.create"/>
-                    </a>
                 </div>
 
                 <table class="table table-hover" id="dataTable">
@@ -189,12 +186,8 @@
                     <div class="modal-footer">
                         <div class="form-group">
                             <div class="col-xs-offset-3 col-xs-9">
-
-                                <button type="button" class="btn" id="createUser"><fmt:message key="button.save"/></button>
-
-                                <button type="submit" class="btn btn-primary"><fmt:message key="button.save"/></button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal"><fmt:message
-                                        key="button.close"/></button>
+                                <button type="button" class="btn btn-primary" id="createUser"><fmt:message key="button.save"/></button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal"><fmt:message key="button.close"/></button>
                             </div>
                         </div>
                     </div>
