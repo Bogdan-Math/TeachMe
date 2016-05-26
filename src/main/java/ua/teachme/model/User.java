@@ -42,7 +42,8 @@ public class User extends EntityName {
     private int maxHoursPerDay;
 
     //todo: add get/set mainGoal tests
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "user")
+    @OneToOne(/*fetch = FetchType.LAZY,*/ //todo: change to List<MainGoal> which will include List<Notation>
+            mappedBy = "user")
     @JsonIgnore // help to avoid: recursion calls/out of memory/stack overflow/no session(hibernate) exceptions
     private MainGoal mainGoal;
 
