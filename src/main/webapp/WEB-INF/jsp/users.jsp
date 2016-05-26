@@ -52,8 +52,33 @@
                 type: 'POST',
                 url: 'users/create',
                 data: form.serialize(),
+                success: function(){
+                    notySuccess()
+                },
+                error: function(){
+                    notyError()
+                }
             });
+
             $('#createUserModalWindow').modal('hide');
+        }
+
+        function notySuccess(){
+            noty({
+                text: 'text',
+                type: 'success',
+                layout: 'topRight'
+                //timeout: true
+            });
+        }
+
+        function notyError(){
+            noty({
+                text: 'text',
+                type: 'error',
+                layout: 'topRight'
+                //timeout: true
+            });
         }
 
     </script>
