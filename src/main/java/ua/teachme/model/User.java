@@ -64,10 +64,13 @@ public class User extends EntityName {
     @Column(name = "registered_date_and_time")
     private LocalDateTime registeredDateAndTime;
 
-    public User() {}
+    public User() {
+        this.setRoles(Role.ANONYMOUS);
+    }
 
     public User(User user){
         this(user.getId(), user.getName(), user.getPassword(), user.getEmail(), user.getMaxHoursPerDay());
+        this.setRoles(Role.ANONYMOUS);
     }
 
     public User(Integer id, String name, String password, String email, int maxHoursPerDay, LocalDateTime registeredDateAndTime) {
@@ -76,6 +79,7 @@ public class User extends EntityName {
         this.email = email;
         this.maxHoursPerDay = maxHoursPerDay;
         this.registeredDateAndTime = registeredDateAndTime;
+        this.setRoles(Role.ANONYMOUS);
     }
 
     public User(Integer id, String name, String password, String email) {
@@ -83,6 +87,7 @@ public class User extends EntityName {
         this.password = password;
         this.email = email;
         this.registeredDateAndTime = LocalDateTime.now();
+        this.setRoles(Role.ANONYMOUS);
     }
 
     public User(Integer id, String name, String password, String email, int maxHoursPerDay) {
@@ -91,6 +96,7 @@ public class User extends EntityName {
         this.email = email;
         this.maxHoursPerDay = maxHoursPerDay;
         this.registeredDateAndTime = LocalDateTime.now();
+        this.setRoles(Role.ANONYMOUS);
     }
 
     public User(String name, String password, String email, int maxHoursPerDay) {
@@ -99,6 +105,7 @@ public class User extends EntityName {
         this.email = email;
         this.maxHoursPerDay = maxHoursPerDay;
         this.registeredDateAndTime = LocalDateTime.now();
+        this.setRoles(Role.ANONYMOUS);
     }
 
     public String getPassword() {
