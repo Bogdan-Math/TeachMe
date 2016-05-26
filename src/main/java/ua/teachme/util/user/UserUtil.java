@@ -1,5 +1,6 @@
 package ua.teachme.util.user;
 
+import ua.teachme.dto.UserTO;
 import ua.teachme.model.User;
 import ua.teachme.util.notation.NotationUtil;
 
@@ -20,4 +21,8 @@ public class UserUtil {
             user,
             anonymous
     );
+
+    public static User createUser(UserTO userTO){
+        return new User(null, userTO.getName(), userTO.getPassword(), userTO.getEmail());
+    }
 }

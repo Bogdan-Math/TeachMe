@@ -4,7 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import ua.teachme.dto.UserTO;
 import ua.teachme.model.User;
+import ua.teachme.util.user.UserUtil;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -32,14 +34,16 @@ public class UserController extends AbstractUserController{
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public String save(HttpServletRequest request) {
+    public String save(UserTO userTO /*SpringMVC MAGIC !!!*/ /*HttpServletRequest request*/) {
+/*
         int id = getIdFromRequest(request);
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
         User user = new User(id, name, password, email);
-        super.save(user);
+*/
+        super.save(UserUtil.createUser(userTO));
         return "redirect:/users";
     }
 
