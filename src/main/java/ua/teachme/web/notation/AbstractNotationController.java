@@ -1,8 +1,8 @@
 package ua.teachme.web.notation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import ua.teachme.dto.NotationTO;
 import ua.teachme.model.Notation;
-import ua.teachme.dto.NotationExceed;
 import ua.teachme.service.NotationService;
 import ua.teachme.util.notation.NotationUtil;
 
@@ -32,7 +32,7 @@ public abstract class AbstractNotationController {
         notationService.delete(id);
     }
 
-    public List<NotationExceed> getBetween(LocalDate startDate, LocalTime startTime, LocalDate endDate, LocalTime endTime){
+    public List<NotationTO> getBetween(LocalDate startDate, LocalTime startTime, LocalDate endDate, LocalTime endTime){
         return NotationUtil.getFilteredNotationsExceedWithStreams(
                 notationService.getBetween(
                         startDate == null ? LocalDate.MIN : startDate,
@@ -44,7 +44,7 @@ public abstract class AbstractNotationController {
         );
     }
 
-    public List<NotationExceed> getBetween(LocalDate startDate, LocalDate endDate){
+    public List<NotationTO> getBetween(LocalDate startDate, LocalDate endDate){
         return getBetween(startDate, LocalTime.MIN, endDate, LocalTime.MAX);
     }
 

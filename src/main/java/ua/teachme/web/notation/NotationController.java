@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ua.teachme.model.Notation;
-import ua.teachme.dto.NotationExceed;
+import ua.teachme.dto.NotationTO;
 import ua.teachme.util.notation.NotationUtil;
 import ua.teachme.util.time.TimeUtil;
 
@@ -85,7 +85,7 @@ public class NotationController extends AbstractNotationController{
     }
 
     @Override
-    public List<NotationExceed> getBetween(LocalDate startDate, LocalTime startTime, LocalDate endDate, LocalTime endTime) {
+    public List<NotationTO> getBetween(LocalDate startDate, LocalTime startTime, LocalDate endDate, LocalTime endTime) {
         return super.getBetween(startDate, startTime, endDate, endTime);
     }
 

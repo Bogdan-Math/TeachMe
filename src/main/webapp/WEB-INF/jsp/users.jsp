@@ -159,7 +159,9 @@
             <div class="modal-body">
                 <form class="form-horizontal" method="post" id="createUserDetails">
 
+<%--
                     <input type="text" hidden="hidden" id="id" name="id" value="0">
+--%>
 
                     <div class="form-group">
                         <label for="name" class="control-label col-xs-3">Name</label>

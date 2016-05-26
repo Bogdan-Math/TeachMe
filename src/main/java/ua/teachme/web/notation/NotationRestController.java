@@ -3,7 +3,7 @@ package ua.teachme.web.notation;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import ua.teachme.dto.NotationExceed;
+import ua.teachme.dto.NotationTO;
 import ua.teachme.model.Notation;
 
 import java.time.LocalDate;
@@ -40,7 +40,7 @@ public class NotationRestController extends AbstractNotationController{
 
     @Override
     @RequestMapping(value = "/betweenDateAndTime", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<NotationExceed> getBetween(
+    public List<NotationTO> getBetween(
             @RequestParam(value = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
             @RequestParam(value = "startTime") @DateTimeFormat(iso = DateTimeFormat.ISO.TIME) LocalTime startTime,
             @RequestParam(value = "endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate,
@@ -51,7 +51,7 @@ public class NotationRestController extends AbstractNotationController{
 
     @Override
     @RequestMapping(value = "/between", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<NotationExceed> getBetween(
+    public List<NotationTO> getBetween(
             @RequestParam(value = "startDay") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
             @RequestParam(value = "endDay") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate
     ) {
