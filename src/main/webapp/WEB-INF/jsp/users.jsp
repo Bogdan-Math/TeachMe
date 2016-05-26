@@ -11,14 +11,51 @@
     <link rel="stylesheet" href="webjars/datatables/1.10.11/css/jquery.dataTables.min.css">
     <script type="text/javascript" src="webjars/datatables/1.10.11/js/jquery.dataTables.min.js"></script>
 
+    <script type="text/javascript" src="webjars/noty/2.3.8/js/noty/packaged/jquery.noty.packaged.min.js"></script>
+
     <script type="text/javascript">
 
         var dataTableApi;
 
         $(document).ready(function () {
-            //$(function () {
             dataTableApi = $('#dataTable').dataTable();
+            //generateAll();
+           $('#createUser').on('click',function(){
+ //               $('#createUser').submit( function(){
+  //             generateAll();
+               create();
+            });
         });
+
+        function generate(type) {
+            var n = noty({
+                text: type,
+                type: type,
+                dismissQueue: true,
+                layout: 'topCenter',
+                theme: 'defaultTheme'
+            });
+        }
+
+        function generateAll() {
+            generate('alert');
+            generate('information');
+            generate('error');
+            generate('warning');
+            generate('notification');
+            generate('success');
+        }
+
+        function create() {
+            var form = $('#createUserDetails');
+            $.ajax({
+                type: 'POST',
+                url: 'users/create',
+                data: form.serialize(),
+            });
+            $('#createUserModalWindow').modal('hide');
+        }
+
     </script>
 
 </head>
@@ -34,7 +71,10 @@
             <div class="shadow">
 
                 <div class="in-center">
-                    <a class="btn btn-default" data-toggle="modal" data-target="#createModalWindow">
+                    <a class="btn btn-default" data-toggle="modal" data-target="#createUserModalWindow">
+                        <fmt:message key="table.users.create"/>
+                    </a>
+                    <a class="btn btn-default" data-toggle="modal">
                         <fmt:message key="table.users.create"/>
                     </a>
                 </div>
@@ -83,7 +123,7 @@
     <jsp:include page="fragments/footer.jsp"/>
 </footer>
 
-<div class="modal fade" id="createModalWindow">
+<div class="modal fade" id="createUserModalWindow">
 
     <div class="modal-dialog">
         <div class="modal-content">
@@ -95,7 +135,7 @@
             </div>
 
             <div class="modal-body">
-                <form class="form-horizontal" method="post" action="users/create" id="userDetails">
+                <form class="form-horizontal" method="post" id="createUserDetails">
 
                     <input type="text" hidden="hidden" id="id" name="id" value="0">
 
@@ -124,6 +164,9 @@
                     <div class="modal-footer">
                         <div class="form-group">
                             <div class="col-xs-offset-3 col-xs-9">
+
+                                <button type="button" class="btn" id="createUser"><fmt:message key="button.save"/></button>
+
                                 <button type="submit" class="btn btn-primary"><fmt:message key="button.save"/></button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal"><fmt:message
                                         key="button.close"/></button>
