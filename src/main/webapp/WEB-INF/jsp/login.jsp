@@ -21,6 +21,18 @@
 </header>
 
 <%--todo: add some body code--%>
+<div class="jumbotron">
+    <div class="container">
+
+        <%--todo: add correct jsp:useBean--%>
+            <c:if test="${loginError}">
+            <div>
+                ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+            </div>
+        </c:if>
+
+    </div>
+</div>
 
 </body>
 

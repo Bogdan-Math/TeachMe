@@ -27,6 +27,7 @@
                 login-page="/login"
                 login-processing-url="/spring_security_check"
                 default-target-url="/index"
+        authentication-failure-url="/login?error=true"
         />
         <logout logout-success-url="/login"/>
         <csrf disabled="true"/>

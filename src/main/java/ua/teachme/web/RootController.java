@@ -17,7 +17,11 @@ public class RootController {
     private static final Logger LOG = getLogger(RootController.class);
 
     @RequestMapping(value = "login")
-    public String login(){
+    public String login(
+            ModelMap model,
+            @RequestParam(value = "error", required = false) boolean error
+    ) {
+        model.put("loginError", error);
         MDC.put("logger_id", "root");
         LOG.debug("GET: /login");
         return "login";
