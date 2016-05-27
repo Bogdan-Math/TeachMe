@@ -35,6 +35,29 @@
     </div>
 </div>
 
+<div class="jumbotron">
+    <div class="container">
+
+        <div class="in-right">
+
+            <br>
+            Testing ROOT's users:<br>
+                    <br>
+                        email = 1<br>
+                     password = 1<br>
+                    <br>
+                        email = 2<br>
+                     password = 2<br>
+                    <br>
+                        email = 3<br>
+                     password = 3<br>
+                    <br>
+
+        </div>
+
+    </div>
+</div>
+
 </body>
 
 </html>

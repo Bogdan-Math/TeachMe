@@ -29,6 +29,10 @@ dd {
     text-align: center;
 }
 
+.in-right {
+    text-align: right;
+}
+
 .error {
     color: #a94442;
     background-color: #f2dede;
