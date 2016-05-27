@@ -13,6 +13,7 @@
 
     <script type="text/javascript" src="webjars/noty/2.3.8/js/noty/packaged/jquery.noty.packaged.min.js"></script>
 
+    <%--todo: add update table by ajax (json)--%>
     <script type="text/javascript">
 
         var dataTableApi;
