@@ -18,33 +18,17 @@
         var dataTableApi;
 
         $(document).ready(function () {
+
             dataTableApi = $('#dataTable').dataTable();
-            //generateAll();
-           $('#createUser').on('click',function(){
- //               $('#createUser').submit( function(){
-  //             generateAll();
+
+            $('#createUser').on('click', function(){
                create();
             });
-        });
 
-        function generate(type) {
-            var n = noty({
-                text: type,
-                type: type,
-                dismissQueue: true,
-                layout: 'topCenter',
-                theme: 'defaultTheme'
+            $('#createUserModalWindow').on(modal('hide'), function(){
+                $.get('/users');
             });
-        }
-
-        function generateAll() {
-            generate('alert');
-            generate('information');
-            generate('error');
-            generate('warning');
-            generate('notification');
-            generate('success');
-        }
+        });
 
         function create() {
             var form = $('#createUserDetails');
@@ -53,19 +37,19 @@
                 url: 'users/create',
                 data: form.serialize(),
                 success: function(){
-                    notySuccess()
+                    $('#createUserModalWindow').modal('hide');
+                    notySuccess();
                 },
                 error: function(){
-                    notyError()
+                    notyError();
                 }
             });
 
-            $('#createUserModalWindow').modal('hide');
         }
 
         function notySuccess(){
             noty({
-                text: 'text',
+                text: 'Good work !!! Please, reload page to look at changes !!!',
                 type: 'success',
                 layout: 'topRight'
                 //timeout: true
@@ -73,11 +57,11 @@
         }
 
         function notyError(){
-            noty({
-                text: 'text',
+            var n = noty({
+                text: 'Ooops !!! Something go wrong !!! Try again !!!',
                 type: 'error',
-                layout: 'topRight'
-                //timeout: true
+                layout: 'topRight',
+                timeout: 3000
             });
         }
 
