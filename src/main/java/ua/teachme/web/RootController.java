@@ -23,6 +23,13 @@ public class RootController {
         return "login";
     }
 
+    @RequestMapping(value = "logout")
+    public String logout(){
+        MDC.put("logger_id", "root");
+        LOG.debug("GET: /logout");
+        return "login";
+    }
+
     @RequestMapping(value = "")
     public String root(){
         MDC.put("logger_id", "root");

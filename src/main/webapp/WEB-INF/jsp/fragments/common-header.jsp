@@ -5,6 +5,7 @@
 <div class="navbar navbar-inverse <%--navbar-fixed-top--%>">
 
     <div class="container">
+
         <a href="index">
             <div class="navbar-brand"><fmt:message key="app.title"/></div>
         </a>
@@ -16,6 +17,11 @@
         <a href="users">
             <div class="navbar-brand"><fmt:message key="app.users"/></div>
         </a>
+
+        <form class="navbar-form navbar-right">
+            <a class="btn btn-danger" role="button" href="logout"><fmt:message key="app.logout"/></a>
+        </form>
+
     </div>
 
 </div>
