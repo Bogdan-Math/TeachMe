@@ -25,8 +25,9 @@
     <div class="container">
 
         <%--todo: add correct jsp:useBean--%>
-            <c:if test="${loginError}">
-            <div>
+        <c:if test="${loginError}">
+            <%--todo: add noty error--%>
+            <div class="error">
                 ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
             </div>
         </c:if>
