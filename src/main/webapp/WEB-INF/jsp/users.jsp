@@ -26,10 +26,33 @@
                create();
             });
 
-            $('#createUserModalWindow').on(modal('hide'), function(){
-                $.get('/users');
-            });
         });
+
+        function notyReloadPage(layout){
+            var n = noty({
+                layout: layout,
+                text: 'Good work!!! Please, reload page to look at changes. Reload NOW???',
+                type: 'success',
+                theme: 'defaultTheme',
+                buttons: [
+                    {
+                        addClass: 'btn btn-primary',
+                        text: 'ok',
+                        onClick: function($noty){
+                            $noty.close();
+                            location.reload();
+                        }
+                    },
+                    {
+                        addClass: 'btn btn-danger',
+                        text: 'cancel',
+                        onClick: function($noty){
+                            $noty.close();
+                        }
+                    }
+                ]
+            });
+        }
 
         function create() {
             var form = $('#createUserDetails');
@@ -37,9 +60,9 @@
                 type: 'POST',
                 url: 'users/create',
                 data: form.serialize(),
-                success: function(){
+                success: function(html){
                     $('#createUserModalWindow').modal('hide');
-                    notySuccess();
+                    notyReloadPage('topRight')
                 },
                 error: function(){
                     notyError();
@@ -48,20 +71,11 @@
 
         }
 
-        function notySuccess(){
-            noty({
-                text: 'Good work !!! Please, reload page to look at changes !!!',
-                type: 'success',
-                layout: 'topRight'
-                //timeout: true
-            });
-        }
-
         function notyError(){
             var n = noty({
-                text: 'Ooops !!! Something go wrong !!! Try again !!!',
+                text: 'Ooops!!! Something go wrong!!! Try again!!!',
                 type: 'error',
-                layout: 'topRight',
+                layout: 'bottomRight',
                 timeout: 3000
             });
         }
@@ -81,10 +95,11 @@
             <div class="shadow">
 
                 <div class="in-center">
-                    <a class="btn btn-default" data-toggle="modal" data-target="#createUserModalWindow">
+                    <a class="btn btn-primary" data-toggle="modal" data-target="#createUserModalWindow">
                         <fmt:message key="table.users.create"/>
                     </a>
                 </div>
+
 
                 <table class="table table-hover" id="dataTable">
 
