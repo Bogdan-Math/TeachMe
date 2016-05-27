@@ -8,7 +8,7 @@
 <body>
 
 <header>
-    <jsp:include page="fragments/header.jsp"/>
+    <jsp:include page="fragments/common-header.jsp"/>
 </header>
 
 <jsp:useBean id="selectedUser" scope="request" type="ua.teachme.model.User"/>

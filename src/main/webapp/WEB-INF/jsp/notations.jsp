@@ -8,7 +8,7 @@
 <body>
 
 <header>
-    <jsp:include page="fragments/header.jsp"/>
+    <jsp:include page="fragments/common-header.jsp"/>
 </header>
 
 <form method="post" action="notations/filter">

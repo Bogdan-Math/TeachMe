@@ -87,7 +87,7 @@
 <body>
 
 <header>
-    <jsp:include page="fragments/header.jsp"/>
+    <jsp:include page="fragments/common-header.jsp"/>
 </header>
 
     <div class="jumbotron">
