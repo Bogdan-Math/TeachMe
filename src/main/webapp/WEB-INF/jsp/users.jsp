@@ -132,7 +132,7 @@
 --%>
                             <td>${user.registeredDateAndTime} </td>
 
-                            <td><a class="btn btn-default" href="users/notations?userID=${user.id}"><fmt:message
+                            <td><a class="btn btn-default" href="notations/user?userId=${user.id}"><fmt:message
                                     key="app.user_personal_data"/></a></td>
 
                             <td><a class="btn btn-success" href="users/update?id=${user.id}"><fmt:message

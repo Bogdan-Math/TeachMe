@@ -50,4 +50,9 @@ public class JpaNotationRepositoryImpl implements NotationRepository{
     public void delete(int id) {
         entityManager.createNamedQuery(Notation.DELETE).setParameter("id", id).executeUpdate();
     }
+
+    @Override
+    public List<Notation> getByUserId(int userId) {
+        return entityManager.createNamedQuery(Notation.GET_BY_USER_ID, Notation.class).setParameter("userId", userId).getResultList();
+    }
 }

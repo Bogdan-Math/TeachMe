@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface NotationRepository extends Repository<Notation> {
     List<Notation> getBetween(LocalDateTime start, LocalDateTime end);
+    List<Notation> getByUserId(int userId);
 }

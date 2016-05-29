@@ -14,7 +14,8 @@ import java.time.LocalTime;
 @NamedQueries({
         @NamedQuery(name = Notation.DELETE, query = "DELETE FROM Notation notation WHERE notation.id=:id"),
         @NamedQuery(name = Notation.GET_ALL, query = "SELECT notation FROM Notation notation ORDER BY notation.createdDateAndTime"),
-        @NamedQuery(name = Notation.GET_BETWEEN, query = "SELECT notation FROM Notation notation WHERE :startDateAndTime <= notation.createdDateAndTime AND notation.createdDateAndTime <= :endDateAndTime ORDER BY notation.createdDateAndTime")
+        @NamedQuery(name = Notation.GET_BETWEEN, query = "SELECT notation FROM Notation notation WHERE :startDateAndTime <= notation.createdDateAndTime AND notation.createdDateAndTime <= :endDateAndTime ORDER BY notation.createdDateAndTime"),
+        @NamedQuery(name = Notation.GET_BY_USER_ID, query = "SELECT notation FROM Notation notation WHERE notation.user.id=:userId ORDER BY notation.createdDateAndTime")
 })
 @Entity
 @Table(name = "notations")
@@ -23,6 +24,7 @@ public class Notation extends EntityName {
     public static final String DELETE = "notation.delete";
     public static final String GET_ALL = "notation.getAll";
     public static final String GET_BETWEEN = "notation.getBetween";
+    public static final String GET_BY_USER_ID = "notation.getByUserId";
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)

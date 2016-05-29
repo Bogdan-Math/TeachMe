@@ -101,4 +101,10 @@ public class JdbcNotationRepositoryImpl implements NotationRepository{
     public void delete(int id) {
         jdbcTemplate.update("DELETE FROM notations WHERE id=?", id);
     }
+
+    @Override
+    //todo: add impl if necessary
+    public List<Notation> getByUserId(int userId) {
+        return null;
+    }
 }

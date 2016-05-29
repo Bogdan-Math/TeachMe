@@ -38,4 +38,10 @@ public class DataJpaNotationRepositoryPseudoImpl implements NotationRepository {
     public void delete(int id) {
         proxyNotationRepository.delete(id);
     }
+
+    @Override
+    //todo: add impl if necessary
+    public List<Notation> getByUserId(int userId) {
+        return null;
+    }
 }

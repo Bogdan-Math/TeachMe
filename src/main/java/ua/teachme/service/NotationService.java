@@ -16,4 +16,6 @@ public interface NotationService extends Service<Notation> {
     @CacheEvict(value = "notations", allEntries = true)
     default void evictCache() {
     }
+
+    List<Notation> getByUserId(int userId);
 }

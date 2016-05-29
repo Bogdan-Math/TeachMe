@@ -98,4 +98,9 @@ public class NotationServiceImplTest {
                 ).size()
         );
     }
+
+    @Test
+    public void getByUserId() throws Exception {
+        notationService.getByUserId(1000001).forEach(System.out::println);
+    }
 }

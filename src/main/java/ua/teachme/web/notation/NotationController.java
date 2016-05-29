@@ -84,6 +84,21 @@ public class NotationController extends AbstractNotationController{
         return "redirect:/notations";
     }
 
+    @RequestMapping(value = "/user", method = RequestMethod.GET)
+    public String getByUserId(HttpServletRequest request, Model model){
+        int userId = Integer.valueOf(request.getParameter("userId"));
+        model.addAttribute
+                (
+                        "notations",
+                        NotationUtil.getFilteredWithExceed
+                                (
+                                        super.getByUserId(userId),
+                                        NotationUtil.hours)
+                );
+        setDefaultDateAndTime(model);
+        return "notations";
+    }
+
     @Override
     public List<NotationTO> getBetween(LocalDate startDate, LocalTime startTime, LocalDate endDate, LocalTime endTime) {
         return super.getBetween(startDate, startTime, endDate, endTime);

@@ -53,4 +53,10 @@ public class InMemoryNotationRepositoryImpl implements NotationRepository {
     public List<Notation> getBetween(LocalDateTime start, LocalDateTime end) {
         return getAll().stream().filter(notation -> TimeUtil.isBetween(notation.getCreatedDateAndTime(), start, end)).collect(Collectors.toList());
     }
+
+    @Override
+    //todo: add impl if necessary
+    public List<Notation> getByUserId(int userId) {
+        return null;
+    }
 }

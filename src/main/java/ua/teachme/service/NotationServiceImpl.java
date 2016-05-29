@@ -56,4 +56,9 @@ public class NotationServiceImpl implements NotationService {
     public List<Notation> getBetween(LocalDateTime start, LocalDateTime end) {
         return notationRepository.getBetween(start, end);
     }
+
+    @Override
+    public List<Notation> getByUserId(int userId) {
+        return notationRepository.getByUserId(userId);
+    }
 }
