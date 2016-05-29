@@ -107,12 +107,15 @@
                     <tr>
                         <th><fmt:message key="table.users.name"/></th>
                         <th><fmt:message key="table.users.email"/></th>
+<%--
                         <th><fmt:message key="table.users.roles"/></th>
+--%>
                         <th><fmt:message key="table.users.reg"/></th>
                         <%--
                         MOTHER_FUCKING FIX !!!
                         (Don't delete this two <th>. Need to correct use DataTable js
                         )--%>
+                        <th></th>
                         <th></th>
                         <th></th>
 
@@ -124,14 +127,18 @@
                         <tr>
                             <td><c:out value="${user.name}"/></td>
                             <td><a href="mailto:${user.email}">${user.email}</a></td>
+<%--
                             <td>${user.roles}</td>
+--%>
                             <td>${user.registeredDateAndTime} </td>
+
+                            <td><a class="btn btn-default" href="users/notations?userID=${user.id}"><fmt:message
+                                    key="app.user_personal_data"/></a></td>
 
                             <td><a class="btn btn-success" href="users/update?id=${user.id}"><fmt:message
                                     key="table.users.edit"/></a></td>
                             <td><a class="btn btn-danger" href="users/delete?id=${user.id}"><fmt:message
                                     key="table.users.delete"/></a></td>
-
                         </tr>
                     </c:forEach>
 

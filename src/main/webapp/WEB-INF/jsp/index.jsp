@@ -14,6 +14,7 @@
 <div class="jumbotron">
     <div class="container">
 
+<%--
         <form method="post" action="users/id">
             <label>
                 <select name="userID">
@@ -24,10 +25,12 @@
             </label>
             <button type="submit"><fmt:message key="button.select"/></button>
         </form>
+--%>
 
         <form method="post" action="users/email">
             <label>
                 <select name="userEmail">
+
                     <option value="anonymous@gmail.com">anonymous@gmail.com</option>
                     <option value="user@gmail.com">user@gmail.com</option>
                     <option value="admin@gmail.com">admin@gmail.com</option>

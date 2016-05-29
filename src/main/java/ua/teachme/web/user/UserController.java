@@ -5,7 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ua.teachme.dto.UserTO;
-import ua.teachme.model.User;
 import ua.teachme.util.user.UserUtil;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +19,7 @@ public class UserController extends AbstractUserController{
         return "users";
     }
 
-    @RequestMapping(value = "/id", method = RequestMethod.POST)
+    @RequestMapping(value = "/id", method = RequestMethod.GET)
     public String get(HttpServletRequest request, Model model) {
         int id = Integer.valueOf(request.getParameter("userID"));
         model.addAttribute("selectedUser", super.get(id));
@@ -59,6 +58,12 @@ public class UserController extends AbstractUserController{
         String email = request.getParameter("userEmail");
         model.addAttribute("selectedUser", super.getByEmail(email));
         return "user";
+    }
+
+    @RequestMapping(value = "/notations", method = RequestMethod.GET)
+    public String getNotationsByUserId(HttpServletRequest request, Model model){
+
+        return "notations";
     }
 
     private int getIdFromRequest(HttpServletRequest request) {
