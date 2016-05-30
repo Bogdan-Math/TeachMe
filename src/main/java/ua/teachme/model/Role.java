@@ -1,7 +1,14 @@
 package ua.teachme.model;
 
-public enum Role {
+import org.springframework.security.core.GrantedAuthority;
+
+public enum Role implements GrantedAuthority {
     ANONYMOUS,
     COMMON,
-    ADMIN
+    ADMIN;
+
+    @Override
+    public String getAuthority() {
+        return this.name();
+    }
 }

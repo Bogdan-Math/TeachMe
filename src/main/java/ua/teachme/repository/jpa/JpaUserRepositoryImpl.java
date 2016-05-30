@@ -6,6 +6,7 @@ import ua.teachme.model.User;
 import ua.teachme.repository.UserRepository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
@@ -18,7 +19,14 @@ public class JpaUserRepositoryImpl implements UserRepository {
 
     @Override
     public User getByEmail(String email) {
-        return entityManager.createNamedQuery(User.BY_EMAIL, User.class).setParameter("email", email).getSingleResult();
+        User user;
+        try {
+            user = entityManager.createNamedQuery(User.BY_EMAIL, User.class).setParameter("email", email).getSingleResult();
+        }
+        catch (NoResultException e) {
+            return null;
+        }
+        return user;
     }
 
     @Override
