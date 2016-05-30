@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import ua.teachme.LoggedUser;
 import ua.teachme.model.Notation;
 import ua.teachme.dto.NotationTO;
 import ua.teachme.util.notation.NotationUtil;
@@ -21,7 +22,16 @@ public class NotationController extends AbstractNotationController{
 
     @RequestMapping(method = RequestMethod.GET)
     public String getAll(Model model) {
+/*
         model.addAttribute("notations", NotationUtil.getFilteredWithExceed(super.getAll(), NotationUtil.hours));
+*/
+        model.addAttribute(
+                "notations",
+                NotationUtil.getFilteredWithExceed(
+                        super.getByUserId(LoggedUser.getId()),
+                        NotationUtil.hours
+                )
+        );
         setDefaultDateAndTime(model);
         return "notations";
     }
