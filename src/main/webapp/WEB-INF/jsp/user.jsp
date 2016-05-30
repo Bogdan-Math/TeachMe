@@ -12,7 +12,7 @@
 </header>
 
 <jsp:useBean id="selectedUser" scope="request" type="ua.teachme.model.User"/>
-<form method="post" action="users/create" style="text-align: center">
+<form method="post" action="users/save" style="text-align: center">
 <dl>
     <dd>
         <label>

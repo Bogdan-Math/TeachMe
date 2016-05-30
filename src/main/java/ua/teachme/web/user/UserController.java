@@ -32,7 +32,7 @@ public class UserController extends AbstractUserController{
         return "user";
     }
 
-    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String save(UserTO userTO /*SpringMVC MAGIC !!!*/ /*HttpServletRequest request*/) {
 /*
         int id = getIdFromRequest(request);
