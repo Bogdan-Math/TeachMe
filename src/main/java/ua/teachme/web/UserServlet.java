@@ -1,6 +1,6 @@
 package ua.teachme.web;
 
-import ua.teachme.SelectedUser;
+import ua.teachme.LoggedUser;
 import ua.teachme.model.User;
 import ua.teachme.web.user.UserController;
 
@@ -25,8 +25,7 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int userID = Integer.parseInt(request.getParameter("userID"));
-        SelectedUser.setID(userID);
-        User selectedUser = userController.get(SelectedUser.getID());
+        User selectedUser = userController.get(userID);
         request.setAttribute("selectedUser", selectedUser);
         request.getRequestDispatcher("user.jsp").forward(request, response);
     }
