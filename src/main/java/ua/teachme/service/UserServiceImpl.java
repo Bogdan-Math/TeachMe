@@ -49,7 +49,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         userRepository.delete(id);
     }
 
-    @Override
+    @Override // todo: fix returned value to more transparent code
     public LoggedUser loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userRepository.getByEmail(email);
         if (null == user) {

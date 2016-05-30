@@ -47,10 +47,10 @@
 
     </dl>
 
+<%--todo: add correct filter
     <button type="submit"><fmt:message key="button.filter"/></button>
-    <%--
-        <button type="reset">reset</button>
-    --%>
+    <button type="reset">reset</button>
+--%>
 </form>
 
 <div class="jumbotron">
@@ -59,7 +59,9 @@
 
             <table class="table table-view">
 
+<%--
                 <a href="notations/create"><fmt:message key="button.create"/></a>
+--%>
                 <thead>
                 <tr>
                     <th><fmt:message key="table.notations.name"/></th>
