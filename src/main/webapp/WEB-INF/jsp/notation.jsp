@@ -24,22 +24,22 @@
 
     <dl>
         <dt>name</dt>
-        <dd><input type="text" value="${notation.name}" name="name"></dd>
+        <dd><input type="text" value="${notation.name}" name="name" required></dd>
     </dl>
 
     <dl>
         <dt>url</dt>
-        <dd><input type="text" value="${notation.url}" name="url"></dd>
+        <dd><input type="text" value="${notation.url}" name="url" required></dd>
     </dl>
 
     <dl>
         <dt>description</dt>
-        <dd><input type="text" value="${notation.description}" name="description"></dd>
+        <dd><input type="text" value="${notation.description}" name="description" required></dd>
     </dl>
 
     <dl>
         <dt>hours</dt>
-        <dd><input type="number" value="${notation.hours}" name="hours"></dd>
+        <dd><input type="number" value="${notation.hours}" name="hours" required></dd>
     </dl>
 
     <dl>
