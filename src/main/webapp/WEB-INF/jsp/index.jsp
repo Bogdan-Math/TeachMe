@@ -27,6 +27,7 @@
         </form>
 --%>
 
+<%--
         <form method="post" action="users/email">
             <label>
                 <select name="userEmail">
@@ -38,6 +39,7 @@
             </label>
             <button type="submit"><fmt:message key="button.select"/></button>
         </form>
+--%>
 
     </div>
 </div>
