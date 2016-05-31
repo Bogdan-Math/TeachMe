@@ -13,6 +13,7 @@
 
 <jsp:useBean id="selectedUser" scope="request" type="ua.teachme.model.User"/>
 <form method="post" action="users/save" style="text-align: center">
+<%--
 <dl>
     <dd>
         <label>
@@ -20,6 +21,7 @@
         </label>
     </dd>
 </dl>
+--%>
 
 <dl>
     <dd>
@@ -66,19 +68,23 @@
 </dl>
 
 <dl>
+<%--
     <dt>registered date</dt>
+--%>
     <dd>
         <label>
-            <input type="text" value="${selectedUser.registeredDate}" name="registeredDate">
+            <input type="hidden" value="${selectedUser.registeredDate}" name="registeredDate">
         </label>
     </dd>
 </dl>
 
 <dl>
+<%--
     <dt>roles</dt>
+--%>
     <dd>
         <label>
-            <input type="text" value="${selectedUser.roles}" name="roles">
+            <input type="hidden" value="${selectedUser.roles}" name="roles">
         </label>
     </dd>
 </dl>

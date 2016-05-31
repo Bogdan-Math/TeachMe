@@ -23,6 +23,12 @@ public class UserUtil {
     );
 
     public static User createUser(UserTO userTO){
-        return new User(userTO.getId(), userTO.getName(), userTO.getPassword(), userTO.getEmail());
+        return new User(
+                        userTO.getId(),
+                        userTO.getName(),
+                        userTO.getPassword(),
+                        userTO.getEmail(),
+                        userTO.getHours()
+        );
     }
 }
