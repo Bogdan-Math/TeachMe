@@ -39,9 +39,9 @@
 
 <!--
             <user-service>
-                <user name="1" password="1" authorities="ADMIN"/>
-                <user name="2" password="2" authorities="COMMON"/>
-                <user name="3" password="3" authorities="ANONYMOUS"/>
+                <user name="1" password="1" authorities="ROLE_ADMIN"/>
+                <user name="2" password="2" authorities="ROLE_COMMON"/>
+                <user name="3" password="3" authorities="ROLE_ANONYMOUS"/>
             </user-service>
 -->
         </authentication-provider>

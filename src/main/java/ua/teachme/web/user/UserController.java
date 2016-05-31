@@ -1,5 +1,6 @@
 package ua.teachme.web.user;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping(value = "/users")
+@PreAuthorize("hasAuthority('ADMIN')")
 public class UserController extends AbstractUserController{
 
     @RequestMapping(method = RequestMethod.GET)
