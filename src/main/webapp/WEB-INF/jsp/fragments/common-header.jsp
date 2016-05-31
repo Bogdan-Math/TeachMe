@@ -19,7 +19,7 @@
         </a>
 
         <form class="navbar-form navbar-right">
-            <a class="btn btn-danger" role="button" href="logout"><fmt:message key="app.logout"/></a>
+            <a class="btn btn-warning" role="button" href="logout"><fmt:message key="app.logout"/></a>
         </form>
 
     </div>
