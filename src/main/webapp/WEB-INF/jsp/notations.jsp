@@ -131,8 +131,8 @@
                         <td>${notation.description}</td>
                         <td>${notation.hours}</td>
                         <td>${notation.date} : ${notation.time}</td>
-                        <td><a href="notations/update?id=${notation.id}"><fmt:message key="button.update"/></a></td>
-                        <td><a href="notations/delete?id=${notation.id}"><fmt:message key="button.delete"/></a></td>
+                        <td><a class="btn btn-warning" href="notations/update?id=${notation.id}"><fmt:message key="button.update"/></a></td>
+                        <td><a class="btn btn-danger" href="notations/delete?id=${notation.id}"><fmt:message key="button.delete"/></a></td>
                     </tr>
 
                 </c:forEach>
