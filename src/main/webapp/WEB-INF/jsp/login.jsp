@@ -42,16 +42,21 @@
 
             <br>
             Testing ROOT's users:<br>
-                    <br>
-                        email = 1@ukr.net<br>
-                     password = 111111<br>
-                    <br>
-                        email = 2@ukr.net<br>
-                     password = 222222<br>
-                    <br>
-                        email = 3@ukr.net<br>
-                     password = 333333<br>
-                    <br>
+            <br>
+
+            <div>
+                admin:<br>
+                email = '<b>admin@gmail.com</b>'<br>
+                password = '<b>password</b>'<br>
+                <br>
+            </div>
+
+            <div>
+                user:<br>
+                email = '<b>user@gmail.com</b>'<br>
+                password = '<b>password</b>'<br>
+                <br>
+            </div>
 
         </div>
 
