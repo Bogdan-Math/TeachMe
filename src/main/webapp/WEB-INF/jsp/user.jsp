@@ -35,7 +35,7 @@
     <dt>name</dt>
     <dd>
         <label>
-            <input type="text" value="${selectedUser.name}" name="name">
+            <input type="text" value="${selectedUser.name}" name="name" required>
         </label>
     </dd>
 </dl>
@@ -44,7 +44,7 @@
     <dt>password</dt>
     <dd>
         <label>
-            <input type="text" value="${selectedUser.password}" name="password">
+            <input type="text" value="${selectedUser.password}" name="password" required>
         </label>
     </dd>
 </dl>
@@ -53,7 +53,7 @@
     <dt>email</dt>
     <dd>
         <label>
-            <input type="text" value="${selectedUser.email}" name="email">
+            <input type="text" value="${selectedUser.email}" name="email" required>
         </label>
     </dd>
 </dl>
@@ -62,7 +62,7 @@
     <dt>hours</dt>
     <dd>
         <label>
-            <input type="text" value="${selectedUser.maxHoursPerDay}" name="hours">
+            <input type="number" value="${selectedUser.maxHoursPerDay}" name="hours" required>
         </label>
     </dd>
 </dl>
