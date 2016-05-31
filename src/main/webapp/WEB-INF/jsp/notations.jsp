@@ -17,8 +17,35 @@
 
         var dataTableApi;
 
+        var startDate;
+        var startTime;
+        var endDate;
+        var endTime;
+
         $(document).ready(function () {
+
             dataTableApi = $('#dataTable').dataTable();
+
+            startDate = $('#startDate').datetimepicker({
+                timepicker: false,
+                format: 'Y-m-d'
+            });
+
+            startTime = $('#startTime').datetimepicker({
+                datepicker: false,
+                format: 'H:i'
+            });
+
+            endDate = $('#endDate').datetimepicker({
+                timepicker: false,
+                format: 'Y-m-d'
+            });
+
+            endTime = $('#endTime').datetimepicker({
+                datepicker: false,
+                format: 'H:i'
+            });
+
         });
 
     </script>
@@ -37,14 +64,14 @@
         <dt>start date:</dt>
         <dd>
             <label>
-                <input type="date" value="${startDate}" name="startDate">
+                <input type="text" value="${startDate}" name="startDate" id="startDate">
             </label>
         </dd>
 
         <dt>start time:</dt>
         <dd>
             <label>
-                <input type="time" value="${startTime}" name="startTime">
+                <input type="text" value="${startTime}" name="startTime" id="startTime">
             </label>
         </dd>
 
@@ -54,14 +81,14 @@
         <dt>end date:</dt>
         <dd>
             <label>
-                <input type="date" value="${endDate}" name="endDate">
+                <input type="text" value="${endDate}" name="endDate" id="endDate">
             </label>
         </dd>
 
         <dt>end time:</dt>
         <dd>
             <label>
-                <input type="time" value="${endTime}" name="endTime">
+                <input type="text" value="${endTime}" name="endTime" id="endTime">
             </label>
         </dd>
 
@@ -120,4 +147,6 @@
 </footer>
 
 </body>
+    <link rel="stylesheet" href="webjars/datetimepicker/2.4.7/jquery.datetimepicker.css">
+    <script type="text/javascript" src="webjars/datetimepicker/2.4.7/build/jquery.datetimepicker.full.min.js"></script>
 </html>
