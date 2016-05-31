@@ -59,9 +59,7 @@
 
             <table class="table table-view">
 
-<%--
                 <a href="notations/create"><fmt:message key="button.create"/></a>
---%>
                 <thead>
                 <tr>
                     <th><fmt:message key="table.notations.name"/></th>

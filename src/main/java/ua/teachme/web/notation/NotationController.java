@@ -59,6 +59,7 @@ public class NotationController extends AbstractNotationController{
                 Integer.valueOf(request.getParameter("hours")),
                 id.isEmpty() ? LocalDateTime.now() : LocalDateTime.parse(request.getParameter("createdDateAndTime"))
         );
+        notation.setUser(super.getUser(LoggedUser.getId()));
         super.save(notation);
         setDefaultDateAndTime(model);
         return "redirect:/notations";

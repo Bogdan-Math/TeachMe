@@ -3,7 +3,9 @@ package ua.teachme.web.notation;
 import org.springframework.beans.factory.annotation.Autowired;
 import ua.teachme.dto.NotationTO;
 import ua.teachme.model.Notation;
+import ua.teachme.model.User;
 import ua.teachme.service.NotationService;
+import ua.teachme.service.UserService;
 import ua.teachme.util.notation.NotationUtil;
 
 import java.time.LocalDate;
@@ -14,7 +16,14 @@ import java.util.List;
 public abstract class AbstractNotationController {
 
     @Autowired
+    private UserService userService;
+
+    @Autowired
     private NotationService notationService;
+
+    public User getUser(int id){
+        return userService.get(id);
+    }
 
     public List<Notation> getAll(){
         return notationService.getAll();

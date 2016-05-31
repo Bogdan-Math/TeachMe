@@ -16,8 +16,10 @@
 <form method="post" action="notations">
 
     <dl>
+<%--
         <dt>id</dt>
-        <dd><input type="text" value="${notation.id}" name="id"></dd>
+--%>
+        <dd><input type="hidden" value="${notation.id}" name="id"></dd>
     </dl>
 
     <dl>
@@ -41,8 +43,10 @@
     </dl>
 
     <dl>
+<%--
         <dt>date and time:</dt>
-        <dd><input type="datetime-local" value="${notation.createdDateAndTime}" name="createdDateAndTime"></dd>
+--%>
+        <dd><input type="hidden" <%--type="datetime-local"--%> value="${notation.createdDateAndTime}" name="createdDateAndTime"></dd>
     </dl>
 
     <button type="submit">save</button>
