@@ -106,14 +106,14 @@
                     <thead>
                     <tr>
                         <th><fmt:message key="table.users.name"/></th>
-                        <th><fmt:message key="table.users.email"/></th>
 <%--
+                        <th><fmt:message key="table.users.email"/></th>
                         <th><fmt:message key="table.users.roles"/></th>
 --%>
                         <th><fmt:message key="table.users.reg"/></th>
                         <%--
                         MOTHER_FUCKING FIX !!!
-                        (Don't delete this two <th>. Need to correct use DataTable js
+                        (Don't delete this <th>. Need to correct use DataTable js
                         )--%>
                         <th></th>
                         <th></th>
@@ -126,8 +126,8 @@
                         <jsp:useBean id="user" scope="page" type="ua.teachme.model.User"/>
                         <tr>
                             <td><c:out value="${user.name}"/></td>
-                            <td><a href="mailto:${user.email}">${user.email}</a></td>
 <%--
+                            <td><a href="mailto:${user.email}">${user.email}</a></td>
                             <td>${user.roles}</td>
 --%>
                             <td>${user.registeredDateAndTime} </td>
