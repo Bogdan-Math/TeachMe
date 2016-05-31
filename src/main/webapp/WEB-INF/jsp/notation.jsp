@@ -13,7 +13,7 @@
 
 
 <jsp:useBean id="notation" scope="request" type="ua.teachme.model.Notation"/>
-<form method="post" action="notations">
+<form method="post" action="notations" style="text-align: center">
 
     <dl>
 <%--
@@ -49,8 +49,8 @@
         <dd><input type="hidden" <%--type="datetime-local"--%> value="${notation.createdDateAndTime}" name="createdDateAndTime"></dd>
     </dl>
 
-    <button type="submit">save</button>
-    <button onclick="window.history.back()">cancel</button>
+    <button type="submit" class="btn btn-primary" ><fmt:message key="button.save"/></button>
+    <button type="button" class="btn btn-default" onclick="window.history.back()"><fmt:message key="button.close"/></button>
 </form>
 
 <footer>
