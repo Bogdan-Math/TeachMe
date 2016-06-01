@@ -24,13 +24,15 @@
 <div class="jumbotron">
     <div class="container">
 
-        <%--todo: add correct jsp:useBean--%>
-        <c:if test="${loginError}">
-            <%--todo: add noty error--%>
-            <div class="error">
-                ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
-            </div>
-        </c:if>
+        <div class="in-center">
+            <%--todo: add correct jsp:useBean--%>
+            <c:if test="${loginError}">
+                <%--todo: add noty error--%>
+                <div class="error">
+                        ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+                </div>
+            </c:if>
+        </div>
 
     </div>
 </div>
@@ -40,6 +42,9 @@
 
         <div class="in-right">
 
+            <a class="btn btn-primary btn-lg" role="button" href="register"><fmt:message key="app.register"/></a>
+
+            <br>
             <br>
             Testing ROOT's users:<br>
             <br>

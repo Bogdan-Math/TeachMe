@@ -16,6 +16,13 @@ public class RootController {
 
     private static final Logger LOG = getLogger(RootController.class);
 
+    @RequestMapping(value = "register")
+    public String register(){
+        MDC.put("logger_id", "root");
+        LOG.debug("GET: /register");
+        return "index";
+    }
+
     @RequestMapping(value = "login")
     public String login(
             ModelMap model,
