@@ -39,3 +39,8 @@ dd {
     background-color: #f2dede;
     border: 1px solid #ebccd1;
 }
+
+.update-warning {
+    color: #000000;
+    background-color: #ff8c1d;
+}

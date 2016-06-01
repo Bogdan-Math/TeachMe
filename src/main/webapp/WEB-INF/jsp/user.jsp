@@ -16,8 +16,10 @@
 
 <jsp:useBean id="selectedUser" scope="request" type="ua.teachme.model.User"/>
 <form method="post" action="users/save" style="text-align: center">
+
     <br>
-    Now, You are changing the PERSONAL DATA from another profile:
+        <div class="update-warning"><fmt:message key="user.update.warning"/></div>
+    <br>
     <%--
     <dl>
         <dd>
