@@ -11,13 +11,13 @@ public class UserInterceptor extends HandlerInterceptorAdapter{
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        /*if (null != modelAndView && !modelAndView.isEmpty()) {
-            LoggedUser loggedUser = LoggedUser.correctGet();
-            if (null != loggedUser) {
-                modelAndView.getModelMap().addAttribute("userTo", LoggedUser.get());
+        if (null != modelAndView && !modelAndView.isEmpty()) {
+            String loggedUserName = LoggedUser.getName();
+            if (null != loggedUserName) {
+                modelAndView.getModelMap().addAttribute("loggedUser", LoggedUser.getName());
             }
-        }*/
-        modelAndView.getModelMap().addAttribute("loggedUser", LoggedUser.getName());
+        }
+        //modelAndView.getModelMap().addAttribute("loggedUser", LoggedUser.getName());
     }
 
 }
