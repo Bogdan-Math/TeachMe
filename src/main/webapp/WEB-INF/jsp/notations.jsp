@@ -71,7 +71,7 @@
         <dt>start time:</dt>
         <dd>
             <label>
-                <input type="text" value="${startTime}" name="startTime" id="startTime">
+                <input type="text" value="00:00" <%--value="${startTime}"--%> name="startTime" id="startTime">
             </label>
         </dd>
 
@@ -88,7 +88,7 @@
         <dt>end time:</dt>
         <dd>
             <label>
-                <input type="text" value="${endTime}" name="endTime" id="endTime">
+                <input type="text" value="23:00" <%--value="${endTime}"--%> name="endTime" id="endTime">
             </label>
         </dd>
 
