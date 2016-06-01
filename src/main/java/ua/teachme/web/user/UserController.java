@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @RequestMapping(value = "/users")
 @PreAuthorize("hasAuthority('ADMIN')")
-public class UserController extends AbstractUserController{
+public class UserController extends AbstractUserController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String getAll(Model model) {
@@ -30,8 +30,21 @@ public class UserController extends AbstractUserController{
         return "user";
     }
 
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public String save(UserTO userTO /*SpringMVC MAGIC !!!*/ /*HttpServletRequest request*/) {
+        /*
+        int id = getIdFromRequest(request);
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        User user = new User(id, name, password, email);
+        */
+        super.save(UserUtil.createUser(userTO));
+        return "redirect:/users";
+    }
+
     @RequestMapping(value = "/update", method = RequestMethod.GET)
-    public String update(HttpServletRequest request, Model model){
+    public String update(HttpServletRequest request, Model model) {
         model.addAttribute("selectedUser", super.get(getIdFromRequest(request)));
         return "user";
     }
@@ -51,7 +64,7 @@ public class UserController extends AbstractUserController{
     }
 
     @RequestMapping(value = "/notations", method = RequestMethod.GET)
-    public String getNotationsByUserId(HttpServletRequest request, Model model){
+    public String getNotationsByUserId(HttpServletRequest request, Model model) {
 
         return "notations";
     }

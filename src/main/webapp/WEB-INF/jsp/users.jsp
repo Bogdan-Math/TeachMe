@@ -58,7 +58,7 @@
             var form = $('#createUserDetails');
             $.ajax({
                 type: 'POST',
-                url: 'profile',
+                url: 'users/save',
                 data: form.serialize(),
                 success: function(){
                     $('#createUserModalWindow').modal('hide');
@@ -134,8 +134,7 @@
 
                             <td><a class="btn btn-default" href="notations/user?userId=${user.id}"><fmt:message
                                     key="app.user_personal_data"/></a></td>
-                            <td><a class="btn btn-warning" href="users/update?id=${user.id}"><fmt:message
-                                    key="table.users.edit"/></a></td>
+                            <td><a class="btn btn-warning" href="users/"><fmt:message key="table.users.edit"/></a></td>
                             <td><a class="btn btn-danger" href="users/delete?id=${user.id}"><fmt:message
                                     key="table.users.delete"/></a></td>
                         </tr>

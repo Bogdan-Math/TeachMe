@@ -29,4 +29,14 @@ public class UserUtil {
         user.setMaxHoursPerDay(userTO.getHours());
         return user;
     }
+
+    public static User createUser(UserTO userTO) {
+        return new User(
+                userTO.getId(),
+                userTO.getName(),
+                userTO.getPassword(),
+                userTO.getEmail(),
+                userTO.getHours()
+        );
+    }
 }
