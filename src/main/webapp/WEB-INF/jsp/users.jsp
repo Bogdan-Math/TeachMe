@@ -58,7 +58,7 @@
             var form = $('#createUserDetails');
             $.ajax({
                 type: 'POST',
-                url: 'users/save',
+                url: 'profile',
                 data: form.serialize(),
                 success: function(){
                     $('#createUserModalWindow').modal('hide');

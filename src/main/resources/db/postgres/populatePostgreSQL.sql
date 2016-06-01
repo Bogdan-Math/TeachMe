@@ -38,12 +38,12 @@ VALUES (1000003, 'notation5', 'http://url5.com', 'desc5', 5, '2016-05-03 21:26:0
 /*populate user_roles table*/
 DELETE FROM user_roles;
 
-INSERT INTO user_roles (user_id, role) VALUES (1000001, 'ANONYMOUS');
+INSERT INTO user_roles (user_id, role) VALUES (1000001, 'COMMON');
 
-INSERT INTO user_roles (user_id, role) VALUES (1000002, 'ANONYMOUS');
 INSERT INTO user_roles (user_id, role) VALUES (1000002, 'COMMON');
+INSERT INTO user_roles (user_id, role) VALUES (1000002, 'EXPANDED');
 
-INSERT INTO user_roles (user_id, role) VALUES (1000003, 'ANONYMOUS');
 INSERT INTO user_roles (user_id, role) VALUES (1000003, 'COMMON');
+INSERT INTO user_roles (user_id, role) VALUES (1000003, 'EXPANDED');
 INSERT INTO user_roles (user_id, role) VALUES (1000003, 'ADMIN');
 
