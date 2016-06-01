@@ -1,5 +1,6 @@
 package ua.teachme.web;
 
+import ua.teachme.LoggedUser;
 import ua.teachme.model.Notation;
 import ua.teachme.util.notation.NotationUtil;
 import ua.teachme.util.time.TimeUtil;
@@ -66,6 +67,7 @@ public class NotationServlet extends HttpServlet {
             String endDate = request.getParameter("endDate");
             String endTime = request.getParameter("endTime");
             request.setAttribute("notations", notationController.getBetween(
+                    LoggedUser.getId(),
                     TimeUtil.toLocalDate(startDate),
                     TimeUtil.toLocalTime(startTime),
                     TimeUtil.toLocalDate(endDate),

@@ -72,6 +72,7 @@ public class NotationController extends AbstractNotationController{
         String endDate = request.getParameter("endDate");
         String endTime = request.getParameter("endTime");
         model.addAttribute("notations", super.getBetween(
+                LoggedUser.getId(),
                 TimeUtil.toLocalDate(startDate),
                 TimeUtil.toLocalTime(startTime),
                 TimeUtil.toLocalDate(endDate),
@@ -108,11 +109,6 @@ public class NotationController extends AbstractNotationController{
                 );
         setDefaultDateAndTime(model);
         return "notations";
-    }
-
-    @Override
-    public List<NotationTO> getBetween(LocalDate startDate, LocalTime startTime, LocalDate endDate, LocalTime endTime) {
-        return super.getBetween(startDate, startTime, endDate, endTime);
     }
 
     private int getIdFromRequest(HttpServletRequest request) {

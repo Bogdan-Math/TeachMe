@@ -94,8 +94,10 @@
 
     </dl>
 
+    <div class="in-center">
+        <button class="btn btn-info" type="submit"><fmt:message key="button.filter"/></button>
+    </div>
     <%--todo: add correct filter
-        <button type="submit"><fmt:message key="button.filter"/></button>
         <button type="reset">reset</button>
     --%>
 </form>
@@ -106,7 +108,10 @@
 
             <table class="table table-view" id="dataTable">
 
-                <a href="notations/create"><fmt:message key="button.create"/></a>
+                <div class="in-center">
+                    <a class="btn btn-primary" href="notations/create"><fmt:message key="button.create"/></a>
+                </div>
+
                 <thead>
                 <tr>
                     <th><fmt:message key="table.notations.name"/></th>
@@ -131,8 +136,10 @@
                         <td>${notation.description}</td>
                         <td>${notation.hours}</td>
                         <td>${notation.date} : ${notation.time}</td>
-                        <td><a class="btn btn-warning" href="notations/update?id=${notation.id}"><fmt:message key="button.update"/></a></td>
-                        <td><a class="btn btn-danger" href="notations/delete?id=${notation.id}"><fmt:message key="button.delete"/></a></td>
+                        <td><a class="btn btn-warning" href="notations/update?id=${notation.id}"><fmt:message
+                                key="button.update"/></a></td>
+                        <td><a class="btn btn-danger" href="notations/delete?id=${notation.id}"><fmt:message
+                                key="button.delete"/></a></td>
                     </tr>
 
                 </c:forEach>
@@ -147,6 +154,6 @@
 </footer>
 
 </body>
-    <link rel="stylesheet" href="webjars/datetimepicker/2.4.7/jquery.datetimepicker.css">
-    <script type="text/javascript" src="webjars/datetimepicker/2.4.7/build/jquery.datetimepicker.full.min.js"></script>
+<link rel="stylesheet" href="webjars/datetimepicker/2.4.7/jquery.datetimepicker.css">
+<script type="text/javascript" src="webjars/datetimepicker/2.4.7/build/jquery.datetimepicker.full.min.js"></script>
 </html>

@@ -9,6 +9,7 @@ import ua.teachme.service.UserService;
 import ua.teachme.util.notation.NotationUtil;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -41,21 +42,24 @@ public abstract class AbstractNotationController {
         notationService.delete(id);
     }
 
-    public List<NotationTO> getBetween(LocalDate startDate, LocalTime startTime, LocalDate endDate, LocalTime endTime){
+    public List<NotationTO> getBetween(int userId, LocalDate startDate, LocalTime startTime, LocalDate endDate, LocalTime endTime){
         return NotationUtil.getFilteredNotationsExceedWithStreams(
-                notationService.getBetween(
+                getByUserId(userId)
+                /*notationService.getBetween(
                         startDate == null ? LocalDate.MIN : startDate,
                         endDate == null ? LocalDate.MAX : endDate
-                ),
-                startTime == null ? LocalTime.MIN : startTime,
-                endTime == null ? LocalTime.MAX : endTime,
+                )*/,
+                startDate == null || startTime == null ? LocalDateTime.MIN : LocalDateTime.of(startDate, startTime),
+                endDate == null || endTime == null ? LocalDateTime.MAX : LocalDateTime.of(endDate, endTime),
                 NotationUtil.hours
         );
     }
 
+/*
     public List<NotationTO> getBetween(LocalDate startDate, LocalDate endDate){
         return getBetween(startDate, LocalTime.MIN, endDate, LocalTime.MAX);
     }
+*/
 
     public void evictCache(){
         notationService.evictCache();

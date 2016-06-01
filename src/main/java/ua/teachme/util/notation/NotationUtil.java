@@ -29,32 +29,34 @@ public class NotationUtil {
     public static Notation equalNotation = new Notation("name", "URL", "description", 1, LocalDateTime.now());
 
     public static void main(String[] args) {
-        getFilteredNotationsExceedWithStreams(notations, LocalTime.of(11, 0), LocalTime.of(23, 0), hours).forEach(System.out::println);
+        getFilteredNotationsExceedWithStreams(notations, LocalDateTime.now(), LocalDateTime.now(), hours).forEach(System.out::println);
         System.out.println("///////////////");
+/*
         getFilteredNotationsExceedWithLoops(notations, LocalTime.of(11, 0), LocalTime.of(23, 0), hours).forEach(System.out::println);
         System.out.println("///////////////");
         getFilteredWithExceed(notations, hours).forEach(System.out::println);
         System.out.println("///////////////");
+*/
     }
 
     //filter with full day period
     public static List<NotationTO> getFilteredWithExceed(List<Notation> notations, int hoursPerDay){
-        return getFilteredNotationsExceedWithStreams(notations, LocalTime.MIN, LocalTime.MAX, hoursPerDay);
+        return getFilteredNotationsExceedWithStreams(notations, LocalDateTime.MIN, LocalDateTime.MAX, hoursPerDay);
     }
 
     //filter with streams
-    public static List<NotationTO> getFilteredNotationsExceedWithStreams(List<Notation> notations, LocalTime startTime, LocalTime endTime, int hoursPerDay){
-        Map<LocalDate, Integer> hoursSumByDate = notations.stream()
+    public static List<NotationTO> getFilteredNotationsExceedWithStreams(List<Notation> notations, LocalDateTime start, LocalDateTime end, int hoursPerDay){
+        Map<LocalDateTime, Integer> hoursSumByDate = notations.stream()
                 .collect(
                         Collectors.groupingBy(
-                                notation -> notation.getCreatedDateAndTime().toLocalDate(),
+                                Notation::getCreatedDateAndTime,
                                 Collectors.summingInt(Notation::getHours)
                         )
                 );
 
         return notations.stream()
-                .filter(notation -> TimeUtil.isBetween(notation.getTime(), startTime, endTime))
-                .map(notation -> new NotationTO(notation, hoursSumByDate.get(notation.getDate()) > hoursPerDay))
+                .filter(notation -> TimeUtil.isBetween(notation.getCreatedDateAndTime(), start, end))
+                .map(notation -> new NotationTO(notation, hoursSumByDate.get(notation.getCreatedDateAndTime()) > hoursPerDay))
                 .collect(Collectors.toList());
     }
 
