@@ -12,7 +12,7 @@
 </header>
 
 <jsp:useBean id="selectedUser" scope="request" type="ua.teachme.model.User"/>
-<form method="post" action="users/save" style="text-align: center">
+<form method="post" action="profile" style="text-align: center">
 <%--
 <dl>
     <dd>
@@ -79,11 +79,10 @@
 </dl>
 
 <dl>
-<%--
     <dt>roles</dt>
---%>
     <dd>
         <label>
+            ${selectedUser.roles}
             <input type="hidden" value="${selectedUser.roles}" name="roles">
         </label>
     </dd>

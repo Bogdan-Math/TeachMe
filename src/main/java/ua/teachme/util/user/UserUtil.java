@@ -22,13 +22,11 @@ public class UserUtil {
             anonymous
     );
 
-    public static User createUser(UserTO userTO){
-        return new User(
-                        userTO.getId(),
-                        userTO.getName(),
-                        userTO.getPassword(),
-                        userTO.getEmail(),
-                        userTO.getHours()
-        );
+    public static User updateUser(User user, UserTO userTO){
+        user.setName(userTO.getName());
+        user.setEmail(userTO.getEmail());
+        user.setPassword(userTO.getPassword());
+        user.setMaxHoursPerDay(userTO.getHours());
+        return user;
     }
 }

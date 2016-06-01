@@ -90,6 +90,15 @@ public class User extends EntityName {
         this.setRoles(Role.ANONYMOUS);
     }
 
+    public User(Integer id, String name, String password, String email, int maxHoursPerDay, Set<Role> roles) {
+        super(id, name);
+        this.password = password;
+        this.email = email;
+        this.maxHoursPerDay = maxHoursPerDay;
+        this.registeredDateAndTime = LocalDateTime.now();
+        this.roles = roles;
+    }
+
     public User(Integer id, String name, String password, String email, int maxHoursPerDay) {
         super(id, name);
         this.password = password;

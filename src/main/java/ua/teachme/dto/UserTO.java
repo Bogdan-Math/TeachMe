@@ -2,7 +2,6 @@ package ua.teachme.dto;
 
 public class UserTO {
 
-    private int id;
     private String name;
     private String email;
     private String password;
@@ -11,20 +10,11 @@ public class UserTO {
     public UserTO() {
     }
 
-    public UserTO(int id, String name, String email, String password, int hours) {
-        this.id = id;
+    public UserTO(String name, String email, String password, int hours) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.hours = hours;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {

@@ -15,7 +15,7 @@
             </a>
 
             <%--@elvariable id="loggedUser" type="java.lang.String"--%>
-            <a href="index">
+            <a href="profile">
                 <div class="navbar-brand">${loggedUser}</div>
             </a>
 

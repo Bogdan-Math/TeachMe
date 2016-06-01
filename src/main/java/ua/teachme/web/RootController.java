@@ -34,7 +34,7 @@ public class RootController {
         return "login";
     }
 
-    @RequestMapping(value = "")
+    @RequestMapping()
     public String root(){
         MDC.put("logger_id", "root");
         LOG.debug("GET: /");
