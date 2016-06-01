@@ -16,7 +16,7 @@
 
             <%--@elvariable id="loggedUser" type="java.lang.String"--%>
             <a href="profile">
-                <div class="navbar-brand">${loggedUser}</div>
+                <div class="navbar-brand"><fmt:message key="app.profile"/> ${loggedUser}</div>
             </a>
 
             <a href="notations">
