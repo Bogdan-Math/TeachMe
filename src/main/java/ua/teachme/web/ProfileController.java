@@ -21,7 +21,7 @@ public class ProfileController {
     @RequestMapping(method = RequestMethod.GET)
     public String getProfile(Model model){
         model.addAttribute("selectedUser", userService.get(LoggedUser.getId()));
-        return "user";
+        return "profile";
     }
 
     @RequestMapping(method = RequestMethod.POST)

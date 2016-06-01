@@ -30,7 +30,7 @@ public class UserUtil {
         return user;
     }
 
-    public static User createUser(UserTO userTO) {
+    public static User saveUser(UserTO userTO) {
         return new User(
                 userTO.getId(),
                 userTO.getName(),

@@ -15,9 +15,7 @@
 </header>
 
 <jsp:useBean id="selectedUser" scope="request" type="ua.teachme.model.User"/>
-<form method="post" action="users/save" style="text-align: center">
-    <br>
-    Now, You are changing the PERSONAL DATA from another profile:
+<form method="post" action="profile" style="text-align: center">
     <%--
     <dl>
         <dd>

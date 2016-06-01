@@ -5,9 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import ua.teachme.LoggedUser;
 import ua.teachme.dto.UserTO;
-import ua.teachme.model.User;
 import ua.teachme.util.user.UserUtil;
 
 import javax.servlet.http.HttpServletRequest;
@@ -39,7 +37,7 @@ public class UserController extends AbstractUserController {
         String password = request.getParameter("password");
         User user = new User(id, name, password, email);
         */
-        super.save(UserUtil.createUser(userTO));
+        super.save(UserUtil.saveUser(userTO));
         return "redirect:/users";
     }
 
