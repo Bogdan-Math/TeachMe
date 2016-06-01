@@ -11,6 +11,7 @@ public class UserInterceptor extends HandlerInterceptorAdapter{
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+        // fixing bug: correct page view after many times reloading
         if (null != modelAndView && !modelAndView.isEmpty()) {
             String loggedUserName = LoggedUser.getName();
             if (null != loggedUserName) {
