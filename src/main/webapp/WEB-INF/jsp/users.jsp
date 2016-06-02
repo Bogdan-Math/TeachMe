@@ -108,14 +108,12 @@
                         <th><fmt:message key="table.users.name"/></th>
                         <th><fmt:message key="table.users.email"/></th>
                         <%--
-                        <th><fmt:message key="table.users.roles"/></th>
+                            <th><fmt:message key="table.users.roles"/></th>
                         --%>
                         <th><fmt:message key="table.users.reg"/></th>
                         <%--
-                        MOTHER_FUCKING FIX !!!
-                        (Don't delete this <th>. Need to correct use DataTable js
-                        )--%>
-                        <%--<th></th>--%>
+                            Don't delete this <th>. Need to correct use DataTable js
+                        --%>
                         <th></th>
                         <th></th>
 

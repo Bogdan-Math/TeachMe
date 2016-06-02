@@ -61,14 +61,14 @@
 <form method="post" action="notations/filter">
 
     <dl>
-        <dt>start date:</dt>
+        <dt><fmt:message key="table.notations.filter.start_date"/></dt>
         <dd>
             <label>
                 <input type="text" value="${startDate}" name="startDate" id="startDate">
             </label>
         </dd>
 
-        <dt>start time:</dt>
+        <dt><fmt:message key="table.notations.filter.start_time"/></dt>
         <dd>
             <label>
                 <input type="text" value="00:00" <%--value="${startTime}"--%> name="startTime" id="startTime">
@@ -78,14 +78,14 @@
     </dl>
 
     <dl>
-        <dt>end date:</dt>
+        <dt><fmt:message key="table.notations.filter.end_date"/></dt>
         <dd>
             <label>
                 <input type="text" value="${endDate}" name="endDate" id="endDate">
             </label>
         </dd>
 
-        <dt>end time:</dt>
+        <dt><fmt:message key="table.notations.filter.end_time"/></dt>
         <dd>
             <label>
                 <input type="text" value="23:00" <%--value="${endTime}"--%> name="endTime" id="endTime">
