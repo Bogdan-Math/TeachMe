@@ -6,6 +6,10 @@
 
     <div class="container">
 
+        <a href="index">
+            <div class="navbar-brand"><fmt:message key="app.title"/></div>
+        </a>
+
     </div>
 
 </div>

@@ -68,6 +68,10 @@
     </div>
 </div>
 
+<footer>
+    <jsp:include page="fragments/footer.jsp"/>
+</footer>
+
 </body>
 
 </html>

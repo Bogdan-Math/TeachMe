@@ -5,6 +5,11 @@
 <div class="navbar navbar-inverse">
 
     <div class="container">
+
+        <a href="index">
+            <div class="navbar-brand"><fmt:message key="app.title"/></div>
+        </a>
+
         <form class="navbar-form navbar-right" role="form" action="spring_security_check" method="post">
             <div class="form-group">
                 <%--Don't change!!! Spring Security need EXXACT: name='username'--%>
