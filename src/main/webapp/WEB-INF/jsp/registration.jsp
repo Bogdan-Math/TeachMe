@@ -22,12 +22,29 @@
     <div class="col-md-4">
         <form class="form" role="form" method="post" action="registration" accept-charset="UTF-8" id="login-nav">
             <div class="form-group">
-                <label class="sr-only" for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Your name" required>
+<%--
+                <label class="sr-only" for="name"><fmt:message key="table.users.name"/></label>
+--%>
+                <input type="text"
+                       class="form-control"
+                       id="name"
+                       name="name"
+                       placeholder="<fmt:message key="table.users.name"/>"
+                       required
+                >
             </div>
             <div class="form-group">
+<%--
                 <label class="sr-only" for="email">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email address" required>
+--%>
+                <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        placeholder="<fmt:message key="table.users.email"/>"
+                        required
+                >
                 <c:if test="${duplicateEmailError}">
                     <div class="reg-error">
                             ${email}
@@ -36,15 +53,22 @@
                 </c:if>
             </div>
             <div class="form-group">
+<%--
                 <label class="sr-only" for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Password"
-                       pattern="[A-Za-z/_]{6,25}"
-                       title="Can be: 'A-Z', 'a-z', '_', from 6 to 25 count of symbols"
-                       required
+--%>
+                <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        name="password"
+                        placeholder="<fmt:message key="table.users.password"/>"
+                        pattern="[A-Za-z/_]{6,25}"
+                        title="Can be: 'A-Z', 'a-z', '_', from 6 to 25 count of symbols"
+                        required
                 >
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                <button type="submit" class="btn btn-primary btn-block"><fmt:message key="app.sign_in"/></button>
             </div>
         </form>
     </div>
