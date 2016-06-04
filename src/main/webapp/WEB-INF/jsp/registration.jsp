@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html>
 
@@ -15,9 +16,11 @@
 </header>
 
 <div class="row">
+
     <div class="col-md-4"></div>
+
     <div class="col-md-4">
-        <form class="form" role="form" method="post" <%--action="login"--%> accept-charset="UTF-8" id="login-nav">
+        <form class="form" role="form" method="post" action="registration" accept-charset="UTF-8" id="login-nav">
             <div class="form-group">
                 <label class="sr-only" for="name">Name</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Your name" required>
@@ -35,7 +38,9 @@
             </div>
         </form>
     </div>
+
     <div class="col-md-4"></div>
+
 </div>
 
 <footer>

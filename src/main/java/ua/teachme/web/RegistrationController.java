@@ -10,13 +10,18 @@ import ua.teachme.service.UserService;
 import ua.teachme.util.user.UserUtil;
 
 @Controller
-@RequestMapping( value = "/", method = RequestMethod.POST)
+@RequestMapping( value = "/registration")
 public class RegistrationController {
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "registration")
+    @RequestMapping(method = RequestMethod.GET)
+    public String getRegistrationForm(){
+        return "registration";
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
     public String userRegistration(UserTO userTO, Model model){
         userService.save(UserUtil.saveUser(userTO));
         model.addAttribute("message", true);
