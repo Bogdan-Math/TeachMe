@@ -63,3 +63,7 @@ dd {
 .input-field:valid {
     border: 1px solid green;
 }
+
+.black {
+    color: black;
+}

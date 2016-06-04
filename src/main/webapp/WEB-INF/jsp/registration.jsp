@@ -30,7 +30,8 @@
                 <input type="email" class="form-control" id="email" name="email" placeholder="Email address" required>
                 <c:if test="${duplicateEmailError}">
                     <div class="reg-error">
-                        <fmt:message key="app.error.duplicate.email"/>
+                            ${email}
+                            <fmt:message key="app.error.duplicate.email"/>
                     </div>
                 </c:if>
             </div>

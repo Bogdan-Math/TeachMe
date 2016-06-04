@@ -32,6 +32,7 @@ public class RegistrationController {
 
         }
         catch (DataIntegrityViolationException e){
+            model.addAttribute("email", userTO.getEmail());
             model.addAttribute("duplicateEmailError", true);
             return "registration";
         }
