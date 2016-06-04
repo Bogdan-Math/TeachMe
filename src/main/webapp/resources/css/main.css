@@ -35,9 +35,9 @@ dd {
 }
 
 .login-error {
-    color: #ff1719;
-    background-color: #f2dede;
-    border: 1px solid #ff1719;
+    color: #b70b08;
+    background-color: #f2d4c8;
+    border: 1px solid #b70b08;
 }
 
 .reg-success {
@@ -46,7 +46,20 @@ dd {
     border: 1px solid #17ac38;
 }
 
+.reg-error {
+    color: #ff1719;
+    background-color: #f2dede;
+    border: 1px solid #ff1719;
+}
 .update-warning {
     color: #000000;
     background-color: #ff8c1d;
+}
+
+.input-field:invalid {
+    border: 1px solid red;
+}
+
+.input-field:valid {
+    border: 1px solid green;
 }

@@ -34,7 +34,6 @@
             </c:if>
 
             <c:if test="${loginError}">
-                <%--todo: add noty error--%>
                 <div class="login-error">
                         ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
                 </div>

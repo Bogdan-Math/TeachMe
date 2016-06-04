@@ -28,10 +28,19 @@
             <div class="form-group">
                 <label class="sr-only" for="email">Email address</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Email address" required>
+                <c:if test="${duplicateEmailError}">
+                    <div class="reg-error">
+                        <fmt:message key="app.error.duplicate.email"/>
+                    </div>
+                </c:if>
             </div>
             <div class="form-group">
                 <label class="sr-only" for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+                       pattern="[A-Za-z/_]{6,25}"
+                       title="Can be: 'A-Z', 'a-z', '_', from 6 to 25 count of symbols"
+                       required
+                >
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block">Sign in</button>

@@ -1,6 +1,7 @@
 package ua.teachme.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,10 +24,17 @@ public class RegistrationController {
 
     @RequestMapping(method = RequestMethod.POST)
     public String userRegistration(UserTO userTO, Model model){
-        userService.save(UserUtil.saveUser(userTO));
-        model.addAttribute("message", true);
-        model.addAttribute("loginError", false);
-        return "login";
+        try {
+            userService.save(UserUtil.saveUser(userTO));
+            model.addAttribute("message", true);
+            model.addAttribute("loginError", false);
+            return "login";
+
+        }
+        catch (DataIntegrityViolationException e){
+            model.addAttribute("duplicateEmailError", true);
+            return "registration";
+        }
     }
 
 }
