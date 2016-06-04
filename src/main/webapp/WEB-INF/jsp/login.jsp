@@ -26,12 +26,20 @@
 
         <div class="in-center">
             <%--todo: add correct jsp:useBean--%>
+
+            <c:if test="${message}">
+                <div class="reg-success">
+                    <fmt:message key="app.registration.success"/>
+                </div>
+            </c:if>
+
             <c:if test="${loginError}">
                 <%--todo: add noty error--%>
-                <div class="error">
+                <div class="login-error">
                         ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
                 </div>
             </c:if>
+
         </div>
 
     </div>

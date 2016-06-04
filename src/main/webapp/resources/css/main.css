@@ -34,10 +34,16 @@ dd {
     font-size: 16px;
 }
 
-.error {
-    color: #a94442;
+.login-error {
+    color: #ff1719;
     background-color: #f2dede;
-    border: 1px solid #ebccd1;
+    border: 1px solid #ff1719;
+}
+
+.reg-success {
+    color: #17ac38;
+    background-color: #befabf;
+    border: 1px solid #17ac38;
 }
 
 .update-warning {

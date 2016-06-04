@@ -2,6 +2,7 @@ package ua.teachme.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ua.teachme.dto.UserTO;
@@ -16,9 +17,11 @@ public class RegistrationController {
     private UserService userService;
 
     @RequestMapping(value = "registration")
-    public String userRegistration(UserTO userTO){
+    public String userRegistration(UserTO userTO, Model model){
         userService.save(UserUtil.saveUser(userTO));
-        return "redirect:/";
+        model.addAttribute("message", true);
+        model.addAttribute("loginError", false);
+        return "login";
     }
 
 }
