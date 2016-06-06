@@ -62,8 +62,8 @@
                         id="password"
                         name="password"
                         placeholder="<fmt:message key="table.users.password"/>"
-                        pattern="[A-Za-z/_]{6,25}"
-                        title="Can be: 'A-Z', 'a-z', '_', from 6 to 25 count of symbols"
+                        pattern="[A-Za-z/_/./0-9]{6,25}"
+                        title="Can be: 'A-Z', 'a-z', '0-9', '_', '.' from 6 to 25 count of symbols"
                         required
                 >
             </div>
