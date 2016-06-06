@@ -34,10 +34,11 @@
         <csrf disabled="true"/>
     </http>
 
+    <beans:bean class="ua.teachme.util.password.PasswordUtil" id="passwordUtil" factory-method="getPasswordEncoder"/>
 
     <authentication-manager>
         <authentication-provider user-service-ref="userServiceImpl">
-
+        <password-encoder ref="passwordUtil"/>
 <!--
             <user-service>
                 <user name="1" password="1" authorities="ROLE_ADMIN"/>

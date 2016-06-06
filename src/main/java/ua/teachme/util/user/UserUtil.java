@@ -3,6 +3,7 @@ package ua.teachme.util.user;
 import ua.teachme.dto.UserTO;
 import ua.teachme.model.User;
 import ua.teachme.util.notation.NotationUtil;
+import ua.teachme.util.password.PasswordUtil;
 
 import java.util.Arrays;
 import java.util.List;
@@ -25,7 +26,7 @@ public class UserUtil {
     public static User updateUser(User user, UserTO userTO){
         user.setName(userTO.getName());
         user.setEmail(userTO.getEmail());
-        user.setPassword(userTO.getPassword());
+        user.setPassword(PasswordUtil.encode(userTO.getPassword()));
         user.setMaxHoursPerDay(userTO.getHours());
         return user;
     }
@@ -34,7 +35,7 @@ public class UserUtil {
         return new User(
                 userTO.getId(),
                 userTO.getName(),
-                userTO.getPassword(),
+                PasswordUtil.encode(userTO.getPassword()),
                 userTO.getEmail(),
                 userTO.getHours()
         );

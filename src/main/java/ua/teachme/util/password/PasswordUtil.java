@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class PasswordUtil {
 
-    private static final Pattern B_CRYPT_PATTERN = Pattern.compile("\\A\\$2a?\\$\\d\\d\\$[./0-9A-Za-z]{53}");
+    private static final Pattern BCRYPT_PATTERN = Pattern.compile("\\A\\$2a?\\$\\d\\d\\$[./0-9A-Za-z]{53}");
 
     private static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
 
@@ -27,6 +27,6 @@ public class PasswordUtil {
     }
 
     private static boolean isEncoded(String newPassword){
-        return B_CRYPT_PATTERN.matcher(newPassword).matches();
+        return BCRYPT_PATTERN.matcher(newPassword).matches();
     }
 }
