@@ -2,6 +2,7 @@ package ua.teachme.service;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import ua.teachme.profiles.ConnectTo;
 import ua.teachme.profiles.PopulateDB;
 import ua.teachme.profiles.WorkBy;
 import ua.teachme.util.exception.EntityNotFoundException;
+import ua.teachme.util.password.PasswordUtil;
 import ua.teachme.util.user.UserUtil;
 
 import java.util.List;
@@ -84,5 +86,13 @@ public class UserServiceImplTest {
         assertEquals(3, userService.getAll().size());
         userService.delete(1000001);
         assertEquals(2, userService.getAll().size());
+    }
+
+    @Test
+    @Ignore
+    public void rePopulateDB(){
+        List<User> users = userService.getAll();
+        users.forEach(user -> user.setPassword(PasswordUtil.encode(user.getPassword())));
+        users.forEach(user -> userService.save(user));
     }
 }
