@@ -20,11 +20,11 @@
     <div class="col-md-4"></div>
 
     <div class="col-md-4">
-        <form class="form" role="form" method="post" action="registration" accept-charset="UTF-8" id="login-nav">
+        <form:form cssClass="form" method="post" action="registration" id="login-nav" accept-charset="UTF-8">
             <div class="form-group">
-<%--
-                <label class="sr-only" for="name"><fmt:message key="table.users.name"/></label>
---%>
+                    <%--
+                                    <label class="sr-only" for="name"><fmt:message key="table.users.name"/></label>
+                    --%>
                 <input type="text"
                        class="form-control"
                        id="name"
@@ -34,9 +34,9 @@
                 >
             </div>
             <div class="form-group">
-<%--
-                <label class="sr-only" for="email">Email address</label>
---%>
+                    <%--
+                                    <label class="sr-only" for="email">Email address</label>
+                    --%>
                 <input
                         type="email"
                         class="form-control"
@@ -48,14 +48,14 @@
                 <c:if test="${duplicateEmailError}">
                     <div class="reg-error">
                             ${email}
-                            <fmt:message key="app.error.duplicate.email"/>
+                        <fmt:message key="app.error.duplicate.email"/>
                     </div>
                 </c:if>
             </div>
             <div class="form-group">
-<%--
-                <label class="sr-only" for="password">Password</label>
---%>
+                    <%--
+                                    <label class="sr-only" for="password">Password</label>
+                    --%>
                 <input
                         type="password"
                         class="form-control"
@@ -70,7 +70,7 @@
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block"><fmt:message key="app.sign_in"/></button>
             </div>
-        </form>
+        </form:form>
     </div>
 
     <div class="col-md-4"></div>

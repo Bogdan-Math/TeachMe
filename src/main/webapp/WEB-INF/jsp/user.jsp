@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html>
 
@@ -15,7 +16,7 @@
 </header>
 
 <jsp:useBean id="selectedUser" scope="request" type="ua.teachme.model.User"/>
-<form method="post" action="users/save" style="text-align: center">
+<form:form cssClass="in-center" action="users/save" method="post">
 
     <br>
         <div class="update-warning"><fmt:message key="user.update.warning"/></div>
@@ -99,7 +100,7 @@
     <button type="button" class="btn btn-default" onclick="window.history.back()"><fmt:message
             key="button.close"/></button>
 
-</form>
+</form:form>
 
 <footer>
     <jsp:include page="fragments/footer.jsp"/>

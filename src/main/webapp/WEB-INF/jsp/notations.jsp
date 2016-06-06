@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html>
 <head>
@@ -58,7 +59,7 @@
     <jsp:include page="fragments/common-header.jsp"/>
 </header>
 
-<form method="post" action="notations/filter">
+<form:form action="notations/filter" method="post">
 
     <dl>
         <dt><fmt:message key="table.notations.filter.start_date"/></dt>
@@ -100,7 +101,7 @@
     <%--todo: add correct filter
         <button type="reset">reset</button>
     --%>
-</form>
+</form:form>
 
 <div class="jumbotron">
     <div class="container">

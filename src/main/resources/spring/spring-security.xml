@@ -31,7 +31,9 @@
         authentication-failure-url="/login?error=true"
         />
         <logout logout-success-url="/login"/>
+<!--
         <csrf disabled="true"/>
+-->
     </http>
 
     <beans:bean class="ua.teachme.util.password.PasswordUtil" id="passwordUtil" factory-method="getPasswordEncoder"/>

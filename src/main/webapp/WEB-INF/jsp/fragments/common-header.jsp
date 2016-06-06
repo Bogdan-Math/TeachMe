@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <div class="navbar navbar-inverse <%--navbar-fixed-top--%>">
 
@@ -29,9 +29,9 @@
                 </a>
             </sec:authorize>
 
-            <form class="navbar-form navbar-right">
-                <a class="btn btn-success" role="button" href="logout"><fmt:message key="app.logout"/></a>
-            </form>
+            <form:form cssClass="navbar-form navbar-right" action="logout" method="post">
+                <button class="btn btn-success" type="submit"><fmt:message key="app.logout"/></button>
+            </form:form>
 
         </sec:authorize>
     </div>

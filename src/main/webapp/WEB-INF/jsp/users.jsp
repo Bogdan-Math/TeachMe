@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html>
 
@@ -161,7 +162,10 @@
             </div>
 
             <div class="modal-body">
+                <form:form cssClass="form-horizontal" method="post" id="createUserDetails">
+<%--
                 <form class="form-horizontal" method="post" id="createUserDetails">
+--%>
 
 <%--
                     <input type="text" hidden="hidden" id="id" name="id" value="0">
@@ -198,7 +202,10 @@
                         </div>
                     </div>
 
+                </form:form>
+<%--
                 </form>
+--%>
             </div>
 
         </div><!-- /.modal-content -->
