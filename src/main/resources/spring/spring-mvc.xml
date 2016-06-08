@@ -64,11 +64,13 @@
     </bean>
 -->
 
+<!--
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="cacheSeconds" value="15"/>
         <property name="defaultEncoding" value="UTF-8"/>
-        <!--todo: change value to better path-->
+        &lt;!&ndash;todo: change value to better path&ndash;&gt;
         <property name="basenames" value="file:///#{systemEnvironment['TEACHME_ROOT']}/config/messages/app"/>
     </bean>
+-->
 
 </beans>
