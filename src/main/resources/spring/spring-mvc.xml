@@ -53,6 +53,7 @@
           p:suffix=".jsp"/>
 
     <!--Internationalization by bundle. All resources inside folder src/main/resources/strings are mapped so they can be referred inside JSP file-->
+<!--
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="defaultEncoding" value="UTF-8"/>
         <property name="basenames">
@@ -60,6 +61,14 @@
                 <value>strings/app</value>
             </list>
         </property>
+    </bean>
+-->
+
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="cacheSeconds" value="15"/>
+        <property name="defaultEncoding" value="UTF-8"/>
+        <!--todo: change value to better path-->
+        <property name="basenames" value="file:///#{systemEnvironment['TEACHME_ROOT']}/config/messages/app"/>
     </bean>
 
 </beans>
