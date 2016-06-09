@@ -17,10 +17,6 @@
     <!--need to understand annotation like: @PreAuthorize("hasRole('ROLE_ADMIN')")-->
     <security:global-method-security secured-annotations="enabled" pre-post-annotations="enabled"/>
 
-    <mvc:interceptors>
-        <bean class="ua.teachme.web.UserInterceptor"/>
-    </mvc:interceptors>
-
     <mvc:annotation-driven>
 
         <!--correct convert to UA/RU etc. if need to return only Sting from RestController (not json)-->
@@ -60,6 +56,22 @@
                 <value>messages.app</value>
             </list>
         </property>
+<!--
+        <property name="fallbackToSystemLocale" value="false"/>
+-->
     </bean>
+
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+<!--
+        <property name="defaultLocale" value="uk"/>
+-->
+    </bean>
+
+    <mvc:interceptors>
+        <bean class="ua.teachme.web.UserInterceptor"/>
+        <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="lang"/>
+        </bean>
+    </mvc:interceptors>
 
 </beans>

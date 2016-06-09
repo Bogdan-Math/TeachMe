@@ -11,7 +11,12 @@
             <div class="navbar-brand"><fmt:message key="app.title"/></div>
         </a>
 
-        <form:form class="navbar-form navbar-right"  action="spring_security_check" method="post">
+        <form:form class="navbar-form navbar-right" action="spring_security_check" method="post">
+
+            <div class="form-group">
+                <jsp:include page="lang.jsp"/>
+            </div>
+
             <div class="form-group">
                     <%--Don't change!!! Spring Security need EXACT: name='username'--%>
                 <input
