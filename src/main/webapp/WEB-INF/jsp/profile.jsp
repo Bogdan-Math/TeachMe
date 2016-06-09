@@ -48,7 +48,7 @@
         <dt>password</dt>
         <dd>
             <label>
-                <input type="text" value="${selectedUser.password}" name="password" required>
+                <input type="text" class="reg-error" value="Will be possible to change in future. Work around it!!!" name="password" readonly>
             </label>
         </dd>
     </dl>

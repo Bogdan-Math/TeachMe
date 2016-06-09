@@ -26,7 +26,7 @@ public class UserUtil {
     public static User updateUser(User user, UserTO userTO){
         user.setName(userTO.getName());
         user.setEmail(userTO.getEmail());
-        user.setPassword(PasswordUtil.encode(userTO.getPassword()));
+//        user.setPassword(PasswordUtil.encode(userTO.getPassword()));
         user.setMaxHoursPerDay(userTO.getHours());
         return user;
     }
