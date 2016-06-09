@@ -5,13 +5,19 @@ ALTER SEQUENCE global_sequence RESTART WITH 1000001;
 DELETE FROM users;
 
 INSERT INTO users (name, password, email)
-VALUES ('Anonymous', 'password', 'anonymous@gmail.com');
+VALUES ('Anonymous',
+        '$2a$10$3jLX.UFBjDeM.EIeakGEPehCGRu4QFkEJsrQ/Q12OZanVwJoh42La',
+        'anonymous@gmail.com');
 
 INSERT INTO users (name, password, email)
-VALUES ('User', 'password', 'user@gmail.com');
+VALUES ('User',
+        '$2a$10$EY4z5/ic8toAeTU1QLC3BOVTji03BzOBkX1TwtrG6vyQhVXtPZJJC',
+        'user@gmail.com');
 
 INSERT INTO users (name, password, email)
-VALUES ('Admin', 'password', 'admin@gmail.com');
+VALUES ('Admin',
+        '$2a$10$Aw.6sykTXJor4LrGzqL2d.uCeQSvOi7jzugCg8wU9l1VoHqWo9P6S',
+        'admin@gmail.com');
 
 /*populate main_goals table*/
 DELETE FROM main_goals;
