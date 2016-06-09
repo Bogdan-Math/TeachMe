@@ -14,7 +14,7 @@
         <form:form class="navbar-form navbar-right" action="spring_security_check" method="post">
 
             <div class="form-group">
-                <jsp:include page="lang.jsp"/>
+                <jsp:include page="language.jsp"/>
             </div>
 
             <div class="form-group">
