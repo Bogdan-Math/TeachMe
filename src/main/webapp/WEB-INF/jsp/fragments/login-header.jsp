@@ -11,12 +11,9 @@
             <div class="navbar-brand"><fmt:message key="app.title"/></div>
         </a>
 
+        <jsp:include page="language.jsp"/>
+
         <form:form class="navbar-form navbar-right" action="spring_security_check" method="post">
-
-            <div class="form-group">
-                <jsp:include page="language.jsp"/>
-            </div>
-
             <div class="form-group">
                     <%--Don't change!!! Spring Security need EXACT: name='username'--%>
                 <input
@@ -36,6 +33,7 @@
             </div>
             <button type="submit" class="btn btn-success"><fmt:message key="app.login"/></button>
         </form:form>
+
     </div>
 
 </div>

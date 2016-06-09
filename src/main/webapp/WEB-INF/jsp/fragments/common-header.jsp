@@ -29,6 +29,8 @@
                 </a>
             </sec:authorize>
 
+            <jsp:include page="language.jsp"/>
+
             <form:form cssClass="navbar-form navbar-right" action="logout" method="post">
                 <button class="btn btn-success" type="submit"><fmt:message key="app.logout"/></button>
             </form:form>
