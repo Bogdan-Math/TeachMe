@@ -65,8 +65,13 @@
                     <label class="control-label"><fmt:message key="user.password"/></label>
                 </div>
                 <div class="col-sm-9">
-                    <button type="button" class="btn btn-inverse btn-block" onclick=""><fmt:message
-                            key="user.change_password"/></button>
+                    <button type="button"
+                            class="btn btn-inverse btn-block"
+                            data-toggle="modal"
+                            data-target="#changePassword"
+                    >
+                        <fmt:message key="user.change_password"/>
+                    </button>
                 </div>
             </div>
 
@@ -108,7 +113,8 @@
 
             <div class="form-group">
                 <div class="col-sm-3"></div>
-                <button type="submit" class="btn btn-primary col-sm-4" id="save"><fmt:message key="button.save"/></button>
+                <button type="submit" class="btn btn-primary col-sm-4" id="save"><fmt:message
+                        key="button.save"/></button>
                 <div class="col-sm-1"></div>
                 <button type="button" class="btn btn-default col-sm-4" onclick="window.history.back()"><fmt:message
                         key="button.close"/></button>
@@ -125,6 +131,26 @@
 <footer>
     <jsp:include page="fragments/footer.jsp"/>
 </footer>
+
+<div class="modal fade" id="changePassword">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+            </div>
+
+            <div class="modal-body">
+
+            </div>
+
+            <div class="modal-footer">
+
+            </div>
+
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
