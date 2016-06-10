@@ -141,7 +141,48 @@
             </div>
 
             <div class="modal-body">
+                <form:form cssClass="form-horizontal" method="post">
 
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <label class="control-label"><fmt:message key="user.old_password"/></label>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="password"
+                                   class="form-control"
+                                   value="${selectedUser.roles}"
+                                   name="oldPassword"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <label class="control-label"><fmt:message key="user.new_password"/></label>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="password"
+                                   class="form-control"
+                                   value="${selectedUser.roles}"
+                                   name="newPassword"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <label class="control-label"><fmt:message key="user.new_password_repeat"/></label>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="password"
+                                   class="form-control"
+                                   value="${selectedUser.roles}"
+                                   name="newPasswordRepeat"
+                            >
+                        </div>
+                    </div>
+
+                </form:form>
             </div>
 
             <div class="modal-footer">
