@@ -36,7 +36,7 @@
     </dl>
 
     <dl>
-        <dt>name</dt>
+        <dt><fmt:message key="user.name"/></dt>
         <dd>
             <label>
                 <input type="text" value="${selectedUser.name}" name="name" required>
@@ -45,16 +45,7 @@
     </dl>
 
     <dl>
-        <dt>password</dt>
-        <dd>
-            <label>
-                <input type="text" class="reg-error" value="Will be possible to change in future. Work around it!!!" name="password" readonly>
-            </label>
-        </dd>
-    </dl>
-
-    <dl>
-        <dt>email</dt>
+        <dt><fmt:message key="user.email"/></dt>
         <dd>
             <label>
                 <input type="text" value="${selectedUser.email}" name="email" required>
@@ -63,7 +54,16 @@
     </dl>
 
     <dl>
-        <dt>hours</dt>
+        <dt><fmt:message key="user.password"/></dt>
+        <dd>
+            <label>
+                <input type="text" class="reg-error" value="Will be possible to change in future. Work around it!!!" name="password" readonly>
+            </label>
+        </dd>
+    </dl>
+
+    <dl>
+        <dt><fmt:message key="user.hours"/></dt>
         <dd>
             <label>
                 <input type="number" value="${selectedUser.maxHoursPerDay}" name="hours" required>
