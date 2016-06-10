@@ -1,3 +1,4 @@
+<%--suppress HtmlFormInputWithoutLabel --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -16,84 +17,108 @@
 </header>
 
 <jsp:useBean id="selectedUser" scope="request" type="ua.teachme.model.User"/>
-<form:form cssClass="in-center" action="profile" method="post">
+<form:form cssClass="form-horizontal" action="profile" method="post">
+
     <%--
-    <dl>
-        <dd>
-            <label>
-                <input type="text" value="${selectedUser.mainGoal} : ${selectedUser.mainGoal.description}" name="mainGoal">
-            </label>
-        </dd>
-    </dl>
+        <input type="text" value="${selectedUser.mainGoal} : ${selectedUser.mainGoal.description}" name="mainGoal">
     --%>
 
-    <dl>
-        <dd>
-            <label>
-                <input type="hidden" value="${selectedUser.id}" name="id">
-            </label>
-        </dd>
-    </dl>
+    <div class="row">
 
-    <dl>
-        <dt><fmt:message key="user.name"/></dt>
-        <dd>
-            <label>
-                <input type="text" value="${selectedUser.name}" name="name" required>
-            </label>
-        </dd>
-    </dl>
+        <div class="col-md-4"></div>
 
-    <dl>
-        <dt><fmt:message key="user.email"/></dt>
-        <dd>
-            <label>
-                <input type="text" value="${selectedUser.email}" name="email" required>
-            </label>
-        </dd>
-    </dl>
+        <div class="col-md-4">
 
-    <dl>
-        <dt><fmt:message key="user.password"/></dt>
-        <dd>
-            <label>
-                <input type="text" class="reg-error" value="Will be possible to change in future. Work around it!!!" name="password" readonly>
-            </label>
-        </dd>
-    </dl>
+            <input type="hidden" value="${selectedUser.id}" name="id">
 
-    <dl>
-        <dt><fmt:message key="user.hours"/></dt>
-        <dd>
-            <label>
-                <input type="number" value="${selectedUser.maxHoursPerDay}" name="hours" required>
-            </label>
-        </dd>
-    </dl>
+            <div class="form-group">
+                <div class="col-sm-3">
+                    <label class="control-label"><fmt:message key="user.name"/></label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text"
+                           class="form-control"
+                           value="${selectedUser.name}"
+                           name="name"
+                           required
+                    >
+                </div>
+            </div>
 
-    <dl>
-        <%--
-            <dt>registered date</dt>
-        --%>
-        <dd>
-            <label>
-                <input type="hidden" value="${selectedUser.registeredDate}" name="registeredDate">
-            </label>
-        </dd>
-    </dl>
+            <div class="form-group">
+                <div class="col-sm-3">
+                    <label class="control-label"><fmt:message key="user.email"/></label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="email"
+                           class="form-control"
+                           value="${selectedUser.email}"
+                           name="email"
+                           required
+                    >
+                </div>
+            </div>
 
-    <dl>
-        <dt>roles</dt>
-        <dd>
-            <label>
-                ${selectedUser.roles}
-                <input type="hidden" value="${selectedUser.roles}" name="roles">
-            </label>
-        </dd>
-    </dl>
 
-    <button type="submit" class="btn btn-primary" id="save"><fmt:message key="button.save"/></button>
-    <button type="button" class="btn btn-default" onclick="window.history.back()"><fmt:message key="button.close"/></button>
+            <div class="form-group">
+                <div class="col-sm-3">
+                    <label class="control-label"><fmt:message key="user.password"/></label>
+                </div>
+                <div class="col-sm-9">
+                    <button type="button" class="btn btn-inverse btn-block" onclick=""><fmt:message
+                            key="user.change_password"/></button>
+                </div>
+            </div>
+
+                <%--
+                            <input type="text" class="reg-error" value="Will be possible to change in future. Work around it!!!" name="password" readonly>
+                --%>
+
+            <div class="form-group">
+                <div class="col-sm-3">
+                    <label class="control-label"><fmt:message key="user.hours"/></label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="number"
+                           class="form-control"
+                           value="${selectedUser.maxHoursPerDay}"
+                           name="hours"
+                           required
+                    >
+                </div>
+            </div>
+
+                <%--
+                            <input type="hidden" value="${selectedUser.registeredDate}" name="registeredDate">
+                --%>
+
+            <div class="form-group">
+                <div class="col-sm-3">
+                    <label class="control-label"><fmt:message key="user.roles"/></label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text"
+                           class="form-control"
+                           value="${selectedUser.roles}"
+                           name="roles"
+                           readonly
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-3"></div>
+                <button type="submit" class="btn btn-primary col-sm-4" id="save"><fmt:message key="button.save"/></button>
+                <div class="col-sm-1"></div>
+                <button type="button" class="btn btn-default col-sm-4" onclick="window.history.back()"><fmt:message
+                        key="button.close"/></button>
+            </div>
+
+        </div>
+
+        <div class="col-md-4"></div>
+
+    </div>
 
 </form:form>
 
