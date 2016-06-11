@@ -38,4 +38,9 @@ public class ProfileController {
         userService.save(UserUtil.updateUser(user, userTO));
         return "index";
     }
+
+    @RequestMapping(value = "password", method = RequestMethod.POST)
+    public String changePassword() {
+        return "index";
+    }
 }

@@ -141,7 +141,7 @@
             </div>
 
             <div class="modal-body">
-                <form:form cssClass="form-horizontal" method="post">
+                <form:form cssClass="form-horizontal" method="post" action="profile/password">
 
                     <div class="form-group">
                         <div class="col-sm-6">
@@ -182,6 +182,7 @@
                         </div>
                     </div>
 
+                    <button type="submit">go</button>
                 </form:form>
             </div>
 
