@@ -52,8 +52,9 @@ dd {
     border: 1px solid #ff1719;
 }
 .update-warning {
-    color: #000000;
-    background-color: #ff8c1d;
+    color: #373737;
+    background-color: #ffa334;
+    border: 2px solid #757575;
 }
 
 .input-field:invalid {

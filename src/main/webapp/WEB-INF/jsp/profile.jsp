@@ -156,7 +156,7 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <div class="">
+                <div class="update-warning in-center">
                     <fmt:message key="user.change_password"/>
                 </div>
             </div>
