@@ -182,7 +182,7 @@
                         </div>
                     </div>
 
-                    <button type="submit">go</button>
+                    <button type="submit"><fmt:message key="user.password.confirm"/></button>
                 </form:form>
             </div>
 
