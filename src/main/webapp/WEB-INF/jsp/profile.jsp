@@ -143,51 +143,53 @@
             <div class="modal-body">
                 <form:form cssClass="form-horizontal" method="post" action="profile/password">
 
-                    <div class="form-group">
-                        <div class="col-sm-6">
-                            <label class="control-label"><fmt:message key="user.old_password"/></label>
-                        </div>
-                        <div class="col-sm-6">
-                            <input type="password"
-                                   class="form-control"
-                                   value="${selectedUser.roles}"
-                                   name="oldPassword"
-                            >
-                        </div>
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="control-label"><fmt:message key="user.old_password"/></label>
                     </div>
-
-                    <div class="form-group">
-                        <div class="col-sm-6">
-                            <label class="control-label"><fmt:message key="user.new_password"/></label>
-                        </div>
-                        <div class="col-sm-6">
-                            <input type="password"
-                                   class="form-control"
-                                   value="${selectedUser.roles}"
-                                   name="newPassword"
-                            >
-                        </div>
+                    <div class="col-sm-6">
+                        <input type="password"
+                               class="form-control"
+                               value="${selectedUser.roles}"
+                               name="oldPassword"
+                        >
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <div class="col-sm-6">
-                            <label class="control-label"><fmt:message key="user.new_password_repeat"/></label>
-                        </div>
-                        <div class="col-sm-6">
-                            <input type="password"
-                                   class="form-control"
-                                   value="${selectedUser.roles}"
-                                   name="newPasswordRepeat"
-                            >
-                        </div>
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="control-label"><fmt:message key="user.new_password"/></label>
                     </div>
+                    <div class="col-sm-6">
+                        <input type="password"
+                               class="form-control"
+                               value="${selectedUser.roles}"
+                               name="newPassword"
+                        >
+                    </div>
+                </div>
 
-                    <button type="submit"><fmt:message key="user.password.confirm"/></button>
-                </form:form>
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="control-label"><fmt:message key="user.new_password_repeat"/></label>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="password"
+                               class="form-control"
+                               value="${selectedUser.roles}"
+                               name="newPasswordRepeat"
+                        >
+                    </div>
+                </div>
+
             </div>
 
             <div class="modal-footer">
-
+                <div class="col-xs-offset-3">
+                    <button type="submit" class="btn btn-primary"><fmt:message key="user.password.confirm"/></button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><fmt:message key="button.cancel"/></button>
+                </form:form>
+                </div>
             </div>
 
         </div>

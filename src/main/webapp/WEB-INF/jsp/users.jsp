@@ -195,9 +195,9 @@
 
                     <div class="modal-footer">
                         <div class="form-group">
-                            <div class="col-xs-offset-3 col-xs-9">
+                            <div class="col-xs-offset-3">
                                 <button type="button" class="btn btn-primary" id="createUser"><fmt:message key="button.save"/></button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal"><fmt:message key="button.close"/></button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal"><fmt:message key="button.cancel"/></button>
                             </div>
                         </div>
                     </div>
