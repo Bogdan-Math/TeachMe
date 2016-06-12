@@ -12,6 +12,7 @@
 <body>
 <%--todo: fix validation and messages--%>
 <script>
+/*
     $(document).ready(function () {
 
         var name = document.getElementById('name');
@@ -22,11 +23,6 @@
             if (name.validity.valueMissing) {
                 name.setCustomValidity("<fmt:message key="user.name.required"/>");
             }
-/*
-            else if () {
-                name.setCustomValidity("<fmt:message key="user.name.required"/>");
-            }
-*/
             name.addEventListener('input', function () {
                 name.setCustomValidity('');
             });
@@ -45,6 +41,7 @@
         }, false);
 
     });
+*/
 </script>
 
 <header>
@@ -95,7 +92,7 @@
                     --%>
                 <input
                         type="password"
-                        class="form-control"
+                        class="form-control validation"
                         id="password"
                         name="password"
                         placeholder="<fmt:message key="table.users.password"/>"
