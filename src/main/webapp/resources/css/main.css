@@ -86,12 +86,10 @@ dd {
 
 .registration-btn:hover {
     color: white;
-    /*
-    border: 1px solid #2365d4;
-    */
     background-color: #2d33a7;
 }
 
 .registration-btn:active  {
+    color: white;
     background-color: #363cc7;
 }
