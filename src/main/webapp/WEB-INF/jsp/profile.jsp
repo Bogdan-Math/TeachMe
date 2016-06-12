@@ -85,6 +85,12 @@
                         </div>
                     </c:if>
 
+                    <c:if test="${successfulChangePassword}">
+                        <div class="reg-success">
+                            <fmt:message key="user.password.successful_change"/>
+                        </div>
+                    </c:if>
+
                 </div>
             </div>
 
@@ -150,7 +156,9 @@
         <div class="modal-content">
 
             <div class="modal-header">
-
+                <div class="">
+                    <fmt:message key="user.change_password"/>
+                </div>
             </div>
 
             <div class="modal-body">
@@ -163,8 +171,15 @@
                     <div class="col-sm-6">
                         <input type="password"
                                class="form-control"
-                               value="${selectedUser.roles}"
                                name="oldPassword"
+<%--
+                               placeholder="<fmt:message key="user.old_password"/>"
+--%>
+                               pattern="[A-Za-z/_/./0-9]{6,25}"
+<%--
+                               title="<fmt:message key="user.password.hint"/>"
+--%>
+                               required
                         >
                     </div>
                 </div>
@@ -176,8 +191,13 @@
                     <div class="col-sm-6">
                         <input type="password"
                                class="form-control"
-                               value="${selectedUser.roles}"
                                name="newPassword"
+<%--
+                               placeholder="<fmt:message key="user.new_password"/>"
+--%>
+                               pattern="[A-Za-z/_/./0-9]{6,25}"
+                               title="<fmt:message key="user.password.hint"/>"
+                               required
                         >
                     </div>
                 </div>
@@ -189,8 +209,15 @@
                     <div class="col-sm-6">
                         <input type="password"
                                class="form-control"
-                               value="${selectedUser.roles}"
                                name="newPasswordRepeated"
+<%--
+                               placeholder="<fmt:message key="user.new_password_repeat"/>"
+--%>
+                               pattern="[A-Za-z/_/./0-9]{6,25}"
+<%--
+                               title="<fmt:message key="user.password.hint"/>"
+--%>
+                               required
                         >
                     </div>
                 </div>

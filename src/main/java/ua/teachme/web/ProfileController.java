@@ -56,6 +56,9 @@ public class ProfileController {
             model.addAttribute("wrongRepeatedPassword", true);
             return "profile";
         }
+        user.setPassword(PasswordUtil.encode(passwordTO.getNewPassword()));
+        userService.save(user);
+        model.addAttribute("successfulChangePassword", true);
         model.addAttribute("selectedUser", user);
         return "profile";
     }
