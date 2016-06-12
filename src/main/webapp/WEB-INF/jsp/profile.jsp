@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-sm-9">
                     <input type="text"
-                           class="form-control"
+                           class="form-control validation"
                            value="${selectedUser.name}"
                            name="name"
                            required
@@ -51,7 +51,7 @@
                 </div>
                 <div class="col-sm-9">
                     <input type="email"
-                           class="form-control"
+                           class="form-control validation"
                            value="${selectedUser.email}"
                            name="email"
                            required
@@ -66,27 +66,26 @@
                 </div>
                 <div class="col-sm-9">
                     <button type="button"
-                            class="btn btn-inverse btn-block"
+                            class="btn btn-block update-warning update-warning-hover"
                             data-toggle="modal"
                             data-target="#changePassword"
                     >
                         <fmt:message key="user.change_password"/>
                     </button>
-
                     <c:if test="${wrongOldPassword}">
-                        <div class="reg-error">
+                        <div class="reg-error in-center">
                             <fmt:message key="user.password.wrong_old"/>
                         </div>
                     </c:if>
 
                     <c:if test="${wrongRepeatedPassword}">
-                        <div class="reg-error">
+                        <div class="reg-error in-center">
                             <fmt:message key="user.password.wrong_repeated"/>
                         </div>
                     </c:if>
 
                     <c:if test="${successfulChangePassword}">
-                        <div class="reg-success">
+                        <div class="reg-success in-center">
                             <fmt:message key="user.password.successful_change"/>
                         </div>
                     </c:if>
@@ -104,10 +103,13 @@
                 </div>
                 <div class="col-sm-9">
                     <input type="number"
-                           class="form-control"
+                           class="form-control validation"
                            value="${selectedUser.maxHoursPerDay}"
                            name="hours"
+                           min="0"
+                           max="23"
                            required
+                           title=""
                     >
                 </div>
             </div>
@@ -174,9 +176,7 @@
                                name="oldPassword"
 <%--
                                placeholder="<fmt:message key="user.old_password"/>"
---%>
                                pattern="[A-Za-z/_/./0-9]{6,25}"
-<%--
                                title="<fmt:message key="user.password.hint"/>"
 --%>
                                required
@@ -190,11 +190,11 @@
                     </div>
                     <div class="col-sm-6">
                         <input type="password"
-                               class="form-control"
+                               class="form-control validation"
                                name="newPassword"
-<%--
-                               placeholder="<fmt:message key="user.new_password"/>"
---%>
+                            <%--
+                                                           placeholder="<fmt:message key="user.new_password"/>"
+                            --%>
                                pattern="[A-Za-z/_/./0-9]{6,25}"
                                title="<fmt:message key="user.password.hint"/>"
                                required
@@ -208,15 +208,13 @@
                     </div>
                     <div class="col-sm-6">
                         <input type="password"
-                               class="form-control"
+                               class="form-control validation"
                                name="newPasswordRepeated"
-<%--
-                               placeholder="<fmt:message key="user.new_password_repeat"/>"
---%>
+                            <%--
+                            placeholder="<fmt:message key="user.new_password_repeat"/>"
+                            --%>
                                pattern="[A-Za-z/_/./0-9]{6,25}"
-<%--
                                title="<fmt:message key="user.password.hint"/>"
---%>
                                required
                         >
                     </div>
@@ -227,8 +225,9 @@
             <div class="modal-footer">
                 <div class="col-xs-offset-3">
                     <button type="submit" class="btn btn-primary"><fmt:message key="user.password.confirm"/></button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal"><fmt:message key="button.cancel"/></button>
-                </form:form>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><fmt:message
+                            key="button.cancel"/></button>
+                    </form:form>
                 </div>
             </div>
 

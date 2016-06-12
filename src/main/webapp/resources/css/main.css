@@ -44,17 +44,23 @@ dd {
     color: #17ac38;
     background-color: #befabf;
     border: 1px solid #17ac38;
+    border-radius: 5px;
 }
 
 .reg-error {
     color: #ff1719;
     background-color: #f2dede;
     border: 1px solid #ff1719;
+    border-radius: 5px;
 }
 .update-warning {
     color: #373737;
     background-color: #ffa334;
     border: 2px solid #757575;
+}
+
+.update-warning-hover:hover {
+    background-color: #ffb822;
 }
 
 .black {
