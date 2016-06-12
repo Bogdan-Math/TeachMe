@@ -57,14 +57,18 @@ dd {
     border: 2px solid #757575;
 }
 
-.input-field:invalid {
-    border: 1px solid red;
-}
-
-.input-field:valid {
-    border: 1px solid green;
-}
-
 .black {
     color: black;
+}
+
+.validation:invalid {
+    color: gray;
+    border: 1px solid gray;
+    background-color: lightgrey;
+}
+
+.validation:valid {
+    color: blue;
+    border: 1px solid blue;
+    background-color: lightblue;
 }
