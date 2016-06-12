@@ -49,7 +49,7 @@
 
         <div class="in-right">
 
-            <a class="btn btn-default btn-lg" role="button" href="registration"><fmt:message key="app.register"/></a>
+            <a class="btn btn-lg registration-btn" role="button" href="registration"><fmt:message key="app.register"/></a>
 
             <br>
             <br>

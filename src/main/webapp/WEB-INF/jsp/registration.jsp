@@ -102,7 +102,7 @@
                 >
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block"><fmt:message key="app.sign_in"/></button>
+                <button type="submit" class="btn btn-block registration-btn"><fmt:message key="app.sign_in"/></button>
             </div>
         </form:form>
     </div>

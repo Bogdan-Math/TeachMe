@@ -76,5 +76,22 @@ dd {
 .validation:valid {
     color: darkblue;
     border: 1px solid blue;
-    background-color: lightblue;
+    background-color: lightgrey;
+}
+
+.registration-btn {
+    color: white;
+    background-color: #252b8b;
+}
+
+.registration-btn:hover {
+    color: white;
+    /*
+    border: 1px solid #2365d4;
+    */
+    background-color: #2d33a7;
+}
+
+.registration-btn:active  {
+    background-color: #363cc7;
 }
