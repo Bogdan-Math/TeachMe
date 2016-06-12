@@ -72,6 +72,19 @@
                     >
                         <fmt:message key="user.change_password"/>
                     </button>
+
+                    <c:if test="${wrongOldPassword}">
+                        <div class="reg-error">
+                            <fmt:message key="user.password.wrong_old"/>
+                        </div>
+                    </c:if>
+
+                    <c:if test="${wrongRepeatedPassword}">
+                        <div class="reg-error">
+                            <fmt:message key="user.password.wrong_repeated"/>
+                        </div>
+                    </c:if>
+
                 </div>
             </div>
 
@@ -177,7 +190,7 @@
                         <input type="password"
                                class="form-control"
                                value="${selectedUser.roles}"
-                               name="newPasswordRepeat"
+                               name="newPasswordRepeated"
                         >
                     </div>
                 </div>
