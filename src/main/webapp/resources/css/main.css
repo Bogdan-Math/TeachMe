@@ -62,13 +62,13 @@ dd {
 }
 
 .validation:invalid {
-    color: gray;
-    border: 1px solid gray;
+    color: dimgray;
+    border: 1px solid grey;
     background-color: lightgrey;
 }
 
 .validation:valid {
-    color: blue;
+    color: darkblue;
     border: 1px solid blue;
     background-color: lightblue;
 }

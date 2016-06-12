@@ -10,6 +10,42 @@
 </head>
 
 <body>
+<%--todo: fix validation and messages--%>
+<script>
+    $(document).ready(function () {
+
+        var name = document.getElementById('name');
+        var email = document.getElementById('email');
+        var password = document.getElementById('password');
+
+        name.addEventListener('invalid', function () {
+            if (name.validity.valueMissing) {
+                name.setCustomValidity("<fmt:message key="user.name.required"/>");
+            }
+/*
+            else if () {
+                name.setCustomValidity("<fmt:message key="user.name.required"/>");
+            }
+*/
+            name.addEventListener('input', function () {
+                name.setCustomValidity('');
+            });
+        }, false);
+
+        email.addEventListener('invalid', function (e) {
+            if (email.validity.valueMissing) {
+                e.target.setCustomValidity("<fmt:message key="user.email.required"/>");
+            }
+            else if (!email.validity.valid) {
+                e.target.setCustomValidity("<fmt:message key="user.email.required"/>");
+            }
+            email.addEventListener('input', function (e) {
+                e.target.setCustomValidity('');
+            });
+        }, false);
+
+    });
+</script>
 
 <header>
     <jsp:include page="fragments/registration-header.jsp"/>
@@ -26,11 +62,12 @@
                                     <label class="sr-only" for="name"><fmt:message key="table.users.name"/></label>
                     --%>
                 <input type="text"
-                       class="form-control"
+                       class="form-control validation"
                        id="name"
                        name="name"
                        placeholder="<fmt:message key="table.users.name"/>"
                        required
+                       autofocus
                 >
             </div>
             <div class="form-group">
@@ -39,7 +76,7 @@
                     --%>
                 <input
                         type="email"
-                        class="form-control"
+                        class="form-control validation"
                         id="email"
                         name="email"
                         placeholder="<fmt:message key="table.users.email"/>"
