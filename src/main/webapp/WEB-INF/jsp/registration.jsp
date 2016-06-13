@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<%--todo: fix validation and messages--%>
+<%--todo: add validation by js and ajax (json)--%>
 <script>
 /*
     $(document).ready(function () {

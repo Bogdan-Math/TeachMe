@@ -20,12 +20,10 @@
     <jsp:include page="fragments/login-header.jsp"/>
 </header>
 
-<%--todo: add some body code--%>
 <div class="jumbotron">
     <div class="container">
 
         <div class="in-center">
-            <%--todo: add correct jsp:useBean--%>
 
             <c:if test="${message}">
                 <div class="reg-success">

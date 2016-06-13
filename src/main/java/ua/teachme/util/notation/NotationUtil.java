@@ -11,7 +11,6 @@ import java.time.Month;
 import java.util.*;
 import java.util.stream.Collectors;
 
-//todo: clear unused code
 public class NotationUtil {
 
     public static int hours = 8;
@@ -27,17 +26,6 @@ public class NotationUtil {
 
     public static Notation newNotation = new Notation("name", "URL", "description", 1, LocalDateTime.now());
     public static Notation equalNotation = new Notation("name", "URL", "description", 1, LocalDateTime.now());
-
-    public static void main(String[] args) {
-        getFilteredNotationsExceedWithStreams(notations, LocalDateTime.now(), LocalDateTime.now(), hours).forEach(System.out::println);
-        System.out.println("///////////////");
-/*
-        getFilteredNotationsExceedWithLoops(notations, LocalTime.of(11, 0), LocalTime.of(23, 0), hours).forEach(System.out::println);
-        System.out.println("///////////////");
-        getFilteredWithExceed(notations, hours).forEach(System.out::println);
-        System.out.println("///////////////");
-*/
-    }
 
     //filter with full day period
     public static List<NotationTO> getFilteredWithExceed(List<Notation> notations, int hoursPerDay){

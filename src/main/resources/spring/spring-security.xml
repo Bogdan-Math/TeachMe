@@ -7,7 +7,6 @@
                                  http://www.springframework.org/schema/security/spring-security.xsd"
 >
 
-    <!--todo: add users login/logout-->
     <http pattern="/resources/**" security="none"/>
     <http pattern="/webjars/**" security="none"/>
 

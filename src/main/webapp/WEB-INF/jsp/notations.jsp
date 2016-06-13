@@ -98,7 +98,7 @@
     <div class="in-center">
         <button class="btn btn-info" type="submit"><fmt:message key="button.filter"/></button>
     </div>
-    <%--todo: add correct filter
+    <%--todo: add correct reset and not default times after filtering
         <button type="reset">reset</button>
     --%>
 </form:form>
