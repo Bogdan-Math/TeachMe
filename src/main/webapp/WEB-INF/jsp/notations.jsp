@@ -65,14 +65,28 @@
         <dt><fmt:message key="table.notations.filter.start_date"/></dt>
         <dd>
             <label>
-                <input type="text" value="${startDate}" name="startDate" id="startDate">
+                <input type="date"
+                       value="${startDate}"
+                       class="date-time-picker"
+                       name="startDate"
+                       id="startDate"
+                       readonly
+                       required
+                >
             </label>
         </dd>
 
         <dt><fmt:message key="table.notations.filter.start_time"/></dt>
         <dd>
             <label>
-                <input type="text" value="00:00" <%--value="${startTime}"--%> name="startTime" id="startTime">
+                <input type="time"
+                       value="00:00"
+                       class="date-time-picker" <%--value="${startTime}"--%>
+                       name="startTime"
+                       id="startTime"
+                       readonly
+                       required
+                >
             </label>
         </dd>
 
@@ -82,21 +96,35 @@
         <dt><fmt:message key="table.notations.filter.end_date"/></dt>
         <dd>
             <label>
-                <input type="text" value="${endDate}" name="endDate" id="endDate">
+                <input type="date"
+                       value="${endDate}"
+                       class="date-time-picker"
+                       name="endDate"
+                       id="endDate"
+                       readonly
+                       required
+                >
             </label>
         </dd>
 
         <dt><fmt:message key="table.notations.filter.end_time"/></dt>
         <dd>
             <label>
-                <input type="text" value="23:00" <%--value="${endTime}"--%> name="endTime" id="endTime">
+                <input type="time"
+                       value="23:00"
+                       class="date-time-picker" <%--value="${endTime}"--%>
+                       name="endTime"
+                       id="endTime"
+                       readonly
+                       required
+                >
             </label>
         </dd>
 
     </dl>
 
     <div class="in-center">
-        <button class="btn btn-info" type="submit"><fmt:message key="button.filter"/></button>
+        <button class="btn filter-btn" type="submit"><fmt:message key="button.filter"/></button>
     </div>
     <%--todo: add correct reset and not default times after filtering
         <button type="reset">reset</button>
@@ -107,7 +135,7 @@
     <div class="container">
         <div class="shadow">
 
-            <table class="table table-view" id="dataTable">
+            <table class="table table-hover" id="dataTable">
 
                 <div class="in-center">
                     <a class="btn btn-primary" href="notations/create"><fmt:message key="button.create"/></a>
