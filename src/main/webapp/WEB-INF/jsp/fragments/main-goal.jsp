@@ -4,9 +4,23 @@
 <jsp:useBean id="loggedUserMainGoal" scope="request" type="ua.teachme.model.MainGoal"/>
 <div class="navbar-form navbar-right">
 
-    <button class="btn main-goal-btn" type="submit">
+    <a class="btn main-goal-btn" type="submit" id="mainGoal">
         <b><fmt:message key="user.main_goal"/></b>
         <div class="in-line personal-main-goal">${loggedUserMainGoal.name}</div>
-    </button>
+    </a>
 
 </div>
+
+<%--
+<script>
+    var div = document.getElementById("mainGoal");
+    div.onmouseover = function(){
+        div.setAttribute("style","color:lightgreen;");
+    };
+    div.onmouseout = function(){
+        div.setAttribute("style","color:lightgreen;");
+    };
+    div.onclick = function(){
+        div.setAttribute("style","color:lightgreen;");
+    };
+</script>--%>

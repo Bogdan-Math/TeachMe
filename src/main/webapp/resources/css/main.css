@@ -132,11 +132,11 @@ dd {
 }
 
 .main-goal-btn {
-    color: lightgreen !important;
+    color: lightgreen;
     background-color: green;
     border-color: darkgreen;
     border-radius: 15px;
-    outline: 0 !important;
+    outline: 0;
 }
 
 .main-goal-btn:hover {
@@ -144,7 +144,7 @@ dd {
     background-color: #009b00;
     border-color: darkgreen;
     border-radius: 15px;
-    outline: 0 !important;
+    outline: 0;
 }
 
 .main-goal-btn:active {
@@ -152,7 +152,7 @@ dd {
     background-color: #00b500;
     border-color: darkgreen;
     border-radius: 15px;
-    outline: 0 !important;
+    outline: 0;
 }
 
 .personal-main-goal {
