@@ -14,7 +14,7 @@ public class LoggedUser extends org.springframework.security.core.userdetails.Us
         super(user.getEmail(), user.getPassword(), user.getRoles());
         id = user.getId();
         name = user.getName();
-        mainGoal = user.getMainGoal();
+        setMainGoal(user);
 //        System.out.println(this.getAuthorities());
     }
 /*
@@ -35,11 +35,21 @@ public class LoggedUser extends org.springframework.security.core.userdetails.Us
     }
 */
 
+    private static void setMainGoal(User user) {
+        MainGoal transferMainGoal = user.getMainGoal();
+        if (null != transferMainGoal) {
+            mainGoal = transferMainGoal;
+        }
+        else {
+            mainGoal = new MainGoal();
+        }
+    }
+
     public static int getId() {
         return id;
     }
 
-    public static String getName(){
+    public static String getName() {
         return name;
     }
 
