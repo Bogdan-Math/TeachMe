@@ -1,3 +1,4 @@
+<%--suppress HtmlFormInputWithoutLabel --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -14,44 +15,82 @@
 
 
 <jsp:useBean id="notation" scope="request" type="ua.teachme.model.Notation"/>
-<form:form cssClass="in-center" action="notations" method="post">
+<form:form cssClass="form-horizontal" action="notations" method="post">
 
-    <dl>
-<%--
-        <dt>id</dt>
---%>
-        <dd><input type="hidden" value="${notation.id}" name="id"></dd>
-    </dl>
+<div class="row">
 
-    <dl>
-        <dt>name</dt>
-        <dd><input type="text" value="${notation.name}" name="name" required></dd>
-    </dl>
+    <div class="col-md-4"></div>
 
-    <dl>
-        <dt>url</dt>
-        <dd><input type="text" value="${notation.url}" name="url" required></dd>
-    </dl>
+    <div class="col-md-4">
+        <input type="hidden" value="${notation.id}" name="id">
 
-    <dl>
-        <dt>description</dt>
-        <dd><input type="text" value="${notation.description}" name="description" required></dd>
-    </dl>
+        <div class="form-group">
+            <div class="col-sm-3">
+                <label class="control-label"><fmt:message key="notation.name"/></label>
+            </div>
+            <div class="col-sm-9">
+                <input type="text"
+                       class="form-control validation"
+                       value="${notation.name}"
+                       name="name"
+                       required
+                >
+            </div>
+        </div>
 
-    <dl>
-        <dt>hours</dt>
-        <dd><input type="number" value="${notation.hours}" name="hours" required></dd>
-    </dl>
+        <div class="form-group">
+            <div class="col-sm-3">
+                <label class="control-label"><fmt:message key="notation.url"/></label>
+            </div>
+            <div class="col-sm-9">
+                <input type="text"
+                       class="form-control validation"
+                       value="${notation.url}"
+                       name="url"
+                       required
+                >
+            </div>
+        </div>
 
-    <dl>
-<%--
-        <dt>date and time:</dt>
---%>
-        <dd><input type="hidden" <%--type="datetime-local"--%> value="${notation.createdDateAndTime}" name="createdDateAndTime"></dd>
-    </dl>
+        <div class="form-group">
+            <div class="col-sm-3">
+                <label class="control-label"><fmt:message key="notation.description"/></label>
+            </div>
+            <div class="col-sm-9">
+                <input type="text"
+                       class="form-control validation"
+                       value="${notation.description}"
+                       name="description"
+                       required
+                >
+            </div>
+        </div>
 
-    <button type="submit" class="btn btn-primary" ><fmt:message key="button.save"/></button>
-    <button type="button" class="btn btn-default" onclick="window.history.back()"><fmt:message key="button.close"/></button>
+        <div class="form-group">
+            <div class="col-sm-3">
+                <label class="control-label"><fmt:message key="notation.hours"/></label>
+            </div>
+            <div class="col-sm-9">
+                <input type="text"
+                       class="form-control validation"
+                       value="${notation.hours}"
+                       name="hours"
+                       required
+                >
+            </div>
+        </div>
+
+        <input type="hidden" <%--type="datetime-local"--%> value="${notation.createdDateAndTime}" name="createdDateAndTime">
+
+        <button type="submit" class="btn btn-primary" ><fmt:message key="button.save"/></button>
+        <button type="button" class="btn btn-default" onclick="window.history.back()"><fmt:message key="button.close"/></button>
+
+    </div>
+
+    <div class="col-md-4"></div>
+
+</div>
+
 </form:form>
 
 <footer>
