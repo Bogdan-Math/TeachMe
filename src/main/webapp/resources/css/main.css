@@ -67,6 +67,10 @@ dd {
     color: black;
 }
 
+.validation {
+    resize: none;
+}
+
 .validation:invalid {
     color: dimgray;
     border: 1px solid grey;
