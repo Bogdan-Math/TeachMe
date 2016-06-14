@@ -3,15 +3,14 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:jdbc="http://www.springframework.org/schema/jdbc"
-       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context.xsd
                            http://www.springframework.org/schema/jdbc
-                           http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+                           http://www.springframework.org/schema/jdbc/spring-jdbc.xsd"
 
-                           "
+
 >
     <!--import properties from db.properties-->
     <context:property-placeholder location="classpath:db/db.properties"/>
@@ -58,26 +57,6 @@
         </jdbc:initialize-database>
 -->
 
-    </beans>
-
-    <beans profile="connect-Heroku">
-        <!--expand data source driver manager, use pool of connections-->
-        <bean id="jdbcDataSource"
-              class="org.apache.tomcat.jdbc.pool.DataSource"
-              p:url="${heroku_postgres.url}"
-              p:username="${heroku_postgres.username}"
-              p:password="${heroku_postgres.password}"
-              p:driverClassName="${heroku_postgres.driver}"
-              p:validationQuery="SELECT 1 FROM users"
-              p:maxActive="10"
-              p:minIdle="2"
-              p:maxWait="20000"
-              p:initialSize="2"
-              p:maxIdle="5"
-              p:testOnBorrow="true"
-              p:removeAbandoned="true"
-              p:testOnConnect="true"
-              p:testWhileIdle="true"/>
     </beans>
 
 </beans>

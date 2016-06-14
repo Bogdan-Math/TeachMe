@@ -23,10 +23,7 @@
     <!--set profiles for app-context-->
     <context-param>
         <param-name>spring.profiles.default</param-name>
-<!--
         <param-value>connect-PostgreSQL,JPA</param-value>
--->
-        <param-value>connect-Heroku,JPA</param-value>
     </context-param>
 
     <!--Spring MVC-->
