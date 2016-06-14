@@ -1,10 +1,6 @@
 package ua.teachme;
 
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import ua.teachme.model.User;
-
-import static java.util.Objects.requireNonNull;
 
 // todo: fix to more transparent code
 public class LoggedUser extends org.springframework.security.core.userdetails.User {

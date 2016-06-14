@@ -1,16 +1,9 @@
 package ua.teachme;
 
 import org.junit.*;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import ua.teachme.profiles.ConnectTo;
 import ua.teachme.profiles.WorkBy;
-import ua.teachme.repository.NotationRepository;
-import ua.teachme.repository.UserRepository;
-import ua.teachme.service.NotationService;
-import ua.teachme.service.UserService;
-import ua.teachme.web.notation.NotationController;
-import ua.teachme.web.user.UserController;
 
 import static org.junit.Assert.*;
 
