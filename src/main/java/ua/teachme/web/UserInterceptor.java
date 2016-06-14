@@ -15,7 +15,8 @@ public class UserInterceptor extends HandlerInterceptorAdapter{
         if (null != modelAndView && !modelAndView.isEmpty()) {
             String loggedUserName = LoggedUser.getName();
             if (null != loggedUserName) {
-                modelAndView.getModelMap().addAttribute("loggedUser", LoggedUser.getName());
+                modelAndView.getModelMap().addAttribute("loggedUserName", LoggedUser.getName());
+                modelAndView.getModelMap().addAttribute("loggedUserMainGoal", LoggedUser.getMainGoal());
             }
         }
         //modelAndView.getModelMap().addAttribute("loggedUser", LoggedUser.getName());

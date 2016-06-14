@@ -1,5 +1,6 @@
 package ua.teachme;
 
+import ua.teachme.model.MainGoal;
 import ua.teachme.model.User;
 
 // todo: fix to more transparent code
@@ -7,11 +8,13 @@ public class LoggedUser extends org.springframework.security.core.userdetails.Us
 
     private static int id;
     private static String name;
+    private static MainGoal mainGoal;
 
     public LoggedUser(User user) {
         super(user.getEmail(), user.getPassword(), user.getRoles());
         id = user.getId();
         name = user.getName();
+        mainGoal = user.getMainGoal();
 //        System.out.println(this.getAuthorities());
     }
 /*
@@ -38,5 +41,9 @@ public class LoggedUser extends org.springframework.security.core.userdetails.Us
 
     public static String getName(){
         return name;
+    }
+
+    public static MainGoal getMainGoal() {
+        return mainGoal;
     }
 }
