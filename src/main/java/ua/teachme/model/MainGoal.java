@@ -6,16 +6,18 @@ import javax.persistence.*;
 @Table(name = "main_goals")
 public class MainGoal extends EntityName{
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne/*(fetch = FetchType.LAZY)*/
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @Column(name = "description")
     private String description;
 
-/*
     public MainGoal(){}
-*/
+
+    public MainGoal(String description){
+        this.description = description;
+    }
 
     public User getUser() {
         return user;

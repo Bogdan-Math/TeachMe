@@ -25,6 +25,11 @@ public class User extends EntityName {
     public static final String GET_ALL = "user.getAll";
     public static final String BY_EMAIL = "user.getByEmail";
 
+    @Column(name = "email", nullable = false)
+    @NotEmpty
+    @Email
+    private String email;
+
     @Column(name = "password", nullable = false)
     @NotEmpty
     @Length(min = 6)
@@ -32,11 +37,6 @@ public class User extends EntityName {
 
     //todo: add enable/disable user
     //private boolean enable;
-
-    @Column(name = "email", nullable = false)
-    @NotEmpty
-    @Email
-    private String email;
 
     @Column(name = "max_hours_per_day")
     private int maxHoursPerDay;

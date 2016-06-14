@@ -24,7 +24,7 @@ public class Notation extends EntityName {
     public static final String GET_BETWEEN = "notation.getBetween";
     public static final String GET_BY_USER_ID = "notation.getByUserId";
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne/*(fetch = FetchType.LAZY)*/
     @JoinColumn(name = "user_id", nullable = false)
     @JsonIgnore
     private User user;

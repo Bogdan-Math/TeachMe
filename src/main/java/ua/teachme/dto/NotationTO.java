@@ -8,13 +8,13 @@ import java.time.LocalTime;
 
 public class NotationTO {
 
-    private final Integer id;
-    private final String name;
-    private final String url;
-    private final String description;
-    private final int hours;
-    private final LocalDateTime dateTime;
-    private final boolean exceed;
+    private Integer id;
+    private String name;
+    private String url;
+    private String description;
+    private int hours;
+    private LocalDateTime dateTime;
+    private boolean exceed;
 
     public NotationTO(Integer id, String name, String url, String description, int hours, LocalDateTime dateTime, boolean exceed) {
         this.id = id;
