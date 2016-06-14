@@ -35,6 +35,8 @@
                 <button class="btn btn-success" type="submit"><fmt:message key="app.logout"/></button>
             </form:form>
 
+            <jsp:include page="main-goal.jsp"/>
+
         </sec:authorize>
     </div>
 
