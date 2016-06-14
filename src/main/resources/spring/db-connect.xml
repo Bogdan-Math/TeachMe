@@ -60,17 +60,14 @@
 
     </beans>
 
-    <beans profile="connect-Heroku-PostgreSQL">
+    <beans profile="connect-Heroku">
         <!--expand data source driver manager, use pool of connections-->
-        <bean class="java.net.URI" id="dbUrl">
-            <constructor-arg value="${DATABASE_URL}"/>
-        </bean>
         <bean id="jdbcDataSource"
               class="org.apache.tomcat.jdbc.pool.DataSource"
-              p:url="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + @dbUrl.getPath() }"
-              p:username="#{ @dbUrl.getUserInfo().split(':')[0] }"
-              p:password="#{ @dbUrl.getUserInfo().split(':')[1] }"
-              p:driverClassName="org.postgresql.Driver"
+              p:url="${heroku_postgres.url}"
+              p:username="${heroku_postgres.username}"
+              p:password="${heroku_postgres.password}"
+              p:driverClassName="${heroku_postgres.driver}"
               p:validationQuery="SELECT 1 FROM users"
               p:maxActive="10"
               p:minIdle="2"
