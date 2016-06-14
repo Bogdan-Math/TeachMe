@@ -53,6 +53,7 @@ dd {
     border: 1px solid #ff1719;
     border-radius: 5px;
 }
+
 .update-warning {
     color: #373737;
     background-color: #ffa334;
@@ -74,13 +75,13 @@ dd {
 .validation:invalid {
     color: dimgray;
     border: 1px solid grey;
-    background-color: lightgrey;
+    background-color: #e7e7e7;
 }
 
 .validation:valid {
     color: darkblue;
     border: 1px solid blue;
-    background-color: lightgrey;
+    background-color: #e7e7e7;
 }
 
 .date-time-picker {
@@ -125,7 +126,43 @@ dd {
     background-color: #2d33a7;
 }
 
-.registration-btn:active  {
+.registration-btn:active {
     color: white;
     background-color: #363cc7;
+}
+
+.main-goal-btn {
+    color: lightgreen !important;
+    background-color: green;
+    border-color: darkgreen;
+    border-radius: 15px;
+    outline: 0 !important;
+}
+
+.main-goal-btn:hover {
+    color: lightgreen;
+    background-color: #009b00;
+    border-color: darkgreen;
+    border-radius: 15px;
+    outline: 0 !important;
+}
+
+.main-goal-btn:active {
+    color: lightgreen;
+    background-color: #00b500;
+    border-color: darkgreen;
+    border-radius: 15px;
+    outline: 0 !important;
+}
+
+.personal-main-goal {
+    padding: 2px 10px;
+    color: #17ac38;
+    background-color: #befabf;
+    border: 1px solid #17ac38;
+    border-radius: 10px;
+}
+
+.in-line {
+    display: inline;
 }

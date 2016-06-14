@@ -14,9 +14,9 @@
                 <div class="navbar-brand"><fmt:message key="app.title"/></div>
             </a>
 
-            <%--@elvariable id="loggedUser" type="java.lang.String"--%>
+            <%--@elvariable id="loggedUserName" type="java.lang.String"--%>
             <a href="profile">
-                <div class="navbar-brand"><fmt:message key="app.profile"/> ${loggedUser}</div>
+                <div class="navbar-brand"><fmt:message key="app.profile"/> ${loggedUserName}</div>
             </a>
 
             <a href="notations">
