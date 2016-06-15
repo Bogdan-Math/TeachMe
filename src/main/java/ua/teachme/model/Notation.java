@@ -1,6 +1,8 @@
 package ua.teachme.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
@@ -9,6 +11,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
+@Getter
+@Setter
 @NamedQueries({
         @NamedQuery(name = Notation.DELETE, query = "DELETE FROM Notation notation WHERE notation.id=:id"),
         @NamedQuery(name = Notation.GET_ALL, query = "SELECT notation FROM Notation notation ORDER BY notation.createdDateAndTime"),
@@ -60,46 +64,6 @@ public class Notation extends EntityName {
         this.url = url;
         this.description = description;
         this.hours = hours;
-        this.createdDateAndTime = createdDateAndTime;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getHours() {
-        return hours;
-    }
-
-    public void setHours(int hours) {
-        this.hours = hours;
-    }
-
-    public LocalDateTime getCreatedDateAndTime() {
-        return createdDateAndTime;
-    }
-
-    public void setCreatedDateAndTime(LocalDateTime createdDateAndTime) {
         this.createdDateAndTime = createdDateAndTime;
     }
 

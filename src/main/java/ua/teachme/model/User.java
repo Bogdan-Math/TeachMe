@@ -1,17 +1,20 @@
 package ua.teachme.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.Set;
 
+@Getter
+@Setter
 @NamedQueries({
         @NamedQuery(name = User.DELETE, query = "DELETE FROM User user WHERE user.id=:id"),
         @NamedQuery(name = User.GET_ALL, query = "SELECT user FROM User user ORDER BY user.name, user.email"),
@@ -117,38 +120,6 @@ public class User extends EntityName {
         this.setRoles(Role.COMMON);
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getMaxHoursPerDay() {
-        return maxHoursPerDay;
-    }
-
-    public void setMaxHoursPerDay(int maxHoursPerDay) {
-        this.maxHoursPerDay = maxHoursPerDay;
-    }
-
-    public MainGoal getMainGoal() {
-        return mainGoal;
-    }
-
-    public void setMainGoal(MainGoal mainGoal) {
-        this.mainGoal = mainGoal;
-    }
-
     public List<Notation> getNotations() {
         return notations;
     }
@@ -163,18 +134,6 @@ public class User extends EntityName {
 
     public void setRoles(Role role, Role... roles) {
         this.roles = EnumSet.of(role, roles);
-    }
-
-    public LocalDateTime getRegisteredDateAndTime() {
-        return registeredDateAndTime;
-    }
-
-    public void setRegisteredDateAndTime(LocalDateTime registeredDateAndTime) {
-        this.registeredDateAndTime = registeredDateAndTime;
-    }
-
-    public LocalDate getRegisteredDate() {
-        return registeredDateAndTime.toLocalDate();
     }
 
     @Override

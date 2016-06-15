@@ -1,9 +1,14 @@
 package ua.teachme.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
+@Getter
+@Setter
 public class EntityName extends EntityID {
 
     @Column(name = "name")
@@ -15,14 +20,6 @@ public class EntityName extends EntityID {
 
     public EntityName(Integer id, String name) {
         super(id);
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
     }
 

@@ -81,7 +81,7 @@
         --%>
         <dd>
             <label>
-                <input type="hidden" value="${selectedUser.registeredDate}" name="registeredDate">
+                <input type="hidden" value="${selectedUser.registeredDateAndTime}" name="registeredDate">
             </label>
         </dd>
     </dl>

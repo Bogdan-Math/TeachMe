@@ -1,7 +1,12 @@
 package ua.teachme.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "main_goals")
 public class MainGoal extends EntityName{
@@ -16,22 +21,6 @@ public class MainGoal extends EntityName{
     public MainGoal(){}
 
     public MainGoal(String description){
-        this.description = description;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
         this.description = description;
     }
 }
