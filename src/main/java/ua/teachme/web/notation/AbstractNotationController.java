@@ -65,7 +65,7 @@ public abstract class AbstractNotationController {
         notationService.evictCache();
     }
 
-    List<Notation> getByUserId(int userId){
+    public List<Notation> getByUserId(int userId){
         return notationService.getByUserId(userId);
     }
 }
