@@ -1,0 +1,31 @@
+.main-goal-btn {
+    color: lightgreen;
+    background-color: green;
+    border-color: darkgreen;
+    border-radius: 15px;
+    outline: 0;
+}
+
+.main-goal-btn:hover {
+    color: lightgreen;
+    background-color: #009b00;
+    border-color: darkgreen;
+    border-radius: 15px;
+    outline: 0;
+}
+
+.main-goal-btn:active {
+    color: lightgreen;
+    background-color: #00b500;
+    border-color: darkgreen;
+    border-radius: 15px;
+    outline: 0;
+}
+
+.personal-main-goal {
+    padding: 2px 10px;
+    color: #17ac38;
+    background-color: #befabf;
+    border: 1px solid #17ac38;
+    border-radius: 10px;
+}

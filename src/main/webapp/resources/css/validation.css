@@ -1,0 +1,15 @@
+.validation {
+    resize: none;
+}
+
+.validation:invalid {
+    color: dimgray;
+    border: 1px solid grey;
+    background-color: #e7e7e7;
+}
+
+.validation:valid {
+    color: darkblue;
+    border: 1px solid blue;
+    background-color: #e7e7e7;
+}

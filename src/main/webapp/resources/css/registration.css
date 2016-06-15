@@ -1,0 +1,28 @@
+.registration-btn {
+    color: white;
+    background-color: #252b8b;
+}
+
+.registration-btn:hover {
+    color: white;
+    background-color: #2d33a7;
+}
+
+.registration-btn:active {
+    color: white;
+    background-color: #363cc7;
+}
+
+.reg-success {
+    color: #17ac38;
+    background-color: #befabf;
+    border: 1px solid #17ac38;
+    border-radius: 5px;
+}
+
+.reg-error {
+    color: #ff1719;
+    background-color: #f2dede;
+    border: 1px solid #ff1719;
+    border-radius: 5px;
+}

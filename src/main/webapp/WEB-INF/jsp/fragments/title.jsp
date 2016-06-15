@@ -19,4 +19,9 @@
 <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
 
 <link href="<c:url value="resources/images/icon.png" />" rel="icon"/>
-<link href="<c:url value="resources/css/main.css" />" rel="stylesheet"/>
+<link href="<c:url value="resources/css/basic-style.css" />" rel="stylesheet"/>
+<link href="<c:url value="resources/css/registration.css" />" rel="stylesheet"/>
+<link href="<c:url value="resources/css/main-goal.css" />" rel="stylesheet"/>
+<link href="<c:url value="resources/css/validation.css" />" rel="stylesheet"/>
+<link href="<c:url value="resources/css/filtering.css" />" rel="stylesheet"/>
+<link href="<c:url value="resources/css/updating.css" />" rel="stylesheet"/>

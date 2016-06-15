@@ -1,0 +1,31 @@
+.date-time-picker {
+    text-align: center;
+    color: darkgrey;
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: whitesmoke;
+}
+
+.filter-btn {
+    color: #373737;
+    background-color: darkgrey;
+    border-color: #373737;
+    border-radius: 15px;
+    outline: 0 !important;
+}
+
+.filter-btn:hover {
+    color: #373737;
+    background-color: #cfcfcf;
+    border-color: #373737;
+    border-radius: 15px;
+    outline: 0 !important;
+}
+
+.filter-btn:active {
+    color: #373737;
+    background-color: #eaeaea;
+    border-color: #373737;
+    border-radius: 15px;
+    outline: 0 !important;
+}

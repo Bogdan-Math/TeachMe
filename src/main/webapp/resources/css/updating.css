@@ -1,0 +1,9 @@
+.update-warning {
+    color: #373737;
+    background-color: #ffa334;
+    border: 2px solid #757575;
+}
+
+.update-warning-hover:hover {
+    background-color: #ffb822;
+}
