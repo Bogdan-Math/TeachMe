@@ -2,6 +2,8 @@ package ua.teachme.model;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
@@ -13,6 +15,8 @@ import javax.persistence.*;
         isGetterVisibility = Visibility.NONE,
         setterVisibility = Visibility.NONE
 )// need to disable methods vision in json, allow only fields vision
+@Getter
+@Setter
 public class EntityID {
 
     @Id
@@ -24,14 +28,6 @@ public class EntityID {
     }
 
     public EntityID(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(int id) {
         this.id = id;
     }
 
