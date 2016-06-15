@@ -1,11 +1,15 @@
 package ua.teachme.dto;
 
+import lombok.Getter;
+import lombok.Setter;
 import ua.teachme.model.Notation;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
+@Getter
+@Setter
 public class NotationTO {
 
     private Integer id;
@@ -35,20 +39,6 @@ public class NotationTO {
         this.dateTime = notation.getCreatedDateAndTime();
         this.exceed = exceed;
     }
-
-    public Integer getId() {return id;}
-
-    public String getName() {return name;}
-
-    public String getUrl() {return url;}
-
-    public String getDescription() {return description;}
-
-    public int getHours() {return hours;}
-
-    public LocalDateTime getDateTime() {return dateTime;}
-
-    public boolean isExceed() {return exceed;}
 
     public LocalDate getDate() {
         return dateTime.toLocalDate();
