@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="30 seconds">
 
+<!--
     <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
         <resetJUL>true</resetJUL>
     </contextListener>
+-->
 
     <!-- To enable JMX Management -->
     <jmxConfigurator/>
@@ -38,6 +40,8 @@
     </appender>
 
     <logger name="ua.teachme" level="debug"/>
+    <logger name="org.springframework" level="error"/>
+    <logger name="org.hibernate" level="error"/>
 
     <root level="info">
         <appender-ref ref="SIFT"/>
