@@ -24,7 +24,7 @@
 
             <div class="modal-header">
                 <div class="in-center personal-main-goal">
-                    <fmt:message key="user.main_goal"/>
+                    <fmt:message key="user.main_goal.cheer"/>
                 </div>
             </div>
 
@@ -39,6 +39,7 @@
                         <input type="text"
                                class="form-control validation"
                                name="name"
+                               value="${loggedUserMainGoal.name}"
                         >
                     </div>
                 </div>
@@ -51,7 +52,7 @@
                         <textarea
                                class="form-control validation"
                                name="description"
-                        ></textarea>
+                        >${loggedUserMainGoal.description}</textarea>
                     </div>
                 </div>
 
