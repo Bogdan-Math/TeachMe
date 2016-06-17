@@ -46,7 +46,9 @@ public class User extends EntityName {
 
     //todo: add get/set mainGoal tests
     @OneToOne(/*fetch = FetchType.LAZY,*/ //todo: change to List<MainGoal> which will include List<Notation>
-            mappedBy = "user")
+            mappedBy = "user",
+            cascade = CascadeType.ALL
+    )
     @JsonIgnore // help to avoid: recursion calls/out of memory/stack overflow/no session(hibernate) exceptions
     private MainGoal mainGoal;
 

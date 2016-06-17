@@ -19,8 +19,4 @@ public class MainGoal extends EntityName{
     private String description;
 
     public MainGoal(){}
-
-    public MainGoal(String description){
-        this.description = description;
-    }
 }
