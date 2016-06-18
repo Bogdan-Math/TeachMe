@@ -41,6 +41,7 @@ public class ProfileController {
 */
         User user = this.getUser();
         userService.save(UserUtil.updateUser(user, userTO));
+        LoggedUser.update(user);
         return "index";
     }
 
@@ -70,6 +71,7 @@ public class ProfileController {
         User user = this.getUser();
         MainGoalUtil.updateMainGoal(user, mainGoalTO);
         userService.save(user);
+        LoggedUser.update(user);
         return "index";
     }
 

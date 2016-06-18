@@ -4,6 +4,7 @@ import ua.teachme.model.MainGoal;
 import ua.teachme.model.User;
 
 // todo: fix to more transparent code
+//todo: change to listener of user or user TO
 public class LoggedUser extends org.springframework.security.core.userdetails.User {
 
     private static int id;
@@ -12,9 +13,7 @@ public class LoggedUser extends org.springframework.security.core.userdetails.Us
 
     public LoggedUser(User user) {
         super(user.getEmail(), user.getPassword(), user.getRoles());
-        id = user.getId();
-        name = user.getName();
-        setMainGoal(user);
+        update(user);
 //        System.out.println(this.getAuthorities());
     }
 /*
@@ -43,6 +42,12 @@ public class LoggedUser extends org.springframework.security.core.userdetails.Us
         else {
             mainGoal = new MainGoal();
         }
+    }
+
+    public static void update(User user){
+        id = user.getId();
+        name = user.getName();
+        setMainGoal(user);
     }
 
     public static int getId() {
