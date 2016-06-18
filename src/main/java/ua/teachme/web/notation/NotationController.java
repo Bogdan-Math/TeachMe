@@ -18,9 +18,6 @@ public class NotationController extends AbstractNotationController{
 
     @RequestMapping(method = RequestMethod.GET)
     public String getAll(Model model) {
-/*
-        model.addAttribute("notations", NotationUtil.getFilteredWithExceed(super.getAll(), NotationUtil.hours));
-*/
         model.addAttribute(
                 "notations",
                 NotationUtil.getFilteredWithExceed(

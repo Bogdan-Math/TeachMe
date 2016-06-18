@@ -17,7 +17,6 @@ public class MainGoalUtil {
             user.setMainGoal(mainGoal);
             update(mainGoal, mainGoalTO);
         }
-
         return mainGoal;
     }
 

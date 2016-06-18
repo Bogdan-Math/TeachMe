@@ -30,14 +30,7 @@ public class UserController extends AbstractUserController {
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String save(UserTO userTO /*SpringMVC MAGIC !!!*/ /*HttpServletRequest request*/) {
-        /*
-        int id = getIdFromRequest(request);
-        String name = request.getParameter("name");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        User user = new User(id, name, password, email);
-        */
+    public String save(UserTO userTO ) {
         if (0 != userTO.getId()) {
             User user = super.get(userTO.getId());
             super.save(UserUtil.updateUser(user, userTO));
@@ -68,14 +61,7 @@ public class UserController extends AbstractUserController {
         return "user";
     }
 
-    @RequestMapping(value = "/notations", method = RequestMethod.GET)
-    public String getNotationsByUserId(HttpServletRequest request, Model model) {
-
-        return "notations";
-    }
-
     private int getIdFromRequest(HttpServletRequest request) {
         return Integer.valueOf(request.getParameter("id"));
     }
-
 }
