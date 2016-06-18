@@ -32,10 +32,10 @@
                 <form:form cssClass="form-horizontal" method="post" action="profile/mainGoal">
 
                 <div class="form-group">
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <label class="control-label"><fmt:message key="user.main_goal.name"/></label>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                         <input type="text"
                                class="form-control validation"
                                name="name"
@@ -45,10 +45,10 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <label class="control-label"><fmt:message key="user.main_goal.description"/></label>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                         <textarea
                                class="form-control validation"
                                name="description"
