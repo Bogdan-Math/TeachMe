@@ -19,10 +19,6 @@
 <jsp:useBean id="selectedUser" scope="request" type="ua.teachme.model.User"/>
 <form:form cssClass="form-horizontal" action="profile" method="post">
 
-    <%--
-        <input type="text" value="${selectedUser.mainGoal} : ${selectedUser.mainGoal.description}" name="mainGoal">
-    --%>
-
     <div class="row">
 
         <div class="col-md-4"></div>
