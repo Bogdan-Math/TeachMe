@@ -4,7 +4,7 @@ import ua.teachme.LoggedUser;
 import ua.teachme.model.Notation;
 import ua.teachme.util.notation.NotationUtil;
 import ua.teachme.util.time.TimeUtil;
-import ua.teachme.web.notation.NotationController;
+import ua.teachme.web.controllers.view.NotationController;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

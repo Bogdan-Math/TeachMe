@@ -1,4 +1,4 @@
-package ua.teachme.web;
+package ua.teachme.web.controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.MDC;

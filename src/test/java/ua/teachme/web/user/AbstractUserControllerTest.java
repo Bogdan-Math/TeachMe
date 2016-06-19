@@ -13,6 +13,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import ua.teachme.profiles.ConnectTo;
 import ua.teachme.profiles.WorkBy;
+import ua.teachme.web.controllers.view.UserController;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;

@@ -1,4 +1,4 @@
-package ua.teachme.web.user;
+package ua.teachme.web.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import ua.teachme.model.User;

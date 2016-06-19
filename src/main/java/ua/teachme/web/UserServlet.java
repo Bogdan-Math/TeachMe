@@ -1,8 +1,7 @@
 package ua.teachme.web;
 
-import ua.teachme.LoggedUser;
 import ua.teachme.model.User;
-import ua.teachme.web.user.UserController;
+import ua.teachme.web.controllers.view.UserController;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

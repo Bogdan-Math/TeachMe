@@ -1,4 +1,4 @@
-package ua.teachme.web.notation;
+package ua.teachme.web.controllers.rest;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.MediaType;
@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import ua.teachme.LoggedUser;
 import ua.teachme.dto.NotationTO;
 import ua.teachme.model.Notation;
+import ua.teachme.web.controllers.AbstractNotationController;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -13,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/rest/notations")
-public class NotationRestController extends AbstractNotationController{
+public class NotationRestController extends AbstractNotationController {
 
     @Override
     @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)

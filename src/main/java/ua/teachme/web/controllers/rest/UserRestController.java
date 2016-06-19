@@ -1,14 +1,15 @@
-package ua.teachme.web.user;
+package ua.teachme.web.controllers.rest;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import ua.teachme.model.User;
+import ua.teachme.web.controllers.AbstractUserController;
 
 import java.util.List;
 
 @RestController
 @RequestMapping(value = "/rest/users")
-public class UserRestController extends AbstractUserController{
+public class UserRestController extends AbstractUserController {
 
     @Override
     @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)

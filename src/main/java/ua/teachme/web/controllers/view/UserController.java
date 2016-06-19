@@ -1,4 +1,4 @@
-package ua.teachme.web.user;
+package ua.teachme.web.controllers.view;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import ua.teachme.dto.UserTO;
 import ua.teachme.model.User;
 import ua.teachme.util.user.UserUtil;
+import ua.teachme.web.controllers.AbstractUserController;
 
 import javax.servlet.http.HttpServletRequest;
 

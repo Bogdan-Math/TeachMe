@@ -1,4 +1,4 @@
-package ua.teachme.web;
+package ua.teachme.web.controllers.view;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;

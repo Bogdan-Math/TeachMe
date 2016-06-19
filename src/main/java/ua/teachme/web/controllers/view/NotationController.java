@@ -1,4 +1,4 @@
-package ua.teachme.web.notation;
+package ua.teachme.web.controllers.view;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,13 +8,14 @@ import ua.teachme.LoggedUser;
 import ua.teachme.model.Notation;
 import ua.teachme.util.notation.NotationUtil;
 import ua.teachme.util.time.TimeUtil;
+import ua.teachme.web.controllers.AbstractNotationController;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
 
 @Controller
 @RequestMapping(value = "/notations")
-public class NotationController extends AbstractNotationController{
+public class NotationController extends AbstractNotationController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String getAll(Model model) {
