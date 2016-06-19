@@ -11,38 +11,6 @@
 
 <body>
 <%--todo: add validation by js and ajax (json)--%>
-<script>
-/*
-    $(document).ready(function () {
-
-        var name = document.getElementById('name');
-        var email = document.getElementById('email');
-        var password = document.getElementById('password');
-
-        name.addEventListener('invalid', function () {
-            if (name.validity.valueMissing) {
-                name.setCustomValidity("<fmt:message key="user.name.required"/>");
-            }
-            name.addEventListener('input', function () {
-                name.setCustomValidity('');
-            });
-        }, false);
-
-        email.addEventListener('invalid', function (e) {
-            if (email.validity.valueMissing) {
-                e.target.setCustomValidity("<fmt:message key="user.email.required"/>");
-            }
-            else if (!email.validity.valid) {
-                e.target.setCustomValidity("<fmt:message key="user.email.required"/>");
-            }
-            email.addEventListener('input', function (e) {
-                e.target.setCustomValidity('');
-            });
-        }, false);
-
-    });
-*/
-</script>
 
 <header>
     <jsp:include page="fragments/registration-header.jsp"/>
@@ -54,10 +22,8 @@
 
     <div class="col-md-4">
         <form:form cssClass="form" method="post" action="registration" id="login-nav" accept-charset="UTF-8">
+
             <div class="form-group">
-                    <%--
-                                    <label class="sr-only" for="name"><fmt:message key="table.users.name"/></label>
-                    --%>
                 <input type="text"
                        class="form-control validation"
                        id="name"
@@ -67,10 +33,8 @@
                        autofocus
                 >
             </div>
+
             <div class="form-group">
-                    <%--
-                                    <label class="sr-only" for="email">Email address</label>
-                    --%>
                 <input
                         type="email"
                         class="form-control validation"
@@ -86,10 +50,8 @@
                     </div>
                 </c:if>
             </div>
+
             <div class="form-group">
-                    <%--
-                                    <label class="sr-only" for="password">Password</label>
-                    --%>
                 <input
                         type="password"
                         class="form-control validation"
@@ -101,9 +63,11 @@
                         required
                 >
             </div>
+
             <div class="form-group">
                 <button type="submit" class="btn btn-block registration-btn"><fmt:message key="app.sign_in"/></button>
             </div>
+
         </form:form>
     </div>
 
