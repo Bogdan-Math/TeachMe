@@ -23,13 +23,13 @@
 
             dataTableApi = $('#dataTable').dataTable();
 
-            $('#createUser').on('click', function(){
-               create();
+            $('#createUser').on('click', function () {
+                create();
             });
 
         });
 
-        function notyReloadPage(layout){
+        function notyReloadPage(layout) {
             var n = noty({
                 layout: layout,
                 text: 'Good work!!! Please, reload page to look at changes. Reload NOW???',
@@ -39,7 +39,7 @@
                     {
                         addClass: 'btn btn-primary',
                         text: 'ok',
-                        onClick: function($noty){
+                        onClick: function ($noty) {
                             $noty.close();
                             location.reload();
                         }
@@ -47,7 +47,7 @@
                     {
                         addClass: 'btn btn-danger',
                         text: 'cancel',
-                        onClick: function($noty){
+                        onClick: function ($noty) {
                             $noty.close();
                         }
                     }
@@ -61,18 +61,18 @@
                 type: 'POST',
                 url: 'users/save',
                 data: form.serialize(),
-                success: function(){
+                success: function () {
                     $('#createUserModalWindow').modal('hide');
                     notyReloadPage('topRight')
                 },
-                error: function(){
+                error: function () {
                     notyError();
                 }
             });
 
         }
 
-        function notyError(){
+        function notyError() {
             var n = noty({
                 text: 'Ooops!!! Something go wrong!!! Try again!!!',
                 type: 'error',
@@ -91,60 +91,57 @@
     <jsp:include page="fragments/common-header.jsp"/>
 </header>
 
-    <div class="jumbotron">
-        <div class="container">
-            <div class="shadow">
+<div class="jumbotron">
+    <div class="container">
+        <div class="shadow">
 
-                <div class="in-center">
-                    <a class="btn btn-primary" data-toggle="modal" data-target="#createUserModalWindow">
-                        <fmt:message key="table.users.create"/>
-                    </a>
-                </div>
-
-
-                <table class="table table-hover" id="dataTable">
-
-                    <thead>
-                    <tr>
-                        <th><fmt:message key="table.users.name"/></th>
-                        <th><fmt:message key="table.users.email"/></th>
-                        <%--
-                            <th><fmt:message key="table.users.roles"/></th>
-                        --%>
-                        <th><fmt:message key="table.users.reg"/></th>
-                        <%--
-                            Don't delete this <th>. Need to correct use DataTable js
-                        --%>
-                        <th></th>
-                        <th></th>
-
-                    </tr>
-                    </thead>
-
-                    <c:forEach items="${users}" var="user">
-                        <jsp:useBean id="user" scope="page" type="ua.teachme.model.User"/>
-                        <tr>
-                            <td><c:out value="${user.name}"/></td>
-                            <td><a href="mailto:${user.email}">${user.email}</a></td>
-<%--
-                            <td>${user.roles}</td>
---%>
-                            <td>${user.registeredDateAndTime} </td>
-
-<%--
-                            <td><a class="btn btn-default" href="users"><fmt:message key="app.user_personal_data"/></a></td>
---%>
-                            <td><a class="btn btn-warning" href="users/update?id=${user.id}"><fmt:message key="table.users.edit"/></a></td>
-                            <td><a class="btn btn-danger" href="users/delete?id=${user.id}"><fmt:message
-                                    key="table.users.delete"/></a></td>
-                        </tr>
-                    </c:forEach>
-
-                </table>
-
+            <div class="in-center">
+                <a class="btn btn-primary" data-toggle="modal" data-target="#createUserModalWindow">
+                    <fmt:message key="table.users.create"/>
+                </a>
             </div>
+
+
+            <table class="table table-hover" id="dataTable">
+
+                <thead>
+                <tr>
+                    <th><fmt:message key="table.users.name"/></th>
+                    <th><fmt:message key="table.users.email"/></th>
+                    <%--
+                        <th><fmt:message key="table.users.roles"/></th>
+                    --%>
+                    <th><fmt:message key="table.users.reg"/></th>
+                    <%--
+                        Don't delete this <th>. Need to correct use DataTable js
+                    --%>
+                    <th></th>
+                    <th></th>
+
+                </tr>
+                </thead>
+
+                <c:forEach items="${users}" var="user">
+                    <jsp:useBean id="user" scope="page" type="ua.teachme.model.User"/>
+                    <tr>
+                        <td><c:out value="${user.name}"/></td>
+                        <td><a href="mailto:${user.email}">${user.email}</a></td>
+                            <%--
+                                                        <td>${user.roles}</td>
+                            --%>
+                        <td>${user.registeredDateAndTime} </td>
+                        <td><a class="btn btn-warning" href="users/update?id=${user.id}"><fmt:message
+                                key="table.users.edit"/></a></td>
+                        <td><a class="btn btn-danger" href="users/delete?id=${user.id}"><fmt:message
+                                key="table.users.delete"/></a></td>
+                    </tr>
+                </c:forEach>
+
+            </table>
+
         </div>
     </div>
+</div>
 
 <footer>
     <jsp:include page="fragments/footer.jsp"/>
@@ -163,13 +160,6 @@
 
             <div class="modal-body">
                 <form:form cssClass="form-horizontal" method="post" id="createUserDetails">
-<%--
-                <form class="form-horizontal" method="post" id="createUserDetails">
---%>
-
-<%--
-                    <input type="text" hidden="hidden" id="id" name="id" value="0">
---%>
 
                     <div class="form-group">
                         <label for="name" class="control-label col-xs-3">Name</label>
@@ -196,21 +186,20 @@
                     <div class="modal-footer">
                         <div class="form-group">
                             <div class="col-xs-offset-3">
-                                <button type="button" class="btn btn-primary" id="createUser"><fmt:message key="button.save"/></button>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal"><fmt:message key="button.cancel"/></button>
+                                <button type="button" class="btn btn-primary" id="createUser"><fmt:message
+                                        key="button.save"/></button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal"><fmt:message
+                                        key="button.cancel"/></button>
                             </div>
                         </div>
                     </div>
 
                 </form:form>
-<%--
-                </form>
---%>
             </div>
 
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

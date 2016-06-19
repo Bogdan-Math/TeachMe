@@ -21,15 +21,6 @@
     <br>
         <div class="update-warning"><fmt:message key="user.update.warning"/></div>
     <br>
-    <%--
-    <dl>
-        <dd>
-            <label>
-                <input type="text" value="${selectedUser.mainGoal} : ${selectedUser.mainGoal.description}" name="mainGoal">
-            </label>
-        </dd>
-    </dl>
-    --%>
 
     <dl>
         <dd>
@@ -75,16 +66,16 @@
         </dd>
     </dl>
 
+<%--
     <dl>
-        <%--
             <dt>registered date</dt>
-        --%>
         <dd>
             <label>
                 <input type="hidden" value="${selectedUser.registeredDateAndTime}" name="registeredDate">
             </label>
         </dd>
     </dl>
+--%>
 
     <dl>
         <dt>roles</dt>
