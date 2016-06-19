@@ -89,10 +89,6 @@
                 </div>
             </div>
 
-                <%--
-                            <input type="text" class="reg-error" value="Will be possible to change in future. Work around it!!!" name="password" readonly>
-                --%>
-
             <div class="form-group">
                 <div class="col-sm-3">
                     <label class="control-label"><fmt:message key="user.hours"/></label>
@@ -170,11 +166,6 @@
                         <input type="password"
                                class="form-control"
                                name="oldPassword"
-<%--
-                               placeholder="<fmt:message key="user.old_password"/>"
-                               pattern="[A-Za-z/_/./0-9]{6,25}"
-                               title="<fmt:message key="user.password.hint"/>"
---%>
                                required
                         >
                     </div>
@@ -188,9 +179,6 @@
                         <input type="password"
                                class="form-control validation"
                                name="newPassword"
-                            <%--
-                                                           placeholder="<fmt:message key="user.new_password"/>"
-                            --%>
                                pattern="[A-Za-z/_/./0-9]{6,25}"
                                title="<fmt:message key="user.password.hint"/>"
                                required
@@ -206,9 +194,6 @@
                         <input type="password"
                                class="form-control validation"
                                name="newPasswordRepeated"
-                            <%--
-                            placeholder="<fmt:message key="user.new_password_repeat"/>"
-                            --%>
                                pattern="[A-Za-z/_/./0-9]{6,25}"
                                title="<fmt:message key="user.password.hint"/>"
                                required
