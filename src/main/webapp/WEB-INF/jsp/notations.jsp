@@ -14,42 +14,8 @@
     <script type="text/javascript" src="webjars/noty/2.3.8/js/noty/packaged/jquery.noty.packaged.min.js"></script>
 
     <%--todo: add update table by ajax (json)--%>
-    <script type="text/javascript">
-
-        var dataTableApi;
-
-        var startDate;
-        var startTime;
-        var endDate;
-        var endTime;
-
-        $(document).ready(function () {
-
-            dataTableApi = $('#dataTable').dataTable();
-
-            startDate = $('#startDate').datetimepicker({
-                timepicker: false,
-                format: 'Y-m-d'
-            });
-
-            startTime = $('#startTime').datetimepicker({
-                datepicker: false,
-                format: 'H:i'
-            });
-
-            endDate = $('#endDate').datetimepicker({
-                timepicker: false,
-                format: 'Y-m-d'
-            });
-
-            endTime = $('#endTime').datetimepicker({
-                datepicker: false,
-                format: 'H:i'
-            });
-
-        });
-
-    </script>
+    <script type="text/javascript" src="<c:url value="/resources/js/NotationsDataTable.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/resources/js/NotationsDateTimePicker.js"/>"></script>
 
 </head>
 
