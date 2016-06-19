@@ -1,11 +1,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="navbar-right navbar-text">
     <div class="navbar-nav">
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <%--${pageContext.response.locale}--%>
                 <fmt:message key="Language"/>
                 <b class="caret"></b>
             </a>
@@ -17,13 +17,4 @@
     </div>
 </div>
 
-<script type="text/javascript">
-    function show(language) {
-        /*todo: fix switching language from different pages*/
-        window.location.href = window.location.href.split('?')[0] + '?language=' + language;
-
-/*
-        window.location.href = window.location.href.split('?')[0] + '?language=' + language;
-*/
-    }
-</script>
+<script type="text/javascript" src="<c:url value="/resources/js/SelectLanguage.js"/>"></script>
