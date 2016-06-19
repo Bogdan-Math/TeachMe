@@ -7,11 +7,6 @@
 <head>
     <jsp:include page="fragments/title.jsp"/>
 
-    <link rel="stylesheet" href="webjars/datatables/1.10.11/css/jquery.dataTables.min.css">
-    <script type="text/javascript" src="webjars/datatables/1.10.11/js/jquery.dataTables.min.js"></script>
-
-    <script type="text/javascript" src="webjars/noty/2.3.8/js/noty/packaged/jquery.noty.packaged.min.js"></script>
-
 </head>
 
 <body>

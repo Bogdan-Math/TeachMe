@@ -70,17 +70,3 @@
         </div>
     </div>
 </div>
-
-<%--
-<script>
-    var div = document.getElementById("mainGoal");
-    div.onmouseover = function(){
-        div.setAttribute("style","color:lightgreen;");
-    };
-    div.onmouseout = function(){
-        div.setAttribute("style","color:lightgreen;");
-    };
-    div.onclick = function(){
-        div.setAttribute("style","color:lightgreen;");
-    };
-</script>--%>
