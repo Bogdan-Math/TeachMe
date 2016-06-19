@@ -15,73 +15,8 @@
     <script type="text/javascript" src="webjars/noty/2.3.8/js/noty/packaged/jquery.noty.packaged.min.js"></script>
 
     <%--todo: add update table by ajax (json)--%>
-    <script type="text/javascript">
-
-        var dataTableApi;
-
-        $(document).ready(function () {
-
-            dataTableApi = $('#dataTable').dataTable();
-
-            $('#createUser').on('click', function () {
-                create();
-            });
-
-        });
-
-        function notyReloadPage(layout) {
-            var n = noty({
-                layout: layout,
-                text: 'Good work!!! Please, reload page to look at changes. Reload NOW???',
-                type: 'success',
-                theme: 'defaultTheme',
-                buttons: [
-                    {
-                        addClass: 'btn btn-primary',
-                        text: 'ok',
-                        onClick: function ($noty) {
-                            $noty.close();
-                            location.reload();
-                        }
-                    },
-                    {
-                        addClass: 'btn btn-danger',
-                        text: 'cancel',
-                        onClick: function ($noty) {
-                            $noty.close();
-                        }
-                    }
-                ]
-            });
-        }
-
-        function create() {
-            var form = $('#createUserDetails');
-            $.ajax({
-                type: 'POST',
-                url: 'users/save',
-                data: form.serialize(),
-                success: function () {
-                    $('#createUserModalWindow').modal('hide');
-                    notyReloadPage('topRight')
-                },
-                error: function () {
-                    notyError();
-                }
-            });
-
-        }
-
-        function notyError() {
-            var n = noty({
-                text: 'Ooops!!! Something go wrong!!! Try again!!!',
-                type: 'error',
-                layout: 'bottomRight',
-                timeout: 3000
-            });
-        }
-
-    </script>
+    <script type="text/javascript" src="<c:url value="/resources/js/UsersDataTable.js"/> "></script>
+    <script type="text/javascript" src="<c:url value="/resources/js/UsersNoty.js"/> "></script>
 
 </head>
 

@@ -30,7 +30,7 @@ public class UserController extends AbstractUserController {
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String save(UserTO userTO ) {
+    public String save(UserTO userTO) {
         if (0 != userTO.getId()) {
             User user = super.get(userTO.getId());
             super.save(UserUtil.updateUser(user, userTO));
