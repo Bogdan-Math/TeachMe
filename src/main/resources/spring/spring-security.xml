@@ -10,16 +10,11 @@
     <http pattern="/resources/**" security="none"/>
     <http pattern="/webjars/**" security="none"/>
 
-<!--
-    <http pattern="/rest/**" use-expressions="true" name="restSecurityFilterChain" create-session="stateless">
-        <http-basic/>
-        <intercept-url pattern="/rest/**" access="hasRole('ROLE_ADMIN')"/>
-        <intercept-url pattern="/**" access="isAuthenticated()"/>
-        <csrf disabled="true"/>
-    </http>
--->
-
     <http>
+        <!--todo: close this access after correct fixing-->
+        <!--open access to all request with /rest/** pattern-->
+        <intercept-url pattern="/rest/**" access="permitAll"/>
+
         <intercept-url pattern="/login" access="permitAll"/>
         <intercept-url pattern="/registration" access="permitAll"/>
         <intercept-url pattern="/**" access="isAuthenticated()"/>
