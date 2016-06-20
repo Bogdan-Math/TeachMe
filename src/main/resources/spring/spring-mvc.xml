@@ -17,10 +17,19 @@
     <!--need to understand annotation like: @PreAuthorize("hasRole('ROLE_ADMIN')")-->
     <security:global-method-security secured-annotations="enabled" pre-post-annotations="enabled"/>
 
+    <!--need to format LocalDatTime from ' "dateTime":{2010, 1, 5, ...}' to '"dateTime":"2010-01-05T..." '-->
+    <bean id="jsonDateTimeMapper" class="ua.teachme.util.json.JsonDateTimeMapper"/>
+
     <mvc:annotation-driven>
 
-        <!--correct convert to UA/RU etc. if need to return only Sting from RestController (not json)-->
         <mvc:message-converters>
+
+            <!--correct convert date and time. if need to return formatted value from RestController (json)-->
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper" ref="jsonDateTimeMapper"/>
+            </bean>
+
+            <!--correct convert to UA/RU etc. if need to return Sting from RestController (not json)-->
             <bean class="org.springframework.http.converter.StringHttpMessageConverter">
                 <property name="supportedMediaTypes">
                     <list>
@@ -28,7 +37,9 @@
                         <value>text/html;charset=UTF-8</value> <!--- Fix AbstractMessageConverterMethodProcessor#142 -->
                     </list>
                 </property>
+
             </bean>
+
         </mvc:message-converters>
 
     </mvc:annotation-driven>
@@ -56,15 +67,15 @@
                 <value>messages.app</value>
             </list>
         </property>
-<!--
-        <property name="fallbackToSystemLocale" value="false"/>
--->
+        <!--
+                <property name="fallbackToSystemLocale" value="false"/>
+        -->
     </bean>
 
     <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
-<!--
-        <property name="defaultLocale" value="uk"/>
--->
+        <!--
+                <property name="defaultLocale" value="uk"/>
+        -->
     </bean>
 
     <mvc:interceptors>
