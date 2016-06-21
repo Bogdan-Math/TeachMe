@@ -11,6 +11,21 @@
 
 <body>
 <%--todo: add validation by js and ajax (json)--%>
+<script>
+    $(document).ready(function () {
+
+        $('#sign-in').on('click', function () {
+            var form = $('#registration');
+            $.ajax({
+                type: 'POST',
+                url: 'rest/registration',
+                data: form.serialize()
+            });
+        });
+
+    });
+
+</script>
 
 <header>
     <jsp:include page="fragments/registration-header.jsp"/>
@@ -21,7 +36,7 @@
     <div class="col-md-4"></div>
 
     <div class="col-md-4">
-        <form:form cssClass="form" method="post" action="registration" id="login-nav" accept-charset="UTF-8">
+        <form:form cssClass="form" method="post" action="registration" id="registration" accept-charset="UTF-8">
 
             <div class="form-group">
                 <input type="text"
@@ -66,6 +81,8 @@
 
             <div class="form-group">
                 <button type="submit" class="btn btn-block registration-btn"><fmt:message key="app.sign_in"/></button>
+                <button type="button" class="btn btn-block btn-default" id="sign-in"><fmt:message key="app.sign_in"/></button>
+
             </div>
 
         </form:form>
