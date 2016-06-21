@@ -1,21 +1,17 @@
 package ua.teachme.web.controllers.view;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ua.teachme.dto.UserTO;
-import ua.teachme.service.UserService;
 import ua.teachme.util.user.UserUtil;
+import ua.teachme.web.controllers.AbstractRegistrationController;
 
 @Controller
 @RequestMapping( value = "/registration")
-public class RegistrationController {
-
-    @Autowired
-    private UserService userService;
+public class RegistrationController extends AbstractRegistrationController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String getRegistrationForm(){
@@ -25,7 +21,7 @@ public class RegistrationController {
     @RequestMapping(method = RequestMethod.POST)
     public String userRegistration(UserTO userTO, Model model){
         try {
-            userService.save(UserUtil.saveUser(userTO));
+            super.save(UserUtil.saveUser(userTO));
             model.addAttribute("message", true);
             model.addAttribute("loginError", false);
             return "login";
