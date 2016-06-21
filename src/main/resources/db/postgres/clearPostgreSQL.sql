@@ -1,0 +1,1 @@
+DELETE FROM users WHERE users.name!='Admin' AND users.name!='User' AND users.name!='Anonymous';
