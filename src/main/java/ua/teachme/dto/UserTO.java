@@ -23,4 +23,15 @@ public class UserTO {
         this.password = password;
         this.hours = hours;
     }
+
+    @Override
+    public String toString() {
+        return "UserTO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", hours=" + hours +
+                '}';
+    }
 }

@@ -17,4 +17,12 @@ public class MainGoalTO {
         this.name = name;
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "MainGoalTO{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

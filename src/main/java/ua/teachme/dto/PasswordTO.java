@@ -19,4 +19,13 @@ public class PasswordTO {
         this.newPassword = newPassword;
         this.newPasswordRepeated = newPasswordRepeated;
     }
+
+    @Override
+    public String toString() {
+        return "PasswordTO{" +
+                "oldPassword='" + oldPassword + '\'' +
+                ", newPassword='" + newPassword + '\'' +
+                ", newPasswordRepeated='" + newPasswordRepeated + '\'' +
+                '}';
+    }
 }
