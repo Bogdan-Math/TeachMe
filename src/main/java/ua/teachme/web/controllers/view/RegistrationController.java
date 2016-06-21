@@ -21,7 +21,7 @@ public class RegistrationController extends AbstractRegistrationController {
     @RequestMapping(method = RequestMethod.POST)
     public String userRegistration(UserTO userTO, Model model){
         try {
-            super.save(UserUtil.saveUser(userTO));
+            super.save(userTO);
             model.addAttribute("message", true);
             model.addAttribute("loginError", false);
             return "login";
