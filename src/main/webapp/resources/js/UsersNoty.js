@@ -1,11 +1,3 @@
-$(document).ready(function () {
-
-    $('#createUser').on('click', function () {
-        create();
-    });
-
-});
-
 function notyReloadPage(layout) {
     noty({
         layout: layout,
@@ -32,6 +24,15 @@ function notyReloadPage(layout) {
     });
 }
 
+function notyError() {
+    noty({
+        text: 'Ooops!!! Something go wrong!!! Try again!!!',
+        type: 'error',
+        layout: 'bottomRight',
+        timeout: 3000
+    });
+}
+
 function create() {
     var form = $('#createUserDetails');
     $.ajax({
@@ -49,11 +50,10 @@ function create() {
 
 }
 
-function notyError() {
-    noty({
-        text: 'Ooops!!! Something go wrong!!! Try again!!!',
-        type: 'error',
-        layout: 'bottomRight',
-        timeout: 3000
+$(document).ready(function () {
+
+    $('#createUser').on('click', function () {
+        create();
     });
-}
+
+});
