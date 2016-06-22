@@ -1,10 +1,10 @@
 package ua.teachme.web.controllers.rest;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import ua.teachme.dto.UserTO;
-import ua.teachme.model.User;
 import ua.teachme.web.controllers.AbstractRegistrationController;
 
 @RestController
@@ -12,7 +12,12 @@ import ua.teachme.web.controllers.AbstractRegistrationController;
 public class RegistrationRestController extends AbstractRegistrationController {
 
     @RequestMapping(method = RequestMethod.POST)
-    public User save(UserTO userTO){
-        return super.save(userTO);
+    public void save(UserTO userTO){
+        try {
+            super.save(userTO);
+        }
+        catch (DataIntegrityViolationException e) {
+            throw new DataIntegrityViolationException("!!!");
+        }
     }
 }
