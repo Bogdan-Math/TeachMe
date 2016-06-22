@@ -11,7 +11,9 @@
 
 <body>
 <%--todo: add validation by js and ajax (json)--%>
+<script type="text/javascript" src="webjars/noty/2.3.8/js/noty/packaged/jquery.noty.packaged.min.js"></script>
 <script>
+
     $(document).ready(function () {
 
         $('#sign-in').on('click', function () {
@@ -19,7 +21,22 @@
             $.ajax({
                 type: 'POST',
                 url: 'rest/registration',
-                data: form.serialize()
+                data: form.serialize(),
+                success: function () {
+                    noty({
+                        text: '!!!',
+                        type: 'success',
+                        theme: 'defaultTheme'
+                    });
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    //alert(jqXHR.responseText);
+                    noty({
+                        text: '!!!',
+                        type: 'error',
+                        theme: 'defaultTheme'
+                    });
+                }
             });
         });
 
@@ -81,7 +98,8 @@
 
             <div class="form-group">
                 <button type="submit" class="btn btn-block registration-btn"><fmt:message key="app.sign_in"/></button>
-                <button type="button" class="btn btn-block btn-default" id="sign-in"><fmt:message key="app.sign_in"/></button>
+                <button type="button" class="btn btn-block btn-default" id="sign-in"><fmt:message
+                        key="app.sign_in"/></button>
 
             </div>
 
