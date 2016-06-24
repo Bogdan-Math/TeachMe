@@ -4,7 +4,7 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<div class="navbar navbar-inverse <%--navbar-fixed-top--%>">
+<div class="navbar navbar-inverse">
 
     <div class="container">
 
