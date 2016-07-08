@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ua.teachme.dto.UserTO;
 import ua.teachme.model.User;
-import ua.teachme.util.user.UserUtil;
+import ua.teachme.utility.user.UserUtil;
 import ua.teachme.web.controllers.AbstractUserController;
 
 import javax.servlet.http.HttpServletRequest;

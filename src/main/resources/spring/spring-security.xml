@@ -27,7 +27,7 @@
         <logout logout-success-url="/login"/>
     </http>
 
-    <beans:bean class="ua.teachme.util.password.PasswordUtil" id="passwordUtil" factory-method="getPasswordEncoder"/>
+    <beans:bean class="ua.teachme.utility.password.PasswordUtil" id="passwordUtil" factory-method="getPasswordEncoder"/>
 
     <authentication-manager>
         <authentication-provider user-service-ref="userServiceImpl">

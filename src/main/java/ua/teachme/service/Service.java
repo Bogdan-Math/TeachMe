@@ -1,6 +1,6 @@
 package ua.teachme.service;
 
-import ua.teachme.util.exception.EntityNotFoundException;
+import ua.teachme.utility.exception.EntityNotFoundException;
 
 import java.util.List;
 

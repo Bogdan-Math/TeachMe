@@ -1,4 +1,4 @@
-package ua.teachme.util.time;
+package ua.teachme.utility.time;
 
 import org.apache.commons.lang3.StringUtils;
 

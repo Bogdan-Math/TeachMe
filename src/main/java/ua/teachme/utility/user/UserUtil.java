@@ -1,9 +1,9 @@
-package ua.teachme.util.user;
+package ua.teachme.utility.user;
 
 import ua.teachme.dto.UserTO;
 import ua.teachme.model.User;
-import ua.teachme.util.notation.NotationUtil;
-import ua.teachme.util.password.PasswordUtil;
+import ua.teachme.utility.notation.NotationUtil;
+import ua.teachme.utility.password.PasswordUtil;
 
 import java.util.Arrays;
 import java.util.List;

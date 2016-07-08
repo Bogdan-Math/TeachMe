@@ -12,9 +12,9 @@ import ua.teachme.dto.PasswordTO;
 import ua.teachme.dto.UserTO;
 import ua.teachme.model.User;
 import ua.teachme.service.UserService;
-import ua.teachme.util.maingoal.MainGoalUtil;
-import ua.teachme.util.password.PasswordUtil;
-import ua.teachme.util.user.UserUtil;
+import ua.teachme.utility.maingoal.MainGoalUtil;
+import ua.teachme.utility.password.PasswordUtil;
+import ua.teachme.utility.user.UserUtil;
 
 @Controller
 @RequestMapping(value = "/profile")

@@ -14,7 +14,7 @@ import ua.teachme.profiles.ConnectTo;
 import ua.teachme.profiles.PopulateDB;
 import ua.teachme.profiles.WorkBy;
 import ua.teachme.repository.NotationRepository;
-import ua.teachme.util.notation.NotationUtil;
+import ua.teachme.utility.notation.NotationUtil;
 
 import static org.junit.Assert.*;
 

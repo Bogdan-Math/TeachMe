@@ -10,7 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ua.teachme.profiles.WorkBy;
 import ua.teachme.repository.NotationRepository;
-import ua.teachme.util.notation.NotationUtil;
+import ua.teachme.utility.notation.NotationUtil;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

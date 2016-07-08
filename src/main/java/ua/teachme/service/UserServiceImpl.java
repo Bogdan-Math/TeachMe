@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 import ua.teachme.LoggedUser;
 import ua.teachme.model.User;
 import ua.teachme.repository.UserRepository;
-import ua.teachme.util.exception.EntityNotFoundException;
-import ua.teachme.util.exception.ExceptionUtil;
+import ua.teachme.utility.exception.EntityNotFoundException;
+import ua.teachme.utility.exception.ExceptionUtil;
 
 import java.util.List;
 

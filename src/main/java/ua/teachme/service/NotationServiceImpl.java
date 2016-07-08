@@ -6,7 +6,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import ua.teachme.model.Notation;
 import ua.teachme.repository.NotationRepository;
-import ua.teachme.util.exception.ExceptionUtil;
+import ua.teachme.utility.exception.ExceptionUtil;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

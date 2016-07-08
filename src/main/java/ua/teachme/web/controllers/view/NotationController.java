@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ua.teachme.LoggedUser;
 import ua.teachme.model.Notation;
-import ua.teachme.util.notation.NotationUtil;
-import ua.teachme.util.time.TimeUtil;
+import ua.teachme.utility.notation.NotationUtil;
+import ua.teachme.utility.time.TimeUtil;
 import ua.teachme.web.controllers.AbstractNotationController;
 
 import javax.servlet.http.HttpServletRequest;

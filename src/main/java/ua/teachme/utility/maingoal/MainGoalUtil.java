@@ -1,4 +1,4 @@
-package ua.teachme.util.maingoal;
+package ua.teachme.utility.maingoal;
 
 import ua.teachme.dto.MainGoalTO;
 import ua.teachme.model.MainGoal;

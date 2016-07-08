@@ -240,7 +240,7 @@
             <version>${hibernate.version}</version>
         </dependency>
 
-        <!--EL - util lib, help to pass hibernate transactions-->
+        <!--EL - utility lib, help to pass hibernate transactions-->
         <dependency>
             <groupId>javax.el</groupId>
             <artifactId>javax.el-api</artifactId>

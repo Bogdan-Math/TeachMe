@@ -13,7 +13,7 @@ import ua.teachme.profiles.ConnectTo;
 import ua.teachme.profiles.PopulateDB;
 import ua.teachme.profiles.WorkBy;
 import ua.teachme.repository.UserRepository;
-import ua.teachme.util.user.UserUtil;
+import ua.teachme.utility.user.UserUtil;
 
 import static org.junit.Assert.*;
 

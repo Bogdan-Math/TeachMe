@@ -10,7 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ua.teachme.profiles.WorkBy;
 import ua.teachme.repository.UserRepository;
-import ua.teachme.util.user.UserUtil;
+import ua.teachme.utility.user.UserUtil;
 
 import static org.junit.Assert.*;
 

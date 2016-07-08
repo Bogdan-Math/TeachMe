@@ -1,4 +1,4 @@
-package ua.teachme.util.jpa;
+package ua.teachme.utility.jpa;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

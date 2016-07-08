@@ -1,8 +1,8 @@
-package ua.teachme.util.notation;
+package ua.teachme.utility.notation;
 
 import ua.teachme.model.Notation;
 import ua.teachme.dto.NotationTO;
-import ua.teachme.util.time.TimeUtil;
+import ua.teachme.utility.time.TimeUtil;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

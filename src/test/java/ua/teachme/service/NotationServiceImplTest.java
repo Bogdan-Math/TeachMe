@@ -13,8 +13,8 @@ import ua.teachme.model.Notation;
 import ua.teachme.profiles.ConnectTo;
 import ua.teachme.profiles.PopulateDB;
 import ua.teachme.profiles.WorkBy;
-import ua.teachme.util.exception.EntityNotFoundException;
-import ua.teachme.util.notation.NotationUtil;
+import ua.teachme.utility.exception.EntityNotFoundException;
+import ua.teachme.utility.notation.NotationUtil;
 
 import java.util.List;
 

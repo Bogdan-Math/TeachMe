@@ -1,4 +1,4 @@
-package ua.teachme.util.exception;
+package ua.teachme.utility.exception;
 
 public class EntityNotFoundException extends RuntimeException {
     public EntityNotFoundException(String message) {

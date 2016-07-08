@@ -1,4 +1,4 @@
-package ua.teachme.util.json;
+package ua.teachme.utility.json;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;

@@ -3,8 +3,8 @@ package ua.teachme.repository.mock;
 import org.springframework.stereotype.Repository;
 import ua.teachme.model.Notation;
 import ua.teachme.repository.NotationRepository;
-import ua.teachme.util.notation.NotationUtil;
-import ua.teachme.util.time.TimeUtil;
+import ua.teachme.utility.notation.NotationUtil;
+import ua.teachme.utility.time.TimeUtil;
 
 import java.time.LocalDateTime;
 import java.util.Comparator;

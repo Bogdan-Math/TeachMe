@@ -3,7 +3,7 @@ package ua.teachme.repository.mock;
 import org.springframework.stereotype.Repository;
 import ua.teachme.model.User;
 import ua.teachme.repository.UserRepository;
-import ua.teachme.util.user.UserUtil;
+import ua.teachme.utility.user.UserUtil;
 
 import java.util.Comparator;
 import java.util.List;

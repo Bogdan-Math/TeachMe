@@ -1,4 +1,4 @@
-package ua.teachme.util.password;
+package ua.teachme.utility.password;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;

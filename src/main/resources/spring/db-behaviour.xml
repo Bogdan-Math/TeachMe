@@ -82,7 +82,7 @@
 
         <!--need to clear 2-nd level hibernate cache-->
 <!--
-        <bean id="jpaUtil" class="ua.teachme.util.jpa.JpaUtil"/>
+        <bean id="jpaUtil" class="ua.teachme.utility.jpa.JpaUtil"/>
 -->
     </beans>
 

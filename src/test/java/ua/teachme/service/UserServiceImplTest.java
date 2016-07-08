@@ -15,9 +15,9 @@ import ua.teachme.model.User;
 import ua.teachme.profiles.ConnectTo;
 import ua.teachme.profiles.PopulateDB;
 import ua.teachme.profiles.WorkBy;
-import ua.teachme.util.exception.EntityNotFoundException;
-import ua.teachme.util.password.PasswordUtil;
-import ua.teachme.util.user.UserUtil;
+import ua.teachme.utility.exception.EntityNotFoundException;
+import ua.teachme.utility.password.PasswordUtil;
+import ua.teachme.utility.user.UserUtil;
 
 import java.util.List;
 

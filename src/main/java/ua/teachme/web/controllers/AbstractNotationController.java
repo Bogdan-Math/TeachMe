@@ -6,7 +6,7 @@ import ua.teachme.model.Notation;
 import ua.teachme.model.User;
 import ua.teachme.service.NotationService;
 import ua.teachme.service.UserService;
-import ua.teachme.util.notation.NotationUtil;
+import ua.teachme.utility.notation.NotationUtil;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

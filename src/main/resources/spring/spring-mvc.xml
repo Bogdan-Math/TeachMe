@@ -18,7 +18,7 @@
     <security:global-method-security secured-annotations="enabled" pre-post-annotations="enabled"/>
 
     <!--need to format LocalDatTime from ' "dateTime":{2010, 1, 5, ...}' to '"dateTime":"2010-01-05T..." '-->
-    <bean id="jsonDateTimeMapper" class="ua.teachme.util.json.JsonDateTimeMapper"/>
+    <bean id="jsonDateTimeMapper" class="ua.teachme.utility.json.JsonDateTimeMapper"/>
 
     <mvc:annotation-driven>
 
