@@ -342,6 +342,7 @@
             <version>${lombok-version}</version>
         </dependency>
 
+        <!--Common Lang - help to check custom line format-->
         <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
