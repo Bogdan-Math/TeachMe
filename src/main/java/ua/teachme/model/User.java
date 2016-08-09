@@ -53,7 +53,7 @@ public class User extends EntityName {
     private MainGoal mainGoal;
 
     //todo: add get/set notations tests
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
     @JsonIgnore // help to avoid: recursion calls/out of memory/stack overflow/no session(hibernate) exceptions
     private List<Notation> notations;
 
