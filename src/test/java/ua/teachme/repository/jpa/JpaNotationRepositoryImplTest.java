@@ -10,10 +10,12 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import ua.teachme.model.Notation;
 import ua.teachme.profiles.ConnectTo;
 import ua.teachme.profiles.PopulateDB;
 import ua.teachme.profiles.WorkBy;
 import ua.teachme.repository.NotationRepository;
+import ua.teachme.utility.notation.NotationUtil;
 
 import static org.junit.Assert.*;
 
@@ -48,21 +50,32 @@ public class JpaNotationRepositoryImplTest {
 
     @Test
     public void testSave() throws Exception {
-
+        assertEquals(6, notationRepository.getAll().size());
+        assertEquals(NotationUtil.newNotation, notationRepository.save(NotationUtil.newNotation));
+        assertEquals(7, notationRepository.getAll().size());
     }
 
     @Test
     public void testGet() throws Exception {
-
+        assertEquals(NotationUtil.notations.get(0), notationRepository.get(1000007));
     }
 
     @Test
     public void testDelete() throws Exception {
-
+        assertEquals(6, notationRepository.getAll().size());
+        notationRepository.delete(1000007);
+        assertEquals(5, notationRepository.getAll().size());
     }
 
     @Test
     public void testGetBetween() throws Exception {
-
+        Notation notation = notationRepository.get(1000007);
+        assertEquals(
+                2,
+                notationRepository.getBetween(
+                        notation.getCreatedDateAndTime(),
+                        notation.getCreatedDateAndTime()
+                ).size()
+        );
     }
 }
