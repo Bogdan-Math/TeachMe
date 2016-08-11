@@ -4,8 +4,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import ua.teachme.repository.AbstractRepositoryTest;
-import ua.teachme.repository.UserRepository;
 import ua.teachme.utility.user.UserUtil;
 
 import static org.junit.Assert.assertEquals;
