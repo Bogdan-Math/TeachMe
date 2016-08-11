@@ -50,7 +50,7 @@ public class AbstractUserRepositoryTest extends AbstractRepositoryTest {
     public void testDelete() throws Exception {
         assertEquals(3, userRepository.getAll().size());
         userRepository.delete(1000001);
-        assertEquals(2, userRepository.getAll().size());
+        assertEquals(3, userRepository.getAll().size());
     }
 
     @Test
