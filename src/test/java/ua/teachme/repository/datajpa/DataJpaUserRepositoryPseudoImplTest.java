@@ -1,47 +1,14 @@
 package ua.teachme.repository.datajpa;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.jdbc.Sql;
+import ua.teachme.profiles.ConnectTo;
+import ua.teachme.profiles.PopulateDB;
+import ua.teachme.profiles.WorkBy;
+import ua.teachme.repository.AbstractUserRepositoryTest;
 
-import static org.junit.Assert.*;
+@ActiveProfiles({ConnectTo.POSTGRESQL, WorkBy.DATAJPA})
+@Sql(scripts = PopulateDB.POSTGRESQL) //execute before every test in this class
+public class DataJpaUserRepositoryPseudoImplTest extends AbstractUserRepositoryTest {
 
-@Ignore //todo: add tests
-public class DataJpaUserRepositoryPseudoImplTest {
-
-    @Before
-    public void setUp() throws Exception {
-
-    }
-
-    @After
-    public void tearDown() throws Exception {
-
-    }
-
-    @Test
-    public void testGetByEmail() throws Exception {
-
-    }
-
-    @Test
-    public void testGetAll() throws Exception {
-
-    }
-
-    @Test
-    public void testSave() throws Exception {
-
-    }
-
-    @Test
-    public void testGet() throws Exception {
-
-    }
-
-    @Test
-    public void testDelete() throws Exception {
-
-    }
 }
