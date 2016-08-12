@@ -41,7 +41,7 @@ function create() {
         data: form.serialize(),
         success: function () {
             $('#createUserModalWindow').modal('hide');
-            notyReloadPage('topRight')
+            notyReloadPage('topRight');
         },
         error: function () {
             notyError();
