@@ -9,7 +9,7 @@ import ua.teachme.utility.user.UserUtil;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-public class AbstractUserRepositoryTest extends AbstractRepositoryTest {
+public abstract class AbstractUserRepositoryTest extends AbstractRepositoryTest {
 
     @Autowired
     private UserRepository userRepository;
@@ -50,7 +50,7 @@ public class AbstractUserRepositoryTest extends AbstractRepositoryTest {
     public void testDelete() throws Exception {
         assertEquals(3, userRepository.getAll().size());
         userRepository.delete(1000001);
-        assertEquals(3, userRepository.getAll().size());
+        assertEquals(2, userRepository.getAll().size());
     }
 
     @Test

@@ -33,7 +33,7 @@ public abstract class AbstractNotationRepositoryTest extends AbstractRepositoryT
 
     @Test
     public void testGetAll() throws Exception {
-        assertEquals(7, notationRepository.getAll().size());
+        assertEquals(6, notationRepository.getAll().size());
     }
 
     @Test
