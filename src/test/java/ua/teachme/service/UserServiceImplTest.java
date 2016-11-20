@@ -90,6 +90,7 @@ public class UserServiceImplTest {
 
     @Test
     @Ignore
+    //TODO: add completable conditions
     public void rePopulateDB(){
         List<User> users = userService.getAll();
         users.forEach(user -> user.setPassword(PasswordUtil.encode(user.getPassword())));
