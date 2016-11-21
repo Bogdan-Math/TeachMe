@@ -1,4 +1,4 @@
-package ua.teachme.profiles;
+package ua.teachme.profiles.db;
 
 public class PopulateDB {
     public static final String POSTGRESQL = "classpath:db/postgres/populatePostgreSQL.sql";

@@ -1,4 +1,4 @@
-package ua.teachme.profiles;
+package ua.teachme.profiles.db;
 
 public class WorkBy {
     public static final String MOCK = "MOCK";

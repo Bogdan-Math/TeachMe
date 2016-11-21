@@ -32,7 +32,7 @@ public class EntityID {
     }
 
     public boolean isNew(){
-        return id == null;
+        return null == id;
     }
 
     @Override

@@ -1,8 +1,8 @@
 package ua.teachme;
 
 import org.springframework.context.support.GenericXmlApplicationContext;
-import ua.teachme.profiles.ConnectTo;
-import ua.teachme.profiles.WorkBy;
+import ua.teachme.profiles.db.ConnectTo;
+import ua.teachme.profiles.db.WorkBy;
 
 //todo: delete this class after ALPHA-production
 public class Main {

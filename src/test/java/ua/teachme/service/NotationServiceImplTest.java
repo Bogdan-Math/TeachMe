@@ -10,9 +10,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ua.teachme.model.Notation;
-import ua.teachme.profiles.ConnectTo;
-import ua.teachme.profiles.PopulateDB;
-import ua.teachme.profiles.WorkBy;
+import ua.teachme.profiles.db.ConnectTo;
+import ua.teachme.profiles.db.PopulateDB;
+import ua.teachme.profiles.db.WorkBy;
 import ua.teachme.utility.exception.EntityNotFoundException;
 import ua.teachme.utility.notation.NotationUtil;
 

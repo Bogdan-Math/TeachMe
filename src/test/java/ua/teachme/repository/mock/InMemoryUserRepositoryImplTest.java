@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import ua.teachme.profiles.WorkBy;
+import ua.teachme.profiles.db.WorkBy;
 import ua.teachme.repository.UserRepository;
 import ua.teachme.utility.user.UserUtil;
 

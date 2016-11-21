@@ -11,8 +11,8 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
-import ua.teachme.profiles.ConnectTo;
-import ua.teachme.profiles.WorkBy;
+import ua.teachme.profiles.db.ConnectTo;
+import ua.teachme.profiles.db.WorkBy;
 import ua.teachme.web.controllers.view.NotationController;
 
 import javax.annotation.PostConstruct;
