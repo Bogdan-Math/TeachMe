@@ -8,16 +8,7 @@ import java.util.List;
 public class ListConverter {
 
     public static String toString(List<String> outputTokens) {
-
-        StringBuilder result = new StringBuilder();
-
-        if (!outputTokens.isEmpty())
-            result.append(outputTokens.remove(0));
-
-        while (!outputTokens.isEmpty())
-            result.append(" ").append(outputTokens.remove(0));
-
-        return result.toString();
+        return String.join(" ", outputTokens);
     }
 
 }
