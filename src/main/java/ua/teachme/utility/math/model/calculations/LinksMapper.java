@@ -16,7 +16,7 @@ public class LinksMapper {
             return rpn;
         }
         List<String> list = recursiveReplaceLinksToValues(rpn, links, new ArrayList<>());
-        return ListConverter.toString(list);
+        return String.join(" ", list);
     }
 
     private static List<String> recursiveReplaceLinksToValues(String rpn, Map<String, String> links, List<String> finalRPN) {

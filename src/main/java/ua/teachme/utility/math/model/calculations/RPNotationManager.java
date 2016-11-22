@@ -74,7 +74,7 @@ public class RPNotationManager {
             outputTokens.add(operatorsStack.pop());
         }
 
-        return ListConverter.toString(outputTokens);
+        return String.join(" ", outputTokens);
     }
 
     public static String calculateResult(String rpn) {
