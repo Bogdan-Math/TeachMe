@@ -6,10 +6,6 @@ package ua.teachme.utility.math.model.calculations;
 public class Priority {
 
     public static int determine(String token) {
-        return priority(token);
-    }
-
-    private static int priority(String token) {
         switch (token) {
             case "^":
                 return 0;

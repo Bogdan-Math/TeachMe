@@ -12,7 +12,7 @@ import java.util.StringTokenizer;
 public class LinksMapper {
 
     public static String buildCleanRPN(String rpn, Map<String, String> links) {
-        if (!isContainsLinks(rpn)) {
+        if (!containsLinks(rpn)) {
             return rpn;
         }
         List<String> list = recursiveReplaceLinksToValues(rpn, links, new ArrayList<>());
@@ -21,7 +21,7 @@ public class LinksMapper {
 
     private static List<String> recursiveReplaceLinksToValues(String rpn, Map<String, String> links, List<String> finalRPN) {
 
-        if (!isContainsLinks(rpn)) {
+        if (!containsLinks(rpn)) {
             if (rpn.length() > 1 && !Token.isNumber(rpn)) {
                 finalRPN.add(rpn);
             }
@@ -44,7 +44,7 @@ public class LinksMapper {
         return finalRPN;
     }
 
-    private static boolean isContainsLinks(String potentialRPN) {
+    private static boolean containsLinks(String potentialRPN) {
 
         StringTokenizer tokenizer = new StringTokenizer(potentialRPN, " ");
         List<String> tokens = new ArrayList<>();
