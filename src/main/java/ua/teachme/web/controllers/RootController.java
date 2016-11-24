@@ -47,4 +47,6 @@ public class RootController {
         LOG.debug("GET: /index");
         return "index";
     }
+
+    //TODO: pass logic from controllers to services layers
 }
