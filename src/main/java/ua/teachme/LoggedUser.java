@@ -7,9 +7,7 @@ import ua.teachme.model.User;
 //todo: change to listener of user or user TO
 public class LoggedUser extends org.springframework.security.core.userdetails.User {
 
-    private static int id;
-    private static String name;
-    private static MainGoal mainGoal;
+    private static User user;
 
     public LoggedUser(User user) {
         super(user.getEmail(), user.getPassword(), user.getRoles());
@@ -34,6 +32,7 @@ public class LoggedUser extends org.springframework.security.core.userdetails.Us
     }
 */
 
+/*
     private static void setMainGoal(User user) {
         MainGoal transferMainGoal = user.getMainGoal();
         if (null != transferMainGoal) {
@@ -43,22 +42,26 @@ public class LoggedUser extends org.springframework.security.core.userdetails.Us
             mainGoal = new MainGoal();
         }
     }
+*/
 
     public static void update(User user){
-        id = user.getId();
-        name = user.getName();
-        setMainGoal(user);
+        LoggedUser.user = user;
+//        setMainGoal(user);
+    }
+
+    public static User getUser() {
+        return user;
     }
 
     public static int getId() {
-        return id;
+        return user.getId();
     }
 
     public static String getName() {
-        return name;
+        return user.getName();
     }
 
     public static MainGoal getMainGoal() {
-        return mainGoal;
+        return user.getMainGoal();
     }
 }

@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<jsp:useBean id="loggedUserMainGoal" scope="request" type="ua.teachme.model.MainGoal"/>
+<jsp:useBean id="loggedUser" scope="request" type="ua.teachme.model.User"/>
 <div class="navbar-form navbar-right">
 
     <a class="btn main-goal-btn"
@@ -13,7 +13,7 @@
        data-target="#setMainGoal"
     >
         <b><fmt:message key="user.main_goal"/></b>
-        <div class="in-line personal-main-goal">${loggedUserMainGoal.name}</div>
+        <div class="in-line personal-main-goal">${loggedUser.mainGoal.name}</div>
     </a>
 
 </div>
@@ -39,7 +39,7 @@
                         <input type="text"
                                class="form-control validation"
                                name="name"
-                               value="${loggedUserMainGoal.name}"
+                               value="${loggedUser.mainGoal.name}"
                         >
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                         <textarea
                                class="form-control validation"
                                name="description"
-                        >${loggedUserMainGoal.description}</textarea>
+                        >${loggedUser.mainGoal.description}</textarea>
                     </div>
                 </div>
 

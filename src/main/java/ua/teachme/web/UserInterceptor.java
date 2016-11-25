@@ -13,13 +13,8 @@ public class UserInterceptor extends HandlerInterceptorAdapter{
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         // fixing bug: correct page view after many times reloading
         if (null != modelAndView && !modelAndView.isEmpty()) {
-            String loggedUserName = LoggedUser.getName();
-            if (null != loggedUserName) {
-                modelAndView.getModelMap().addAttribute("loggedUserName", LoggedUser.getName());
-                modelAndView.getModelMap().addAttribute("loggedUserMainGoal", LoggedUser.getMainGoal());
-            }
+            modelAndView.getModelMap().addAttribute("loggedUser", LoggedUser.getUser());
         }
-        //modelAndView.getModelMap().addAttribute("loggedUser", LoggedUser.getName());
     }
 
 }

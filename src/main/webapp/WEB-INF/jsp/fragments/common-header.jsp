@@ -14,9 +14,9 @@
                 <div class="navbar-brand"><fmt:message key="app.title"/></div>
             </a>
 
-            <%--@elvariable id="loggedUserName" type="java.lang.String"--%>
+            <jsp:useBean id="loggedUser" scope="request" type="ua.teachme.model.User"/>
             <a href="profile">
-                <div class="navbar-brand"><fmt:message key="app.profile"/> ${loggedUserName}</div>
+                <div class="navbar-brand"><fmt:message key="app.profile"/> ${loggedUser.name}</div>
             </a>
 
             <a href="notations">
