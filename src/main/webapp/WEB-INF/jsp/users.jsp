@@ -65,9 +65,9 @@
                                                         <td>${user.roles}</td>
                             --%>
                         <td>${user.registeredDateAndTime} </td>
-                        <td><a class="btn btn-warning" href="users/update?id=${user.id}"><fmt:message
+                        <td><a class="btn btn-warning" href="users/update/${user.id}"><fmt:message
                                 key="table.users.edit"/></a></td>
-                        <td><a class="btn btn-danger" href="users/delete?id=${user.id}"><fmt:message
+                        <td><a class="btn btn-danger" href="users/delete/${user.id}"><fmt:message
                                 key="table.users.delete"/></a></td>
                     </tr>
                 </c:forEach>

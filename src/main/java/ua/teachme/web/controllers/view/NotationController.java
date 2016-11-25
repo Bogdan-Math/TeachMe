@@ -2,6 +2,7 @@ package ua.teachme.web.controllers.view;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ua.teachme.LoggedUser;
@@ -36,9 +37,17 @@ public class NotationController extends AbstractNotationController {
         return "notation";
     }
 
+/*
     @RequestMapping(value = "/update", method = RequestMethod.GET)
     public String update(HttpServletRequest request, Model model) {
         model.addAttribute("notation", super.get(getIdFromRequest(request)));
+        return "notation";
+    }
+*/
+
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
+    public String update(@PathVariable int id, HttpServletRequest request, Model model) {
+        model.addAttribute("notation", super.get(id));
         return "notation";
     }
 
@@ -83,9 +92,9 @@ public class NotationController extends AbstractNotationController {
         return "notations";
     }
 
-    @RequestMapping(value = "/delete", method = RequestMethod.GET)
-    public String delete(HttpServletRequest request, Model model) {
-        super.delete(getIdFromRequest(request));
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public String delete(@PathVariable int id, HttpServletRequest request, Model model) {
+        super.delete(id);
         setDefaultDateAndTime(model);
         return "redirect:/notations";
     }
