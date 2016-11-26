@@ -29,9 +29,9 @@ public class UserRestController extends AbstractUserController {
         return super.get(id);
     }
 
-    //todo: add 'delete' to REST functionality
     @Override
-    public void delete(int id) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public void delete(@PathVariable("id") int id) {
         super.delete(id);
     }
 
